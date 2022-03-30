@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>НТИРФ</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body class="page-main">
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="logo">
+                            <svg><use xlink:href="images/sprite.svg#logo"></use></svg>
+                        </div>
+
+                        <div class="nav">
+                            <ul>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Документы</a></li>
+                                <li><a href="#">Открытые данные</a></li>
+                                <li><a href="#">Аналитика</a></li>
+                                <li><a href="#">Статус заявки</a></li>
+                                <li><a href="#">Вопрос-ответ</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="header-burger">
+                            <a href="#" class="header-burger-link"><svg><use xlink:href="images/sprite.svg#header-burger"></use></svg></a>
+                        </div>
+
+                        <div class="header-user">
+                            <a href="#" class="header-user-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
+                        </div>
+
+                    </div>
+                </header>
+
+                <!-- main welcome -->
+                <div class="main-welcome">
+                    <div class="main-welcome-lines">
+                        <div class="container">
+                            <div class="main-welcome-lines-inner"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="main-welcome-flag"><img src="images/main-flag.svg" alt="" /></div>
+                        <div class="main-welcome-title">Научно-технологическая инфраструктура Российской Федерации</div>
+                        <div class="main-welcome-text">Центры коллективного пользования научным оборудованием и уникальные научные установки</div>
+                        <div class="main-welcome-sections">
+                            <div class="main-welcome-section">
+                                <a href="#">
+                                    <div class="main-welcome-section-number">01</div>
+                                    <div class="main-welcome-section-title">Каталог центров коллективного пользования</div>
+                                </a>
+                            </div>
+                            <div class="main-welcome-section">
+                                <a href="#">
+                                    <div class="main-welcome-section-number">02</div>
+                                    <div class="main-welcome-section-title">Каталог уникальных научных&nbsp;установок</div>
+                                </a>
+                            </div>
+                            <div class="main-welcome-section">
+                                <a href="#">
+                                    <div class="main-welcome-section-number">03</div>
+                                    <div class="main-welcome-section-title">Каталог производителей научного оборудования</div>
+                                </a>
+                            </div>
+                            <div class="main-welcome-section">
+                                <a href="#">
+                                    <div class="main-welcome-section-number">04</div>
+                                    <div class="main-welcome-section-title">Научно-технологическая инфраструктура России</div>
+                                </a>
+                            </div>
+                            <div class="main-welcome-section">
+                                <a href="#">
+                                    <div class="main-welcome-section-number">05</div>
+                                    <div class="main-welcome-section-title">Продажа оборудования центров коллективного пользования</div>
+                                </a>
+                            </div>
+                            <div class="main-welcome-section main-welcome-section-order">
+                                <a href="#">
+                                    <div class="main-welcome-section-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-welcome-section-number">Заявка</div>
+                                    <div class="main-welcome-section-btn">Заявка на оборудование<svg><use xlink:href="images/sprite.svg#btn-arrow"></use></svg></div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="main-filter">
+                            <div class="main-filter-menu">
+                                <ul>
+                                    <li class="active"><a href="#">Поиск по прибору</a></li>
+                                    <li><a href="#">Поиск по услугам</a></li>
+                                </ul>
+                            </div>
+                            <div class="main-filter-container">
+                                <div class="main-filter-content active">
+                                    <div class="search-form">
+                                        <form action="#" method="post">
+                                            <div class="search-form-input"><input type="text" name="search" value="" placeholder="Введите название прибора" /></div>
+                                            <div class="search-form-submit"><input type="submit" value="Найти" class="btn" /></div>
+                                        </form>
+                                    </div>
+                                    <div class="main-filter-detail-link"><a href="#"><span>Расширеный поиск</span><svg><use xlink:href="images/sprite.svg#main-filter-detail-link"></use></svg></a></div>
+                                </div>
+
+                                <div class="main-filter-content">
+                                    <div class="search-form">
+                                        <form action="#" method="post">
+                                            <div class="search-form-input"><input type="text" name="search" value="" placeholder="Введите название услуги" /></div>
+                                            <div class="search-form-submit"><input type="submit" value="Найти" class="btn" /></div>
+                                        </form>
+                                    </div>
+                                    <div class="main-filter-detail-link"><a href="#"><span>Расширеный поиск</span><svg><use xlink:href="images/sprite.svg#main-filter-detail-link"></use></svg></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main welcome END -->
+
+                <!-- container -->
+                <div class="container">
+
+                    <!-- main achieves -->
+                    <div class="main-achieves">
+                        <div class="main-achieve">
+                            <div class="main-achieve-inner">
+                                <div class="main-achieve-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="main-achieve-header">
+                                    <div class="main-achieve-header-value">661</div>
+                                    <div class="main-achieve-header-text">центров<br /> коллективного пользования</div>
+                                </div>
+                                <div class="main-achieve-text"><span>в том числе</span></div>
+                                <div class="main-achieve-add">
+                                    <div class="main-achieve-add-item">
+                                        <div class="main-achieve-add-item-value">22</div>
+                                        <div class="main-achieve-add-item-text">суперкомпьютерных центра</div>
+                                    </div>
+                                    <div class="main-achieve-add-item">
+                                        <div class="main-achieve-add-item-value">63</div>
+                                        <div class="main-achieve-add-item-text">биоресурсные<br /> коллекции</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main-achieve">
+                            <div class="main-achieve-inner">
+                                <div class="main-achieve-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="main-achieve-header">
+                                    <div class="main-achieve-header-value">440</div>
+                                    <div class="main-achieve-header-text">уникальные<br /> научные установки</div>
+                                </div>
+                                <div class="main-achieve-text"><span>в том числе</span></div>
+                                <div class="main-achieve-add">
+                                    <div class="main-achieve-add-item">
+                                        <div class="main-achieve-add-item-value">4</div>
+                                        <div class="main-achieve-add-item-text">суперкомпьютерных комплекса</div>
+                                    </div>
+                                    <div class="main-achieve-add-item">
+                                        <div class="main-achieve-add-item-value">84</div>
+                                        <div class="main-achieve-add-item-text">биоресурсные<br /> коллекции</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main achieves END -->
+
+                    <!-- main block -->
+                    <div class="main-block">
+                        <h2>Новости</h2>
+
+                        <div class="main-news">
+                            <div class="main-news-item">
+                                <div class="main-news-item-date">11 марта 2022</div>
+                                <div class="main-news-item-title"><a href="#">На основе технологий искусственного интеллекта разрабатывается математическая модель распространения эпидемии COVID-19 в России</a></div>
+                            </div>
+                            <div class="main-news-item">
+                                <div class="main-news-item-date">11 марта 2022</div>
+                                <div class="main-news-item-title"><a href="#">Обнаружение нейтрино Байкальским глубоководным нейтринным телескопом – одно из главных научных событий 2021 года.</a></div>
+                            </div>
+                            <div class="main-news-item">
+                                <div class="main-news-item-date">11 марта 2022</div>
+                                <div class="main-news-item-title"><a href="#">Ликвидирован ЦКП «Диагностика и энергоэффективное электрооборудование» ФГБОУ ВО «ЮРГПУ (НПИ)»</a></div>
+                            </div>
+                        </div>
+                        <div class="main-news-all"><a href="#">читать все новости</a></div>
+                    </div>
+                    <!-- main block END -->
+
+                    <!-- main block -->
+                    <div class="main-block">
+                        <div class="main-link"><a href="#"><img src="files/main-link.svg" alt="" /></a></div>
+                    </div>
+                    <!-- main block END -->
+
+                    <!-- main block -->
+                    <div class="main-block">
+                        <h2>Каталог уникальных научных установок</h2>
+
+                        <div class="main-catalogue">
+                            <div class="main-catalogue-inner">
+                                <a href="#" class="main-catalogue-item">
+                                    <div class="main-catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
+                                    <div class="main-catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>г. Москва</div>
+                                    <div class="main-catalogue-item-type"><svg><use xlink:href="images/sprite.svg#catalogue-type"></use></svg>Стенды для электро-, теплофизических и механических испытаний</div>
+                                </a>
+                                <a href="#" class="main-catalogue-item">
+                                    <div class="main-catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
+                                    <div class="main-catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>г. Москва</div>
+                                    <div class="main-catalogue-item-type"><svg><use xlink:href="images/sprite.svg#catalogue-type"></use></svg>Электрофизические установки и&nbsp;ускорители</div>
+                                </a>
+                                <a href="#" class="main-catalogue-all">
+                                    <div class="main-catalogue-all-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-catalogue-all-title">Всего более 400 уникальных научных установок</div>
+                                    <div class="main-catalogue-all-btn"><span>перейти в каталог<svg><use xlink:href="images/sprite.svg#btn-arrow"></use></svg></span></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main block END -->
+
+                    <!-- main block -->
+                    <div class="main-block">
+                        <h2>Каталог центров коллективного пользования научным оборудованием</h2>
+
+                        <div class="main-catalogue">
+                            <div class="main-catalogue-inner">
+                                <a href="#" class="main-catalogue-item">
+                                    <div class="main-catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-catalogue-item-title">Центр коллективного пользования «Материаловедение и диагностика в передовых технологиях»</div>
+                                    <div class="main-catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>г. Санкт-Петербург</div>
+                                    <div class="main-catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg>Федеральное государственное бюджетное учреждение науки Физико-технический институт им. А.Ф. Иоффе Российской академии наук</div>
+                                </a>
+                                <a href="#" class="main-catalogue-item">
+                                    <div class="main-catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-catalogue-item-title">Центр коллективного пользования научным оборудованием «Арктика»</div>
+                                    <div class="main-catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Архангельская область</div>
+                                    <div class="main-catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg>Федеральное государственное автономное образовательное учреждение высшего образования «Северный (Арктический) федеральный университет имени М. В. Ломоносова»</div>
+                                </a>
+                                <a href="#" class="main-catalogue-all">
+                                    <div class="main-catalogue-all-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-catalogue-all-title">Всего более 660 центров коллективного пользования научным оборудованием</div>
+                                    <div class="main-catalogue-all-btn"><span>перейти в каталог<svg><use xlink:href="images/sprite.svg#btn-arrow"></use></svg></span></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main block END -->
+
+                    <!-- main block -->
+                    <div class="main-block">
+                        <h2>Открытые данные</h2>
+
+                        <div class="main-opendata">
+                            <div class="main-opendata-inner">
+                                <a href="#" class="main-opendata-item">
+                                    <div class="main-opendata-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-opendata-item-title">661</div>
+                                    <div class="main-opendata-item-text">Зарегистрирован <span>центр коллективного пользования</span></div>
+                                </a>
+                                <a href="#" class="main-opendata-item">
+                                    <div class="main-opendata-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-opendata-item-title">440</div>
+                                    <div class="main-opendata-item-text">Зарегистрировано <span>уникальных научных установок</span></div>
+                                </a>
+                                <a href="#" class="main-opendata-item">
+                                    <div class="main-opendata-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                    <div class="main-opendata-item-title">7</div>
+                                    <div class="main-opendata-item-text"><span>Установок класса «Megascience»</span> создается в России</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="main-opendata-download">
+                            <div class="main-opendata-download-inner">
+                                <a href="#" class="main-opendata-download-item">
+                                    <div class="main-opendata-download-item-title">Общие сведения о ЦКП и УНУ</div>
+                                    <div class="main-opendata-download-item-btn"><span><svg><use xlink:href="images/sprite.svg#file-icon"></use></svg><strong>Скачать</strong>2.4 Мб</span></div>
+                                </a>
+                                <a href="#" class="main-opendata-download-item">
+                                    <div class="main-opendata-download-item-title">Сведения о научном<br /> оборудовании ЦКП</div>
+                                    <div class="main-opendata-download-item-btn"><span><svg><use xlink:href="images/sprite.svg#file-icon"></use></svg><strong>Скачать</strong>2.4 Мб</span></div>
+                                </a>
+                                <a href="#" class="main-opendata-download-item">
+                                    <div class="main-opendata-download-item-title">Общие сведения о ЦКП и УНУ<br /> по федеральным округам</div>
+                                    <div class="main-opendata-download-item-btn"><span><svg><use xlink:href="images/sprite.svg#file-icon"></use></svg><strong>Скачать</strong>2.4 Мб</span></div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="main-opendata-bars">
+                            <div class="main-opendata-bar">
+                                <h4>Распределение ЦКП по федеральным округам</h4>
+                                <div class="main-opendata-bar-container">
+                                    <div class="chart-bar" data-datavar="mainChartBar1Data"></div>
+                                    <script>
+                                        var mainChartBar1Data = [
+                                            {
+                                                'title' : '<strong>Центральный</strong> Федеральный округ',
+                                                'value' : 219,
+                                                'main'  : true
+                                            },
+                                            {
+                                                'title' : '<strong>Сибирский</strong> Федеральный округ',
+                                                'value' : 105
+                                            },
+                                            {
+                                                'title' : '<strong>Приволжский</strong> Федеральный округ',
+                                                'value' : 101
+                                            },
+                                            {
+                                                'title' : '<strong>Северо-Западный</strong> Федеральный округ',
+                                                'value' : 66
+                                            },
+                                            {
+                                                'title' : '<strong>Южный</strong> Федеральный округ',
+                                                'value' : 53
+                                            },
+                                            {
+                                                'title' : '<strong>Дальневосточный</strong> Федеральный округ',
+                                                'value' : 47
+                                            },
+                                            {
+                                                'title' : '<strong>Северо-Кавказский</strong> Федеральный округ',
+                                                'value' : 35
+                                            },
+                                            {
+                                                'title' : '<strong>Уральский</strong> Федеральный округ',
+                                                'value' : 34
+                                            }
+                                        ];
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="main-opendata-bar">
+                                <h4>Распределение УНУ по федеральным округам</h4>
+                                <div class="main-opendata-bar-container">
+                                    <div class="chart-bar" data-datavar="mainChartBar2Data"></div>
+                                    <script>
+                                        var mainChartBar2Data = [
+                                            {
+                                                'title' : '<strong>Центральный</strong> Федеральный округ',
+                                                'value' : 184,
+                                                'main'  : true
+                                            },
+                                            {
+                                                'title' : '<strong>Северо-Западный</strong> Федеральный округ',
+                                                'value' : 67
+                                            },
+                                            {
+                                                'title' : '<strong>Сибирский</strong> Федеральный округ',
+                                                'value' : 48
+                                            },
+                                            {
+                                                'title' : '<strong>Приволжский</strong> Федеральный округ',
+                                                'value' : 39
+                                            },
+                                            {
+                                                'title' : '<strong>Дальневосточный</strong> Федеральный округ',
+                                                'value' : 21
+                                            },
+                                            {
+                                                'title' : '<strong>Южный</strong> Федеральный округ',
+                                                'value' : 18
+                                            },
+                                            {
+                                                'title' : '<strong>Северо-Кавказский</strong> Федеральный округ',
+                                                'value' : 12
+                                            },
+                                            {
+                                                'title' : '<strong>Уральский</strong> Федеральный округ',
+                                                'value' : 10
+                                            }
+                                        ];
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main block END -->
+
+                    <!-- main block -->
+                    <div class="main-block">
+                        <h2>О ЦКП и УНУ</h2>
+
+                        <div class="main-about">
+                            <div class="main-about-item">
+                                <div class="main-about-item-title">Уникальная научная установка&nbsp;(УНУ) —</div>
+                                <div class="main-about-item-text">комплекс научного оборудования, не имеющий аналогов в&nbsp;Российской Федерации, функционирующий как единое целое и созданный научной организацией и (или) образовательной организацией в целях получения научных результатов, достижение которых невозможно при использовании другого оборудования</div>
+                            </div>
+                            <div class="main-about-item">
+                                <div class="main-about-item-title">Типы уникальных научных установоек</div>
+                                <div class="main-about-item-text">
+                                    <ul>
+                                        <li>Ядерные и термоядерные комплексы</li>
+                                        <li>Электрофизические установки и ускорители</li>
+                                        <li>Устройства для регистрации природных потоков частиц</li>
+                                        <li>Астрономические приборы</li>
+                                        <li>Лазерная техника</li>
+                                        <li>Установки для исследований в области наук о Земле</li>
+                                        <li>Установки для медико-биологических исследований</li>
+                                        <li>Испытательные стенды</li>
+                                        <li>Коллекции</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="main-about-item">
+                                <div class="main-about-item-title">Центр коллективного пользования научным оборудованием&nbsp;(ЦКП) — </div>
+                                <div class="main-about-item-text">структурное подразделение (совокупность структурных подразделений), которое создано научной организацией и (или) образовательной организацией, располагает научным и (или) технологическим оборудованием, квалифицированным персоналом и обеспечивает в&nbsp;интересах третьих лиц выполнение работ и оказание услуг для проведения научных исследований, а&nbsp;также осуществления экспериментальных разработок</div>
+                            </div>
+                            <div class="main-about-item">
+                                <div class="main-about-item-title">Типы центров коллективного пользования научным оборудованием</div>
+                                <div class="main-about-item-text">
+                                    <ul>
+                                        <li>Исследовательские - участвующие в выполнении научных проектов фундаментального и поискового характера</li>
+                                        <li>Сервисные - оказывающие типовые услуги широкому кругу лиц, заинтересованных в испытаниях или проведении исследований</li>
+                                        <li>Суперкомпьютерные - предоставляющие в пользование высокопроизводительные вычислительные ресурсы</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main block END -->
+
+                </div>
+                <!-- container END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="container">
+
+                <div class="footer-container">
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Инфраструктура</div>
+                        <ul>
+                            <li><a href="#">Каталог центров коллективного пользования</a></li>
+                            <li><a href="#">Каталог уникальных научных установок</a></li>
+                            <li><a href="#">Каталог производителей научного оборудования</a></li>
+                            <li><a href="#">Научно-технологическая инфраструктура России</a></li>
+                            <li><a href="#">Продажа оборудования центров коллективного пользования</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Разделы</div>
+                        <ul>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Документы</a></li>
+                            <li><a href="#">Открытые данные</a></li>
+                            <li><a href="#">Аналитика</a></li>
+                            <li><a href="#">Статус заявки</a></li>
+                            <li><a href="#">Вопрос-ответ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contacts">
+                        <div class="footer-title">Контакты</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254,<br /> Москва, ул. Добролюбова, 20А</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg><a href="tel:+74959162884">+7 (495) 916-2884</a></div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                    <div class="footer-support">
+                        <div class="footer-support-title">Портал разработан при поддержке</div>
+                        <div class="footer-support-logo"><img src="images/footer-support.png" alt="" /></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
