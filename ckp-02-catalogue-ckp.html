@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>НТИРФ</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="logo">
+                            <a href="#"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></a>
+                        </div>
+
+                        <div class="nav">
+                            <ul>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Документы</a></li>
+                                <li><a href="#">Открытые данные</a></li>
+                                <li><a href="#">Аналитика</a></li>
+                                <li><a href="#">Статус заявки</a></li>
+                                <li><a href="#">Вопрос-ответ</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="header-burger">
+                            <a href="#" class="header-burger-link"><svg><use xlink:href="images/sprite.svg#header-burger"></use></svg></a>
+                        </div>
+
+                        <div class="header-user">
+                            <a href="#" class="header-user-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
+                        </div>
+
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="back-link"><a href="#"><svg><use xlink:href="images/sprite.svg#back-link"></use></svg>На главную</a></div>
+
+                    <h1>Каталог центров коллективного пользования научным оборудованием</h1>
+
+                    <!-- catalogue filter -->
+                    <div class="catalogue-filter">
+                        <div class="catalogue-filter-header">
+                            <div class="catalogue-filter-link"><a href="#" class="btn btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg><span>Фильтр</span><span>Скрыть фильтр</span><strong></strong></a></div>
+                            <div class="catalogue-filter-reset"><a href="#" class="btn-reset btn-mini"><svg class="btn-reset-icon"><use xlink:href="images/sprite.svg#btn-reset-icon"></use></svg>Очистить все</a></div>
+                        </div>
+
+                        <div class="catalogue-filter-container">
+                            <div class="catalogue-filter-menu">
+                                <ul>
+                                    <li class="active"><a href="#">Фильтр ЦКП</a></li>
+                                    <li><a href="#">Отбор ЦКП по условиям оказания услуг</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="catalogue-filter-tabs">
+                                <div class="catalogue-filter-content active">
+                                    <form action="#" method="post">
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Местоположение центра<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="catalogue-filter-row">
+                                                    <div class="catalogue-filter-field">
+                                                        <div class="form-label">Федеральный округ</div>
+                                                        <div class="form-select">
+                                                            <select name="district" data-placeholder="Не выбрано">
+                                                                <option value=""></option>
+                                                                <option value="1">Центральный</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="catalogue-filter-field">
+                                                        <div class="form-label">Регион</div>
+                                                        <div class="form-select">
+                                                            <select name="region" data-placeholder="Не выбрано">
+                                                                <option value=""></option>
+                                                                <option value="1">Рязанская область</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="catalogue-filter-field">
+                                                        <div class="form-label">Город</div>
+                                                        <div class="form-select">
+                                                            <select name="city" data-placeholder="Не выбрано">
+                                                                <option value=""></option>
+                                                                <option value="1">г. Рязань</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Приоритетные направления<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="catalogue-filter-row">
+                                                    <div class="catalogue-filter-field catalogue-filter-field-2">
+                                                        <div class="form-label">Приоритетные направления (указ Президента РФ N 899)</div>
+                                                        <div class="form-select">
+                                                            <select name="priority" data-placeholder="Не выбрано">
+                                                                <option value=""></option>
+                                                                <option value="1">Перспективные виды вооружения, военной и специальной техники</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="catalogue-filter-row">
+                                                    <div class="catalogue-filter-field catalogue-filter-field-2">
+                                                        <div class="form-label">Приоритетные направления Стратегии НТР (п. 20)</div>
+                                                        <div class="form-select">
+                                                            <select name="stratery" data-placeholder="Не выбрано">
+                                                                <option value=""></option>
+                                                                <option value="1">Персонализированная медицина, высокотехнологичное здравоохранение и другое</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Поддержка<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="catalogue-filter-section-block">
+                                                    <div class="form-label">Поддержан в рамках мероприятия 5.2 ФЦП «Исследования и разработки» на 2007-2013 годы</div>
+                                                    <div class="catalogue-filter-section-radios">
+                                                        <div class="form-radio">
+                                                            <label><input type="radio" name="support1" value="0" checked="checked" class="catalogue-filter-radio-default" /><span>Все</span></label>
+                                                        </div>
+                                                        <div class="form-radio">
+                                                            <label><input type="radio" name="support1" value="1" /><span>Да</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="catalogue-filter-section-block">
+                                                    <div class="form-label">Поддержан в рамках мероприятия 3.1.2 ФЦП «Исследования и разработки» на 2014-2020 годы:</div>
+                                                    <div class="catalogue-filter-section-radios">
+                                                        <div class="form-radio">
+                                                            <label><input type="radio" name="support2" value="0" checked="checked" class="catalogue-filter-radio-default" /><span>Все</span></label>
+                                                        </div>
+                                                        <div class="form-radio">
+                                                            <label><input type="radio" name="support2" value="1" /><span>Да</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Дополнительно<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="catalogue-filter-section-block">
+                                                    <div class="form-label">Суперкомпьютерный ЦКП:</div>
+                                                    <div class="catalogue-filter-section-radios">
+                                                        <div class="form-radio">
+                                                            <label><input type="radio" name="add1" value="0" checked="checked" class="catalogue-filter-radio-default" /><span>Все</span></label>
+                                                        </div>
+                                                        <div class="form-radio">
+                                                            <label><input type="radio" name="add1" value="1" /><span>Да</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="catalogue-filter-section-block">
+                                                    <div class="form-label">Биоресурсная коллекция:</div>
+                                                    <div class="catalogue-filter-section-radios">
+                                                        <div class="form-radio">
+                                                            <label><input type="radio" name="add2" value="0" checked="checked" class="catalogue-filter-radio-default" /><span>Все</span></label>
+                                                        </div>
+                                                        <div class="form-radio">
+                                                            <label><input type="radio" name="add2" value="1" /><span>Да</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-bottom">
+                                            <div class="form-ctrl">
+                                                <div class="form-reset"><button class="btn-reset"><svg class="btn-reset-icon"><use xlink:href="images/sprite.svg#btn-reset-icon"></use></svg>Очистить все</button></div>
+                                                <div class="form-submit"><input type="submit" value="Найти" class="btn" /></div>
+                                            </div>
+                                            <div class="catalogue-filter-hide"><a href="#"><svg><use xlink:href="images/sprite.svg#catalogue-filter-hide"></use></svg>Свернуть фильтр</a></div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <div class="catalogue-filter-content">
+                                    <form action="#" method="post">
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Способ подачи заявки:<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="method" value="0" checked="checked" class="catalogue-filter-radio-default" /><span>все</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="method" value="1" /><span>только в электронном виде</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="method" value="2" /><span>в электронном и печатном виде</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="method" value="3" /><span>только в печатном виде</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Основания для оказания услуг:<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="footing" value="0" checked="checked" class="catalogue-filter-radio-default" /><span>все</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="footing" value="1" /><span>только заявка</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="footing" value="2" /><span>заявка, договор и техническое задание</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="footing" value="3" /><span>заявка и календарный план работ ЦКП</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="footing" value="4" /><span>заявка и сопроводительное письмо</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="footing" value="5" /><span>заявка, договор, техническое задание, сопроводительное письмо</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Период рассмотрения заявки:<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="period" value="0" checked="checked" class="catalogue-filter-radio-default" /><span>все</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="period" value="1" /><span>1-2 дня</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="period" value="2" /><span>1-5 дней</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="period" value="3" /><span>1-10 дней</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="period" value="4" /><span>5-10 дней</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="period" value="5" /><span>не более 20 дней</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="period" value="6" /><span>не более 1 месяца</span></label>
+                                                </div>
+                                                <div class="form-radio">
+                                                    <label><input type="radio" name="period" value="7" /><span>определяется индивидуально</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Критерии рассмотрения заявок:<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="review1" /><span>Предварительное согласование запланированных работ</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="review2" /><span>Привлечение совета, экспертов для оценки заявки</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="review3" /><span>Рассмотрение заявок вне очередности их поступления</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="review4" /><span>Прием заявок от физических лиц</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Критерии исполнения заявок<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution1" /><span>Заключение типового договора</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution2" /><span>Заключение индивидуализированного договора</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution3" /><span>Заключение договора о научном сотрудничестве/безвозмездного договора</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution4" /><span>Отсутствие предоплаты</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution5" /><span>Частичная предоплата</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution6" /><span>Полная предоплата</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution7" /><span>Индивидуальный расчет цены услуги (работы)</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution8" /><span>Прямой допуск заказчика к научному оборудованию</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution9" /><span>Возможность присутствия заказчика при исполнении сотрудником ЦКП</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution10" /><span>Исполнение силами сотрудников ЦКП</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution11" /><span>Исполнение с применением аттестованных методик измерений</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution12" /><span>Исполнение только на сертифицированном оборудовании</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="execution13" /><span>Изготовление опытного образца</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Сопроводительная документация к результатам по заявке<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="docs1" /><span>Протоколы анализа, испытания</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="docs2" /><span>Заключение к заявке</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="docs3" /><span>Научный отчет</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="docs4" /><span>Акт об оказании услуг</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-section">
+                                            <a href="#" class="catalogue-filter-section-title">Дополнительные условия<span></span><svg><use xlink:href="images/sprite.svg#faq-arrow"></use></svg></a>
+
+                                            <div class="catalogue-filter-section-content">
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="rules1" /><span>Возможность обеспечения конфиденциальности работ по заявке</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="rules2" /><span>Разграничение прав собственности</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="rules3" /><span>Отсутствие обязательства заказчика ссылаться в публикациях на использование оборудования ЦКП</span></label>
+                                                </div>
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="rules4" /><span>Отсутствие обязательства заказчика включать в число соавторов сотрудника(-ов) ЦКП</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="catalogue-filter-bottom">
+                                            <div class="form-ctrl">
+                                                <div class="form-reset"><button class="btn-reset"><svg class="btn-reset-icon"><use xlink:href="images/sprite.svg#btn-reset-icon"></use></svg>Очистить все</button></div>
+                                                <div class="form-submit"><input type="submit" value="Найти" class="btn" /></div>
+                                            </div>
+                                            <div class="catalogue-filter-hide"><a href="#"><svg><use xlink:href="images/sprite.svg#catalogue-filter-hide"></use></svg>Свернуть фильтр</a></div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- catalogue filter END -->
+
+                    <!-- catalogue -->
+                    <div class="catalogue">
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Исследования наноструктурных, углеродных и&nbsp;сверхтвердых материалов</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">г. Москва</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное бюджетное научное учреждение Технологический институт сверхтвердых и новых углеродных материалов (ТИСНУМ)</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Центр коллективного пользования «Материаловедение и диагностика в передовых технологиях»</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">г. Санкт-Петербург</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное бюджетное учреждение науки Физико-технический институт им. А.Ф. Иоффе Российской академии наук</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Центр коллективного пользования научным оборудованием «Арктика»</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">Архангельская область</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное автономное образовательное учреждение высшего образования «Северный (Арктический) федеральный университет имени М. В. Ломоносова»</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Исследования наноструктурных, углеродных и&nbsp;сверхтвердых материалов</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">г. Москва</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное бюджетное научное учреждение Технологический институт сверхтвердых и новых углеродных материалов (ТИСНУМ)</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Центр коллективного пользования «Материаловедение и диагностика в передовых технологиях»</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">г. Санкт-Петербург</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное бюджетное учреждение науки Физико-технический институт им. А.Ф. Иоффе Российской академии наук</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Центр коллективного пользования научным оборудованием «Арктика»</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">Архангельская область</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное автономное образовательное учреждение высшего образования «Северный (Арктический) федеральный университет имени М. В. Ломоносова»</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Исследования наноструктурных, углеродных и&nbsp;сверхтвердых материалов</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">г. Москва</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное бюджетное научное учреждение Технологический институт сверхтвердых и новых углеродных материалов (ТИСНУМ)</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Центр коллективного пользования «Материаловедение и диагностика в передовых технологиях»</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">г. Санкт-Петербург</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное бюджетное учреждение науки Физико-технический институт им. А.Ф. Иоффе Российской академии наук</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Центр коллективного пользования научным оборудованием «Арктика»</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">Архангельская область</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное автономное образовательное учреждение высшего образования «Северный (Арктический) федеральный университет имени М. В. Ломоносова»</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Исследования наноструктурных, углеродных и&nbsp;сверхтвердых материалов</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">г. Москва</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное бюджетное научное учреждение Технологический институт сверхтвердых и новых углеродных материалов (ТИСНУМ)</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Центр коллективного пользования «Материаловедение и диагностика в передовых технологиях»</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">г. Санкт-Петербург</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное бюджетное учреждение науки Физико-технический институт им. А.Ф. Иоффе Российской академии наук</span></div>
+                            </a>
+                        </div>
+
+                        <div class="catalogue-item">
+                            <a href="#">
+                                <div class="catalogue-item-corner"><svg><use xlink:href="images/sprite.svg#corner"></use></svg></div>
+                                <div class="catalogue-item-title">Центр коллективного пользования научным оборудованием «Арктика»</div>
+                                <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg><span data-href="#">Архангельская область</span></div>
+                                <div class="catalogue-item-gov"><svg><use xlink:href="images/sprite.svg#catalogue-gov"></use></svg><span data-href="#">Федеральное государственное автономное образовательное учреждение высшего образования «Северный (Арктический) федеральный университет имени М. В. Ломоносова»</span></div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- catalogue END -->
+
+                    <div class="pager">
+                        <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <span>...</span>
+                        <a href="#">13</a>
+                        <a href="#">14</a>
+                        <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                    </div>
+
+                </div>
+                <!-- container END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="container">
+
+                <div class="footer-container">
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Инфраструктура</div>
+                        <ul>
+                            <li><a href="#">Каталог центров коллективного пользования</a></li>
+                            <li><a href="#">Каталог уникальных научных установок</a></li>
+                            <li><a href="#">Каталог производителей научного оборудования</a></li>
+                            <li><a href="#">Научно-технологическая инфраструктура России</a></li>
+                            <li><a href="#">Продажа оборудования центров коллективного пользования</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Разделы</div>
+                        <ul>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Документы</a></li>
+                            <li><a href="#">Открытые данные</a></li>
+                            <li><a href="#">Аналитика</a></li>
+                            <li><a href="#">Статус заявки</a></li>
+                            <li><a href="#">Вопрос-ответ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contacts">
+                        <div class="footer-title">Контакты</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254,<br /> Москва, ул. Добролюбова, 20А</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg><a href="tel:+74959162884">+7 (495) 916-2884</a></div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                    <div class="footer-support">
+                        <div class="footer-support-title">Портал разработан при поддержке</div>
+                        <div class="footer-support-logo"><img src="images/footer-support.png" alt="" /></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>

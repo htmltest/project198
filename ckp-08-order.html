@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>НТИРФ</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="logo">
+                            <a href="#"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></a>
+                        </div>
+
+                        <div class="nav">
+                            <ul>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Документы</a></li>
+                                <li><a href="#">Открытые данные</a></li>
+                                <li><a href="#">Аналитика</a></li>
+                                <li><a href="#">Статус заявки</a></li>
+                                <li><a href="#">Вопрос-ответ</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="header-burger">
+                            <a href="#" class="header-burger-link"><svg><use xlink:href="images/sprite.svg#header-burger"></use></svg></a>
+                        </div>
+
+                        <div class="header-user">
+                            <a href="#" class="header-user-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
+                        </div>
+
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs"><a href="#">Главная</a><span>—</span>Заявка</div>
+
+                    <h1>Заказ услуги</h1>
+
+                    <h2>Предоставление времени на просвечивающем микроскопе JEM2100</h2>
+
+                    <!-- order -->
+                    <div class="order">
+                        <form action="#" method="post">
+
+                            <!-- order block -->
+                            <div class="order-block">
+                                <div class="order-block-number"><span>01</span> / 02</div>
+                                <div class="order-block-container">
+                                    <div class="order-block-title">Контактные данные</div>
+
+                                    <div class="form-label">Фамилия</div>
+                                    <div class="form-input"><input type="text" name="lastname" value="" class="required" /></div>
+
+                                    <div class="form-label">Имя</div>
+                                    <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
+
+                                    <div class="form-label">Отчество</div>
+                                    <div class="form-input"><input type="text" name="middlename" value="" class="required" /></div>
+
+                                    <div class="order-block-group">
+                                        <div class="form-label">Страна</div>
+                                        <div class="form-select">
+                                            <select name="country" data-placeholder="Не выбрано" class="required">
+                                                <option value=""></option>
+                                                <option value="1">Российская Федерация</option>
+                                                <option value="2">Великобритания</option>
+                                                <option value="3">США</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="order-row">
+                                            <div class="order-row-field">
+                                                <div class="form-label">Регион</div>
+                                                <div class="form-select">
+                                                    <select name="region" data-placeholder="Не выбрано" class="required">
+                                                        <option value=""></option>
+                                                        <option value="1">Москва</option>
+                                                        <option value="2">Санкт-Петербург</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="order-row-field">
+                                                <div class="form-label">Город</div>
+                                                <div class="form-select">
+                                                    <select name="city" data-placeholder="Не выбрано" class="required">
+                                                        <option value=""></option>
+                                                        <option value="1">Москва</option>
+                                                        <option value="2">Санкт-Петербург</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="order-row">
+                                        <div class="order-row-field">
+                                            <div class="form-label">E-mail*</div>
+                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                        </div>
+                                        <div class="order-row-field">
+                                            <div class="form-label">Телефон*</div>
+                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- order block END -->
+
+                            <!-- order block -->
+                            <div class="order-block">
+                                <div class="order-block-number"><span>02</span> / 02</div>
+                                <div class="order-block-container">
+                                    <div class="order-block-title">Подробности заявки</div>
+
+                                    <div class="form-label">Цель работы</div>
+                                    <div class="form-input"><input type="text" name="target" value="" class="required" /></div>
+
+                                    <div class="order-row">
+                                        <div class="order-row-field order-row-field-1">
+                                            <div class="form-label">Желаемая дата начала</div>
+                                            <div class="form-input form-input-date"><input type="text" name="date" value="" /></div>
+                                        </div>
+                                        <div class="order-row-field order-row-field-2">
+                                            <div class="form-label">Предполагаемая продолжительность работ, дней</div>
+                                            <div class="form-input"><input type="text" name="lenth" value="" class="required" /></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-label">Характер работы</div>
+                                    <div class="form-select">
+                                        <select name="nature" data-placeholder="Не выбрано" class="required">
+                                            <option value=""></option>
+                                            <option value="1">Диплом</option>
+                                            <option value="2">Диссертация</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-label">Объект исследования(образец)</div>
+                                    <div class="form-input"><input type="text" name="object" value="" class="required" /></div>
+
+                                    <div class="form-label">Требуемый метод исследования</div>
+                                    <div class="form-input"><input type="text" name="method" value="" class="required" /></div>
+
+                                    <div class="form-label">Специальная пробоподготовка образца</div>
+                                    <div class="form-select">
+                                        <select name="preparation" data-placeholder="Не выбрано" class="required">
+                                            <option value=""></option>
+                                            <option value="1">Да</option>
+                                            <option value="2">Нет</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-label">Количество образцов</div>
+                                    <div class="form-input"><input type="text" name="count" value="" class="required" /></div>
+
+                                    <div class="order-block-group">
+                                        <div class="form-label">Использование результатов в образовательном процессе (диплом, диссертация)</div>
+                                        <div class="form-select">
+                                            <select name="results" data-placeholder="Не выбрано" class="required">
+                                                <option value=""></option>
+                                                <option value="1">Да</option>
+                                                <option value="2">Нет</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-label">Обязательство ссылаться на ЦКП в публикации результата работы</div>
+                                        <div class="form-select">
+                                            <select name="commitment" data-placeholder="Не выбрано" class="required">
+                                                <option value=""></option>
+                                                <option value="1">Да</option>
+                                                <option value="2">Нет</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-checkbox form-policy">
+                                        <label><input type="checkbox" name="confirm" class="required" /><span>Я даю согласие на обработку моих персональных данных в соответствии с&nbsp;Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных», на&nbsp;условиях и для целей, определенных в <a href="#">Согласии на обработку персональных данных</a>.</span></label>
+                                    </div>
+
+                                    <div class="form-ctrl">
+                                        <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
+                                        <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- order block END -->
+
+                        </form>
+                    </div>
+                    <!-- order END -->
+
+                </div>
+                <!-- container END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="container">
+
+                <div class="footer-container">
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Инфраструктура</div>
+                        <ul>
+                            <li><a href="#">Каталог центров коллективного пользования</a></li>
+                            <li><a href="#">Каталог уникальных научных установок</a></li>
+                            <li><a href="#">Каталог производителей научного оборудования</a></li>
+                            <li><a href="#">Научно-технологическая инфраструктура России</a></li>
+                            <li><a href="#">Продажа оборудования центров коллективного пользования</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Разделы</div>
+                        <ul>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Документы</a></li>
+                            <li><a href="#">Открытые данные</a></li>
+                            <li><a href="#">Аналитика</a></li>
+                            <li><a href="#">Статус заявки</a></li>
+                            <li><a href="#">Вопрос-ответ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contacts">
+                        <div class="footer-title">Контакты</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254,<br /> Москва, ул. Добролюбова, 20А</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg><a href="tel:+74959162884">+7 (495) 916-2884</a></div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                    <div class="footer-support">
+                        <div class="footer-support-title">Портал разработан при поддержке</div>
+                        <div class="footer-support-logo"><img src="images/footer-support.png" alt="" /></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
