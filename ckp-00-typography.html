@@ -279,6 +279,12 @@
                             </select>
                         </div>
 
+                        <div class="form-label">Загрузка файлов</div>
+                        <div class="form-files">
+                            <div class="form-files-list"></div>
+                            <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /><span class="btn btn-mini"><svg class="btn-file"><use xlink:href="images/sprite.svg#btn-file"></use></svg>Добавить файл</span></div>
+                        </div>
+
                         <div class="form-label">Сообщение</div>
                         <div class="form-input"><textarea name="message" rows="5" cols="10"></textarea></div>
 
@@ -427,6 +433,9 @@
         <script src="js/select2/select2.min.js"></script>
         <script src="js/select2/ru.js"></script>
         <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/fileupload/jquery.ui.widget.js"></script>
+        <script src="js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

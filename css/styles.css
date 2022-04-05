@@ -65,6 +65,8 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
 .btn-email {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; width:25px; height:25px; fill:#fff}
 .btn-filter {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; width:25px; height:25px; fill:#fff}
 .btn-reset-icon {display:inline-block; vertical-align:middle; margin:-2px 0 0 10px; width:25px; height:24px; fill:#1c48a3}
+.btn-feedback {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; width:24px; height:25px; fill:#1c48a3; transition:fill 0.2s}
+a:hover .btn-feedback {fill:#fff}
 
 .btn-order {background:#ff0000}
 .btn-order:hover {background:#ff000088}
@@ -157,6 +159,30 @@ label.error {display:block; margin:5px 0 0 0; font-weight:300; font-size:14px; l
 .form-radio label.error {position:absolute; left:0; bottom:0; white-space:nowrap; text-align:left}
 
 .form-policy {margin-top:30px}
+
+.form-files {margin:30px 0}
+.form-files::after {content:""; display:block; clear:both}
+.form-label+.form-files {margin-top:7px}
+.form-files::after {content:""; display:block; clear:both}
+
+.form-files-input {float:right; width:200px; position:relative; overflow:hidden; cursor:pointer}
+.form-files-input input {height:200px; z-index:1; position:absolute; top:0; right:0; opacity:0; cursor:pointer; font-size:200px; background:url(../images/blank.gif); -webkit-appearance:none}
+.form-files-input input.error+span {margin-bottom:28px}
+.form-files-input input.error+label.error+span {margin-bottom:28px}
+.form-files-input label.error {display:block; position:absolute; left:0; bottom:0}
+
+.form-files-list {float:left; width:calc(100% - 200px); margin:-10px 0 0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
+.form-files-list-item-progress {display:inline-block; vertical-align:top; width:136px; height:150px; background:#fafcff url(../images/loading.svg) no-repeat center; border:1px solid #8daaf5; border-radius:5px; margin:10px 0 0 10px; position:relative}
+.form-files-list-item {display:inline-block; vertical-align:top; width:136px; height:150px; padding:39px 0 0 0; background:#fafcff; border:1px solid #8daaf5; border-radius:5px; margin:10px 0 0 10px; position:relative; letter-spacing:0}
+.form-files-list-item-remove,
+.form-files-list-item-cancel {display:block; position:absolute; right:4px; top:4px; width:25px; height:25px; cursor:pointer; border-radius:50%}
+.form-files-list-item-remove svg,
+.form-files-list-item-cancel svg {display:block; width:25px; height:25px; fill:#1c48a3}
+.form-files-list-item-icon {width:36px; height:41px; position:relative; margin:0 auto; padding:17px 0 0 0; font-weight:bold; font-size:10px; line-height:12px; text-transform:uppercase; text-align:center; color:#fff}
+.form-files-list-item-icon svg {position:absolute; left:0; top:0; width:36px; height:41px; fill:#1c48a3}
+.form-files-list-item-icon span {position:relative}
+.form-files-list-item-name {margin:12px 5px 0 5px; font-size:12px; line-height:16px; font-weight:normal; text-align:center; color:#1c48a3; height:32px; position:relative; overflow:hidden}
+.form-files-list-item-size {margin:3px 0 0 0; font-size:12px; line-height:18px; font-weight:normal; text-align:center; color:#7e9cc8}
 
 .form-ctrl {margin:30px 0 0 0; text-align:right; font-size:0; line-height:0; letter-spacing:-1px}
 .form-reset {display:inline-block; vertical-align:top; margin:0 10px 0 0}
@@ -637,6 +663,49 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .catalogue-item-gov {padding:0 0 0 30px; position:relative; margin:18px 0 0 0; font-size:14px; line-height:18px; color:#494b61}
 .catalogue-item-gov svg {display:block; width:21px; height:22px; fill:#7e9cc8; position:absolute; left:0; top:-4px}
 .catalogue-item-gov span:hover {text-decoration:underline}
+
+.page-404 {margin:100px 0 0 0; text-align:center}
+.page-404-img {line-height:0}
+.page-404 h2 {margin:60px 0 0 0; color:#000}
+.page-404-btn {margin:60px 0 0 0}
+.page-404-btn a {font-weight:bold; text-transform:uppercase; font-size:16px; line-height:21px}
+.page-404-btn .btn-arrow {margin:-2px 10px 0 0; fill:#1c48a3; transition:fill 0.2s; transform:rotate(-180deg)}
+.page-404-btn a:hover .btn-arrow {fill:#fff}
+
+.auth {max-width:424px; margin:0 auto}
+.auth h1 {text-align:center}
+.auth-form {margin:40px 0 0 0}
+.auth-form form {margin:0; padding:0}
+.auth-btn {margin:40px 0 0 0; text-align:center}
+.auth-btn .btn-border {font-weight:bold; text-transform:uppercase; font-size:16px; line-height:21px; padding-left:23px; padding-right:23px}
+.auth-bottom {margin:40px auto 0 auto; text-align:center}
+.auth-links {display:inline-block; vertical-align:top; border-bottom:1px solid #becee5; padding:0 0 30px 0; font-weight:normal; line-height:23px}
+.auth-links span {margin:0 25px; color:#becee5}
+.auth-feedback-title {margin:40px 0 0 0; font-weight:normal; line-height:23px}
+.auth-feedback-btn {margin:20px 0 0 0}
+
+.tabs {margin:70px 0 0 0}
+.tabs-menu {font-weight:bold; font-size:16px; line-height:21px; text-transform:uppercase}
+.tabs-menu ul {margin:0; padding:0; list-style:none}
+.tabs-menu ul::after {content:""; display:block; clear:both}
+.tabs-menu ul li {float:left; margin:0 0 0 20px; padding:0}
+.tabs-menu ul li::before {display:none}
+.tabs-menu ul li:first-child {margin:0}
+.tabs-menu ul li a {display:block; padding:0 0 5px 0; border-bottom:2px solid #8daaf5; color:#8daaf5; text-decoration:none; transition:border-color 0.2s, color 0.2s}
+.tabs-menu ul li a:hover,
+.tabs-menu ul li.active a {border-color:#1c48a3; color:#1c48a3}
+.tabs-container {margin:70px 0 0 0; position:relative}
+.tabs-content {position:absolute; left:-99999px; top:-99999px; width:100%; opacity:0; transition:opacity 0.2s}
+.tabs-content.active {position:relative; left:auto; top:auto; opacity:1}
+.tabs-content .order {margin:0}
+
+.registration-docs {margin:30px 0 0 0}
+.registration-doc {margin:16px 0 0 0}
+.registration-doc-title {font-weight:normal}
+.registration-doc-title span {margin:0 10px 0 0}
+.registration-doc-title a {text-decoration:none; border-bottom:1px dashed #1c48a3; transition:border-color 0.2s}
+.registration-doc-title a:hover {border-bottom-color:transparent}
+.registration-doc .file-link {margin:10px 0 0 0}
 
 footer {height:470px; position:relative; margin:-470px 0 0 0; background:#1c48a3; color:#fff}
 footer a {color:#fff}

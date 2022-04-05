@@ -27,6 +27,19 @@ $(document).ready(function() {
         this.style.height = (this.scrollHeight) + 'px';
     });
 
+    $('body').on('click', '.form-files-list-item-remove', function(e) {
+        var curLink = $(this);
+        $.ajax({
+            type: 'GET',
+            url: curLink.attr('href'),
+            dataType: 'json',
+            cache: false
+        }).done(function(data) {
+            curLink.parent().remove();
+        });
+        e.preventDefault();
+    });
+
     $('form').each(function() {
         initForm($(this));
     });
@@ -180,6 +193,19 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.tabs-menu a').click(function(e) {
+        var curItem = $(this).parent();
+        if (!curItem.hasClass('active')) {
+            var curTabs = curItem.parents().filter('.tabs');
+            curTabs.find('.tabs-menu li.active').removeClass('active');
+            curItem.addClass('active');
+            var curIndex = curTabs.find('.tabs-menu li').index(curItem);
+            curTabs.find('.tabs-content.active').removeClass('active');
+            curTabs.find('.tabs-content').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+
 });
 
 function initForm(curForm) {
@@ -301,6 +327,27 @@ function initForm(curForm) {
         }
 
         curSelect.select2(options);
+    });
+
+    curForm.find('.form-files').each(function() {
+        var curFiles = $(this);
+        var curInput = curFiles.find('.form-files-input input');
+
+        var uploadURL = curInput.attr('data-uploadurl');
+        var uploadFiles = curInput.attr('data-uploadfiles');
+        var removeURL = curInput.attr('data-removeurl');
+        curInput.fileupload({
+            url: uploadURL,
+            dataType: 'json',
+            add: function(e, data) {
+                curFiles.find('.form-files-list').append('<div class="form-files-list-item-progress"><span class="form-files-list-item-cancel"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></span></div>');
+                data.submit();
+            },
+            done: function (e, data) {
+                curFiles.find('.form-files-list-item-progress').eq(0).remove();
+                curFiles.find('.form-files-list').append('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-icon-2"></use></svg><span>' + data.result.ext + '</span></div><div class="form-files-list-item-name">' + data.result.path + '</div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' Мб</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+            }
+        });
     });
 
     curForm.validate({

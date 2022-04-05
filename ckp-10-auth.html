@@ -26,7 +26,7 @@
 
                         <div class="nav">
                             <ul>
-                                <li class="active"><a href="#">Новости</a></li>
+                                <li><a href="#">Новости</a></li>
                                 <li><a href="#">Документы</a></li>
                                 <li><a href="#">Открытые данные</a></li>
                                 <li><a href="#">Аналитика</a></li>
@@ -49,13 +49,33 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">Главная</a><span>—</span><a href="#">Новости</a><span>—</span>На основе технологий искусственного интеллекта разрабатывается математическая модель распространения эпидемии COVID-19 в России</div>
+                    <div class="breadcrumbs"><a href="#">Главная</a><span>—</span>Авторизация</div>
 
-                    <h1>На основе технологий искусственного интеллекта разрабатывается математическая модель распространения эпидемии COVID-19 в России</h1>
-                    <p>На основе технологий искусственного интеллекта было разработано методическое, алгоритмическое и&nbsp;программное обеспечение для широкого мониторинга открытого сегмента Интернета с целью получения фактических данных, необходимых для построения математической модели распространения эпидемии COVID-19 в России. Поиск источников данных базировался на&nbsp;предположении о том, что они должны отражать процессы распространения инфекций. Теоретические исследования подкреплены практически значимыми результатами экспериментальной проверки эффективности предложенной методики работы со структурированными (базы данных) и&nbsp;неструктурированными (тексты на web-страницах и в социальных сетях) данными из сети Интернет.</p>
-                    <p>Предложенные программные решения и их техническая реализация были протестированы на&nbsp;специально собранной аппаратной платформе, соединенной с суперкомпьютером К-60 в&nbsp;Суперкомпьютерном Центре Коллективного Пользования ИПМ им. М.В. Келдыша РАН.</p>
-                    
-                    <div class="back-link"><a href="#"><svg><use xlink:href="images/sprite.svg#back-link"></use></svg>К списку новостей</a></div>
+                    <!-- auth -->
+                    <div class="auth">
+                        <h1>Авторизация</h1>
+                        <div class="auth-form">
+                            <form action="#" method="post">
+                                <div class="form-label">Логин</div>
+                                <div class="form-input"><input type="text" name="login" value="" class="required" /></div>
+
+                                <div class="form-label">Пароль</div>
+                                <div class="form-input"><input type="password" name="password" value="" class="required" /></div>
+
+                                <div class="form-checkbox">
+                                    <label><input type="checkbox" name="remember" /><span>Запомнить меня на этом компьютере</span></label>
+                                </div>
+
+                                <div class="auth-btn"><input type="submit" value="Войти" class="btn-border btn-mini" /></div>
+                            </form>
+                        </div>
+                        <div class="auth-bottom">
+                            <div class="auth-links"><a href="#">Забыли пароль?</a><span>|</span><a href="#">Регистрироваться</a></div>
+                            <div class="auth-feedback-title">Остались вопросы?</div>
+                            <div class="auth-feedback-btn"><a href="#" class="btn-border btn-mini"><svg class="btn-feedback"><use xlink:href="images/sprite.svg#btn-feedback"></use></svg>Напишите нам</a></div>
+                        </div>
+                    </div>
+                    <!-- auth END -->
 
                 </div>
                 <!-- container END -->

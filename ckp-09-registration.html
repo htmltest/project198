@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>НТИРФ</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="logo">
+                            <a href="#"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></a>
+                        </div>
+
+                        <div class="nav">
+                            <ul>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Документы</a></li>
+                                <li><a href="#">Открытые данные</a></li>
+                                <li><a href="#">Аналитика</a></li>
+                                <li><a href="#">Статус заявки</a></li>
+                                <li><a href="#">Вопрос-ответ</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="header-burger">
+                            <a href="#" class="header-burger-link"><svg><use xlink:href="images/sprite.svg#header-burger"></use></svg></a>
+                        </div>
+
+                        <div class="header-user">
+                            <a href="#" class="header-user-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
+                        </div>
+
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs"><a href="#">Главная</a><span>—</span>Регистрация УНУ и ЦКП</div>
+
+                    <h1>Регистрация на портале</h1>
+                    <p>Портал <a href="#">ckp-rf.ru</a> предназначен для аккумулирования информации о центрах коллективного доступа к научному оборудованию (ЦКП) и об уникальных научных установках и стендах (УНУ).</p>
+                    <p>Определения ЦКП и УНУ, а также иная полезная информация содержатся в&nbsp;разделе «<a href="#">Вопрос-Ответ</a>» на портале</p>
+
+                    <!-- tabs -->
+                    <div class="tabs">
+                        <div class="tabs-menu">
+                            <ul>
+                                <li class="active"><a href="#">Регистрация ЦКП</a></li>
+                                <li><a href="#">Регистрация УНУ</a></li>
+                                <li><a href="#">Регистрация заказчика</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="tabs-container">
+                            <div class="tabs-content active">
+                                <!-- order -->
+                                <div class="order">
+                                    <form action="#" method="post">
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>01</span> / 02</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Регистрация ЦКП</div>
+
+                                                <div class="form-label">Название базовой организации</div>
+                                                <div class="form-input"><input type="text" name="name_base" value="" class="required" /></div>
+
+                                                <div class="form-label">Название ЦКП</div>
+                                                <div class="form-input"><input type="text" name="name_ckp" value="" class="required" /></div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">Фамилия, Имя, Отчество руководителя ЦКП</div>
+                                                    <div class="form-input"><input type="text" name="director" value="" class="required" /></div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">E-mail*</div>
+                                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Телефон*</div>
+                                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-label">Фактический адрес ЦКП</div>
+                                                <div class="form-input"><input type="text" name="address" value="" class="required" /></div>
+
+                                                <div class="form-label">Перечень научных направлений деятельности ЦКП</div>
+                                                <div class="form-input"><input type="text" name="themes" value="" class="required" /></div>
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>02</span> / 02</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Загрузка документов</div>
+
+                                                <div class="registration-docs">
+                                                    <div class="registration-doc">
+                                                        <div class="registration-doc-title"><span>1.</span>Отсканированная копия <a href="#">приказа о создании</a></div>
+                                                    </div>
+                                                    <div class="registration-doc">
+                                                        <div class="registration-doc-title"><span>2.</span>Заполненную анкету</div>
+                                                        <div class="file-link file-link-variant file-link-doc">
+                                                            <a href="#">
+                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon-2"></use></svg><span>doc</span></div>
+                                                                <div class="file-link-title">Анкета для регистрации ЦКП</div>
+                                                                <div class="file-link-info">15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-label">Загрузка файлов</div>
+                                                <div class="form-files">
+                                                    <div class="form-files-list"></div>
+                                                    <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /><span class="btn btn-mini"><svg class="btn-file"><use xlink:href="images/sprite.svg#btn-file"></use></svg>Добавить файл</span></div>
+                                                </div>
+
+                                                <div class="form-checkbox form-policy">
+                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Я даю согласие на обработку моих персональных данных в соответствии с&nbsp;Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных», на&nbsp;условиях и для целей, определенных в <a href="#">Согласии на обработку персональных данных</a>.</span></label>
+                                                </div>
+
+                                                <div class="form-ctrl">
+                                                    <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
+                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                    </form>
+                                </div>
+                                <!-- order END -->
+                            </div>
+
+                            <div class="tabs-content">
+                                <!-- order -->
+                                <div class="order">
+                                    <form action="#" method="post">
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>01</span> / 02</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Регистрация УНУ</div>
+
+                                                <div class="form-label">Название базовой организации</div>
+                                                <div class="form-input"><input type="text" name="name_base" value="" class="required" /></div>
+
+                                                <div class="form-label">Название УНУ</div>
+                                                <div class="form-input"><input type="text" name="name_unu" value="" class="required" /></div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">Фамилия, Имя, Отчество руководителя</div>
+                                                    <div class="form-input"><input type="text" name="director" value="" class="required" /></div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">E-mail*</div>
+                                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Телефон*</div>
+                                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-label">Фактический адрес УНУ</div>
+                                                <div class="form-input"><input type="text" name="address" value="" class="required" /></div>
+
+                                                <div class="form-label">Перечень научных направлений деятельности ЦКП</div>
+                                                <div class="form-input"><input type="text" name="themes" value="" class="required" /></div>
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>02</span> / 02</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Загрузка документов</div>
+
+                                                <div class="registration-docs">
+                                                    <div class="registration-doc">
+                                                        <div class="registration-doc-title"><span>1.</span>Отсканированная копия <a href="#">приказа о создании</a></div>
+                                                    </div>
+                                                    <div class="registration-doc">
+                                                        <div class="registration-doc-title"><span>2.</span>Заполненную анкету</div>
+                                                        <div class="file-link file-link-variant file-link-doc">
+                                                            <a href="#">
+                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon-2"></use></svg><span>doc</span></div>
+                                                                <div class="file-link-title">Анкета для регистрации ЦКП</div>
+                                                                <div class="file-link-info">15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="registration-doc">
+                                                        <div class="registration-doc-title"><span>3.</span>Справка об уникальности оборудования</div>
+                                                        <div class="file-link file-link-variant file-link-pdf">
+                                                            <a href="#">
+                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon-2"></use></svg><span>pdf</span></div>
+                                                                <div class="file-link-title">Пример справки об уникальности оборудования</div>
+                                                                <div class="file-link-info">15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-label">Загрузка файлов</div>
+                                                <div class="form-files">
+                                                    <div class="form-files-list"></div>
+                                                    <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /><span class="btn btn-mini"><svg class="btn-file"><use xlink:href="images/sprite.svg#btn-file"></use></svg>Добавить файл</span></div>
+                                                </div>
+
+                                                <div class="form-checkbox form-policy">
+                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Я даю согласие на обработку моих персональных данных в соответствии с&nbsp;Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных», на&nbsp;условиях и для целей, определенных в <a href="#">Согласии на обработку персональных данных</a>.</span></label>
+                                                </div>
+
+                                                <div class="form-ctrl">
+                                                    <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
+                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                    </form>
+                                </div>
+                                <!-- order END -->
+                            </div>
+
+                            <div class="tabs-content">
+                                <!-- order -->
+                                <div class="order">
+                                    <form action="#" method="post">
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>01</span> / 01</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Контактные данные</div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">Фамилия</div>
+                                                    <div class="form-input"><input type="text" name="lastname" value="" class="required" /></div>
+
+                                                    <div class="form-label">Имя</div>
+                                                    <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
+
+                                                    <div class="form-label">Отчество</div>
+                                                    <div class="form-input"><input type="text" name="middlename" value="" class="required" /></div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">E-mail*</div>
+                                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Телефон*</div>
+                                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="is_jur" /><span>Юридическое лицо</span></label>
+                                                </div>
+
+                                                <div class="order-row">
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">ИНН</div>
+                                                        <div class="form-input"><input type="text" name="inn" value="" disabled="disabled" /></div>
+                                                    </div>
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Название организации</div>
+                                                        <div class="form-input"><input type="text" name="company" value="" disabled="disabled" /></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="order-row">
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Юридический адрес</div>
+                                                        <div class="form-input"><input type="text" name="address" value="" disabled="disabled" /></div>
+                                                    </div>
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Фактический адрес</div>
+                                                        <div class="form-input"><input type="text" name="address_jur" value="" disabled="disabled" /></div>
+                                                        <div class="form-checkbox">
+                                                            <label><input type="checkbox" name="address_ident" /><span>Совпадает с юридическим адресом</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-checkbox form-policy">
+                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Я даю согласие на обработку моих персональных данных в соответствии с&nbsp;Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных», на&nbsp;условиях и для целей, определенных в <a href="#">Согласии на обработку персональных данных</a>.</span></label>
+                                                </div>
+
+                                                <div class="form-ctrl">
+                                                    <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
+                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                    </form>
+                                </div>
+                                <!-- order END -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tabs END -->
+
+                </div>
+                <!-- container END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="container">
+
+                <div class="footer-container">
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Инфраструктура</div>
+                        <ul>
+                            <li><a href="#">Каталог центров коллективного пользования</a></li>
+                            <li><a href="#">Каталог уникальных научных установок</a></li>
+                            <li><a href="#">Каталог производителей научного оборудования</a></li>
+                            <li><a href="#">Научно-технологическая инфраструктура России</a></li>
+                            <li><a href="#">Продажа оборудования центров коллективного пользования</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Разделы</div>
+                        <ul>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Документы</a></li>
+                            <li><a href="#">Открытые данные</a></li>
+                            <li><a href="#">Аналитика</a></li>
+                            <li><a href="#">Статус заявки</a></li>
+                            <li><a href="#">Вопрос-ответ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contacts">
+                        <div class="footer-title">Контакты</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254,<br /> Москва, ул. Добролюбова, 20А</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg><a href="tel:+74959162884">+7 (495) 916-2884</a></div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                    <div class="footer-support">
+                        <div class="footer-support-title">Портал разработан при поддержке</div>
+                        <div class="footer-support-logo"><img src="images/footer-support.png" alt="" /></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/fileupload/jquery.ui.widget.js"></script>
+        <script src="js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="js/fileupload/jquery.fileupload.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
