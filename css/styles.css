@@ -18,11 +18,11 @@ iframe {border:none; max-width:100%}
 strong, b {font-weight:normal}
 small {font-size:16px; line-height:24px}
 
-h1 {margin:70px 0 20px 0; padding:0; font-weight:500; font-size:42px; line-height:55px; color:#191919}
-h2 {margin:70px 0 20px 0; padding:0; font-weight:500; font-size:36px; line-height:47px; color:#191919}
+h1 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:36px; line-height:47px; color:#191919}
+h2 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:30px; line-height:39px; color:#191919}
 h1+h2 {margin-top:20px}
-h3 {margin:60px 0 20px 0; padding:0; font-weight:500; font-size:30px; line-height:39px; color:#191919}
-h4 {margin:50px 0 20px 0; padding:0; font-weight:500; font-size:24px; line-height:31px; color:#191919}
+h3 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:24px; line-height:31px; color:#191919}
+h4 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:20px; line-height:26px; color:#191919}
 p {margin:20px 0; padding:0}
 ul {margin:20px 0; padding:0; list-style:none}
 ul li {margin:6px 0; padding:0 0 0 25px; position:relative}
@@ -36,10 +36,10 @@ li ol li {padding:0 0 0 37px}
 ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:subpoint 1}
 .blockquote {margin:20px 0; padding:20px; font-size:18px; line-height:27px; border-left:3px solid #1c48a3; color:#1c48a3; background:#fafcff; font-weight:normal; font-style:italic}
 
-.wrapper table {width:100%; margin:70px 0 30px 0; border-collapse:collapse}
-.wrapper th {vertical-align:middle; padding:0 0 10px 30px; font-weight:normal; font-size:16px; line-height:24px; letter-spacing:0.05em; text-transform:uppercase}
+.wrapper table {width:100%; margin:60px 0 20px 0; border-collapse:collapse}
+.wrapper th {vertical-align:middle; padding:0 0 10px 30px; font-weight:bold; font-size:16px; line-height:24px; letter-spacing:0.05em; text-transform:uppercase}
 .wrapper th:last-child {padding-right:30px}
-.wrapper td {vertical-align:middle; padding:30px 0 30px 30px; text-align:left; border-top:1px solid #7e9cc8}
+.wrapper td {vertical-align:middle; padding:10px 0 10px 30px; text-align:left; border-top:1px solid #7e9cc8}
 .wrapper td:last-child {padding-right:30px}
 .wrapper tbody tr:first-child td {border-top:2px solid #1c48a3}
 .wrapper tbody tr:last-child td {border-bottom:2px solid #1c48a3}
@@ -47,7 +47,7 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
 
 .btn {display:inline-block; vertical-align:top; margin:0; padding:19.5px 25px; overflow:visible; outline:none; text-decoration:none; background:#1c48a3; color:#fff; border:none; border-radius:0; font:normal 24px/31px Arial, Helvetica, sans-serif; letter-spacing:0; text-transform:none; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:all 0.2s; box-sizing:border-box}
 .fonts-loaded .btn {font-family:Roboto, sans-serif}
-.btn:hover {text-decoration:none; background:#8daaf5}
+.btn:hover {text-decoration:none; background:#00236b}
 
 .btn-border {display:inline-block; vertical-align:top; margin:0; padding:17.5px 24px; overflow:visible; outline:none; text-decoration:none; background:transparent; color:#1c48a3; border:2px solid #1c48a3; border-radius:0; font:normal 24px/31px Arial, Helvetica, sans-serif; letter-spacing:0; text-transform:none; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:all 0.2s; box-sizing:border-box}
 .fonts-loaded .btn-border {font-family:Roboto, sans-serif}
@@ -195,11 +195,11 @@ label.error {display:block; margin:5px 0 0 0; font-weight:300; font-size:14px; l
 .gallery-item-title {font-weight:normal; font-style:italic; font-size:14px; line-height:21px; letter-spacing:0; padding:15px 0 0 0; color:#383838}
 
 .file-link {margin:20px 0}
-.file-link a {display:inline-block; text-decoration:none; position:relative; padding:0 0 0 33px}
-.file-link-icon {display:block; position:absolute; left:0; top:0; width:24px}
-.file-link-icon svg {display:block; width:24px; height:25px; fill:#1c48a3}
-.file-link-title {font-weight:normal}
-.file-link a:hover .file-link-title {text-decoration:underline}
+.file-link a {display:inline-block; text-decoration:none; position:relative; padding:0 0 0 32px}
+.file-link-icon {display:block; position:absolute; left:0; top:0; width:22px}
+.file-link-icon svg {display:block; width:22px; height:29px; fill:#1c48a3}
+.file-link-title {font-weight:normal; transition:color 0.2s}
+.file-link a:hover .file-link-title {color:#ff0000}
 .file-link-info {font-size:16px; line-height:24px; color:#7e9cc8}
 
 .file-link-variant a {padding:0 0 0 51px}
@@ -240,14 +240,63 @@ label.error {display:block; margin:5px 0 0 0; font-weight:300; font-size:14px; l
 .container::after {content:""; display:block; clear:both}
 
 .wrapper {width:100%; min-width:480px; min-height:100%; position:relative; overflow:hidden}
-.wrapper-inner {padding:80px 0 580px 0}
+.wrapper-inner {padding:240px 0 602px 0}
+.page-main .wrapper-inner {padding-top:80px}
 
-header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right:0; z-index:99}
-.page-main header {background:none}
+header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
+.page-main header {height:80px}
 
-.logo {float:left; margin:17px 0 0 0}
+.header-top {height:40px; background:#05266b}
+.header-top-menu {float:left; font-size:16px; line-height:40px; font-weight:normal}
+.header-top-menu ul {margin:0; padding:0; list-style:none}
+.header-top-menu ul li {float:left; margin:0 0 0 30px; padding:0}
+.header-top-menu ul li:first-child {margin:0}
+.header-top-menu ul li::before {display:none}
+.header-top-menu ul li a {color:#fff; text-decoration:none}
+.header-top-status {float:left; font-size:16px; line-height:40px; font-weight:normal; margin:0 0 0 30px}
+.header-top-status a {color:#fff; text-decoration:none}
+.header-top-status svg {display:inline-block; vertical-align:middle; width:24px; height:25px; fill:#fff; margin:-2px 5px 0 0}
+
+.page-main .header-top-menu {margin:20px 0 0 40px}
+.page-main .header-top-status {margin:22px 37px 0 0; float:right; line-height:36px; font-size:14px; font-weight:500}
+.page-main .header-top-status a {display:block; height:38px; border:1px solid #fff; padding:0 10px}
+
+.header-top-user {float:right}
+.header-top-user-link {display:block; width:20px; height:40px; position:relative}
+.header-top-user-link svg {display:block; width:20px; height:20px; fill:#fff; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
+
+.page-main .header-top-user {margin:20px 0 0 0}
+.page-main .header-top-user-link {width:26px}
+.page-main .header-top-user-link svg {width:26px; height:26px}
+
+.header-top-search {float:right; margin:0 24px 0 0}
+.header-top-search-link {display:block; width:20px; height:40px; position:relative}
+.header-top-search-link svg {display:block; width:20px; height:20px; fill:#fff; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
+
+.page-main .header-top-search {margin:20px 40px 0 0}
+.page-main .header-top-search-link {width:24px}
+.page-main .header-top-search-link svg {width:24px; height:24px}
+
+.header-middle {height:150px; background:url(../images/header-middle.jpg) no-repeat center; background-size:cover}
+
+.logo {float:left; margin:32px 0 0 0}
 .logo a {display:block}
-.logo svg {display:block; width:131px; height:47px; fill:#fff}
+.logo svg {display:block; width:70px; height:78px; fill:#fff}
+
+.page-main .logo {margin:17px 0 0 0}
+.page-main .logo svg {width:131px; height:47px}
+
+.header-title {float:left; margin:40px 0 0 20px; max-width:600px; font-size:30px; line-height:35px; font-weight:500; color:#fff}
+
+.header-nav {height:50px; background:#ebf2fc}
+.header-nav ul {float:left; margin:0; padding:0; list-style:none; font-weight:normal; font-size:18px; line-height:50px}
+.header-nav ul li {float:left; margin:0 0 0 55px; padding:0; position:relative}
+.header-nav ul li:first-child {margin:0}
+.header-nav ul li::before {display:none}
+.header-nav ul li::after {content:"|"; display:block; position:absolute; left:-30px; top:0; color:#becee5; pointer-events:none}
+.header-nav ul li:first-child::after {display:none}
+.header-nav ul li a {color:#000; text-decoration:none}
+.header-nav ul li a svg {display:inline-block; vertical-align:middle; margin:-2px 0 0 5px; width:15px; height:15px; fill:#000}
 
 .nav {float:left; margin:30px 0 0 60px}
 .nav ul {margin:0; padding:0; list-style:none; font-size:16px; line-height:21px; font-weight:normal}
@@ -255,16 +304,6 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .nav ul li:first-child {margin:0}
 .nav ul li::before {display:none}
 .nav ul li a {color:#fff}
-
-.header-burger {float:right}
-.header-burger-link {display:block; width:80px; height:80px; position:relative; background:#1c48a3; transition:background 0.2s}
-.header-burger-link:hover {background:#8daaf5}
-.header-burger-link svg {display:block; width:40px; height:13px; fill:none; stroke:#fff; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
-
-.header-user {float:right; margin:0 5px 0 0}
-.header-user-link {display:block; width:80px; height:80px; position:relative; background:#1c48a3; transition:background 0.2s}
-.header-user-link:hover {background:#8daaf5}
-.header-user-link svg {display:block; width:30px; height:31px; fill:#fff; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
 
 .breadcrumbs {margin:30px 0 0 0; font-size:14px; line-height:16px; font-weight:normal}
 .breadcrumbs span {margin:0 5px; color:#7e9cc8}
@@ -293,7 +332,9 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .main-welcome-section a {display:block; text-decoration:none; height:190px; position:relative; transition:background 0.2s}
 .main-welcome-section a:hover {background:#ebf2fc}
 .main-welcome-section-number {position:absolute; left:40px; top:35px; font-weight:500; font-size:18px; line-height:23px; color:#ff0000}
-.main-welcome-section-title {position:absolute; left:40px; bottom:40px; right:40px; font-size:18px; line-height:23px; font-weight:normal; text-decoration:underline}
+.main-welcome-section-icon {position:absolute; left:40px; top:30px; line-height:66px}
+.main-welcome-section-icon img {display:inline-block; vertical-align:middle}
+.main-welcome-section-title {position:absolute; left:40px; bottom:30px; right:40px; font-size:18px; line-height:23px; font-weight:normal; text-decoration:underline}
 .main-welcome-section-order a {background:#ff0000; color:#fff}
 .main-welcome-section-order a:hover {background:#ff0000; color:#fff}
 .main-welcome-section-order .main-welcome-section-number {color:#fff}
@@ -304,31 +345,20 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .main-welcome-section-corner {position:absolute; right:0; top:0}
 .main-welcome-section-corner svg {display:block; width:26px; height:31px; fill:#1c48a3}
 
-.main-filter {margin:80px 0 0 0}
-.main-filter-menu {font-weight:bold; font-size:16px; line-height:21px; text-transform:uppercase}
-.main-filter-menu ul {margin:0; padding:0; list-style:none}
-.main-filter-menu ul::after {content:""; display:block; clear:both}
-.main-filter-menu ul li {float:left; margin:0 0 0 20px; padding:0}
-.main-filter-menu ul li::before {display:none}
-.main-filter-menu ul li:first-child {margin:0}
-.main-filter-menu ul li a {display:block; padding:0 0 5px 0; border-bottom:2px solid #8daaf5; color:#8daaf5; text-decoration:none; transition:border-color 0.2s, color 0.2s}
-.main-filter-menu ul li a:hover,
-.main-filter-menu ul li.active a {border-color:#1c48a3; color:#1c48a3}
+.main-filter {margin:85px 0 0 0; padding:0 0 87px 0}
 
-.main-filter-container {margin:30px 0 0 0; position:relative}
-.main-filter-content {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.5s}
-.main-filter-content.active {position:relative; left:auto; top:auto; opacity:1}
-.main-filter-content .search-form {margin:0}
-.main-filter-content .search-form-input input {background:#fff; padding-left:23px; padding-right:23px}
-.main-filter-content .search-form-input input::-webkit-input-placeholder {color:#8daaf5}
-.main-filter-content .search-form-input input::-moz-placeholder {color:#8daaf5}
-.main-filter-content .search-form-input input:-ms-input-placeholder {color:#8daaf5}
-.main-filter-detail-link {padding:28px 0 33px 0; font-weight:normal; line-height:23px}
+.main-filter-container {position:relative}
+.main-filter-container .search-form {margin:0}
+.main-filter-container .search-form-input input {background:#fff; padding-left:23px; padding-right:23px}
+.main-filter-container .search-form-input input::-webkit-input-placeholder {color:#8daaf5}
+.main-filter-container .search-form-input input::-moz-placeholder {color:#8daaf5}
+.main-filter-container .search-form-input input:-ms-input-placeholder {color:#8daaf5}
+.main-filter-detail-link {padding:28px 0 0 0; font-weight:normal; line-height:23px}
 .main-filter-detail-link a {text-decoration:none}
 .main-filter-detail-link a span {border-bottom:1px dashed #1c48a3; transition:border-color 0.2s}
 .main-filter-detail-link a:hover span {border-bottom-color:transparent}
 .main-filter-detail-link a svg {display:inline-block; vertical-align:middle; margin:-2px 0 0 13px; width:19px; height:19px; fill:#1c48a3; transition:transform 0.2s}
-.main-filter-content.open .main-filter-detail-link a svg {transform:rotate(-180deg)}
+.main-filter-container.open .main-filter-detail-link a svg {transform:rotate(-180deg)}
 
 .main-achieves {margin:120px -10px 0 -10px}
 .main-achieves::after {content:""; display:block; clear:both}
@@ -348,18 +378,38 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .main-achieve-add-item-value {font-weight:bold; font-size:36px; line-height:47px}
 .main-achieve-add-item-text {font-weight:500; font-size:20px; line-height:22px}
 
-.main-block {margin:120px 0 0 0}
-.main-block h2 {margin:0; color:#000}
+.main-achieves-last {margin:82px 0 0 0}
+.main-achieves-last h2 {margin:0; color:#000; font-size:36px; line-height:47px; position:relative; text-align:center}
+.main-achieves-last h2::before {content:""; display:block; position:absolute; left:0; top:25px; right:0; height:1px; background:#7e9cc8}
+.main-achieves-last h2 span {display:inline-block; position:relative; padding:0 20px; background:#fff}
+
+.main-block {margin:120px 0 0 0; position:relative}
+.main-block h2 {margin:0; color:#000; font-size:36px; line-height:47px}
+
+.main-who {margin:0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
+.main-who-item {display:inline-block; vertical-align:top; width:50%; padding:40px 10px 0 10px; position:relative}
+.main-who-item::before {content:""; display:block; position:absolute; left:35px; bottom:0; right:35px; height:140px; background:#fafcff; opacity:0.9; box-shadow:0px 10px 25px rgba(28, 72, 163, 0.1)}
+.main-who-item-inner {background:#fff; border:1px solid #ebf2fc; position:relative; padding:30px 0 40px 0}
+.main-who-item-icon {height:169px; line-height:169px}
+.main-who-item-icon img {display:inline-block; vertical-align:middle; max-height:169px}
+.main-who-item-title {margin:20px 20px 0 20px; font-weight:bold; font-size:25px; line-height:31px; letter-spacing:0}
+.main-who-item-text {margin:20px 20px 0 20px; font-size:16px; line-height:24px; letter-spacing:0}
+.main-who-item-text ul {margin:0}
+.main-who-item-text ul li {margin:10px 0 0 0; padding:0 0 0 22px}
+.main-who-item-text ul li::before {left:0; top:9px}
 
 .main-news {margin:0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
 .main-news-item {display:inline-block; vertical-align:top; width:33.33%; padding:40px 10px 0 10px}
-.main-news-item-date {font-size:16px; line-height:24px; letter-spacing:0; color:#7e9cc8}
-.main-news-item-title {margin:13px 0 0 0; font-size:18px; line-height:27px; letter-spacing:0; font-weight:normal}
-.main-news-item-title a {text-decoration:underline; display:inline-block; vertical-align:middle}
-.main-news-item-title a:hover {text-decoration:none}
-.main-news-all {margin:60px 0 0 0; text-align:center}
-.main-news-all a {display:inline-block; vertical-align:top; width:374px; height:63px; background:#ebf2fc; font-weight:500; font-size:16px; line-height:63px; letter-spacing:0.05em; text-transform:uppercase; transition:background 0.2s, color 0.2s}
-.main-news-all a:hover {text-decoration:none; background:#1c48a3; color:#fff}
+.main-news-item a {display:block; text-decoration:none; transition:transform 0.2s}
+.main-news-item a:hover {transform:translateY(-5px)}
+.main-news-item-preview {position:relative; transition:box-shadow 0.2s}
+.main-news-item a:hover .main-news-item-preview {box-shadow:0 0 5px rgba(0, 0, 0, 0.2)}
+.main-news-item-preview img {display:block; width:100%}
+.main-news-item-date {margin:24px 0 0 0; font-size:16px; line-height:24px; letter-spacing:0; color:#7e9cc8; font-weight:normal}
+.main-news-item-date span {display:inline-block; vertical-align:top; margin:-4px 0 -4px 10px; padding:4px 15px; color:#1c48a3; border-radius:5px}
+.main-news-item-title {margin:14px 0 0 0; font-size:18px; line-height:27px; letter-spacing:0; font-weight:normal}
+.main-news-all {position:absolute; right:0; top:0}
+.main-news-all .btn-border {font-weight:bold; font-size:16px; line-height:21px; text-transform:uppercase; border-radius:0}
 
 .main-link a {display:block; position:relative}
 .main-link a::before {content:""; display:block; position:absolute; left:32px; bottom:0; right:32px; top:50%; background:#fafcff; opacity:0.9; box-shadow:0px 10px 25px rgba(28, 72, 163, 0.1)}
@@ -367,16 +417,24 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 
 .main-catalogue {margin:40px -20px 0 -20px}
 .main-catalogue-inner {display:table; width:100%; border-collapse:separate; border-spacing:20px 0}
-.main-catalogue-item {display:table-cell; vertical-align:top; width:33.33%; border:1px solid #ebf2fc; background:#fff; position:relative; padding:30px 30px 24px 30px; transition:transform 0.2s, box-shadow 0.2s}
+.main-catalogue-item {display:table-cell; vertical-align:top; width:33.33%; border:1px solid #ebf2fc; background:#fff; position:relative; padding:36px 27px 72px 27px; transition:transform 0.2s, box-shadow 0.2s}
 .main-catalogue-item:hover {text-decoration:none; transform:translateY(-5px); box-shadow:0 0 5px rgba(0, 0, 0, 0.2)}
 .main-catalogue-item::before {content:""; display:block; position:absolute; left:16px; bottom:0; right:16px; height:115px; background:#fafcff; opacity:0.9; box-shadow:0px 10px 25px rgba(28, 72, 163, 0.1); z-index:-1}
 .main-catalogue-item-corner {position:absolute; right:-1px; bottom:-1px}
 .main-catalogue-item-corner svg {display:block; width:26px; height:31px; fill:#1c48a3; transform:scale(1, -1)}
-.main-catalogue-item-title {font-weight:500; font-size:16px; line-height:21px; color:#000}
-.main-catalogue-item-city {padding:0 0 0 30px; position:relative; margin:18px 0 0 0; font-size:16px; line-height:24px; font-weight:500}
+.main-catalogue-item-rating {position:absolute; right:10px; top:10px; font-size:16px; line-height:24px; font-weight:bold}
+.main-catalogue-item-rating svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:#1c48a3; margin:-2px 8px 0 0}
+.main-catalogue-item-title {font-weight:normal; font-size:20px; line-height:26px; color:#000}
+.main-catalogue-item-city {padding:0 0 0 30px; position:relative; margin:20px 0 0 0; font-size:16px; line-height:24px; font-weight:500; color:#1c48a3}
 .main-catalogue-item-city svg {display:block; width:17px; height:21px; fill:#7e9cc8; position:absolute; left:0; top:2px}
 .main-catalogue-item-city span {padding:5px 0}
 .main-catalogue-item-city span:hover {text-decoration:underline}
+.main-catalogue-item-params {margin:13px 0 0 0; font-size:16px; line-height:24px; letter-spacing:0; font-weight:500}
+.main-catalogue-item-params::after {content:""; display:block; clear:both}
+.main-catalogue-item-params-equipment {float:left; margin:0 20px 0 0}
+.main-catalogue-item-params-equipment svg {display:inline-block; vertical-align:middle; width:14px; height:20px; fill:#7e9cc8; margin:-2px 14px 0 0}
+.main-catalogue-item-params-case {float:left; margin:0 20px 0 0}
+.main-catalogue-item-params-case svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:#7e9cc8; margin:-2px 8px 0 0}
 .main-catalogue-item-type {padding:0 0 0 30px; position:relative; margin:13px 0 0 0; font-size:16px; line-height:24px; font-weight:500}
 .main-catalogue-item-type svg {display:block; width:15px; height:20px; fill:#7e9cc8; position:absolute; left:0; top:0}
 .main-catalogue-item-type span {padding:5px 0}
@@ -384,11 +442,18 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .main-catalogue-item-gov {padding:0 0 0 30px; position:relative; margin:18px 0 0 0; font-size:14px; line-height:18px; color:#494b61}
 .main-catalogue-item-gov svg {display:block; width:21px; height:22px; fill:#7e9cc8; position:absolute; left:0; top:-4px}
 .main-catalogue-item-gov span:hover {text-decoration:underline}
-.main-catalogue-all {display:table-cell; vertical-align:top; width:33.33%; background:#1c48a3; position:relative; padding:36px 30px 40px 30px}
+.main-catalogue-item-btns {position:absolute; right:30px; bottom:30px}
+.main-catalogue-item-btns a {margin:0 0 0 10px}
+.main-catalogue-item-btns .btn-border {width:40px; height:36px; position:relative; padding:0; border-radius:3px}
+.main-catalogue-item-btns .btn-border svg {display:block; width:21px; height:21px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); fill:#1c48a3; transition:fill 0.2s}
+.main-catalogue-item-btns .btn-border:hover svg {fill:#fff}
+.main-catalogue-item-btns .btn {width:36px; height:36px; position:relative; padding:0; border-radius:3px}
+.main-catalogue-item-btns .btn svg {display:block; width:25px; height:25px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); fill:#fff}
+.main-catalogue-all {display:table-cell; vertical-align:top; width:33.33%; background:rgba(28, 72, 163, 0.9); border:1px solid #ebf2fc; position:relative; padding:36px 27px 122px 27px}
 .main-catalogue-all-corner {position:absolute; right:0; bottom:0}
 .main-catalogue-all-corner svg {display:block; width:26px; height:31px; fill:#ff0000; transform:scale(1, -1)}
 .main-catalogue-all-title {font-weight:500; font-size:24px; line-height:31px; color:#fff}
-.main-catalogue-all-btn {margin:30px 0 0 0}
+.main-catalogue-all-btn {position:absolute; left:30px; bottom:30px}
 .main-catalogue-all-btn span {display:inline-block; vertical-align:top; height:50px; padding:0 14px; color:#fff; font-weight:bold; font-size:16px; line-height:48px; text-transform:uppercase; border:1px solid #fff; transition:background 0.2s, color 0.2s}
 .main-catalogue-all:hover .main-catalogue-all-btn span {color:#1c48a3; background:#fff}
 .main-catalogue-all-btn svg {display:inline-block; vertical-align:middle; margin:-2px 0 0 10px; width:17px; height:17px; fill:#fff; transition:fill 0.2s}
@@ -397,12 +462,17 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .main-opendata {margin:40px -20px 0 -20px}
 .main-opendata-inner {display:table; width:100%; border-collapse:separate; border-spacing:20px 0}
 .main-opendata-item {display:table-cell; vertical-align:top; width:33.33%; background:#1c48a3; position:relative; padding:30px 140px 30px 30px; color:#fff; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s}
-.main-opendata-item:hover {transform:translateY(-5px); box-shadow:0 0 5px rgba(0, 0, 0, 0.4); text-decoration:none}
+a.main-opendata-item:hover {transform:translateY(-5px); box-shadow:0 0 5px rgba(0, 0, 0, 0.4); text-decoration:none}
 .main-opendata-item-corner {position:absolute; right:0; top:0}
 .main-opendata-item-corner svg {display:block; width:57px; height:68px; fill:#ff0000}
 .main-opendata-item-title {font-weight:500; font-size:48px; line-height:62px}
 .main-opendata-item-text {font-size:20px; line-height:26px; font-weight:normal}
 .main-opendata-item-text span {text-decoration:underline}
+
+.main-achieves-last .main-opendata {margin:20px -20px 0 -20px}
+.main-achieves-last .main-opendata-item {padding:32px 90px 43px 30px}
+.main-achieves-last .main-opendata-item-title {font-size:60px; line-height:78px}
+.main-achieves-last .main-opendata-item-text {line-height:22px; margin:7px 0 0 0; font-weight:500}
 
 .main-opendata-download {margin:40px -20px 0 -20px}
 .main-opendata-download-inner {display:table; width:100%; border-collapse:separate; border-spacing:20px 0}
@@ -432,8 +502,13 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .chart-bar-row-back {position:absolute; left:0; top:0; right:0; bottom:0}
 .chart-bar-row-back-item {position:absolute; top:0; bottom:0; width:1px; background:#ebf2fc}
 
-.main-about {margin:5px -40px 0 -40px; font-size:0; line-height:0; letter-spacing:-1px}
-.main-about-item {display:inline-block; vertical-align:top; width:50%; padding:35px 40px 0 40px; font-size:18px; line-height:27px; letter-spacing:0; color:#494b61}
+.main-about {margin:40px 0 0 0}
+.main-about-item {margin:80px 0 0 0}
+.main-about-item:first-child {margin:0}
+.main-about-item::after {content:""; display:block; clear:both}
+.main-about-item-icon {float:left; width:118px; line-height:0}
+.main-about-item-anonce {float:left; width:395px}
+.main-about-item-detail {margin:0 0 0 574px}
 .main-about-item-title {font-weight:500}
 .main-about-item-text {margin:5px 0 0 0}
 .main-about-item-text p,
@@ -465,12 +540,11 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .news-item-title a {text-decoration:underline}
 .news-item-title a:hover {text-decoration:none}
 
-.back-link {margin:72px 0 0 0}
-.back-link:first-child {margin:40px 0 0 0}
+.back-link {margin:30px 0 0 0}
 .back-link+h1 {margin-top:55px}
-.back-link a {display:inline-block; vertical-align:top; height:40px; padding:0 15px; background:#ebf2fc; line-height:40px; text-decoration:none; font-weight:normal; transition:background 0.2s, color 0.2s}
+.back-link a {display:inline-block; vertical-align:top; height:40px; padding:0 15px; background:#ebf2fc; font-size:16px; line-height:40px; text-decoration:none; font-weight:normal; transition:background 0.2s, color 0.2s}
 .back-link a:hover {background:#1c48a3; color:#fff}
-.back-link a svg {display:inline-block; vertical-align:middle; width:17px; height:17px; fill:#1c48a3; margin:-2px 10px 0 0; transition:fill 0.2s}
+.back-link a svg {display:inline-block; vertical-align:middle; width:28px; height:8px; fill:#1c48a3; margin:-2px 10px 0 0; transition:fill 0.2s}
 .back-link a:hover svg {fill:#fff}
 
 .docs {margin:70px 0 0 0}
@@ -707,35 +781,49 @@ header {height:80px; background:#1c48a3; position:absolute; left:0; top:0; right
 .registration-doc-title a:hover {border-bottom-color:transparent}
 .registration-doc .file-link {margin:10px 0 0 0}
 
-footer {height:470px; position:relative; margin:-470px 0 0 0; background:#1c48a3; color:#fff}
+footer {height:482px; position:relative; margin:-482px 0 0 0; background:#1c48a3; color:#fff}
 footer a {color:#fff}
 
-.footer-container {height:358px; padding:60px 0 0 0}
+.footer-container {height:307px; padding:42px 0 0 0}
 .footer-container::after {content:""; display:block; clear:both}
-
-.footer-nav {float:left; margin:0 0 0 117px}
-.footer-nav:first-child {margin:0}
-.footer-nav ul {margin:30px 0 0 0; padding:0; list-style:none; font-weight:normal; font-size:16px; line-height:21px}
-.footer-nav ul li {margin:14px 0 0 0; padding:0}
-.footer-nav ul li:first-child {margin:0}
-.footer-nav ul li::before {display:none}
 
 .footer-title {font-weight:bold; font-size:16px; line-height:24px; letter-spacing:0.2em; text-transform:uppercase}
 
-.footer-contacts {float:right; width:300px}
-.footer-contacts-text {margin:23px 0 0 0; font-weight:normal; font-size:16px; line-height:21px; padding:0 0 0 34px; position:relative}
-.footer-title+.footer-contacts-text {margin:30px 0 0 0}
-.footer-contacts-text svg {display:block; width:24px; height:25px; fill:#fff; position:absolute; left:0; top:-3px}
+.footer-nav {float:left; margin:0 0 0 126px}
+.footer-nav:first-child {margin:0}
+.footer-nav ul {margin:10px 0 0 0; padding:0; list-style:none; font-weight:normal; font-size:16px; line-height:32px}
+.footer-nav ul li {margin:0; padding:0}
+.footer-nav ul li::before {display:none}
 
-.footer-bottom {border-top:1px solid #113070; height:112px}
-.footer-bottom::after {content:""; display:block; clear:both}
+.footer-status {margin:51px 0 0 0; font-size:14px; line-height:36px; font-weight:bold; text-transform:uppercase; letter-spacing:0.05em}
+.footer-status a {display:inline-block; vertical-align:top; height:40px; border:2px solid #fff; padding:0 12px; color:#fff; text-decoration:none}
+.footer-status svg {display:inline-block; vertical-align:middle; width:24px; height:25px; fill:#fff; margin:-2px 5px 0 0}
 
-.footer-logo {float:left; margin:30px 0 0 0}
-.footer-logo svg {display:block; width:131px; height:47px; fill:#fff}
+.footer-contacts {float:right; width:561px}
+.footer-contacts-text {font-weight:normal; font-size:16px; line-height:32px; padding:0 0 0 34px; position:relative}
+.footer-title+.footer-contacts-text {margin:10px 0 0 0}
+.footer-contacts-text svg {display:block; width:24px; height:25px; fill:#fff; position:absolute; left:0; top:3px}
+.footer-links {margin:62px 0 0 0; font-weight:normal; font-size:14px; line-height:18px}
+.footer-links span {margin:0 25px}
 
-.footer-support {float:right; margin:30px 0 0 0}
+.footer-resources {border-top:1px solid #113070; height:105px; padding:20px 0 0 0}
+.footer-resources ul {margin:10px 0 0 0; padding:0; list-style:none}
+.footer-resources ul::after {content:""; display:block; clear:both}
+.footer-resources ul li {float:left; margin:0 0 0 10px; padding:0}
+.footer-resources ul li:first-child {margin:0}
+.footer-resources ul li::before {display:none}
+.footer-resources ul li a {display:block; height:31px; padding:0 15px; background:#2a57b5; border-radius:3px; line-height:31px; font-size:16px; font-weight:normal}
+
+.footer-bottom {height:70px; background:#05266b}
+
+.footer-logo {float:left; margin:20px 0 0 0}
+.footer-logo svg {display:block; width:78px; height:29px; fill:#fff}
+
+.footer-support {float:right; margin:12px 0 0 0}
 .footer-support-title {float:left; font-size:16px; line-height:48px; margin:0 14px 0 0}
 .footer-support-logo {float:left; line-height:0}
+
+.footer-copyrights {float:left; margin:25px 0 0 176px; font-size:16px; line-height:21px}
 
 .window-open,
 .window-open body {overflow:hidden; position:fixed; left:0; top:0; right:0; bottom:0}

@@ -66,20 +66,8 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.main-filter-menu a').click(function(e) {
-        var curItem = $(this).parent();
-        if (!curItem.hasClass('active')) {
-            $('.main-filter-menu li.active').removeClass('active');
-            curItem.addClass('active');
-            var curIndex = $('.main-filter-menu li').index(curItem);
-            $('.main-filter-content.active').removeClass('active');
-            $('.main-filter-content').eq(curIndex).addClass('active');
-        }
-        e.preventDefault();
-    });
-
     $('.main-filter-detail-link a').click(function(e) {
-        $(this).parents().filter('.main-filter-content').toggleClass('open');
+        $(this).parents().filter('.main-filter-container').toggleClass('open');
         e.preventDefault();
     });
 
@@ -639,6 +627,30 @@ function createChartBar(curBlock, curData) {
 }
 
 $(window).on('load resize', function() {
+
+    $('.main-who').each(function() {
+        var curList = $(this);
+
+        curList.find('.main-who-item-inner').css({'min-height': '0px'});
+
+        curList.find('.main-who-item-inner').each(function() {
+            var curBlock = $(this);
+            var curHeight = curBlock.outerHeight();
+            var curTop = curBlock.parents().filter('.main-who-item').offset().top;
+
+            curList.find('.main-who-item-inner').each(function() {
+                var otherBlock = $(this);
+                if (otherBlock.parents().filter('.main-who-item').offset().top == curTop) {
+                    var newHeight = otherBlock.outerHeight();
+                    if (newHeight > curHeight) {
+                        curBlock.css({'min-height': newHeight + 'px'});
+                    } else {
+                        otherBlock.css({'min-height': curHeight + 'px'});
+                    }
+                }
+            });
+        });
+    });
 
     $('.catalogue').each(function() {
         var curList = $(this);
