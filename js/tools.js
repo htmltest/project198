@@ -267,6 +267,56 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.news-search-select-current').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.news-search-select').length == 0) {
+            $('.news-search-select').removeClass('open');
+        }
+    });
+
+    $('.news-search-select-item label input').change(function() {
+        var curSelect = $(this).parents().filter('.news-search-select');
+        var curText = '';
+        curSelect.find('.news-search-select-item label input:checked').each(function() {
+            if (curText != '') {
+                curText += ', ';
+            }
+            curText += $(this).parent().find('span').html();
+        });
+        if (curText != '') {
+            curSelect.find('.news-search-select-current span').html(curText);
+            curSelect.find('.news-search-select-current').removeClass('default');
+        } else {
+            curSelect.find('.news-search-select-current span').html(curSelect.find('.news-search-select-current').attr('data-default'));
+            curSelect.find('.news-search-select-current').addClass('default');
+        }
+    });
+
+    function popupCenter(url, title) {
+        var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
+        var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
+        var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+        var left = ((width / 2) - (480 / 2)) + dualScreenLeft;
+        var top = ((height / 3) - (360 / 3)) + dualScreenTop;
+        var newWindow = window.open(url, title, 'scrollbars=yes, width=' + 480 + ', height=' + 360 + ', top=' + top + ', left=' + left);
+        if (window.focus) {
+            newWindow.focus();
+        }
+    }
+
+    $('body').on('click', '.news-detail-social-vk', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://vk.com/share.php?url=' + curUrl + '&description=' + curTitle, curTitle);
+
+        e.preventDefault();
+    });
+
 });
 
 function initForm(curForm) {

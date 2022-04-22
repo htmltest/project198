@@ -72,44 +72,56 @@
                     <div class="breadcrumbs"><a href="#">Главная</a><span>—</span>Регистрация УНУ и ЦКП</div>
 
                     <h1>Регистрация на портале</h1>
-                    <p>Портал <a href="#">ckp-rf.ru</a> предназначен для аккумулирования информации о центрах коллективного доступа к научному оборудованию (ЦКП) и об уникальных научных установках и стендах (УНУ).</p>
-                    <p>Определения ЦКП и УНУ, а также иная полезная информация содержатся в&nbsp;разделе «<a href="#">Вопрос-Ответ</a>» на портале</p>
+                    <h2>Контакты</h2>
+                    <div class="registration-header">
+                        <div class="registration-header-contacts">
+                            <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254, Москва, ул. Добролюбова, 20А</div>
+                            <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                            <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg>+7 (495) 916-2884</div>
+                        </div>
+                        <div class="registration-header-info">
+                            <div class="registration-header-info-text">Если у вас есть какие-либо вопросы или предложения —  свяжитесь с нами, воспользовавшись приведенной контактной информацией, или посмотрите раздел «<a href="#">Вопросы-ответы</a>»</div>
+                            <div class="registration-header-info-btn"><a href="#" class="btn-border btn-mini"><svg class="btn-feedback"><use xlink:href="images/sprite.svg#btn-feedback"></use></svg>Напишите нам</a></div>
+                        </div>
+                    </div>
 
                     <!-- tabs -->
                     <div class="tabs">
                         <div class="tabs-menu">
                             <ul>
-                                <li class="active"><a href="#">Регистрация ЦКП</a></li>
+                                <li class="active"><a href="#">Регистрация заказчика</a></li>
+                                <li><a href="#">Регистрация ЦКП</a></li>
                                 <li><a href="#">Регистрация УНУ</a></li>
-                                <li><a href="#">Регистрация заказчика</a></li>
                             </ul>
                         </div>
 
                         <div class="tabs-container">
+
                             <div class="tabs-content active">
                                 <!-- order -->
                                 <div class="order">
                                     <form action="#" method="post">
 
+                                        <h2>Регистрация заказчика</h2>
                                         <!-- order block -->
                                         <div class="order-block">
-                                            <div class="order-block-number"><span>01</span> / 02</div>
+                                            <div class="order-block-number"><span>01</span> / 01</div>
                                             <div class="order-block-container">
-                                                <div class="order-block-title">Регистрация ЦКП</div>
-
-                                                <div class="form-label">Название базовой организации</div>
-                                                <div class="form-input"><input type="text" name="name_base" value="" class="required" /></div>
-
-                                                <div class="form-label">Название ЦКП</div>
-                                                <div class="form-input"><input type="text" name="name_ckp" value="" class="required" /></div>
+                                                <div class="order-block-title">Данные заказчика</div>
 
                                                 <div class="order-block-group">
-                                                    <div class="form-label">Фамилия, Имя, Отчество руководителя ЦКП</div>
-                                                    <div class="form-input"><input type="text" name="director" value="" class="required" /></div>
+                                                    <div class="form-label">Фамилия</div>
+                                                    <div class="form-input"><input type="text" name="lastname" value="" class="required" /></div>
+
+                                                    <div class="form-label">Имя</div>
+                                                    <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
+
+                                                    <div class="form-label">Отчество</div>
+                                                    <div class="form-input"><input type="text" name="middlename" value="" class="required" /></div>
 
                                                     <div class="order-row">
                                                         <div class="order-row-field">
-                                                            <div class="form-label">E-mail*</div>
+                                                            <div class="form-label">Электронная почта*</div>
                                                             <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
                                                         </div>
                                                         <div class="order-row-field">
@@ -117,7 +129,72 @@
                                                             <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="form-checkbox">
+                                                        <label><input type="checkbox" name="is_jur" /><span>Юридическое лицо</span></label>
+                                                    </div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">ИНН</div>
+                                                            <div class="form-input"><input type="text" name="inn" value="" disabled="disabled" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Название организации</div>
+                                                            <div class="form-input"><input type="text" name="company" value="" disabled="disabled" /></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Юридический адрес</div>
+                                                            <div class="form-input"><input type="text" name="address" value="" disabled="disabled" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Фактический адрес</div>
+                                                            <div class="form-input"><input type="text" name="address_jur" value="" disabled="disabled" /></div>
+                                                            <div class="form-checkbox">
+                                                                <label><input type="checkbox" name="address_ident" /><span>Совпадает с юридическим адресом</span></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
+
+                                                <div class="form-checkbox form-policy">
+                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на&nbsp;обработку <a href="#">персональных данных</a>.</span></label>
+                                                </div>
+
+                                                <div class="form-ctrl">
+                                                    <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
+                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn-border" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                    </form>
+                                </div>
+                                <!-- order END -->
+                            </div>
+
+                            <div class="tabs-content">
+                                <!-- order -->
+                                <div class="order">
+                                    <form action="#" method="post">
+
+                                        <h2>Регистрация ЦКП</h2>
+                                        <div class="order-notice">После заполнения формы для регистрации на портале данные будут рассмотрены администрацией. Если Ваша заявка соответствует условиям, Вам придет уведомление от администрации портала на указанную электронную почту с&nbsp;данными для входа в личный кабинет.</div>
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>01</span> / 04</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Данные ЦКП</div>
+
+                                                <div class="form-label">Название базовой организации</div>
+                                                <div class="form-input"><input type="text" name="name_base" value="" class="required" /></div>
+
+                                                <div class="form-label">Название ЦКП</div>
+                                                <div class="form-input"><input type="text" name="name_ckp" value="" class="required" /></div>
 
                                                 <div class="form-label">Фактический адрес ЦКП</div>
                                                 <div class="form-input"><input type="text" name="address" value="" class="required" /></div>
@@ -130,7 +207,63 @@
 
                                         <!-- order block -->
                                         <div class="order-block">
-                                            <div class="order-block-number"><span>02</span> / 02</div>
+                                            <div class="order-block-number"><span>02</span> / 04</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Данные руководителя ЦКП</div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">ФИО</div>
+                                                    <div class="form-input"><input type="text" name="director" value="" class="required" /></div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Электронная почта*</div>
+                                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Телефон*</div>
+                                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>03</span> / 04</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Данные контактного лица</div>
+
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="contacts_ident" /><span>Совпадают с данными руководителя</span></label>
+                                                </div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">ФИО</div>
+                                                    <div class="form-input"><input type="text" name="contacts_name" value="" class="required" /></div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Электронная почта*</div>
+                                                            <div class="form-input"><input type="text" name="contacts_email" value="" class="required email" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Телефон*</div>
+                                                            <div class="form-input"><input type="text" name="contacts_phone" value="" class="required phoneRU" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>04</span> / 04</div>
                                             <div class="order-block-container">
                                                 <div class="order-block-title">Загрузка документов</div>
 
@@ -139,7 +272,7 @@
                                                         <div class="registration-doc-title"><span>1.</span>Отсканированная копия <a href="#">приказа о создании</a></div>
                                                     </div>
                                                     <div class="registration-doc">
-                                                        <div class="registration-doc-title"><span>2.</span>Заполненную анкету</div>
+                                                        <div class="registration-doc-title"><span>2.</span>Заполненная анкета</div>
                                                         <div class="file-link file-link-variant file-link-doc">
                                                             <a href="#">
                                                                 <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon-2"></use></svg><span>doc</span></div>
@@ -157,12 +290,12 @@
                                                 </div>
 
                                                 <div class="form-checkbox form-policy">
-                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Я даю согласие на обработку моих персональных данных в соответствии с&nbsp;Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных», на&nbsp;условиях и для целей, определенных в <a href="#">Согласии на обработку персональных данных</a>.</span></label>
+                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на&nbsp;обработку <a href="#">персональных данных</a>.</span></label>
                                                 </div>
 
                                                 <div class="form-ctrl">
                                                     <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
-                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn" /></div>
+                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn-border" /></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -178,33 +311,19 @@
                                 <div class="order">
                                     <form action="#" method="post">
 
+                                        <h2>Регистрация УНУ</h2>
+                                        <div class="order-notice">После заполнения формы для регистрации на портале данные будут рассмотрены администрацией. Если Ваша заявка соответствует условиям, Вам придет уведомление от администрации портала на указанную электронную почту с&nbsp;данными для входа в личный кабинет.</div>
                                         <!-- order block -->
                                         <div class="order-block">
-                                            <div class="order-block-number"><span>01</span> / 02</div>
+                                            <div class="order-block-number"><span>01</span> / 04</div>
                                             <div class="order-block-container">
-                                                <div class="order-block-title">Регистрация УНУ</div>
+                                                <div class="order-block-title">Данные УНУ</div>
 
                                                 <div class="form-label">Название базовой организации</div>
                                                 <div class="form-input"><input type="text" name="name_base" value="" class="required" /></div>
 
                                                 <div class="form-label">Название УНУ</div>
                                                 <div class="form-input"><input type="text" name="name_unu" value="" class="required" /></div>
-
-                                                <div class="order-block-group">
-                                                    <div class="form-label">Фамилия, Имя, Отчество руководителя</div>
-                                                    <div class="form-input"><input type="text" name="director" value="" class="required" /></div>
-
-                                                    <div class="order-row">
-                                                        <div class="order-row-field">
-                                                            <div class="form-label">E-mail*</div>
-                                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
-                                                        </div>
-                                                        <div class="order-row-field">
-                                                            <div class="form-label">Телефон*</div>
-                                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
                                                 <div class="form-label">Фактический адрес УНУ</div>
                                                 <div class="form-input"><input type="text" name="address" value="" class="required" /></div>
@@ -217,7 +336,63 @@
 
                                         <!-- order block -->
                                         <div class="order-block">
-                                            <div class="order-block-number"><span>02</span> / 02</div>
+                                            <div class="order-block-number"><span>02</span> / 04</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Данные руководителя УНУ</div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">ФИО</div>
+                                                    <div class="form-input"><input type="text" name="director" value="" class="required" /></div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Электронная почта*</div>
+                                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Телефон*</div>
+                                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>03</span> / 04</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Данные контактного лица</div>
+
+                                                <div class="form-checkbox">
+                                                    <label><input type="checkbox" name="contacts_ident" /><span>Совпадают с данными руководителя</span></label>
+                                                </div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">ФИО</div>
+                                                    <div class="form-input"><input type="text" name="contacts_name" value="" class="required" /></div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Электронная почта*</div>
+                                                            <div class="form-input"><input type="text" name="contacts_email" value="" class="required email" /></div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Телефон*</div>
+                                                            <div class="form-input"><input type="text" name="contacts_phone" value="" class="required phoneRU" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>04</span> / 04</div>
                                             <div class="order-block-container">
                                                 <div class="order-block-title">Загрузка документов</div>
 
@@ -226,7 +401,7 @@
                                                         <div class="registration-doc-title"><span>1.</span>Отсканированная копия <a href="#">приказа о создании</a></div>
                                                     </div>
                                                     <div class="registration-doc">
-                                                        <div class="registration-doc-title"><span>2.</span>Заполненную анкету</div>
+                                                        <div class="registration-doc-title"><span>2.</span>Заполненная анкета</div>
                                                         <div class="file-link file-link-variant file-link-doc">
                                                             <a href="#">
                                                                 <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon-2"></use></svg><span>doc</span></div>
@@ -254,91 +429,12 @@
                                                 </div>
 
                                                 <div class="form-checkbox form-policy">
-                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Я даю согласие на обработку моих персональных данных в соответствии с&nbsp;Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных», на&nbsp;условиях и для целей, определенных в <a href="#">Согласии на обработку персональных данных</a>.</span></label>
+                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на&nbsp;обработку <a href="#">персональных данных</a>.</span></label>
                                                 </div>
 
                                                 <div class="form-ctrl">
                                                     <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
-                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn" /></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- order block END -->
-
-                                    </form>
-                                </div>
-                                <!-- order END -->
-                            </div>
-
-                            <div class="tabs-content">
-                                <!-- order -->
-                                <div class="order">
-                                    <form action="#" method="post">
-
-                                        <!-- order block -->
-                                        <div class="order-block">
-                                            <div class="order-block-number"><span>01</span> / 01</div>
-                                            <div class="order-block-container">
-                                                <div class="order-block-title">Контактные данные</div>
-
-                                                <div class="order-block-group">
-                                                    <div class="form-label">Фамилия</div>
-                                                    <div class="form-input"><input type="text" name="lastname" value="" class="required" /></div>
-
-                                                    <div class="form-label">Имя</div>
-                                                    <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
-
-                                                    <div class="form-label">Отчество</div>
-                                                    <div class="form-input"><input type="text" name="middlename" value="" class="required" /></div>
-
-                                                    <div class="order-row">
-                                                        <div class="order-row-field">
-                                                            <div class="form-label">E-mail*</div>
-                                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
-                                                        </div>
-                                                        <div class="order-row-field">
-                                                            <div class="form-label">Телефон*</div>
-                                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-checkbox">
-                                                    <label><input type="checkbox" name="is_jur" /><span>Юридическое лицо</span></label>
-                                                </div>
-
-                                                <div class="order-row">
-                                                    <div class="order-row-field">
-                                                        <div class="form-label">ИНН</div>
-                                                        <div class="form-input"><input type="text" name="inn" value="" disabled="disabled" /></div>
-                                                    </div>
-                                                    <div class="order-row-field">
-                                                        <div class="form-label">Название организации</div>
-                                                        <div class="form-input"><input type="text" name="company" value="" disabled="disabled" /></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="order-row">
-                                                    <div class="order-row-field">
-                                                        <div class="form-label">Юридический адрес</div>
-                                                        <div class="form-input"><input type="text" name="address" value="" disabled="disabled" /></div>
-                                                    </div>
-                                                    <div class="order-row-field">
-                                                        <div class="form-label">Фактический адрес</div>
-                                                        <div class="form-input"><input type="text" name="address_jur" value="" disabled="disabled" /></div>
-                                                        <div class="form-checkbox">
-                                                            <label><input type="checkbox" name="address_ident" /><span>Совпадает с юридическим адресом</span></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-checkbox form-policy">
-                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Я даю согласие на обработку моих персональных данных в соответствии с&nbsp;Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных», на&nbsp;условиях и для целей, определенных в <a href="#">Согласии на обработку персональных данных</a>.</span></label>
-                                                </div>
-
-                                                <div class="form-ctrl">
-                                                    <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
-                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn" /></div>
+                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn-border" /></div>
                                                 </div>
                                             </div>
                                         </div>
