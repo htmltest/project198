@@ -317,6 +317,117 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.ntr-map').each(function() {
+        var newHTML = '';
+
+        newHTML +=  '<div class="ntr-map-img"><svg viewBox="0 0 1107.77 630.12" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></div>';
+
+        var curData = ntrData;
+
+        $('.ntr-map').html(newHTML);
+
+        if (curData !== null) {
+            var newMap = '';
+
+            for (var j = 0; j < russiaRegions.length; j++) {
+                var curRegion = russiaRegions[j];
+                for (var i = 0; i < curData.length; i++) {
+                    if (curRegion.id == curData[i][0]) {
+                        newMap += '<g data-title="' + curRegion.title + '">' + curRegion.svg + '</g>';
+                    }
+                }
+            }
+            $('.ntr-map-img svg').html(newMap);
+        }
+    });
+
+    $('body').on('click', '.ntr-map-zoom-inc', function(e) {
+        $('.ntr-map-img').css({'transform': 'translate(-1108px, -631px)', 'width': 2216, 'height': 1262, 'left': '50%', 'top': '50%'});
+        $('.ntr-map-img').data('curLeft', -1108);
+        $('.ntr-map-img').data('curTop', -631);
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.ntr-map-zoom-dec', function(e) {
+        $('.ntr-map-img').css({'transform': 'none', 'width': '100%', 'height': 'auto', 'left': 'auto', 'top': 'auto'});
+        e.preventDefault();
+    });
+
+    var mapDrag = false;
+    var mapMove = false;
+    var mapMoveTimer = null;
+    var mapStartX = 0;
+    var mapStartY = 0;
+
+    var isTouchCapable = 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch || navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0;
+
+    if (!isTouchCapable) {
+        $('.ntr-map-img').on('mousedown', function(e) {
+            mapDrag = true;
+            mapStartX = e.pageX;
+            mapStartY = e.pageY;
+        });
+
+        $('.ntr-map-img').on('mousemove', function(e) {
+            if (mapDrag) {
+                mapMove = true;
+                var curLeft = Number($('.ntr-map-img').data('curLeft'));
+                var curTop = Number($('.ntr-map-img').data('curTop'));
+                var curDiffX = e.pageX;
+                var curDiffY = e.pageY;
+                curDiffX = curDiffX - mapStartX;
+                curDiffY = curDiffY - mapStartY;
+                curLeft += curDiffX;
+                curTop += curDiffY;
+                mapStartX = e.pageX;
+                mapStartY = e.pageY;
+                $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)'});
+                $('.ntr-map-img').data('curLeft', curLeft);
+                $('.ntr-map-img').data('curTop', curTop);
+            }
+        });
+
+        $(document).on('mouseup', function(e) {
+            mapDrag = false;
+            if (mapMove) {
+                window.clearTimeout(mapMoveTimer);
+                mapMoveTimer = null;
+                mapMoveTimer = window.setTimeout(function() {
+                    mapMove = false;
+                }, 100);
+            }
+        });
+    } else {
+        $('.ntr-map-img').on('touchstart', function(e) {
+            mapDrag = true;
+            mapStartX = e.originalEvent.touches[0].pageX;
+            mapStartY = e.originalEvent.touches[0].pageY;
+        });
+
+        $('.ntr-map-img').on('touchmove', function(e) {
+            if (mapDrag) {
+                var curLeft = Number($('.ntr-map-img').data('curLeft'));
+                var curTop = Number($('.ntr-map-img').data('curTop'));
+                var curDiffX = e.originalEvent.touches[0].pageX;
+                var curDiffY = e.originalEvent.touches[0].pageY;
+                curDiffX = curDiffX - mapStartX;
+                curDiffY = curDiffY - mapStartY;
+                curLeft += curDiffX;
+                curTop += curDiffY;
+                mapStartX = e.originalEvent.touches[0].pageX;
+                mapStartY = e.originalEvent.touches[0].pageY;
+                $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)'});
+                $('.ntr-map-img').data('curLeft', curLeft);
+                $('.ntr-map-img').data('curTop', curTop);
+            }
+            e.preventDefault();
+        });
+
+        $(document).on('touchend', function(e) {
+            mapDrag = false;
+        });
+    }
+
 });
 
 function initForm(curForm) {

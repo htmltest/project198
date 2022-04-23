@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>НТИРФ</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="header-top">
+                        <div class="container">
+                            <div class="header-top-menu">
+                                <ul>
+                                    <li><a href="#">Поддержка</a></li>
+                                    <li><a href="#">Новости</a></li>
+                                    <li><a href="#">Документы</a></li>
+                                </ul>
+                            </div>
+                            <div class="header-top-status"><a href="#"><svg><use xlink:href="images/sprite.svg#header-top-status"></use></svg>Статус заявки</a></div>
+                            <div class="header-top-user">
+                                <a href="#" class="header-top-user-link"><svg><use xlink:href="images/sprite.svg#header-top-user"></use></svg></a>
+                            </div>
+                            <div class="header-top-search">
+                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-middle">
+                        <div class="container">
+                            <div class="logo">
+                                <a href="#"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></a>
+                            </div>
+                            <div class="header-title">Научно-технологическая инфраструктура Российской Федерации</div>
+                        </div>
+                    </div>
+                    <div class="header-nav">
+                        <div class="container">
+                            <ul>
+                                <li>
+                                    <a href="#">Каталог ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Каталог УНУ</a></li>
+                                        <li><a href="#">Каталог ЦКП</a></li>
+                                        <li><a href="#">Ремонт и продажа оборудования ЦКП</a></li>
+                                        <li><a href="#">Каталог производителей</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Аналитика</a></li>
+                                <li><a href="#">Меры поддержки</a></li>
+                                <li><a href="#">Ремонт оборудования</a></li>
+                                <li><a href="#">НТИ России</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs"><a href="#">Портал НТИ</a><span>—</span>Научно-технологическая инфраструктура России</div>
+
+                    <h1>Научно-технологическая инфраструктура России</h1>
+
+                    <div class="ntr-header">
+                        <div class="ntr-filter-link"><a href="#" class="btn btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg>Фильтр<strong></strong></a></div>
+                        <div class="ntr-map-zoom">
+                            <a href="#" class="ntr-map-zoom-inc"><svg><use xlink:href="images/sprite.svg#ntr-map-zoom-inc"></use></svg></a>
+                            <a href="#" class="ntr-map-zoom-dec"><svg><use xlink:href="images/sprite.svg#ntr-map-zoom-dec"></use></svg></a>
+                        </div>
+                    </div>
+                    <div class="ntr-map"></div>
+                    <script src="js/russia.js"></script>
+                    <script>
+                        var ntrData = [
+                            //  [id region, value]
+                            [1, 62.3396431015904],
+                            [2, 61.3845393025735],
+                            [3, 56.5250757722472],
+                            [4, 60.2496544290141],
+                            [5, 63.4176635798853],
+                            [6, 65.4532439664129],
+                            [7, 67.6196719804891],
+                            [8, 55.6090871083406],
+                            [9, 64.2763543198577],
+                            [10, 60.37568551374],
+                            [11, 55.8962392856042],
+                            [12, 57.4335777426581],
+                            [13, 62.8134671138023],
+                            [14, 54.1522171733543],
+                            [15, 63.9420390395865],
+                            [16, 56.5342091283137],
+                            [17, 47.6976680823794],
+                            [18, 56.1291303140178],
+                            [19, 58.1900943996378],
+                            [20, 62.9543589203461],
+                            [21, 51.1684086795895],
+                            [22, 63.5799494567149],
+                            [23, 65.3886873905704],
+                            [24, 63.4789015513596],
+                            [25, 63.4486320126664],
+                            [26, 63.3129423372719],
+                            [27, 59.6179362635706],
+                            [28, 61.0523008354161],
+                            [29, 64.4475233601957],
+                            [30, 61.4827607254067],
+                            [31, 64.5069253752198],
+                            [32, 69.1391955771586],
+                            [33, 64.4132237293047],
+                            [34, 57.9116807481239],
+                            [35, 59.6367862311395],
+                            [36, 64.7757027248831],
+                            [37, 61.1932126689278],
+                            [38, 59.9815241618522],
+                            [39, 56.0416602663478],
+                            [40, 62.8467759337872],
+                            [41, 56.2216014533254],
+                            [42, 60.6721958517353],
+                            [43, 63.3281614896506],
+                            [44, 63.8709213927713],
+                            [45, 65.6449432784793],
+                            [46, 68.3697973753674],
+                            [47, 59.2460425952459],
+                            [48, 64.7009837963839],
+                            [49, 55.7704701862888],
+                            [50, 65.2475560105441],
+                            [51, 61.221412632048],
+                            [52, 65.7733731036948],
+                            [53, 60.1986529655848],
+                            [54, 62.1139727817225],
+                            [55, 60.9449082724485],
+                            [56, 64.8683466151667],
+                            [57, 66.5599321852598],
+                            [58, 66.2390385107507],
+                            [59, 56.1728085643189],
+                            [60, 62.9360929560895],
+                            [61, 63.9183216103248],
+                            [62, 64.4245203426067],
+                            [63, 64.5763333865659],
+                            [64, 66.2507486941228],
+                            [65, 59.7463907610996],
+                            [66, 60.6019420273535],
+                            [67, 64.676607107772],
+                            [68, 70.744112279745],
+                            [69, 69.9795663312026],
+                            [70, 60.5095200661781],
+                            [71, 69.9269902419114],
+                            [72, 61.5332829422192],
+                            [73, 58.8270123663865],
+                            [74, 64.25205754813],
+                            [75, 59.2658829676063],
+                            [76, 62.7469586990751],
+                            [77, 54.7546339753762],
+                            [78, 58.4687319331747],
+                            [79, 61.4632446599439],
+                            [83, 62.3186869114697],
+                            [86, 62.3841882088523],
+                            [87, 63.76551010439],
+                            [89, 63.5612931634194],
+                            [91, 61.8816435305721],
+                            [92, 53.6011512537402]
+                        ];
+                    </script>
+
+                </div>
+                <!-- container END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="container">
+
+                <div class="footer-container">
+                    <div class="footer-nav">
+                        <div class="footer-title">Инфраструктура</div>
+                        <ul>
+                            <li><a href="#">Каталог ЦКП</a></li>
+                            <li><a href="#">Каталог УНУ</a></li>
+                            <li><a href="#">Ремонт оборудования</a></li>
+                            <li><a href="#">Аналитика</a></li>
+                            <li><a href="#">Меры поддержки</a></li>
+                            <li><a href="#">НТИ России</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Разделы</div>
+                        <ul>
+                            <li><a href="#">Поддержка</a></li>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Документы</a></li>
+                        </ul>
+                        <div class="footer-status"><a href="#"><svg><use xlink:href="images/sprite.svg#header-top-status"></use></svg>Статус заявки</a></div>
+                    </div>
+
+                    <div class="footer-contacts">
+                        <div class="footer-title">Контакты</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254, Москва, ул. Добролюбова, 20А</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg><a href="tel:+74959162884">+7 (495) 916-2884</a></div>
+                        <div class="footer-links">
+                            <a href="#">Карта сайта</a><span>|</span><a href="#">Пользовательское соглашение</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-resources">
+                    <div class="footer-title">Ресурсы</div>
+                    <ul>
+                        <li><a href="#">Научно-техниеское развитие РФ</a></li>
+                        <li><a href="#">Научные центры мирового уровня</a></li>
+                        <li><a href="#">Агрегатор фондов</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo-main"></use></svg></div>
+                    <div class="footer-support">
+                        <div class="footer-support-title">Портал разработан при поддержке</div>
+                        <div class="footer-support-logo"><img src="images/footer-support.png" alt="" /></div>
+                    </div>
+                    <div class="footer-copyrights">© Реализация и сопровождение: ФГБУ «РИЭПП»</div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/fileupload/jquery.ui.widget.js"></script>
+        <script src="js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="js/fileupload/jquery.fileupload.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
