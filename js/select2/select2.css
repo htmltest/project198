@@ -1,4 +1,4 @@
-.select2-container {box-sizing:border-box; display:inline-block; margin:0; font-weight:normal; position:relative; font-size:16px; line-height:26px; vertical-align:middle}
+.select2-container {box-sizing:border-box; display:block; margin:0; font-weight:normal; position:relative; font-size:16px; line-height:26px; width:100% !important}
 .select2-container .select2-selection--single {box-sizing:border-box; cursor:pointer; display:block; height:50px; user-select:none; -webkit-user-select:none}
 .select2-container .select2-selection--single .select2-selection__rendered {display:block; padding-left:14px; padding-right:44px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
 .select2-container .select2-selection--single .select2-selection__clear {position:relative}
