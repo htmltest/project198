@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
         <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/slick/slick.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -75,33 +77,45 @@
                                 <li>
                                     <a href="#">Услуги ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
-                                        <li><a href="#">Каталог УНУ</a></li>
-                                        <li><a href="#">Каталог ЦКП</a></li>
-                                        <li><a href="#">Ремонт и продажа оборудования ЦКП</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li><a href="#">Поиск</a></li>
+                                        <li><a href="#">Статус заявки</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#">Каталог ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
-                                        <li><a href="#">Каталог УНУ</a></li>
                                         <li><a href="#">Каталог ЦКП</a></li>
-                                        <li><a href="#">Ремонт и продажа оборудования ЦКП</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li><a href="#">Каталог УНУ</a></li>
+                                        <li><a href="#">Проекты «MegaScience»</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Оборудование ЦКП<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <a href="#">Оборудование<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
                                         <li><a href="#">Поиск оборудования</a></li>
-                                        <li><a href="#">Продажа и ремонт</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li><a href="#">Продажа</a></li>
+                                        <li><a href="#">Ремонт</a></li>
+                                        <li><a href="#">Каталог производителей оборудования</a></li>
                                         <li><a href="#">Каталог сервисов по ремонту</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Поддержка</a></li>
+                                <li>
+                                    <a href="#">Поддержка<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Поддержка портала</a></li>
+                                        <li><a href="#">Вопрос-ответ</a></li>
+                                        <li><a href="#">Форум</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#">Аналитика</a></li>
-                                <li><a href="#">Информация об НТИРФ</a></li>
+                                <li>
+                                    <a href="#">Об НТИРФ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Другие объекты НТИРФ</a></li>
+                                        <li><a href="#">Меры поддержки</a></li>
+                                        <li><a href="#">Документы</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -128,17 +142,11 @@
 
                     <!-- tabs -->
                     <div class="tabs">
-                        <div class="tabs-menu">
-                            <ul>
-                                <li class="active"><a href="#">Регистрация заказчика</a></li>
-                                <li><a href="#">Регистрация ЦКП</a></li>
-                                <li><a href="#">Регистрация УНУ</a></li>
-                            </ul>
-                        </div>
+                        <div class="tabs-menu"></div>
 
                         <div class="tabs-container">
 
-                            <div class="tabs-content active">
+                            <div class="tabs-content active" data-title="Регистрация заказчика">
                                 <!-- order -->
                                 <div class="order">
                                     <form action="#" method="post">
@@ -172,30 +180,30 @@
                                                     </div>
 
                                                     <div class="form-checkbox">
-                                                        <label><input type="checkbox" name="is_jur" /><span>Юридическое лицо</span></label>
+                                                        <label><input type="checkbox" name="is_jur" class="is-jur-checkbox" /><span>Юридическое лицо</span></label>
                                                     </div>
 
                                                     <div class="order-row">
                                                         <div class="order-row-field">
                                                             <div class="form-label">ИНН</div>
-                                                            <div class="form-input"><input type="text" name="inn" value="" disabled="disabled" /></div>
+                                                            <div class="form-input"><input type="text" name="inn" value="" disabled="disabled" class="jur-field" /></div>
                                                         </div>
                                                         <div class="order-row-field">
                                                             <div class="form-label">Название организации</div>
-                                                            <div class="form-input"><input type="text" name="company" value="" disabled="disabled" /></div>
+                                                            <div class="form-input"><input type="text" name="company" value="" disabled="disabled" class="jur-field" /></div>
                                                         </div>
                                                     </div>
 
                                                     <div class="order-row">
                                                         <div class="order-row-field">
                                                             <div class="form-label">Юридический адрес</div>
-                                                            <div class="form-input"><input type="text" name="address" value="" disabled="disabled" /></div>
+                                                            <div class="form-input"><input type="text" name="address" value="" disabled="disabled" class="jur-field" /></div>
                                                         </div>
                                                         <div class="order-row-field">
                                                             <div class="form-label">Фактический адрес</div>
-                                                            <div class="form-input"><input type="text" name="address_jur" value="" disabled="disabled" /></div>
+                                                            <div class="form-input"><input type="text" name="address_jur" value="" disabled="disabled" class="jur-field address-ident" /></div>
                                                             <div class="form-checkbox">
-                                                                <label><input type="checkbox" name="address_ident" /><span>Совпадает с юридическим адресом</span></label>
+                                                                <label><input type="checkbox" name="address_ident" class="address-ident-checkbox" /><span>Совпадает с юридическим адресом</span></label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -218,7 +226,7 @@
                                 <!-- order END -->
                             </div>
 
-                            <div class="tabs-content">
+                            <div class="tabs-content" data-title="Регистрация ЦКП">
                                 <!-- order -->
                                 <div class="order">
                                     <form action="#" method="post">
@@ -347,7 +355,7 @@
                                 <!-- order END -->
                             </div>
 
-                            <div class="tabs-content">
+                            <div class="tabs-content" data-title="Регистрация УНУ">
                                 <!-- order -->
                                 <div class="order">
                                     <form action="#" method="post">
@@ -593,6 +601,9 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

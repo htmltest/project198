@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
         <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/slick/slick.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -75,33 +77,45 @@
                                 <li>
                                     <a href="#">Услуги ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
-                                        <li><a href="#">Каталог УНУ</a></li>
-                                        <li><a href="#">Каталог ЦКП</a></li>
-                                        <li><a href="#">Ремонт и продажа оборудования ЦКП</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li><a href="#">Поиск</a></li>
+                                        <li><a href="#">Статус заявки</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#">Каталог ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
-                                        <li><a href="#">Каталог УНУ</a></li>
                                         <li><a href="#">Каталог ЦКП</a></li>
-                                        <li><a href="#">Ремонт и продажа оборудования ЦКП</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li><a href="#">Каталог УНУ</a></li>
+                                        <li><a href="#">Проекты «MegaScience»</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Оборудование ЦКП<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <a href="#">Оборудование<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
                                         <li><a href="#">Поиск оборудования</a></li>
-                                        <li><a href="#">Продажа и ремонт</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li><a href="#">Продажа</a></li>
+                                        <li><a href="#">Ремонт</a></li>
+                                        <li><a href="#">Каталог производителей оборудования</a></li>
                                         <li><a href="#">Каталог сервисов по ремонту</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Поддержка</a></li>
+                                <li>
+                                    <a href="#">Поддержка<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Поддержка портала</a></li>
+                                        <li><a href="#">Вопрос-ответ</a></li>
+                                        <li><a href="#">Форум</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#">Аналитика</a></li>
-                                <li><a href="#">Информация об НТИРФ</a></li>
+                                <li>
+                                    <a href="#">Об НТИРФ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Другие объекты НТИРФ</a></li>
+                                        <li><a href="#">Меры поддержки</a></li>
+                                        <li><a href="#">Документы</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -112,8 +126,109 @@
 
                     <div class="page-404">
                         <div class="page-404-img"><img src="images/404.svg" alt="" /></div>
-                        <h2>Страница не найдена</h2>
-                        <div class="page-404-btn"><a href="#" class="btn-border btn-mini"><svg class="btn-arrow"><use xlink:href="images/sprite.svg#btn-arrow"></use></svg>На главную</a></div>
+                        <h1>Страница не найдена</h1>
+                        <div class="page-404-btn"><a href="#" class="btn-border btn-mini"><svg><use xlink:href="images/sprite.svg#page-404-btn-arrow"></use></svg>На главную</a></div>
+                    </div>
+
+                    <!-- sitemap -->
+                    <div class="sitemap">
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Услуги ЦКП и УНУ</a></div>
+                            <div class="sitemap-block-list">
+                                <ul>
+                                    <li><a href="#">Поиск</a></li>
+                                    <li><a href="#">Статус заявки</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Каталог ЦКП и УНУ</a></div>
+                            <div class="sitemap-block-list">
+                                <ul>
+                                    <li><a href="#">Каталог ЦКП</a></li>
+                                    <li><a href="#">Каталог УНУ</a></li>
+                                    <li><a href="#">Проекты «MegaScience»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Аналитика</a></div>
+                        </div>
+
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Оборудование ЦКП</a></div>
+                            <div class="sitemap-block-list">
+                                <ul>
+                                    <li><a href="#">Поиск оборудования</a></li>
+                                    <li><a href="#">Продажа</a></li>
+                                    <li><a href="#">Ремонт</a></li>
+                                    <li><a href="#">Каталог производителей оборудования</a></li>
+                                    <li><a href="#">Каталог сервисов по ремонту</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Поддержка</a></div>
+                            <div class="sitemap-block-list">
+                                <ul>
+                                    <li><a href="#">Поддержка портала</a></li>
+                                    <li><a href="#">Вопрос-ответ</a></li>
+                                    <li><a href="#">Форум</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sitemap-block sitemap-block-break">
+                            <div class="sitemap-block-title"><a href="#">Информация об НТИРФ</a></div>
+                            <div class="sitemap-block-list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Другие объекты НТИРФ</a>
+                                        <ul>
+                                            <li><a href="#">Наукограды</a></li>
+                                            <li><a href="#">ОЭЗ</a></li>
+                                            <li><a href="#">Технопарки</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Меры поддержки</a></li>
+                                    <li><a href="#">Документы</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Личный кабинет</a></div>
+                        </div>
+
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Контакты</a></div>
+                        </div>
+
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Документы</a></div>
+                        </div>
+
+                        <div class="sitemap-block">
+                            <div class="sitemap-block-title"><a href="#">Новости</a></div>
+                        </div>
+                    </div>
+                    <!-- sitemap END -->
+                    
+                    <div class="page-404-bottom">
+                        <div class="registration-header">
+                            <div class="registration-header-contacts">
+                                <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254, Москва, ул. Добролюбова, 20А</div>
+                                <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                                <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg>+7 (495) 916-2884</div>
+                            </div>
+                            <div class="registration-header-info">
+                                <div class="registration-header-info-text">Если у вас есть какие-либо вопросы или предложения —  свяжитесь с нами, воспользовавшись приведенной контактной информацией, или посмотрите раздел «<a href="#">Вопросы-ответы</a>»</div>
+                                <div class="registration-header-info-btn"><a href="#" class="btn-border btn-mini"><svg class="btn-feedback"><use xlink:href="images/sprite.svg#btn-feedback"></use></svg>Напишите нам</a></div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -220,6 +335,9 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

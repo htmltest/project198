@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
         <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/slick/slick.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -75,33 +77,45 @@
                                 <li class="active">
                                     <a href="#">Услуги ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
-                                        <li><a href="#">Каталог УНУ</a></li>
-                                        <li><a href="#">Каталог ЦКП</a></li>
-                                        <li><a href="#">Ремонт и продажа оборудования ЦКП</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li class="active"><a href="#">Поиск</a></li>
+                                        <li><a href="#">Статус заявки</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#">Каталог ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
-                                        <li><a href="#">Каталог УНУ</a></li>
                                         <li><a href="#">Каталог ЦКП</a></li>
-                                        <li><a href="#">Ремонт и продажа оборудования ЦКП</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li><a href="#">Каталог УНУ</a></li>
+                                        <li><a href="#">Проекты «MegaScience»</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Оборудование ЦКП<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <a href="#">Оборудование<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
                                         <li><a href="#">Поиск оборудования</a></li>
-                                        <li><a href="#">Продажа и ремонт</a></li>
-                                        <li><a href="#">Каталог производителей</a></li>
+                                        <li><a href="#">Продажа</a></li>
+                                        <li><a href="#">Ремонт</a></li>
+                                        <li><a href="#">Каталог производителей оборудования</a></li>
                                         <li><a href="#">Каталог сервисов по ремонту</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Поддержка</a></li>
+                                <li>
+                                    <a href="#">Поддержка<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Поддержка портала</a></li>
+                                        <li><a href="#">Вопрос-ответ</a></li>
+                                        <li><a href="#">Форум</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#">Аналитика</a></li>
-                                <li><a href="#">Информация об НТИРФ</a></li>
+                                <li>
+                                    <a href="#">Об НТИРФ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Другие объекты НТИРФ</a></li>
+                                        <li><a href="#">Меры поддержки</a></li>
+                                        <li><a href="#">Документы</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -112,7 +126,7 @@
 
                     <div class="breadcrumbs"><a href="#">Портал НТИ</a><span>—</span><a href="#">Каталог ЦКП и УНУ</a><span>—</span>Поиск по услугам</div>
 
-                    <h1>Поиск по услугам<span class="catalogue-results-title">Центры с <strong>15</strong> по <strong>40</strong> из <strong>14 000</strong></span></h1>
+                    <h1>Поиск по услугам<span class="catalogue-results-title">Центры с <strong class="catalogue-results-title-from">15</strong> по <strong class="catalogue-results-title-to">40</strong> из <strong class="catalogue-results-title-count">14 000</strong></span></h1>
 
                     <!-- catalogue filter -->
                     <div class="catalogue-filter">
@@ -132,7 +146,7 @@
                         </div>
 
                         <div class="catalogue-filter-container">
-                            <form action="#" method="post">
+                            <form action="ajax/services.html" method="post">
 
                                 <div class="catalogue-filter-section open-always">
                                     <a href="#" class="catalogue-filter-section-title">Основное<span><svg><use xlink:href="images/sprite.svg#catalogue-filter-section-title"></use></svg></span></a>
@@ -141,7 +155,7 @@
                                         <div class="catalogue-filter-row">
                                             <div class="catalogue-filter-field catalogue-filter-field-3">
                                                 <div class="form-label">Название ЦКП</div>
-                                                <div class="form-input"><input type="text" name="name" value="" /></div>
+                                                <div class="form-input"><input type="text" name="name" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                             </div>
                                             <div class="catalogue-filter-field">
                                                 <input type="submit" value="Применить" class="btn btn-mini" />
@@ -151,11 +165,11 @@
                                         <div class="catalogue-filter-row">
                                             <div class="catalogue-filter-field">
                                                 <div class="form-label">Биоресурсная коллекция</div>
-                                                <div class="form-input"><input type="text" name="bio" value="" /></div>
+                                                <div class="form-input"><input type="text" name="bio" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                             </div>
                                             <div class="catalogue-filter-field">
                                                 <div class="form-label">Базовая организация</div>
-                                                <div class="form-input"><input type="text" name="base" value="" /></div>
+                                                <div class="form-input"><input type="text" name="base" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                             </div>
                                             <div class="catalogue-filter-field">
                                                 <div class="form-label">Ведомственная принадлежность</div>
@@ -172,12 +186,12 @@
                                             </div>
                                             <div class="catalogue-filter-field">
                                                 <div class="form-label">Суперкомпьютерный ЦКП</div>
-                                                <div class="form-input"><input type="text" name="super" value="" /></div>
+                                                <div class="form-input"><input type="text" name="super" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                             </div>
                                         </div>
 
                                         <div class="form-label">Направления научных исследований, проводимых в ЦКП</div>
-                                        <div class="form-input"><input type="text" name="directions" value="" /></div>
+                                        <div class="form-input"><input type="text" name="directions" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                     </div>
                                 </div>
 
@@ -506,17 +520,18 @@
                     </div>
                     <!-- catalogue container END -->
 
+                    <!-- catalogue paging -->
                     <div class="catalogue-paging">
 
                         <div class="pager">
-                            <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
-                            <a href="#" class="active">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
+                            <a href="#" class="pager-prev" data-value="prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                            <a href="#" class="active" data-value="1">1</a>
+                            <a href="#" data-value="2">2</a>
+                            <a href="#" data-value="3">3</a>
                             <span>...</span>
-                            <a href="#">13</a>
-                            <a href="#">14</a>
-                            <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                            <a href="#" data-value="13">13</a>
+                            <a href="#" data-value="14">14</a>
+                            <a href="#" class="pager-next" data-value="next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
                         </div>
 
                         <div class="catalogue-page-size">
@@ -543,6 +558,7 @@
                         </div>
 
                     </div>
+                    <!-- catalogue paging END -->
 
                 </div>
                 <!-- container END -->
@@ -648,6 +664,9 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

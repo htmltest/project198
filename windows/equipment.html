@@ -1,7 +1,7 @@
-<div class="window-general">
+<div class="window-equipment">
     <div class="window-title">Карточка оборудования<span><em>|</em>БСП-21455</span></div>
     <div class="window-equipment-content">
-        <h3>Автоматическая установка контроля сопротивления Cresbox</h3>
+        <h2>Автоматическая установка контроля сопротивления Cresbox</h2>
         <div class="window-equipment-info">
             <div class="window-equipment-info-row">
                 <div class="window-equipment-info-row-label">Марка</div>
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <h3>ЦКП</h3>
+        <h2>ЦКП</h2>
         <div class="window-equipment-info">
             <div class="window-equipment-info-row window-equipment-info-row-wide">
                 <div class="window-equipment-info-row-label">Владеющее этим оборудованием</div>
@@ -76,18 +76,10 @@
 
         <!-- tabs -->
         <div class="tabs">
-            <div class="tabs-menu">
-                <ul>
-                    <li class="active"><a href="#">Услуги</a></li>
-                    <li><a href="#">Загрузка</a></li>
-                    <li><a href="#">Оборудование ЦКП</a></li>
-                    <li><a href="#">Похожее оборудование</a></li>
-                    <li><a href="#">Дополнительно</a></li>
-                </ul>
-            </div>
+            <div class="tabs-menu"></div>
 
             <div class="tabs-container">
-                <div class="tabs-content active">
+                <div class="tabs-content active" data-title="Услуги">
 
                     <div class="ckp-detail-services">
                         <div class="ckp-detail-services-headers">
@@ -124,12 +116,12 @@
 
                 </div>
 
-                <div class="tabs-content">
+                <div class="tabs-content" data-title="Загрузка">
 
                     <div class="window-equipment-workload">
                         <form action="#" method="post">
                             <div class="catalogue-filter selected">
-                                <div class="catalogue-filter-link"><a href="#" class="btn btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg><span>Фильтр</span><span>Скрыть фильтр</span><strong>12</strong></a></div>
+                                <div class="catalogue-filter-link"><a href="#" class="btn btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg>Фильтр</a></div>
                             </div>
                             <div class="window-equipment-workload-date">
                                 <div class="form-input form-input-date"><input type="text" name="date" value="" placeholder="Дата" data-position="top left" /></div>
@@ -139,7 +131,7 @@
 
                 </div>
 
-                <div class="tabs-content">
+                <div class="tabs-content" data-title="Оборудование ЦКП">
 
                     <div class="ckp-detail-equipments">
                         <div class="ckp-detail-equipments-headers">
@@ -174,7 +166,7 @@
 
                 </div>
 
-                <div class="tabs-content">
+                <div class="tabs-content" data-title="Похожее оборудование">
 
                     <div class="ckp-detail-equipments">
                         <div class="ckp-detail-equipments-headers">
@@ -209,7 +201,7 @@
 
                 </div>
 
-                <div class="tabs-content">
+                <div class="tabs-content" data-title="Дополнительно">
 
                     <div class="window-equipment-descr">
                         <h4>Описание</h4>
@@ -217,18 +209,47 @@
 
                         <div class="photo-gallery">
                             <div class="photo-gallery-list">
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-01.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-02.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-03.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-04.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-05.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-06.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-07.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-08.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-09.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-10.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-11.jpg" alt="" /></div>
-                                <div class="photo-gallery-item"><img src="files/ckp-detail-photo-12.jpg" alt="" /></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-01.jpg"><img src="files/ckp-detail-photo-01.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-02.jpg"><img src="files/ckp-detail-photo-02.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-03.jpg"><img src="files/ckp-detail-photo-03.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-04.jpg"><img src="files/ckp-detail-photo-04.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-05.jpg"><img src="files/ckp-detail-photo-05.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-06.jpg"><img src="files/ckp-detail-photo-06.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-07.jpg"><img src="files/ckp-detail-photo-07.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-08.jpg"><img src="files/ckp-detail-photo-08.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-09.jpg"><img src="files/ckp-detail-photo-09.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-10.jpg"><img src="files/ckp-detail-photo-10.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-11.jpg"><img src="files/ckp-detail-photo-11.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-12.jpg"><img src="files/ckp-detail-photo-12.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-13.jpg"><img src="files/ckp-detail-photo-13.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-14.jpg"><img src="files/ckp-detail-photo-14.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-15.jpg"><img src="files/ckp-detail-photo-15.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-16.jpg"><img src="files/ckp-detail-photo-16.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-01.jpg"><img src="files/ckp-detail-photo-01.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-02.jpg"><img src="files/ckp-detail-photo-02.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-03.jpg"><img src="files/ckp-detail-photo-03.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-04.jpg"><img src="files/ckp-detail-photo-04.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-05.jpg"><img src="files/ckp-detail-photo-05.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-06.jpg"><img src="files/ckp-detail-photo-06.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-07.jpg"><img src="files/ckp-detail-photo-07.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-08.jpg"><img src="files/ckp-detail-photo-08.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-09.jpg"><img src="files/ckp-detail-photo-09.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-10.jpg"><img src="files/ckp-detail-photo-10.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-11.jpg"><img src="files/ckp-detail-photo-11.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-12.jpg"><img src="files/ckp-detail-photo-12.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-13.jpg"><img src="files/ckp-detail-photo-13.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-14.jpg"><img src="files/ckp-detail-photo-14.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-15.jpg"><img src="files/ckp-detail-photo-15.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-16.jpg"><img src="files/ckp-detail-photo-16.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-01.jpg"><img src="files/ckp-detail-photo-01.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-02.jpg"><img src="files/ckp-detail-photo-02.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-03.jpg"><img src="files/ckp-detail-photo-03.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-04.jpg"><img src="files/ckp-detail-photo-04.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-05.jpg"><img src="files/ckp-detail-photo-05.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-06.jpg"><img src="files/ckp-detail-photo-06.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-07.jpg"><img src="files/ckp-detail-photo-07.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-08.jpg"><img src="files/ckp-detail-photo-08.jpg" alt="" /></a></div>
+                                <div class="photo-gallery-item"><a href="files/ckp-detail-photo-09.jpg"><img src="files/ckp-detail-photo-09.jpg" alt="" /></a></div>
                             </div>
                             <div class="photo-gallery-more"><a href="#">Показать еще</a></div>
                         </div>

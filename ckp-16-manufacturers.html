@@ -81,21 +81,21 @@
                                         <li><a href="#">Статус заявки</a></li>
                                     </ul>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="#">Каталог ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
-                                        <li class="active"><a href="#">Каталог ЦКП</a></li>
+                                        <li><a href="#">Каталог ЦКП</a></li>
                                         <li><a href="#">Каталог УНУ</a></li>
                                         <li><a href="#">Проекты «MegaScience»</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="#">Оборудование<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
                                         <li><a href="#">Поиск оборудования</a></li>
                                         <li><a href="#">Продажа</a></li>
                                         <li><a href="#">Ремонт</a></li>
-                                        <li><a href="#">Каталог производителей оборудования</a></li>
+                                        <li class="active"><a href="#">Каталог производителей оборудования</a></li>
                                         <li><a href="#">Каталог сервисов по ремонту</a></li>
                                     </ul>
                                 </li>
@@ -124,29 +124,36 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">Портал НТИ</a><span>—</span><a href="#">Каталог ЦКП и УНУ</a><span>—</span>Каталог ЦКП</div>
+                    <div class="breadcrumbs"><a href="#">Портал НТИ</a><span>—</span>Производители научного оборудования</div>
 
-                    <h1>Каталог ЦКП<span class="catalogue-results-title">Центры с <strong class="catalogue-results-title-from">15</strong> по <strong class="catalogue-results-title-to">40</strong> из <strong class="catalogue-results-title-count">14 000</strong></span></h1>
+                    <h1>Производители научного оборудования</h1>
+
+                    <div class="manufacturers-digits">
+                        <div class="manufacturers-digits-inner">
+                            <div class="manufacturers-digit manufacturers-digit-main">
+                                <div class="manufacturers-digit-title">Количество производителей</div>
+                                <div class="manufacturers-digit-value">333</div>
+                            </div>
+                            <div class="manufacturers-digit">
+                                <div class="manufacturers-digit-title">Количество Российских филиалов производителей</div>
+                                <div class="manufacturers-digit-value">316</div>
+                            </div>
+                            <div class="manufacturers-digit">
+                                <div class="manufacturers-digit-title">Количество стран происхождения производителей</div>
+                                <div class="manufacturers-digit-value">29</div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- catalogue filter -->
                     <div class="catalogue-filter">
                         <div class="catalogue-filter-header">
                             <div class="catalogue-filter-link"><a href="#" class="btn btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg><span>Фильтр</span></a></div>
                             <div class="catalogue-filter-options"></div>
-                            <div class="catalogue-filter-view">
-                                <a href="#"><svg class="catalogue-view-rows"><use xlink:href="images/sprite.svg#catalogue-view-rows"></use></svg></a>
-                                <a href="#" class="active"><svg class="catalogue-view-cards"><use xlink:href="images/sprite.svg#catalogue-view-cards"></use></svg></a>
-                            </div>
-                        </div>
-
-                        <div class="catalogue-filter-sort" data-name="sort">
-                            <div class="catalogue-filter-sort-title">Сортировать по:</div>
-                            <div class="catalogue-filter-sort-item"><a href="#" data-value="rating">По рейтингу</a></div>
-                            <div class="catalogue-filter-sort-item"><a href="#" data-value="name" class="active">По названию</a></div>
                         </div>
 
                         <div class="catalogue-filter-container">
-                            <form action="ajax/catalogue.html" method="post">
+                            <form action="ajax/manufacturers.html" method="post">
 
                                 <div class="catalogue-filter-section open-always">
                                     <a href="#" class="catalogue-filter-section-title">Основное<span><svg><use xlink:href="images/sprite.svg#catalogue-filter-section-title"></use></svg></span></a>
@@ -155,7 +162,7 @@
                                         <div class="catalogue-filter-row">
                                             <div class="catalogue-filter-field catalogue-filter-field-3">
                                                 <div class="form-label">Название ЦКП</div>
-                                                <div class="form-input"><input type="text" name="name" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                                <div class="form-input"><input type="text" name="name" value="" /></div>
                                             </div>
                                             <div class="catalogue-filter-field">
                                                 <input type="submit" value="Применить" class="btn btn-mini" />
@@ -165,11 +172,11 @@
                                         <div class="catalogue-filter-row">
                                             <div class="catalogue-filter-field">
                                                 <div class="form-label">Биоресурсная коллекция</div>
-                                                <div class="form-input"><input type="text" name="bio" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                                <div class="form-input"><input type="text" name="bio" value="" /></div>
                                             </div>
                                             <div class="catalogue-filter-field">
                                                 <div class="form-label">Базовая организация</div>
-                                                <div class="form-input"><input type="text" name="base" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                                <div class="form-input"><input type="text" name="base" value="" /></div>
                                             </div>
                                             <div class="catalogue-filter-field">
                                                 <div class="form-label">Ведомственная принадлежность</div>
@@ -186,12 +193,12 @@
                                             </div>
                                             <div class="catalogue-filter-field">
                                                 <div class="form-label">Суперкомпьютерный ЦКП</div>
-                                                <div class="form-input"><input type="text" name="super" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                                <div class="form-input"><input type="text" name="super" value="" /></div>
                                             </div>
                                         </div>
 
                                         <div class="form-label">Направления научных исследований, проводимых в ЦКП</div>
-                                        <div class="form-input"><input type="text" name="directions" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                        <div class="form-input"><input type="text" name="directions" value="" /></div>
                                     </div>
                                 </div>
 
@@ -244,7 +251,7 @@
                                             <label><input type="checkbox" name="support2" /><span>Поддержан в рамках мероприятия 3.1.2 ФЦП «Исследования и разработки» на 2014-2020 годы</span></label>
                                         </div>
                                         <div class="form-checkbox">
-                                            <label><input type="checkbox" name="support3" checked="checked" /><span>Поддержан в рамках Мероприятия 5.1.1. ГП «Научно- технологическое развитие Российской Федерации»</span></label>
+                                            <label><input type="checkbox" name="support3" /><span>Поддержан в рамках Мероприятия 5.1.1. ГП «Научно- технологическое развитие Российской Федерации»</span></label>
                                         </div>
                                     </div>
                                 </div>
@@ -369,161 +376,101 @@
                     <!-- catalogue container -->
                     <div class="catalogue-container">
 
-                        <!-- catalogue -->
-                        <div class="catalogue">
-                            <div class="catalogue-item">
+                        <!-- manufacturers -->
+                        <div class="manufacturers">
+                            <div class="manufacturers-item">
                                 <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                    <div class="manufacturers-item-inner">
+                                        <div class="manufacturers-item-text">
+                                            <div class="manufacturers-item-title">A&D Company, Ltd.</div>
                                         </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="#" class="catalogue-item-btn-order" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="#" class="catalogue-item-btn-feedback"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg>Написать</span>
-                                        </div>
+                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Япония</div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="catalogue-item">
+                            <div class="manufacturers-item">
                                 <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                    <div class="manufacturers-item-inner">
+                                        <div class="manufacturers-item-text">
+                                            <div class="manufacturers-item-title">Aanderaa Data Instruments AS</div>
+                                            <div class="manufacturers-item-title-other">AADI</div>
                                         </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="#" class="catalogue-item-btn-order" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="#" class="catalogue-item-btn-feedback"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg>Написать</span>
-                                        </div>
+                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Норвегия</div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="catalogue-item">
+                            <div class="manufacturers-item">
                                 <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                    <div class="manufacturers-item-inner">
+                                        <div class="manufacturers-item-text">
+                                            <div class="manufacturers-item-title">A&D Company, Ltd.</div>
                                         </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="#" class="catalogue-item-btn-order" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="#" class="catalogue-item-btn-feedback"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg>Написать</span>
-                                        </div>
+                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Япония</div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="catalogue-item">
+                            <div class="manufacturers-item">
                                 <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>4.3</div>
-                                        <div class="catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                    <div class="manufacturers-item-inner">
+                                        <div class="manufacturers-item-text">
+                                            <div class="manufacturers-item-title">Aanderaa Data Instruments AS</div>
+                                            <div class="manufacturers-item-title-other">AADI</div>
                                         </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="#" class="catalogue-item-btn-order" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="#" class="catalogue-item-btn-feedback"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg>Написать</span>
-                                        </div>
+                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Норвегия</div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="catalogue-item">
+                            <div class="manufacturers-item">
                                 <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                    <div class="manufacturers-item-inner">
+                                        <div class="manufacturers-item-text">
+                                            <div class="manufacturers-item-title">A&D Company, Ltd.</div>
                                         </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="#" class="catalogue-item-btn-order" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="#" class="catalogue-item-btn-feedback"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg>Написать</span>
-                                        </div>
+                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Япония</div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="catalogue-item">
+                            <div class="manufacturers-item">
                                 <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                    <div class="manufacturers-item-inner">
+                                        <div class="manufacturers-item-text">
+                                            <div class="manufacturers-item-title">Aanderaa Data Instruments AS</div>
+                                            <div class="manufacturers-item-title-other">AADI</div>
                                         </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="#" class="catalogue-item-btn-order" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="#" class="catalogue-item-btn-feedback"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg>Написать</span>
-                                        </div>
+                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Норвегия</div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="catalogue-item">
+                            <div class="manufacturers-item">
                                 <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                    <div class="manufacturers-item-inner">
+                                        <div class="manufacturers-item-text">
+                                            <div class="manufacturers-item-title">A&D Company, Ltd.</div>
                                         </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="#" class="catalogue-item-btn-order" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="#" class="catalogue-item-btn-feedback"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg>Написать</span>
-                                        </div>
+                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Япония</div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="catalogue-item">
+                            <div class="manufacturers-item">
                                 <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>4.3</div>
-                                        <div class="catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                    <div class="manufacturers-item-inner">
+                                        <div class="manufacturers-item-text">
+                                            <div class="manufacturers-item-title">Aanderaa Data Instruments AS</div>
+                                            <div class="manufacturers-item-title-other">AADI</div>
                                         </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="#" class="catalogue-item-btn-order" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="#" class="catalogue-item-btn-feedback"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg>Написать</span>
-                                        </div>
+                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Норвегия</div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <!-- catalogue END -->
+                        <!-- manufacturers END -->
 
                     </div>
                     <!-- catalogue container END -->
@@ -540,29 +487,6 @@
                             <a href="#" data-value="13">13</a>
                             <a href="#" data-value="14">14</a>
                             <a href="#" class="pager-next" data-value="next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
-                        </div>
-
-                        <div class="catalogue-page-size">
-                            <div class="catalogue-page-size-title">На странице:</div>
-                            <div class="catalogue-page-size-value">
-                                <div class="catalogue-page-size-select">
-                                    <div class="catalogue-page-size-select-current"><span>20</span><svg><use xlink:href="images/sprite.svg#news-search-select-current"></use></svg></div>
-                                    <div class="catalogue-page-size-select-list">
-                                        <div class="catalogue-page-size-select-item">
-                                            <label><input type="radio" name="size" value="20" checked="checked" /><span>20</span><svg><use xlink:href="images/sprite.svg#news-search-select-item"></use></svg></label>
-                                        </div>
-                                        <div class="catalogue-page-size-select-item">
-                                            <label><input type="radio" name="size" value="40" /><span>40</span><svg><use xlink:href="images/sprite.svg#news-search-select-item"></use></svg></label>
-                                        </div>
-                                        <div class="catalogue-page-size-select-item">
-                                            <label><input type="radio" name="size" value="60" /><span>60</span><svg><use xlink:href="images/sprite.svg#news-search-select-item"></use></svg></label>
-                                        </div>
-                                        <div class="catalogue-page-size-select-item">
-                                            <label><input type="radio" name="size" value="80" /><span>80</span><svg><use xlink:href="images/sprite.svg#news-search-select-item"></use></svg></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                     </div>

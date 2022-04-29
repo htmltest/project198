@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>НТИРФ</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/slick/slick.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="header-top">
+                        <div class="container">
+                            <div class="header-top-left">
+                                <div class="header-top-left-container">
+                                    <div class="header-top-left-title">Дополнительно</div>
+                                    <div class="header-top-menu">
+                                        <ul>
+                                            <li><a href="#">Новости</a></li>
+                                            <li><a href="#">Документы</a></li>
+                                            <li><a href="#">Контакты</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-top-status"><a href="#"><svg><use xlink:href="images/sprite.svg#header-top-status"></use></svg>Статус заявки</a></div>
+                                </div>
+                                <a href="#" class="header-top-add"><svg><use xlink:href="images/sprite.svg#header-top-add"></use></svg><svg><use xlink:href="images/sprite.svg#header-top-add-close"></use></a>
+                            </div>
+                            <div class="header-top-user">
+                                <a href="#" class="header-top-user-link"><svg><use xlink:href="images/sprite.svg#header-top-user"></use></svg></a>
+                                <div class="header-top-user-menu">
+                                    <div class="header-top-user-menu-name">Сергей Байдаков</div>
+                                    <div class="header-top-user-menu-post">Редактор РИЭПП</div>
+                                    <div class="header-top-user-menu-nav">
+                                        <ul>
+                                            <li><a href="#">Рабочий стол<svg><use xlink:href="images/sprite.svg#header-top-user-menu"></use></svg></a></li>
+                                            <li><a href="#">Данные о ЦКП</a></li>
+                                            <li><a href="#">Заявки<svg><use xlink:href="images/sprite.svg#header-top-user-menu"></use></svg></a></li>
+                                            <li><a href="#">Объявлениями о продаже/ремонта</a></li>
+                                            <li><a href="#">Мониторинг Минобрнаук</a></li>
+                                            <li><a href="#">Настройки<svg><use xlink:href="images/sprite.svg#header-top-user-menu"></use></svg></a></li>
+                                            <li><a href="#">Техподдержка</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-top-user-menu-logout">
+                                        <a href="#">Выход<svg><use xlink:href="images/sprite.svg#user-logout"></use></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-top-search">
+                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-middle">
+                        <div class="container">
+                            <div class="logo">
+                                <a href="#"><svg><use xlink:href="images/sprite.svg#logo"></use></svg><svg><use xlink:href="images/sprite.svg#logo-main"></use></svg></a>
+                            </div>
+                            <div class="header-title">Научно-технологическая инфраструктура Российской Федерации</div>
+                        </div>
+                    </div>
+                    <div class="header-nav">
+                        <div class="container">
+                            <ul>
+                                <li>
+                                    <a href="#">Услуги ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Поиск</a></li>
+                                        <li><a href="#">Статус заявки</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Каталог ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Каталог ЦКП</a></li>
+                                        <li><a href="#">Каталог УНУ</a></li>
+                                        <li><a href="#">Проекты «MegaScience»</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Оборудование<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Поиск оборудования</a></li>
+                                        <li><a href="#">Продажа</a></li>
+                                        <li><a href="#">Ремонт</a></li>
+                                        <li><a href="#">Каталог производителей оборудования</a></li>
+                                        <li><a href="#">Каталог сервисов по ремонту</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Поддержка<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Поддержка портала</a></li>
+                                        <li><a href="#">Вопрос-ответ</a></li>
+                                        <li><a href="#">Форум</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Аналитика</a></li>
+                                <li>
+                                    <a href="#">Об НТИРФ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Другие объекты НТИРФ</a></li>
+                                        <li><a href="#">Меры поддержки</a></li>
+                                        <li><a href="#">Документы</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- cabinet menu -->
+                <div class="cabinet-menu">
+                    <div class="cabinet-menu-inner">
+                        <div class="cabinet-menu-block">
+                            <div class="cabinet-menu-block-title">Сведения, отображаемые в профиле ЦКП<br /> в открытом доступе:</div>
+                            <div class="cabinet-menu-block-list">
+                                <ul>
+                                    <li><a href="#"><span><svg class="cabinet-menu-01"><use xlink:href="images/sprite.svg#cabinet-menu-01"></use></svg></span>Общая информация о ЦКП</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-02"><use xlink:href="images/sprite.svg#cabinet-menu-02"></use></svg></span>Сведения о научном оборудовании ЦКП</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-03"><use xlink:href="images/sprite.svg#cabinet-menu-03"></use></svg></span>Сведения об услугах ЦКП</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-04"><use xlink:href="images/sprite.svg#cabinet-menu-04"></use></svg></span>Сведения о методиках измерений, применяемых ЦКП</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-05"><use xlink:href="images/sprite.svg#cabinet-menu-05"></use></svg></span>Регламентирующие документы ЦКП</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cabinet-menu-block">
+                            <div class="cabinet-menu-block-title">Модуль управления заявками и заказами<br /> на услуги ЦКП:</div>
+                            <div class="cabinet-menu-block-list">
+                                <ul>
+                                    <li><a href="#"><span><svg class="cabinet-menu-06"><use xlink:href="images/sprite.svg#cabinet-menu-06"></use></svg></span>Плановая годовая загрузка оборудования ЦКП</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-07"><use xlink:href="images/sprite.svg#cabinet-menu-07"></use></svg></span>Сведения об услугах ЦКП: детализированные услуги</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-08"><use xlink:href="images/sprite.svg#cabinet-menu-08"></use></svg></span>Заявки на услуги ЦКП</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-09"><use xlink:href="images/sprite.svg#cabinet-menu-09"></use></svg></span>Заказчики услуг</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cabinet-menu-block">
+                            <div class="cabinet-menu-block-title">Модуль управления объявлениями<br /> о продаже оборудования ЦКП:</div>
+                            <div class="cabinet-menu-block-list">
+                                <ul>
+                                    <li><a href="#"><span><svg class="cabinet-menu-10"><use xlink:href="images/sprite.svg#cabinet-menu-10"></use></svg></span>Объявления</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cabinet-menu-block">
+                            <div class="cabinet-menu-block-title">Настройки:</div>
+                            <div class="cabinet-menu-block-list">
+                                <ul>
+                                    <li><a href="#"><span><svg class="cabinet-menu-11"><use xlink:href="images/sprite.svg#cabinet-menu-11"></use></svg></span>Режим ввода данных о загрузке оборудования</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-12"><use xlink:href="images/sprite.svg#cabinet-menu-12"></use></svg></span>Причины отклонения заявок на услуги ЦКП</a></li>
+                                    <li><a href="#"><span><svg class="cabinet-menu-13"><use xlink:href="images/sprite.svg#cabinet-menu-13"></use></svg></span>Настройка автоматической публикации перечня оборудования ЦКП</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cabinet-menu-block">
+                            <div class="cabinet-menu-block-list">
+                                <ul>
+                                    <li><a href="#"><span><svg class="cabinet-menu-14"><use xlink:href="images/sprite.svg#cabinet-menu-14"></use></svg></span>Выход</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- cabinet menu END -->
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs"><a href="#">Главная</a><span>—</span>Личный кабинет</div>
+
+                    <h1>Личный кабинет</h1>
+
+                    <div class="dashboard-info">
+                        <div class="dashboard-info-row">
+                            <div class="dashboard-info-label">Название ЦКП:</div>
+                            <div class="dashboard-info-value">Центр коллективного пользования «Альфа»</div>
+                        </div>
+                        <div class="dashboard-info-row">
+                            <div class="dashboard-info-label">Регистрационный номер ЦКП на портале:</div>
+                            <div class="dashboard-info-value">267986</div>
+                        </div>
+                        <div class="dashboard-info-row">
+                            <div class="dashboard-info-label">Дата регистрации:</div>
+                            <div class="dashboard-info-value">08.12.2013</div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-profile-link"><a href="#" class="btn btn-mini"><svg><use xlink:href="images/sprite.svg#dashboard-profile-link"></use></svg>Показать профиль</a></div>
+
+                    <!-- dashboard monitoring -->
+                    <div class="dashboard-monitoring">
+                        <h2>Участие в ежегодном мониторинге Минобрнауки России:</h2>
+                        <p>Отчеты о деятельности ЦКП (хранятся в закрытой части портала):</p>
+                    </div>
+                    <!-- dashboard monitoring END -->
+
+                    <!-- catalogue filter -->
+                    <div class="catalogue-filter">
+                        <div class="catalogue-filter-header">
+                            <div class="catalogue-filter-link"><a href="#" class="btn btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg><span>Фильтр</span></a></div>
+                            <div class="catalogue-filter-options"></div>
+                        </div>
+
+                        <div class="catalogue-filter-container dashboard-filter-container">
+                            <form action="ajax/dashboard.html" method="post">
+
+                                <div class="dashboard-filter-content">
+                                    <div class="dashboard-filter-address">
+                                        <div class="dashboard-filter-title">Местоположение центра</div>
+                                        <div class="form-label">Федеральный округ</div>
+                                        <div class="form-select">
+                                            <select name="district" data-placeholder="">
+                                                <option value=""></option>
+                                                <option value="1">Центральный</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-label">Регион</div>
+                                        <div class="form-select">
+                                            <select name="region" data-placeholder="">
+                                                <option value=""></option>
+                                                <option value="1">Рязанская область</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-label">Город</div>
+                                        <div class="form-select">
+                                            <select name="city" data-placeholder="">
+                                                <option value=""></option>
+                                                <option value="1">г. Рязань</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="dashboard-filter-add">
+                                        <div class="dashboard-filter-title">Дополнительно</div>
+
+                                        <div class="form-label">Суперкомпьютерный ЦКП:</div>
+                                        <div class="dashboard-filter-add-radios">
+                                            <div class="form-radio">
+                                                <label><input type="radio" name="super" value="0" checked="checked" /><span>Все</span></label>
+                                            </div>
+                                            <div class="form-radio">
+                                                <label><input type="radio" name="super" value="1" /><span>Да</span></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-label">Биоресурсная коллекция:</div>
+                                        <div class="dashboard-filter-add-radios">
+                                            <div class="form-radio">
+                                                <label><input type="radio" name="bio" value="0" checked="checked" /><span>Все</span></label>
+                                            </div>
+                                            <div class="form-radio">
+                                                <label><input type="radio" name="bio" value="1" /><span>Да</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dashboard-filter-rules">
+                                        <div class="dashboard-filter-title">Критерии рассмотрения заявок:</div>
+                                        <div class="dashboard-filter-rules-list">
+                                            <div class="form-checkbox">
+                                                <label><input type="checkbox" name="rules1" /><span>Предварительное согласование запланированных работ</span></label>
+                                            </div>
+                                            <div class="form-checkbox">
+                                                <label><input type="checkbox" name="rules2" checked="checked" /><span>Привлечение совета, экспертов для оценки заявки</span></label>
+                                            </div>
+                                            <div class="form-checkbox">
+                                                <label><input type="checkbox" name="rules3" /><span>Рассмотрение заявок вне очередности их поступления</span></label>
+                                            </div>
+                                            <div class="form-checkbox">
+                                                <label><input type="checkbox" name="rules4" /><span>Прием заявок от физических лиц</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!-- catalogue filter END -->
+
+                    <!-- catalogue container -->
+                    <div class="catalogue-container">
+
+                        <!-- dashboard monitoring data -->
+                        <div class="dashboard-monitoring-data">
+                            <div class="dashboard-monitoring-data-headers">
+                                <div class="dashboard-monitoring-data-header dashboard-monitoring-data-header-number">№</div>
+                                <div class="dashboard-monitoring-data-header dashboard-monitoring-data-header-id">Идентификатор</div>
+                                <div class="dashboard-monitoring-data-header dashboard-monitoring-data-header-status">Статус</div>
+                                <div class="dashboard-monitoring-data-header dashboard-monitoring-data-header-download">Скачать</div>
+                                <div class="dashboard-monitoring-data-header dashboard-monitoring-data-header-comment">Комментарий</div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">1</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987<span>06.07 | 21:33</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"><span class="lk-status-1">Одобрено</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment">В данном окне отображаются результаты поиска оборудования ЦКП</div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">2</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"><span class="lk-status-2">Не определено</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"><a href="#"><svg><use xlink:href="images/sprite.svg#dashboard-monitoring-data-download"></use></svg>Protokol_dopuska_2-A_1.06.pdf &nbsp;<span>|&nbsp; 2.4 Мб</span></a></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment"></div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">3</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987<span>06.07 | 21:33</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"><span class="lk-status-1">Одобрено</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment"></div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">4</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987<span>06.07 | 21:33</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment"></div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">5</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"><span class="lk-status-3">Повторная проверка</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment"></div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">6</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"><span class="lk-status-1">Одобрено</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"><a href="#"><svg><use xlink:href="images/sprite.svg#dashboard-monitoring-data-download"></use></svg>Protokol_dopuska_2-A_1.06.pdf &nbsp;<span>|&nbsp; 2.4 Мб</span></a></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment">В данном окне отображаются результаты поиска оборудования ЦКП</div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">7</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987<span>06.07 | 21:33</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"><span class="lk-status-4">Отклонено</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment"></div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">8</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"><span class="lk-status-2">Не определено</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment"></div>
+                            </div>
+                            <div class="dashboard-monitoring-data-row">
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-number">9</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-id">267987</div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-status"><span class="lk-status-1">Одобрено</span></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-download"></div>
+                                <div class="dashboard-monitoring-data-cell dashboard-monitoring-data-cell-comment">В данном окне отображаются результаты поиска оборудования ЦКП</div>
+                            </div>
+                        </div>
+                        <!-- dashboard monitoring data END -->
+
+                    </div>
+                    <!-- catalogue container END -->
+
+                    <!-- catalogue paging -->
+                    <div class="catalogue-paging">
+
+                        <div class="pager">
+                            <a href="#" class="pager-prev" data-value="prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                            <a href="#" class="active" data-value="1">1</a>
+                            <a href="#" data-value="2">2</a>
+                            <span>...</span>
+                            <a href="#" data-value="4">4</a>
+                            <a href="#" data-value="5">5</a>
+                            <a href="#" class="pager-next" data-value="next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                        </div>
+
+                    </div>
+                    <!-- catalogue paging END -->
+
+                    <!-- dashboard support -->
+                    <div class="dashboard-support">
+                        <h2>Задать вопрос техподдержке</h2>
+                        <form action="#" method="post">
+                            <div class="dashboard-support-row">
+                                <div class="dashboard-support-field">
+                                    <div class="form-label">Имя</div>
+                                    <div class="form-input"><input type="text" name="name" value="" /></div>
+                                </div>
+                                <div class="dashboard-support-field">
+                                    <div class="form-label">E-mail*</div>
+                                    <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                </div>
+                                <div class="dashboard-support-field">
+                                    <div class="form-label">Телефон*</div>
+                                    <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                                </div>
+                            </div>
+
+                            <div class="form-label">Сообщение</div>
+                            <div class="form-input"><textarea name="message" rows="5" cols="10"></textarea></div>
+
+                            <div class="form-ctrl">
+                                <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
+                                <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn" /></div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- dashboard support END -->
+
+                </div>
+                <!-- container END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="container">
+
+                <div class="footer-container">
+                    <div class="footer-nav">
+                        <div class="footer-title">Инфраструктура</div>
+                        <ul>
+                            <li><a href="#">Каталог ЦКП</a></li>
+                            <li><a href="#">Каталог УНУ</a></li>
+                            <li><a href="#">Ремонт оборудования</a></li>
+                            <li><a href="#">Аналитика</a></li>
+                            <li><a href="#">Меры поддержки</a></li>
+                            <li><a href="#">НТИ России</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Разделы</div>
+                        <ul>
+                            <li><a href="#">Поддержка</a></li>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Документы</a></li>
+                        </ul>
+                        <div class="footer-status"><a href="#"><svg><use xlink:href="images/sprite.svg#header-top-status"></use></svg>Статус заявки</a></div>
+                    </div>
+
+                    <div class="footer-contacts">
+                        <div class="footer-title">Контакты</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254, Москва, ул. Добролюбова, 20А</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg><a href="tel:+74959162884">+7 (495) 916-2884</a></div>
+                        <div class="footer-links">
+                            <a href="#">Карта сайта</a><span>|</span><a href="#">Пользовательское соглашение</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-resources">
+                    <div class="footer-title">Ресурсы</div>
+                    <ul>
+                        <li><a href="#">Научно-техниеское развитие РФ</a></li>
+                        <li><a href="#">Научные центры мирового уровня</a></li>
+                        <li><a href="#">Агрегатор фондов</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo-main"></use></svg></div>
+                    <div class="footer-support">
+                        <div class="footer-support-title">Портал разработан при поддержке</div>
+                        <div class="footer-support-logo"><img src="images/footer-support.png" alt="" /></div>
+                    </div>
+                    <div class="footer-copyrights">© Реализация и сопровождение: ФГБУ «РИЭПП»</div>
+                </div>
+            </div>
+        </footer>
+
+        <a href="#" class="up-link"><svg><use xlink:href="images/sprite.svg#up-link"></use></svg></a>
+        <div class="social-links">
+            <div class="social-links-icon"><svg><use xlink:href="images/sprite.svg#social-links"></use></svg></div>
+            <div class="social-links-content">
+                <div class="social-links-block">
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-vk"></use></svg></a></div>
+                </div>
+                <div class="social-links-block">
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-whatsapp"></use></svg></a></div>
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-skype"></use></svg></a></div>
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-telegram"></use></svg></a></div>
+                </div>
+                <div class="social-links-block">
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-feedback"></use></svg></a></div>
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-phone"></use></svg></a></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/fileupload/jquery.ui.widget.js"></script>
+        <script src="js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="js/fileupload/jquery.fileupload.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
