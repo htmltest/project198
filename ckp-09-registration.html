@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="header-top-search">
-                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg></a>
+                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg><svg><use xlink:href="images/sprite.svg#header-top-search-close"></use></svg></a>
                             </div>
                         </div>
                     </div>
@@ -117,6 +117,15 @@
                                     </ul>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="header-search">
+                        <div class="container">
+                            <form action="#" method="post">
+                                <div class="header-search-input"><input type="text" name="search" value="" placeholder="Что ищем?" /></div>
+                                <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg></button></div>
+                            </form>
                         </div>
                     </div>
                 </header>
@@ -287,10 +296,10 @@
                                                 <div class="order-block-title">Данные контактного лица</div>
 
                                                 <div class="form-checkbox">
-                                                    <label><input type="checkbox" name="contacts_ident" /><span>Совпадают с данными руководителя</span></label>
+                                                    <label><input type="checkbox" name="contacts_ident" class="contacts-ident-checkbox" /><span>Совпадают с данными руководителя</span></label>
                                                 </div>
 
-                                                <div class="order-block-group">
+                                                <div class="order-block-group contacts-ident-block">
                                                     <div class="form-label">ФИО</div>
                                                     <div class="form-input"><input type="text" name="contacts_name" value="" class="required" /></div>
 
@@ -322,9 +331,9 @@
                                                     </div>
                                                     <div class="registration-doc">
                                                         <div class="registration-doc-title"><span>2.</span>Заполненная анкета</div>
-                                                        <div class="file-link file-link-variant file-link-doc">
+                                                        <div class="file-link">
                                                             <a href="#">
-                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon-2"></use></svg><span>doc</span></div>
+                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon"></use></svg></div>
                                                                 <div class="file-link-title">Анкета для регистрации ЦКП</div>
                                                                 <div class="file-link-info">15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
                                                             </a>
@@ -334,8 +343,9 @@
 
                                                 <div class="form-label">Загрузка файлов</div>
                                                 <div class="form-files">
-                                                    <div class="form-files-list"></div>
+                                                    <div class="form-files-dropzone"><span>Перетащите сюда файлы<br /> или кликните для выбора</span></div>
                                                     <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /><span class="btn btn-mini"><svg class="btn-file"><use xlink:href="images/sprite.svg#btn-file"></use></svg>Добавить файл</span></div>
+                                                    <div class="form-files-list"></div>
                                                 </div>
 
                                                 <div class="form-checkbox form-policy">
@@ -416,10 +426,10 @@
                                                 <div class="order-block-title">Данные контактного лица</div>
 
                                                 <div class="form-checkbox">
-                                                    <label><input type="checkbox" name="contacts_ident" /><span>Совпадают с данными руководителя</span></label>
+                                                    <label><input type="checkbox" name="contacts_ident" class="contacts-ident-checkbox" /><span>Совпадают с данными руководителя</span></label>
                                                 </div>
 
-                                                <div class="order-block-group">
+                                                <div class="order-block-group contacts-ident-block">
                                                     <div class="form-label">ФИО</div>
                                                     <div class="form-input"><input type="text" name="contacts_name" value="" class="required" /></div>
 
@@ -451,9 +461,9 @@
                                                     </div>
                                                     <div class="registration-doc">
                                                         <div class="registration-doc-title"><span>2.</span>Заполненная анкета</div>
-                                                        <div class="file-link file-link-variant file-link-doc">
+                                                        <div class="file-link">
                                                             <a href="#">
-                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon-2"></use></svg><span>doc</span></div>
+                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon"></use></svg></div>
                                                                 <div class="file-link-title">Анкета для регистрации ЦКП</div>
                                                                 <div class="file-link-info">15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
                                                             </a>
@@ -461,9 +471,9 @@
                                                     </div>
                                                     <div class="registration-doc">
                                                         <div class="registration-doc-title"><span>3.</span>Справка об уникальности оборудования</div>
-                                                        <div class="file-link file-link-variant file-link-pdf">
+                                                        <div class="file-link">
                                                             <a href="#">
-                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon-2"></use></svg><span>pdf</span></div>
+                                                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#file-icon"></use></svg></div>
                                                                 <div class="file-link-title">Пример справки об уникальности оборудования</div>
                                                                 <div class="file-link-info">15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
                                                             </a>
@@ -473,8 +483,9 @@
 
                                                 <div class="form-label">Загрузка файлов</div>
                                                 <div class="form-files">
-                                                    <div class="form-files-list"></div>
+                                                    <div class="form-files-dropzone"><span>Перетащите сюда файлы<br /> или кликните для выбора</span></div>
                                                     <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /><span class="btn btn-mini"><svg class="btn-file"><use xlink:href="images/sprite.svg#btn-file"></use></svg>Добавить файл</span></div>
+                                                    <div class="form-files-list"></div>
                                                 </div>
 
                                                 <div class="form-checkbox form-policy">
@@ -509,7 +520,7 @@
 
                 <div class="footer-container">
                     <div class="footer-nav">
-                        <div class="footer-title">Инфраструктура</div>
+                        <div class="footer-title">Инфраструктура<svg><use xlink:href="images/sprite.svg#footer-title"></use></svg></div>
                         <ul>
                             <li><a href="#">Каталог ЦКП</a></li>
                             <li><a href="#">Каталог УНУ</a></li>
@@ -521,7 +532,7 @@
                     </div>
 
                     <div class="footer-nav">
-                        <div class="footer-title">Разделы</div>
+                        <div class="footer-title">Разделы<svg><use xlink:href="images/sprite.svg#footer-title"></use></svg></div>
                         <ul>
                             <li><a href="#">Поддержка</a></li>
                             <li><a href="#">Новости</a></li>
@@ -548,6 +559,10 @@
                         <li><a href="#">Научные центры мирового уровня</a></li>
                         <li><a href="#">Агрегатор фондов</a></li>
                     </ul>
+                </div>
+
+                <div class="footer-links-mobile">
+                    <a href="#">Карта сайта</a><span>|</span><a href="#">Пользовательское соглашение</a>
                 </div>
             </div>
 
@@ -590,7 +605,7 @@
         <script src="js/svg4everybody.min.js"></script>
         <script>svg4everybody();</script>
 
-        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/validation/messages_ru.js"></script>

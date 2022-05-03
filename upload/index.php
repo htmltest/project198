@@ -6,7 +6,7 @@
             $extension = pathinfo($value['name'][0], PATHINFO_EXTENSION);
 
             if (!in_array(strtolower($extension), $allowed)) {
-                echo '{"status":"error"}';
+                echo '{"status":"error", "text": "ошибка загрузки"}';
                 exit;
             }
 

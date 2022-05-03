@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="header-top-search">
-                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg></a>
+                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg><svg><use xlink:href="images/sprite.svg#header-top-search-close"></use></svg></a>
                             </div>
                         </div>
                     </div>
@@ -117,6 +117,15 @@
                                     </ul>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="header-search">
+                        <div class="container">
+                            <form action="#" method="post">
+                                <div class="header-search-input"><input type="text" name="search" value="" placeholder="Что ищем?" /></div>
+                                <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg></button></div>
+                            </form>
                         </div>
                     </div>
                 </header>
@@ -504,7 +513,7 @@
 
                 <div class="footer-container">
                     <div class="footer-nav">
-                        <div class="footer-title">Инфраструктура</div>
+                        <div class="footer-title">Инфраструктура<svg><use xlink:href="images/sprite.svg#footer-title"></use></svg></div>
                         <ul>
                             <li><a href="#">Каталог ЦКП</a></li>
                             <li><a href="#">Каталог УНУ</a></li>
@@ -516,7 +525,7 @@
                     </div>
 
                     <div class="footer-nav">
-                        <div class="footer-title">Разделы</div>
+                        <div class="footer-title">Разделы<svg><use xlink:href="images/sprite.svg#footer-title"></use></svg></div>
                         <ul>
                             <li><a href="#">Поддержка</a></li>
                             <li><a href="#">Новости</a></li>
@@ -543,6 +552,10 @@
                         <li><a href="#">Научные центры мирового уровня</a></li>
                         <li><a href="#">Агрегатор фондов</a></li>
                     </ul>
+                </div>
+
+                <div class="footer-links-mobile">
+                    <a href="#">Карта сайта</a><span>|</span><a href="#">Пользовательское соглашение</a>
                 </div>
             </div>
 
@@ -585,7 +598,7 @@
         <script src="js/svg4everybody.min.js"></script>
         <script>svg4everybody();</script>
 
-        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/validation/messages_ru.js"></script>

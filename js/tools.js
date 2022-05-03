@@ -50,6 +50,7 @@ $(document).ready(function() {
 
     $('body').on('click', '.form-files-list-item-remove', function(e) {
         var curLink = $(this);
+        var curFiles = curLink.parents().filter('.form-files');
         $.ajax({
             type: 'GET',
             url: curLink.attr('href'),
@@ -57,7 +58,48 @@ $(document).ready(function() {
             cache: false
         }).done(function(data) {
             curLink.parent().remove();
+            if (curFiles.find('.form-files-list-item-progress, .form-files-list-item').length == 0) {
+                curFiles.removeClass('full');
+            }
         });
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.form-files-list-item-cancel', function(e) {
+        var curLink = $(this);
+        var curFiles = curLink.parents().filter('.form-files');
+        curLink.parent().remove();
+        if (curFiles.find('.form-files-list-item-progress, .form-files-list-item').length == 0) {
+            curFiles.removeClass('full');
+        }
+        e.preventDefault();
+    });
+
+    $(document).bind('drop dragover', function (e) {
+        e.preventDefault();
+    });
+
+    $(document).bind('dragover', function (e) {
+        var dropZones = $('.form-files-dropzone'),
+            timeout = window.dropZoneTimeout;
+        if (timeout) {
+            clearTimeout(timeout);
+        } else {
+            dropZones.addClass('in');
+        }
+        var hoveredDropZone = $(e.target).closest(dropZones);
+        dropZones.not(hoveredDropZone).removeClass('hover');
+        hoveredDropZone.addClass('hover');
+        window.dropZoneTimeout = setTimeout(function () {
+            window.dropZoneTimeout = null;
+            dropZones.removeClass('in hover');
+        }, 100);
+    });
+
+    $('body').on('click', '.form-files-dropzone', function(e) {
+        var curLink = $(this);
+        var curFiles = $(this).parents().filter('.form-files');
+        curFiles.find('.form-files-input input').click();
         e.preventDefault();
     });
 
@@ -748,42 +790,117 @@ $(document).ready(function() {
     });
 
     $('.is-jur-checkbox').change(function() {
+        var curForm = $(this).parents().filter('form');
         if ($(this).prop('checked')) {
-            $('.jur-field').prop('disabled', false);
-            $('.jur-field').addClass('required');
+            curForm.find('.jur-field').prop('disabled', false);
+            curForm.find('.jur-field').addClass('required');
+            if (curForm.find('.address-ident-checkbox').prop('checked')) {
+                curForm.find('.address-ident').prop('disabled', true);
+                curForm.find('.address-ident').removeClass('required');
+            }
         } else {
-            $('.jur-field').prop('disabled', true);
-            $('.jur-field').removeClass('required');
+            curForm.find('.jur-field').prop('disabled', true);
+            curForm.find('.jur-field').removeClass('required');
         }
     });
 
     $('.is-jur-checkbox').each(function() {
+        var curForm = $(this).parents().filter('form');
         if ($(this).prop('checked')) {
-            $('.jur-field').prop('disabled', false);
-            $('.jur-field').addClass('required');
+            curForm.find('.jur-field').prop('disabled', false);
+            curForm.find('.jur-field').addClass('required');
+            if (curForm.find('.address-ident-checkbox').prop('checked')) {
+                curForm.find('.address-ident').prop('disabled', true);
+                curForm.find('.address-ident').removeClass('required');
+            }
         } else {
-            $('.jur-field').prop('disabled', true);
-            $('.jur-field').removeClass('required');
+            curForm.find('.jur-field').prop('disabled', true);
+            curForm.find('.jur-field').removeClass('required');
         }
     });
 
     $('.address-ident-checkbox').change(function() {
+        var curForm = $(this).parents().filter('form');
         if ($(this).prop('checked')) {
-            $('.address-ident').prop('disabled', true);
-            $('.address-ident').removeClass('required');
+            curForm.find('.address-ident').prop('disabled', true);
+            curForm.find('.address-ident').removeClass('required');
         } else {
-            $('.address-ident').prop('disabled', false);
-            $('.address-ident').addClass('required');
+            if (curForm.find('.is-jur-checkbox').prop('checked')) {
+                curForm.find('.address-ident').prop('disabled', false);
+                curForm.find('.address-ident').addClass('required');
+            }
         }
     });
 
     $('.address-ident-checkbox').each(function() {
+        var curForm = $(this).parents().filter('form');
         if ($(this).prop('checked')) {
-            $('.address-ident').prop('disabled', true);
-            $('.address-ident').removeClass('required');
+            curForm.find('.address-ident').prop('disabled', true);
+            curForm.find('.address-ident').removeClass('required');
         } else {
-            $('.address-ident').prop('disabled', false);
-            $('.address-ident').addClass('required');
+            if (curForm.find('.is-jur-checkbox').prop('checked')) {
+                curForm.find('.address-ident').prop('disabled', false);
+                curForm.find('.address-ident').addClass('required');
+            }
+        }
+    });
+
+    $('.contacts-ident-checkbox').change(function() {
+        var curForm = $(this).parents().filter('form');
+        if ($(this).prop('checked')) {
+            curForm.find('.contacts-ident-block input').prop('disabled', true);
+            curForm.find('.contacts-ident-block input').removeClass('required');
+        } else {
+            curForm.find('.contacts-ident-block input').prop('disabled', false);
+            curForm.find('.contacts-ident-block input').addClass('required');
+        }
+    });
+
+    $('.address-ident-checkbox').each(function() {
+        var curForm = $(this).parents().filter('form');
+        if ($(this).prop('checked')) {
+            curForm.find('.contacts-ident-block input').prop('disabled', true);
+            curForm.find('.contacts-ident-block input').removeClass('required');
+        } else {
+            curForm.find('.contacts-ident-block input').prop('disabled', false);
+            curForm.find('.contacts-ident-block input').addClass('required');
+        }
+    });
+
+    $('.header-top-search-link').click(function(e) {
+        $('html').toggleClass('search-open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.header-search').length == 0 && !$(e.target).hasClass('header-search') && $(e.target).parents().filter('.header-top-search').length == 0 && !$(e.target).hasClass('header-top-search')) {
+            $('html').removeClass('search-open');
+        }
+    });
+
+    $('.wrapper .container table').each(function() {
+        var curTable = $(this);
+        curTable.wrap('<div class="table-scroll"></div>');
+    });
+
+    $('.footer-nav .footer-title').click(function() {
+        $(this).parent().toggleClass('open');
+        e.preventDefault();
+    });
+
+    $('.main-who-item-title').click(function() {
+        $(this).parent().parent().toggleClass('open');
+        e.preventDefault();
+    });
+
+    $('.social-links-icon').click(function() {
+        $(this).parent().toggleClass('open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.social-links').length == 0) {
+            $('.social-links').removeClass('open');
         }
     });
 
@@ -917,7 +1034,6 @@ function initForm(curForm) {
         }
 
         if (curForm.parents().filter('.catalogue-filter').length == 1) {
-            options['dropdownParent'] = $('.catalogue-filter-container');
             options['allowClear'] = true;
         }
 
@@ -934,13 +1050,21 @@ function initForm(curForm) {
         curInput.fileupload({
             url: uploadURL,
             dataType: 'json',
+            dropZone: curFiles.find('.form-files-dropzone'),
+            pasteZone: curFiles.find('.form-files-dropzone'),
             add: function(e, data) {
                 curFiles.find('.form-files-list').append('<div class="form-files-list-item-progress"><span class="form-files-list-item-cancel"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></span></div>');
                 data.submit();
+                curFiles.addClass('full');
             },
             done: function (e, data) {
                 curFiles.find('.form-files-list-item-progress').eq(0).remove();
-                curFiles.find('.form-files-list').append('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-icon-2"></use></svg><span>' + data.result.ext + '</span></div><div class="form-files-list-item-name">' + data.result.path + '</div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' Мб</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                if (data.result.status == 'success') {
+                    curFiles.find('.form-files-list').append('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-icon-2"></use></svg><span>' + data.result.ext + '</span></div><div class="form-files-list-item-name">' + data.result.path + '</div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' Мб</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                } else {
+                    curFiles.find('.form-files-list').append('<div class="form-files-list-item error"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-icon-2"></use></svg></div><div class="form-files-list-item-name">' + data.result.text + '</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                }
+                curFiles.addClass('full');
             }
         });
     });
@@ -1413,6 +1537,42 @@ $(window).on('load resize', function() {
             });
         });
     });
+
+    if ($(window).width() > 1205) {
+        if ($('.table-scroll').length > 0) {
+            $('.table-scroll').mCustomScrollbar('destroy');
+        }
+    } else {
+        if ($('.table-scroll').length > 0) {
+            $('.table-scroll').each(function() {
+                var curTableScroll = $(this);
+                curTableScroll.mCustomScrollbar({
+                    axis: 'x',
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+            });
+        }
+    }
+
+    if ($(window).width() > 1205) {
+        if ($('.main-news').length > 0) {
+            $('.main-news').mCustomScrollbar('destroy');
+        }
+    } else {
+        if ($('.main-news').length > 0) {
+            $('.main-news').each(function() {
+                var curTableScroll = $(this);
+                curTableScroll.mCustomScrollbar({
+                    axis: 'x',
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+            });
+        }
+    }
 
 });
 

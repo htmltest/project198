@@ -31,13 +31,17 @@ window.onload = function() {
             var Roboto700 = new FontFaceObserver('Roboto', {
                 weight: 'bold'
             });
+            var Roboto900 = new FontFaceObserver('Roboto', {
+                weight: '900'
+            });
 
             Promise.all([
                 Roboto300.load(),
                 Roboto400.load(),
                 Roboto400i.load(),
                 Roboto500.load(),
-                Roboto700.load()
+                Roboto700.load(),
+                Roboto900.load()
             ]).then(function () {
                 html.classList.add('fonts-loaded');
                 sessionStorage.fontsLoaded = true;

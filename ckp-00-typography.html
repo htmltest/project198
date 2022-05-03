@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="header-top-search">
-                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg></a>
+                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg><svg><use xlink:href="images/sprite.svg#header-top-search-close"></use></svg></a>
                             </div>
                         </div>
                     </div>
@@ -119,12 +119,24 @@
                             </ul>
                         </div>
                     </div>
+
+                    <div class="header-search">
+                        <div class="container">
+                            <form action="#" method="post">
+                                <div class="header-search-input"><input type="text" name="search" value="" placeholder="Что ищем?" /></div>
+                                <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg></button></div>
+                            </form>
+                        </div>
+                    </div>
                 </header>
 
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">Главная</a><span>—</span>Типографика</div>
+                    <div class="breadcrumbs"><a href="#">Портал НТИ</a><span>—</span>Типографика</div>
+                    <div class="breadcrumbs-mobile">
+                        <div class="back-link"><a href="#"><svg><use xlink:href="images/sprite.svg#back-link"></use></svg>Портал НТИ</a></div>
+                    </div>
 
                     <h1>h1. Платформа, где можно найти все контакты для работы</h1>
                     <p>Интеграл от функции, имеющий конечный разрыв охватывает интеграл по ориентированной области. Эпсилон окрестность, конечно, неоднозначна. Длина вектора, следовательно, поддерживает натуральный логарифм. Определитель системы линейных уравнений, конечно, программирует интеграл от функции комплексной переменной.</p>
@@ -356,8 +368,9 @@
 
                         <div class="form-label">Загрузка файлов</div>
                         <div class="form-files">
-                            <div class="form-files-list"></div>
+                            <div class="form-files-dropzone"><span>Перетащите сюда файлы<br /> или кликните для выбора</span></div>
                             <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /><span class="btn btn-mini"><svg class="btn-file"><use xlink:href="images/sprite.svg#btn-file"></use></svg>Добавить файл</span></div>
+                            <div class="form-files-list"></div>
                         </div>
 
                         <div class="form-label">Сообщение</div>
@@ -455,7 +468,7 @@
 
                 <div class="footer-container">
                     <div class="footer-nav">
-                        <div class="footer-title">Инфраструктура</div>
+                        <div class="footer-title">Инфраструктура<svg><use xlink:href="images/sprite.svg#footer-title"></use></svg></div>
                         <ul>
                             <li><a href="#">Каталог ЦКП</a></li>
                             <li><a href="#">Каталог УНУ</a></li>
@@ -467,7 +480,7 @@
                     </div>
 
                     <div class="footer-nav">
-                        <div class="footer-title">Разделы</div>
+                        <div class="footer-title">Разделы<svg><use xlink:href="images/sprite.svg#footer-title"></use></svg></div>
                         <ul>
                             <li><a href="#">Поддержка</a></li>
                             <li><a href="#">Новости</a></li>
@@ -494,6 +507,10 @@
                         <li><a href="#">Научные центры мирового уровня</a></li>
                         <li><a href="#">Агрегатор фондов</a></li>
                     </ul>
+                </div>
+
+                <div class="footer-links-mobile">
+                    <a href="#">Карта сайта</a><span>|</span><a href="#">Пользовательское соглашение</a>
                 </div>
             </div>
 
@@ -536,7 +553,7 @@
         <script src="js/svg4everybody.min.js"></script>
         <script>svg4everybody();</script>
 
-        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/validation/messages_ru.js"></script>
