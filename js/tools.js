@@ -252,6 +252,75 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('click', '.registration .tabs-menu a', function(e) {
+        var curItem = $(this).parent();
+        var curTabs = curItem.parents().filter('.tabs');
+        var curIndex = curTabs.find('.tabs-menu li').index(curItem);
+        $('html').addClass('registration-tab-open');
+        curTabs.find('.tabs-content').eq(curIndex).addClass('registration-active');
+        if ($(window).width() < 1206) {
+            $('html, body').animate({'scrollTop': 0});
+        }
+        e.preventDefault();
+    });
+
+    $('.registration-mobile-back .back-link a').click(function(e) {
+        $('html').removeClass('registration-tab-open');
+        $('.tabs-content').removeClass('registration-active');
+        if ($(window).width() < 1206) {
+            $('html, body').animate({'scrollTop': 0});
+        }
+        e.preventDefault();
+    });
+
+    $('.ckp-detail-services').each(function() {
+        var curBlock = $(this);
+        if (curBlock.find('.ckp-detail-services-item').length > 4) {
+            curBlock.addClass('visible-more');
+        }
+    });
+
+    $('.ckp-detail-services-more').click(function(e) {
+        var curBlock = $(this).parent().find('.ckp-detail-services');
+        if (curBlock.hasClass('view-all')) {
+            count = 4;
+            curBlock.find('.ckp-detail-services-item.visible').removeClass('visible');
+            curBlock.removeClass('view-all');
+        } else {
+            var count = curBlock.find('.ckp-detail-services-item:visible').length;
+            count += 4;
+            curBlock.find('.ckp-detail-services-item:lt(' + count + ')').addClass('visible');
+            if (count >= curBlock.find('.ckp-detail-services-item').length) {
+                curBlock.addClass('view-all');
+            }
+        }
+        e.preventDefault();
+    });
+
+    $('.ckp-detail-equipments').each(function() {
+        var curBlock = $(this);
+        if (curBlock.find('.ckp-detail-equipments-item').length > 4) {
+            curBlock.addClass('visible-more');
+        }
+    });
+
+    $('.ckp-detail-equipments-more').click(function(e) {
+        var curBlock = $(this).parent().find('.ckp-detail-equipments');
+        if (curBlock.hasClass('view-all')) {
+            count = 4;
+            curBlock.find('.ckp-detail-equipments-item.visible').removeClass('visible');
+            curBlock.removeClass('view-all');
+        } else {
+            var count = curBlock.find('.ckp-detail-equipments-item:visible').length;
+            count += 4;
+            curBlock.find('.ckp-detail-equipments-item:lt(' + count + ')').addClass('visible');
+            if (count >= curBlock.find('.ckp-detail-equipments-item').length) {
+                curBlock.addClass('view-all');
+            }
+        }
+        e.preventDefault();
+    });
+
     $('.ckp-detail-reviews-list').each(function() {
         if ($('.ckp-detail-reviews-item').length > 2) {
             $('.ckp-detail-reviews-more').addClass('visible');
@@ -904,6 +973,20 @@ $(document).ready(function() {
         }
     });
 
+    $('.order-info-block h4').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.megascience-item-text-more a').click(function(e) {
+        $(this).parent().prev().toggleClass('open');
+        e.preventDefault();
+    });
+
+    $('.news-header-filter-link').click(function(e) {
+        $('.news-header').toggleClass('open');
+        e.preventDefault();
+    });
+
 });
 
 function initForm(curForm) {
@@ -1542,6 +1625,9 @@ $(window).on('load resize', function() {
         if ($('.table-scroll').length > 0) {
             $('.table-scroll').mCustomScrollbar('destroy');
         }
+        if ($('.tabs-menu').length > 0) {
+            $('.tabs-menu').mCustomScrollbar('destroy');
+        }
     } else {
         if ($('.table-scroll').length > 0) {
             $('.table-scroll').each(function() {
@@ -1554,6 +1640,16 @@ $(window).on('load resize', function() {
                 });
             });
         }
+        if ($('.tabs-menu').length > 0) {
+            $('.tabs-menu').each(function() {
+                var curTableScroll = $(this);
+                if (curTableScroll.parents().filter('.registration').length == 0) {
+                    curTableScroll.mCustomScrollbar({
+                        axis: 'x'
+                    });
+                }
+            });
+        }
     }
 
     if ($(window).width() > 1205) {
@@ -1564,16 +1660,25 @@ $(window).on('load resize', function() {
         if ($('.main-news').length > 0) {
             $('.main-news').each(function() {
                 var curTableScroll = $(this);
-                curTableScroll.mCustomScrollbar({
-                    axis: 'x',
-                    scrollButtons: {
-                        enable: true
-                    }
-                });
+                if (curTableScroll.parents().filter('.news').length == 0) {
+                    curTableScroll.mCustomScrollbar({
+                        axis: 'x',
+                        scrollButtons: {
+                            enable: true
+                        }
+                    });
+                }
             });
         }
     }
 
+    $('.megascience-item-text').each(function() {
+        var curBlock = $(this);
+        curBlock.removeClass('open with-more');
+        if (curBlock.height() < curBlock.find('.megascience-item-text-inner').height()) {
+            curBlock.addClass('with-more');
+        }
+    });
 });
 
 $(window).on('load resize scroll', function() {
