@@ -755,7 +755,7 @@ $(document).ready(function() {
 
         $('.window-photo').each(function() {
             var marginPhoto = 166;
-            if ($(window).width() < 1200) {
+            if ($(window).width() < 1206) {
                 marginPhoto = 253;
             }
             var newHeight = marginPhoto;
@@ -938,6 +938,9 @@ $(document).ready(function() {
 
     $('.header-top-search-link').click(function(e) {
         $('html').toggleClass('search-open');
+        if ($('html').hasClass('search-open')) {
+            $('.header-search-input input').trigger('focus');
+        }
         e.preventDefault();
     });
 
@@ -985,6 +988,31 @@ $(document).ready(function() {
     $('.news-header-filter-link').click(function(e) {
         $('.news-header').toggleClass('open');
         e.preventDefault();
+    });
+
+    $('.header-top-user-link').click(function(e) {
+        if ($(window).width() < 1206) {
+            $('html').toggleClass('user-menu-open');
+            e.preventDefault();
+        }
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.header-top-user').length == 0) {
+            $('html').removeClass('user-menu-open');
+        }
+    });
+
+    $('.header-nav').each(function(){
+        $('.header-top-left-container').prepend('<div class="header-top-nav-mobile">' + $('.header-nav .container').html() + '</div>');
+    });
+
+    $('.header-top-nav-mobile ul li a').click(function(e) {
+        var curLI = $(this).parent();
+        if (curLI.find('ul').length > 0) {
+            curLI.toggleClass('open');
+            e.preventDefault();
+        }
     });
 
 });
@@ -1239,7 +1267,7 @@ function initForm(curForm) {
                         } else {
                             curForm.prepend('<div class="message message-error">' + data.message + '</div>')
                         }
-                        if ($(window).width() < 1200) {
+                        if ($(window).width() < 1206) {
                             $('html, body').animate({'scrollTop': $('#feedback').offset().top - $('header').height()});
                         }
                         curForm.removeClass('loading');
