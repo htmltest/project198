@@ -477,9 +477,9 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 .header-fixed.menu-add-open .header-top-add svg {width:31px; height:31px; fill:#1c48a3; stroke:none}
 .header-fixed.menu-add-open .header-top-add svg:nth-child(1) {display:none}
 .header-fixed.menu-add-open .header-top-add svg:nth-child(2) {display:block}
-.header-fixed.menu-add-open .header-top-left-container {display:block; position:absolute; right:0; top:0; width:376px; background:#fff; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); padding:0 0 20px 0}
+.header-fixed.menu-add-open .header-top-left-container {display:block; position:absolute; right:0; top:0; width:376px; background:#fff; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); padding:0}
 .header-fixed.menu-add-open .header-top-left-title {display:block; padding:22px 0 0 25px; font-weight:bold; font-size:20px; line-height:26px; color:#1c48a3; text-transform:uppercase}
-.header-fixed.menu-add-open .header-top-menu {padding:18px 0 0 0; font-size:18px; line-height:45px; float:none}
+.header-fixed.menu-add-open .header-top-menu {padding:17px 0 0 0; font-size:18px; line-height:45px; float:none}
 .header-fixed.menu-add-open .header-top-menu ul li {float:none; margin:0}
 .header-fixed.menu-add-open .header-top-menu ul li a {display:block; padding:0 25px; height:45px; color:#1c48a3; text-decoration:none; transition:background 0.2s}
 @media (min-width:1206px) {
@@ -488,7 +488,7 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 .header-fixed.menu-add-open .header-top-status {float:none; font-size:18px; line-height:45px; margin:0}
 .header-fixed.menu-add-open .header-top-status a {display:block; padding:0 25px; height:45px; color:#1c48a3; text-decoration:none; transition:background 0.2s}
 @media (min-width:1206px) {
-    .header-fixed.menu-add-open .header-top-status a:hover {background:#ebf2fc}
+    .header-fixed.menu-add-open .header-top-status a:hover {background:#ebf2fc; border-color:transparent}
 }
 .header-fixed.menu-add-open .header-top-status svg {display:none}
 
@@ -572,35 +572,41 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
     .header-top-user:hover .header-top-user-link {background:#103787}
 }
 .header-top-user-link svg {display:block; width:20px; height:20px; fill:#fff; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
-.header-top-user-menu {display:none; position:absolute; right:0; top:100%; margin-top:5px; white-space:nowrap; background:#fff; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); padding:21px 24px 11px 24px}
-@media (min-width:1206px) {
-    .header-top-user:hover .header-top-user-menu {display:block}
-}
+.header-top-user-menu {display:none; position:absolute; right:0; top:100%; width:356px; margin-top:5px; white-space:nowrap; background:#fff; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); padding:21px 24px 11px 24px}
 .header-top-user-menu::before {content:""; display:block; position:absolute; left:-1px; top:-6px; right:-1px; height:6px; background:url(../images/blank.gif)}
 .header-top-user-menu::after {content:""; display:block; width:20px; height:20px; right:10px; top:-10px; position:absolute; background:#fff; transform:rotate(-45deg)}
-.header-top-user-menu-name {position:relative; overflow:hidden; text-overflow:ellipsis; font-weight:normal; font-size:18px; line-height:23px; color:#000; max-width:306px}
+.header-top-user-menu-name {position:relative; overflow:hidden; text-overflow:ellipsis; font-weight:normal; font-size:18px; line-height:23px; color:#000}
 .header-top-user-menu-post {margin:4px 0 0 0; position:relative; overflow:hidden; text-overflow:ellipsis; font-weight:normal; font-size:14px; line-height:18px; color:#7e9cc8; max-width:306px}
 .header-top-user-menu-nav {margin:24px 0 0 0; border-top:1px solid #becee5; padding:11px 0 0 0}
 .header-top-user-menu-nav ul {margin:0 -24px; padding:0; list-style:none; font-size:18px; line-height:45px; font-weight:normal}
 .header-top-user-menu-nav ul li {margin:0; padding:0}
+.header-top-user-menu.open ul li {display:none}
+.header-top-user-menu.open ul li.open {display:block}
 .header-top-user-menu-nav ul li::before {display:none}
 .header-top-user-menu-nav ul li a {display:block; height:45px; padding:0 24px; text-decoration:none; color:#1c48a3; transition:background 0.2s; position:relative}
 @media (min-width:1206px) {
     .header-top-user-menu-nav ul li a:hover {background:#ebf2fc}
 }
+.header-top-user-menu.open ul li.open > a {font-weight:bold; font-size:20px; padding:0 20px 0 45px; color:#000}
 .header-top-user-menu-nav ul li a svg {display:block; width:15px; height:15px; fill:#1c48a3; position:absolute; right:24px; top:50%; margin-top:-7.5px}
+.header-top-user-menu.open ul li.open > a svg {fill:#000; right:auto; left:22px; transform:rotate(-180deg)}
+.header-top-user-menu-nav ul li ul {display:none}
+.header-top-user-menu.open .header-top-user-menu-nav ul li.open ul {display:block; margin:0}
+.header-top-user-menu.open .header-top-user-menu-nav ul li.open ul li {display:block}
+.header-top-user-menu.open .header-top-user-menu-nav ul li.open ul li a {padding:0 20px 0 45px}
 .header-top-user-menu-logout {margin:11px 0 0 0; border-top:1px solid #becee5; padding:11px 0 0 0}
+.header-top-user-menu.open .header-top-user-menu-logout {display:none}
 .header-top-user-menu-logout a {display:block; margin:0 -24px; padding:0 24px; position:relative; font-size:18px; line-height:45px; font-weight:500; color:#1c48a3; text-decoration:none; transition:background 0.2s}
 @media (min-width:1206px) {
     .header-top-user-menu-logout a:hover {background:#ebf2fc}
 }
 .header-top-user-menu-logout a svg {display:block; width:25px; height:25px; fill:#1c48a3; position:absolute; right:20px; top:50%; margin-top:-12.5px}
+.user-menu-open .header-top-user-link {background:#103787}
+.user-menu-open .header-top-user-menu {display:block}
 
 @media (max-width:1205px) {
     .header-top-user-link {width:60px; height:80px}
     .header-top-user-link svg {width:30px; height:30px}
-    .user-menu-open .header-top-user-link {background:#103787}
-    .user-menu-open .header-top-user-menu {display:block}
     .user-menu-open .header-top-user-menu::after {right:20px}
 }
 
@@ -733,17 +739,16 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 
 .header-nav {height:50px; background:#ebf2fc}
 .header-nav ul {float:left; margin:0; padding:0; list-style:none; font-weight:normal; font-size:18px; line-height:40px}
-.header-nav ul li {float:left; margin:5px 0 0 17px; padding:0; position:relative}
-.header-nav ul li:first-child {margin-left:-6px}
+.header-nav ul li {float:left; margin:5px 0 0 23px; padding:0; position:relative}
+.header-nav ul li:first-child {margin-left:12px}
 .header-nav ul li::before {display:none}
-.header-nav ul li::after {content:"|"; display:block; position:absolute; left:-11px; top:0; color:#becee5; pointer-events:none}
 .header-nav ul li:first-child::after {display:none}
 .header-nav ul li a {color:#000; text-decoration:none; display:block; padding:0 6px; transition:background 0.2s, color 0.2s; border-radius:3px}
 @media (min-width:1206px) {
     .header-nav ul li:hover > a {color:#fff; background:#1c48a3}
 }
 .header-nav ul li.active > a {color:#fff; background:#1c48a3}
-.header-nav ul li a svg {display:inline-block; vertical-align:middle; margin:-2px 0 0 5px; width:15px; height:15px; fill:#000; transition:fill 0.2s}
+.header-nav ul li a svg {display:inline-block; vertical-align:middle; margin:-2px 0 0 5px; width:10px; height:10px; fill:#5d7fb0; transition:fill 0.2s}
 @media (min-width:1206px) {
     .header-nav ul li:hover a svg {fill:#fff}
 }
@@ -756,7 +761,6 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 }
 .header-nav ul li ul li {float:none; margin:4px 0 0 0; position:relative}
 .header-nav ul li ul li:first-child {margin:0}
-.header-nav ul li ul li::after {display:none}
 .header-nav ul li ul li a {padding:0 20px; margin:0 -20px; height:40px; font-weight:normal; font-size:16px; line-height:40px; border-radius:0; color:#747474; background:none}
 @media (min-width:1206px) {
     .header-nav ul li:hover ul li a {padding:0 20px; margin:0 -20px; height:40px; font-weight:normal; font-size:16px; line-height:40px; border-radius:0; color:#747474; background:none}
@@ -778,38 +782,37 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 }
 
 .header-fixed .header-nav {position:absolute; left:0; top:0; right:0; background:none; height:0}
-.header-fixed .header-nav ul {margin:0 0 0 102px; font-size:16px; line-height:21px}
+.header-fixed .header-nav ul {margin:0 0 0 102px; font-size:14px; line-height:65px; letter-spacing:0}
 .header-fixed .header-nav ul li {margin:0; position:relative}
 .header-fixed .header-nav ul li:first-child {margin:0}
 .header-fixed .header-nav ul li::after {display:none}
-.header-fixed .header-nav ul li.active::before {display:block; position:absolute; left:0; top:15px; bottom:13px; right:0; background:#8daaf5; width:auto; height:auto; border-radius:5px}
-.header-fixed .header-nav ul li a {padding:24px 5px 20px 5px; color:#fff; position:relative}
+.header-fixed .header-nav ul li.active::before {display:block; position:absolute; left:0; top:13px; bottom:13px; right:0; background:#305fc0; width:auto; height:auto; border-radius:5px}
+.header-fixed .header-nav ul li a {padding:0 12px; color:#fff; position:relative; border-radius:0}
+.header-fixed .header-nav ul li.active > a {color:#fff; background:none}
+.header-fixed .header-nav ul li.active svg {width:12px; height:12px; fill:rgba(255, 255, 255, 0.5)}
+.header-fixed .header-nav ul li a svg {fill:rgba(255, 255, 255, 0.5)}
 @media (min-width:1206px) {
-    .header-fixed .header-nav ul li:hover > a {color:#fff; background:#173f92}
+    .header-fixed .header-nav ul li:hover > a {color:#fff; background:#092b71}
 }
-.header-fixed .header-nav ul li.active > a {color:#05266b; background:none}
-.header-fixed .header-nav ul li.active svg {fill:#05266b}
-.header-fixed .header-nav ul li a svg {fill:#fff}
 .header-fixed .header-nav ul li ul {margin:0; left:0; background:#1c48a3; box-shadow:none; padding:0}
 .header-fixed .header-nav ul li ul::before {display:none}
 .header-fixed .header-nav ul li ul::after {display:none}
 .header-fixed .header-nav ul li ul li {border-top:1px solid #173f92}
 .header-fixed .header-nav ul li.active ul li::before {display:none}
-.header-fixed .header-nav ul li ul li:first-child {border-top:none}
 @media (min-width:1206px) {
-    .header-fixed .header-nav ul li:hover ul li a {padding:10px 12px; margin:0; color:#fff; background:none; line-height:21px; height:auto}
+    .header-fixed .header-nav ul li:hover ul li a {padding:11px 12px; margin:0; color:#fff; background:none; font-size:14px; line-height:18px; height:auto}
 }
 .header-fixed .header-nav ul li ul li a,
-.header-fixed .header-nav ul li.active ul li a {padding:10px 12px; margin:0; color:#fff; background:none; line-height:21px; height:auto}
+.header-fixed .header-nav ul li.active ul li a {padding:11px 12px; margin:0; color:#fff; background:none; font-size:14px; line-height:18px; height:auto}
 @media (min-width:1206px) {
     .header-fixed .header-nav ul li:hover ul li a:hover,
-    .header-fixed .header-nav ul li.active ul li a:hover {color:#05266b; background:#8daaf5}
+    .header-fixed .header-nav ul li.active ul li a:hover {color:#fff; background:#092b71}
 }
 @media (min-width:1206px) {
-    .header-fixed .header-nav ul li:hover ul li.active a {color:#05266b; background:#8daaf5}
+    .header-fixed .header-nav ul li:hover ul li.active a {color:#fff; background:#092b71}
 }
 .header-fixed .header-nav ul li ul li a,
-.header-fixed .header-nav ul li.active ul li.active a {color:#05266b; background:#8daaf5}
+.header-fixed .header-nav ul li.active ul li.active a {color:#fff; background:#092b71}
 
 .page-main .header-nav {display:none}
 .header-fixed .page-main .header-nav {display:block}
@@ -1149,18 +1152,18 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 .main-catalogue-item-rating {position:absolute; right:10px; top:10px; font-size:16px; line-height:24px; font-weight:bold}
 .main-catalogue-item-rating svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:#1c48a3; margin:-2px 8px 0 0}
 .main-catalogue-item-title {font-weight:normal; font-size:20px; line-height:26px; color:#000}
-.main-catalogue-item-city {padding:0 0 0 30px; position:relative; margin:20px 0 0 0; font-size:16px; line-height:24px; font-weight:500; color:#1c48a3}
-.main-catalogue-item-city svg {display:block; width:17px; height:21px; fill:#7e9cc8; position:absolute; left:0; top:2px}
+.main-catalogue-item-city {padding:0 0 0 25px; position:relative; margin:20px 0 0 0; font-size:16px; line-height:24px; font-weight:normal; color:#000}
+.main-catalogue-item-city svg {display:block; width:20px; height:20px; fill:#828282; position:absolute; left:0; top:2px}
 .main-catalogue-item-city span {padding:5px 0}
 @media (min-width:1206px) {
     .main-catalogue-item-city span:hover {text-decoration:underline}
 }
-.main-catalogue-item-params {margin:13px 0 0 0; font-size:16px; line-height:24px; letter-spacing:0; font-weight:500}
+.main-catalogue-item-params {margin:8px 0 0 0; font-size:16px; line-height:24px; letter-spacing:0; font-weight:normal; color:#000}
 .main-catalogue-item-params::after {content:""; display:block; clear:both}
 .main-catalogue-item-params-equipment {float:left; margin:0 20px 0 0}
-.main-catalogue-item-params-equipment svg {display:inline-block; vertical-align:middle; width:14px; height:20px; fill:#7e9cc8; margin:-2px 14px 0 0}
+.main-catalogue-item-params-equipment svg {display:inline-block; vertical-align:middle; width:20px; height:20px; fill:#828282; margin:-2px 4px 0 0}
 .main-catalogue-item-params-case {float:left; margin:0 20px 0 0}
-.main-catalogue-item-params-case svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:#7e9cc8; margin:-2px 8px 0 0}
+.main-catalogue-item-params-case svg {display:inline-block; vertical-align:middle; width:20px; height:20px; fill:#828282; margin:-2px 4px 0 0}
 .main-catalogue-item-type {padding:0 0 0 30px; position:relative; margin:13px 0 0 0; font-size:16px; line-height:24px; font-weight:500}
 .main-catalogue-item-type svg {display:block; width:15px; height:20px; fill:#7e9cc8; position:absolute; left:0; top:0}
 .main-catalogue-item-type span {padding:5px 0}
@@ -1877,16 +1880,16 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 @media (min-width:1206px) {
     .catalogue-filter-option a:hover svg {fill:#1c48a3}
 }
-.catalogue-filter-view {float:right; margin:9px 0 0 0}
-.catalogue-filter-view a {float:left; margin:0 0 0 30px}
+.catalogue-filter-view {float:right; margin:12px 0 0 0}
+.catalogue-filter-view a {float:left; margin:0 0 0 20px}
 .catalogue-filter-view a:first-child {margin:0}
-.catalogue-filter-view svg {display:block; height:21px; fill:#becee5; transition:fill 0.2s}
+.catalogue-filter-view svg {display:block; height:15px; fill:#c4c4c4; transition:fill 0.2s}
 @media (min-width:1206px) {
-    .catalogue-filter-view a:hover svg {fill:#1c48a3}
+    .catalogue-filter-view a:hover svg {fill:#000}
 }
-.catalogue-filter-view a.active svg {fill:#1c48a3}
-.catalogue-filter-view svg.catalogue-view-rows {width:37px}
-.catalogue-filter-view svg.catalogue-view-cards {width:26px}
+.catalogue-filter-view a.active svg {fill:#000}
+.catalogue-filter-view svg.catalogue-view-rows {width:26px}
+.catalogue-filter-view svg.catalogue-view-cards {width:19px}
 
 @media (max-width:1205px) {
     .catalogue-filter-options {display:none}
@@ -1961,35 +1964,35 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 @media (min-width:1206px) {
     .catalogue-item a:hover {text-decoration:none; transform:translateY(-5px); box-shadow:0 0 5px rgba(0, 0, 0, 0.2)}
 }
-.catalogue-item a::before {content:""; display:block; position:absolute; left:16px; bottom:0; right:16px; height:115px; background:#fafcff; opacity:0.9; box-shadow:0px 10px 25px rgba(28, 72, 163, 0.1); z-index:-1}
-.catalogue-item-inner {position:relative; border:1px solid #ebf2fc; background:#fff; position:relative; padding:63px 20px 20px 20px}
-.catalogue-item-code {position:absolute; left:20px; top:20px; font-size:16px; line-height:24px; color:#7e9cc8}
-.catalogue-item-rating {position:absolute; right:20px; top:20px; font-size:16px; line-height:24px; font-weight:bold; color:#1c48a3}
+.catalogue-item a::before {content:""; display:block; position:absolute; left:16px; bottom:0; right:16px; height:96px; background:#fafcff; opacity:0.9; box-shadow:0px 10px 25px rgba(0, 0, 0, 0.1); z-index:-1}
+.catalogue-item-inner {position:relative; border:1px solid #e5e5e5; background:#fff; position:relative; padding:63px 20px 20px 20px}
+.catalogue-item-code {position:absolute; left:20px; top:20px; font-size:16px; line-height:24px; color:#828282}
+.catalogue-item-rating {position:absolute; right:20px; top:20px; font-size:16px; line-height:24px; font-weight:normal; color:#000}
 .catalogue-item-rating svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:#1c48a3; margin:-2px 8px 0 0}
 .catalogue-item-title {color:#000}
-.catalogue-item-city {padding:0 0 0 30px; position:relative; margin:20px 0 0 0; font-size:16px; line-height:24px; color:#1c48a3}
-.catalogue-item-city svg {display:block; width:17px; height:21px; fill:#7e9cc8; position:absolute; left:0; top:2px}
+.catalogue-item-city {padding:0 0 0 25px; position:relative; margin:20px 0 0 0; font-size:16px; line-height:24px; color:#000}
+.catalogue-item-city svg {display:block; width:20px; height:20px; fill:#828282; position:absolute; left:0; top:2px}
 .catalogue-item-city span {padding:5px 0}
 @media (min-width:1206px) {
     .main-catalogue-item-city span:hover {text-decoration:underline}
 }
-.catalogue-item-params {margin:13px 0 0 0; font-size:16px; line-height:24px; letter-spacing:0}
+.catalogue-item-params {margin:8px 0 0 0; font-size:16px; line-height:24px; letter-spacing:0; color:#000}
 .catalogue-item-params::after {content:""; display:block; clear:both}
 .catalogue-item-params-equipment {float:left; margin:0 20px 0 0}
-.catalogue-item-params-equipment svg {display:inline-block; vertical-align:middle; width:14px; height:20px; fill:#7e9cc8; margin:-2px 14px 0 0}
+.catalogue-item-params-equipment svg {display:inline-block; vertical-align:middle; width:20px; height:20px; fill:#828282; margin:-2px 4px 0 0}
 .catalogue-item-params-case {float:left; margin:0 20px 0 0}
-.catalogue-item-params-case svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:#7e9cc8; margin:-2px 8px 0 0}
-.catalogue-item-btns {position:absolute; right:20px; bottom:20px}
-.catalogue-item-btn-order {float:left; width:24px; height:35px; position:relative; margin:0 10px 0 0; cursor:pointer}
-.catalogue-item-btn-order svg {display:block; width:14px; height:15px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); fill:#7e9cc8; transition:fill 0.2s}
+.catalogue-item-params-case svg {display:inline-block; vertical-align:middle; width:20px; height:20px; fill:#828282; margin:-2px 4px 0 0}
+.catalogue-item-btns {position:absolute; right:12px; bottom:12px}
+.catalogue-item-btn-order {float:left; width:36px; height:36px; position:relative; cursor:pointer; transition:background 0.2s; border-radius:50%}
 @media (min-width:1206px) {
-    .catalogue-item-btn-order:hover svg {fill:#1c48a3}
+    .catalogue-item-btn-order:hover {background:#f6f6f6}
 }
-.catalogue-item-btn-feedback {float:left; height:35px; position:relative; padding:0 15px; background:#335aac; color:#fff; font-weight:normal; font-size:16px; line-height:35px; letter-spacing:0; transition:background 0.2s; cursor:pointer}
+.catalogue-item-btn-order svg {display:block; width:20px; height:20px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); fill:#1c48a3}
+.catalogue-item-btn-feedback {float:left; width:36px; height:36px; position:relative; cursor:pointer; transition:background 0.2s; border-radius:50%}
 @media (min-width:1206px) {
-    .catalogue-item-btn-feedback:hover {background:#1c48a3}
+    .catalogue-item-btn-feedback:hover {background:#f6f6f6}
 }
-.catalogue-item-btn-feedback svg {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; width:20px; height:20px; fill:#fff}
+.catalogue-item-btn-feedback svg {display:block; width:20px; height:20px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); fill:#335aac}
 
 @media (max-width:1205px) {
     .catalogue {margin:20px 0 0 0}
@@ -2472,10 +2475,11 @@ footer a {color:#fff}
     .footer-support::after {content:""; display:block; clear:both}
 }
 
-.footer-copyrights {float:left; margin:25px 0 0 176px; font-size:16px; line-height:21px}
+.footer-copyrights {float:left; margin:0 0 0 236px; font-size:16px; line-height:70px}
+.footer-copyrights img {display:inline-block; vertical-align:middle; margin:-2px 0 0 8px}
 
 @media (max-width:1205px) {
-    .footer-copyrights {float:none; position:absolute; left:123px; top:28px; margin:0; font-size:14px; line-height:18px}
+    .footer-copyrights {float:none; position:absolute; left:123px; top:16px; margin:0; font-size:14px; line-height:37px}
 }
 
 .up-link {display:block; opacity:0; visibility:hidden; position:fixed; z-index:90; right:110px; bottom:40px; width:60px; height:60px; background:#173f92; transition:opacity 0.2s, background-color 0.2s}
@@ -2495,19 +2499,20 @@ footer a {color:#fff}
 .social-links {display:block; opacity:0; visibility:hidden; position:fixed; z-index:90; right:40px; bottom:40px; width:60px; height:60px; background:#ff0000; cursor:pointer; transition:opacity 0.2s}
 .social-links.visible {opacity:1; visibility:visible}
 .social-links-icon {width:60px; height:60px; position:relative}
-.social-links-icon svg {display:block; position:absolute; left:50%; top:50%; margin:-12px 0 0 -12px; width:24px; height:24px; fill:#fff}
-.social-links-content {opacity:0; visibility:hidden; position:absolute; left:0; bottom:100%; margin-bottom:0; right:0; background:#fff; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); transition:opacity 0.2s, margin-bottom 0.2s; padding:9px 8px; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
-.social-links-content::before {content:""; display:block; position:absolute; left:-1px; bottom:-11px; right:-1px; height:11px; background:url(../images/blank.gif)}
+.social-links-icon svg {display:block; position:absolute; left:18px; top:21px; width:24px; height:24px; fill:#fff}
+.social-links-content {opacity:0; visibility:hidden; position:absolute; left:0; bottom:100%; margin-bottom:0; right:0; background:#fff; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); transition:opacity 0.2s, margin-bottom 0.2s; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
+.social-links-content::before {content:""; display:block; position:absolute; left:50%; bottom:-5px; margin-left:-11px; width:22px; height:22px; border:1px solid #e6e6e6; background:#fff; transform:rotate(-45deg)}
+.social-links-content::after {content:""; display:block; position:absolute; left:-1px; bottom:-11px; right:-1px; height:11px; background:url(../images/blank.gif)}
 @media (min-width:1206px) {
     .social-links:hover .social-links-content {opacity:1; visibility:visible; margin-bottom:10px}
 }
-.social-links-content a {display:block; transition:background 0.2s; padding:6px 0; margin:0 -8px}
+.social-links-content a {display:block; transition:background 0.2s; padding:10px 0; margin:0 -8px}
 @media (min-width:1206px) {
-    .social-links-content a:hover {background:#edf3ff}
+    .social-links-content a:hover {background:#e3edfc}
 }
-.social-links-content svg {display:block; margin:0 auto; width:31px; height:31px; fill:#1c48a3; transition:fill 0.2s}
-.social-links-block {margin:9px 0 0 0; border-top:1px solid #e6e6e6; padding:9px 0 0 0}
-.social-links-block:first-child {margin:0; border-top:none; padding:0}
+.social-links-content svg {display:block; margin:0 auto; width:25px; height:25px; fill:none}
+.social-links-block {border-top:1px solid #e6e6e6; margin:0 8px; padding:10px 0; position:relative; background:#fff}
+.social-links-block:first-child {border-top:none}
 
 @media (max-width:1205px) {
     .social-links {right:20px; bottom:20px}
