@@ -2337,12 +2337,36 @@ header {height:240px; position:absolute; left:0; top:0; right:0; z-index:99}
 .manufacturers-detail-info-title {display:table-cell; vertical-align:top; color:#7e9cc8; width:268px; padding:20px 30px 20px 0; border-top:1px solid #becee5}
 .manufacturers-detail-info-value {display:table-cell; vertical-align:top; padding:20px 0; border-top:1px solid #becee5}
 
-.ntr-header {margin:20px 0 0 0}
+.ntr-header {margin:20px 0 0 0; position:relative}
 .ntr-header::after {content:""; display:block; clear:both}
 .ntr-filter-link {float:left}
 .ntr-filter-link a strong {display:none; vertical-align:middle; margin:-2px 0 0 10px; width:24px; height:24px; background:#fff; border-radius:50%; color:#1c48a3; font-weight:500; font-size:12px; line-height:24px; letter-spacing:0; text-align:center}
 .ntr-filter-link a strong.visible {display:inline-block}
-.ntr-filter.selected .ntr-filter-link a strong {display:inline-block}
+.ntr-header.selected .ntr-filter-link a strong {display:inline-block}
+
+.ntr-filter-container {position:absolute; left:-99999px; top:-99999px; width:1166px; opacity:0; transition:opacity 0.2s; z-index:90; padding:40px; border:1px solid #e6e6e6; background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25)}
+.ntr-filter-open .ntr-filter-container {left:0; top:72px; opacity:1}
+.ntr-filter-container::before {content:""; display:block; width:22px; height:22px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:34px; top:-12px; background:#fff}
+.ntr-filter-container form {margin:0; padding:0}
+.ntr-filter-item {border-top:1px solid #e5e5e5}
+.ntr-filter-header .ntr-filter-item {border-top:none; font-size:12px; text-transform:uppercase; letter-spacing:0.05em}
+.ntr-filter-item label {display:block; cursor:pointer}
+.ntr-filter-item label input {display:none}
+.ntr-filter-item-inner {display:table; width:100%; border-collapse:collapse; transition:background 0.2s; line-height:23px}
+.ntr-filter-item label:hover .ntr-filter-item-inner,
+.ntr-filter-item label input:checked+.ntr-filter-item-inner {background:#fafafa}
+.ntr-filter-item label input:checked+.ntr-filter-item-inner {font-weight:500}
+.ntr-filter-header .ntr-filter-item-inner,
+.ntr-filter-header .ntr-filter-item label input:checked+.ntr-filter-item-inner {font-weight:bold}
+.ntr-filter-item-title {display:table-cell; vertical-align:middle; padding:12px 0 12px 40px; position:relative}
+.ntr-filter-item-title::before {content:""; position:absolute; left:10px; top:12px; display:block; width:20px; height:20px; border:1px solid #B4B4B4; background:#fff url(../images/checkbox.svg) no-repeat -999px -999px; transition:background-color 0.2s, border-color 0.2s}
+.ntr-filter-item label input:checked+.ntr-filter-item-inner .ntr-filter-item-title::before {border-color:#1c48a3; background-color:#1c48a3; background-position:center}
+.ntr-filter-item-count {display:table-cell; vertical-align:middle; text-align:center; width:110px}
+.ntr-filter-header .ntr-filter-item-count {width:242px; padding-right:132px}
+.ntr-filter-item-link {display:table-cell; vertical-align:middle; padding:0 20px 0 0; width:44px; line-height:0}
+.ntr-filter-item-link a {display:block; width:24px}
+.ntr-filter-item-link a svg {display:block; width:24px; height:24px; fill:#1c48a3; margin-bottom:2px}
+
 .ntr-map-zoom {float:right; width:22px}
 .ntr-map-zoom a {display:block; margin:6px 0 0 0}
 .ntr-map-zoom a:first-child {margin:0}
