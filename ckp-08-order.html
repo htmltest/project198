@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -199,156 +200,373 @@
                         </div>
                     </div>
 
-                    <!-- order -->
-                    <div class="order">
-                        <form action="#" method="post">
+                    <script src="https://www.google.com/recaptcha/api.js?render=6LdHSvgcAAAAAHfkqTliNRLNbN8n4oSa0UJfMCU3"></script>
 
-                            <!-- order block -->
-                            <div class="order-block">
-                                <div class="order-block-number"><span>01</span> / 02</div>
-                                <div class="order-block-container">
-                                    <div class="order-block-title">Контактные данные</div>
+                    <!-- tabs -->
+                    <div class="tabs">
+                        <div class="tabs-menu"></div>
 
-                                    <div class="form-label">Фамилия</div>
-                                    <div class="form-input"><input type="text" name="lastname" value="" class="required" /></div>
+                        <div class="tabs-container">
 
-                                    <div class="form-label">Имя</div>
-                                    <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
+                            <div class="tabs-content active" data-title="Заявка от физического лица">
+                                <!-- order -->
+                                <div class="order">
+                                    <h2>Заявка от физического лица</h2>
 
-                                    <div class="form-label">Отчество</div>
-                                    <div class="form-input"><input type="text" name="middlename" value="" class="required" /></div>
+                                    <form action="ajax/success.html" method="post" data-captchaurl="ajax/captcha.php" class="ajax-form recaptcha-form">
 
-                                    <div class="order-block-group">
-                                        <div class="form-label">Страна</div>
-                                        <div class="form-select">
-                                            <select name="country" data-placeholder="Не выбрано" class="required">
-                                                <option value=""></option>
-                                                <option value="1">Российская Федерация</option>
-                                                <option value="2">Великобритания</option>
-                                                <option value="3">США</option>
-                                            </select>
-                                        </div>
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>01</span> / 02</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Контактные данные</div>
 
-                                        <div class="order-row">
-                                            <div class="order-row-field">
-                                                <div class="form-label">Регион</div>
-                                                <div class="form-select">
-                                                    <select name="region" data-placeholder="Не выбрано" class="required">
-                                                        <option value=""></option>
-                                                        <option value="1">Москва</option>
-                                                        <option value="2">Санкт-Петербург</option>
-                                                    </select>
+                                                <div class="form-label">Фамилия*</div>
+                                                <div class="form-input"><input type="text" name="lastname" value="" class="required" /></div>
+
+                                                <div class="form-label">Имя*</div>
+                                                <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
+
+                                                <div class="form-label">Отчество</div>
+                                                <div class="form-input"><input type="text" name="middlename" value="" class="required" /></div>
+
+                                                <div class="order-row">
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Электронная почта*</div>
+                                                        <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                                    </div>
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Телефон*</div>
+                                                        <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">Страна*</div>
+                                                    <div class="form-select">
+                                                        <select name="country" data-placeholder="Не выбрано" class="required">
+                                                            <option value=""></option>
+                                                            <option value="1">Российская Федерация</option>
+                                                            <option value="2">Великобритания</option>
+                                                            <option value="3">США</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Регион</div>
+                                                            <div class="form-select">
+                                                                <select name="region" data-placeholder="Не выбрано">
+                                                                    <option value=""></option>
+                                                                    <option value="1">Москва</option>
+                                                                    <option value="2">Санкт-Петербург</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Город</div>
+                                                            <div class="form-select">
+                                                                <select name="city" data-placeholder="Не выбрано">
+                                                                    <option value=""></option>
+                                                                    <option value="1">Москва</option>
+                                                                    <option value="2">Санкт-Петербург</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="order-row-field">
-                                                <div class="form-label">Город</div>
+                                        </div>
+                                        <!-- order block END -->
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>02</span> / 02</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Подробности заявки</div>
+
+                                                <div class="form-label">Наименование проекта, в рамках которого заказывается услуга*</div>
+                                                <div class="form-input"><input type="text" name="project" value="" class="required" /></div>
+
+                                                <div class="form-label">Цель работы</div>
+                                                <div class="form-input"><input type="text" name="target" value="" /></div>
+
+                                                <div class="order-row">
+                                                    <div class="order-row-field order-row-field-1">
+                                                        <div class="form-label">Желаемая дата начала</div>
+                                                        <div class="form-input form-input-date"><input type="text" name="date" value="" /></div>
+                                                    </div>
+                                                    <div class="order-row-field order-row-field-2">
+                                                        <div class="form-label">Предполагаемая продолжительность работ, дней</div>
+                                                        <div class="form-input"><input type="text" name="lenth" value="" /></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-label">Характер работы</div>
                                                 <div class="form-select">
-                                                    <select name="city" data-placeholder="Не выбрано" class="required">
+                                                    <select name="nature" data-placeholder="Не выбрано">
                                                         <option value=""></option>
-                                                        <option value="1">Москва</option>
-                                                        <option value="2">Санкт-Петербург</option>
+                                                        <option value="1">Диплом</option>
+                                                        <option value="2">Диссертация</option>
                                                     </select>
+                                                </div>
+
+                                                <div class="form-label">Объект исследования(образец)</div>
+                                                <div class="form-input"><input type="text" name="object" value="" /></div>
+
+                                                <div class="form-label">Требуемый метод исследования</div>
+                                                <div class="form-input"><input type="text" name="method" value="" /></div>
+
+                                                <div class="form-label">Специальная пробоподготовка образца</div>
+                                                <div class="form-select">
+                                                    <select name="preparation" data-placeholder="Не выбрано">
+                                                        <option value=""></option>
+                                                        <option value="1">Да</option>
+                                                        <option value="2">Нет</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-label">Количество образцов</div>
+                                                <div class="form-input"><input type="text" name="count" value="" /></div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">Использование результатов в образовательном процессе (диплом, диссертация)</div>
+                                                    <div class="form-select">
+                                                        <select name="results" data-placeholder="Не выбрано">
+                                                            <option value=""></option>
+                                                            <option value="1">Да</option>
+                                                            <option value="2">Нет</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-label">Обязательство ссылаться на ЦКП в публикации результата работы</div>
+                                                    <div class="form-select">
+                                                        <select name="commitment" data-placeholder="Не выбрано">
+                                                            <option value=""></option>
+                                                            <option value="1">Да</option>
+                                                            <option value="2">Нет</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-checkbox form-policy">
+                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на обработку <a href="#">персональных данных</a>.</span></label>
+                                                </div>
+
+                                                <div class="captcha-notice">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</div>
+
+                                                <div class="form-ctrl">
+                                                    <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
+                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn-border" /></div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <!-- order block END -->
 
-                                    <div class="order-row">
-                                        <div class="order-row-field">
-                                            <div class="form-label">E-mail*</div>
-                                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
-                                        </div>
-                                        <div class="order-row-field">
-                                            <div class="form-label">Телефон*</div>
-                                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
+                                <!-- order END -->
                             </div>
-                            <!-- order block END -->
 
-                            <!-- order block -->
-                            <div class="order-block">
-                                <div class="order-block-number"><span>02</span> / 02</div>
-                                <div class="order-block-container">
-                                    <div class="order-block-title">Подробности заявки</div>
+                            <div class="tabs-content" data-title="Заявка от юридического лица">
+                                <!-- order -->
+                                <div class="order">
+                                    <h2>Заявка от юридического лица</h2>
 
-                                    <div class="form-label">Цель работы</div>
-                                    <div class="form-input"><input type="text" name="target" value="" class="required" /></div>
+                                    <form action="ajax/success.html" method="post" data-captchaurl="ajax/captcha.php" class="ajax-form recaptcha-form">
 
-                                    <div class="order-row">
-                                        <div class="order-row-field order-row-field-1">
-                                            <div class="form-label">Желаемая дата начала</div>
-                                            <div class="form-input form-input-date"><input type="text" name="date" value="" /></div>
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>01</span> / 02</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Контактные данные</div>
+
+                                                <div class="form-label">Наименование организации*</div>
+                                                <div class="form-input"><input type="text" name="companyname" value="" class="required" /></div>
+
+                                                <div class="form-label">ИНН (введите 0, если ваша страна не Россия)*</div>
+                                                <div class="form-input"><input type="text" name="companyinn" value="" class="required" /></div>
+
+                                                <div class="order-row">
+                                                    <div class="order-row-field">
+                                                        <div class="order-row-radios-label">Является базовой организацией</div>
+                                                        <div class="order-row-radios">
+                                                            <div class="form-radio">
+                                                                <label><input type="radio" name="isbase" value="y" checked="checked" /><span>Да</span></label>
+                                                            </div>
+                                                            <div class="form-radio">
+                                                                <label><input type="radio" name="isbase" value="n" /><span>Нет</span></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Тип организации*</div>
+                                                        <div class="form-select">
+                                                            <select name="companytype" data-placeholder="Не выбрано" class="required">
+                                                                <option value=""></option>
+                                                                <option value="1">Образовательная организация</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">Страна*</div>
+                                                    <div class="form-select">
+                                                        <select name="country" data-placeholder="Не выбрано" class="required">
+                                                            <option value=""></option>
+                                                            <option value="1">Российская Федерация</option>
+                                                            <option value="2">Великобритания</option>
+                                                            <option value="3">США</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="order-row">
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Регион*</div>
+                                                            <div class="form-select">
+                                                                <select name="region" data-placeholder="Не выбрано" class="required">
+                                                                    <option value=""></option>
+                                                                    <option value="1">Москва</option>
+                                                                    <option value="2">Санкт-Петербург</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="order-row-field">
+                                                            <div class="form-label">Город*</div>
+                                                            <div class="form-select">
+                                                                <select name="city" data-placeholder="Не выбрано" class="required">
+                                                                    <option value=""></option>
+                                                                    <option value="1">Москва</option>
+                                                                    <option value="2">Санкт-Петербург</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h4>Контактное лицо от организации</h4>
+
+                                                <div class="form-label">Фамилия, Имя, Отчество*</div>
+                                                <div class="form-input"><input type="text" name="contacts_name" value="" class="required" /></div>
+
+                                                <div class="order-row">
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Должность</div>
+                                                        <div class="form-input"><input type="text" name="contacts_post" value="" /></div>
+                                                    </div>
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Электронная почта*</div>
+                                                        <div class="form-input"><input type="text" name="contacts_email" value="" class="required email" /></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="order-row">
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Телефон*</div>
+                                                        <div class="form-input"><input type="text" name="contacts_phone" value="" class="required phoneRU" /></div>
+                                                    </div>
+                                                    <div class="order-row-field">
+                                                        <div class="form-label">Факс</div>
+                                                        <div class="form-input"><input type="text" name="contacts_fax" value="" class="phoneRU" /></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="order-row-field order-row-field-2">
-                                            <div class="form-label">Предполагаемая продолжительность работ, дней</div>
-                                            <div class="form-input"><input type="text" name="lenth" value="" class="required" /></div>
+                                        <!-- order block END -->
+
+                                        <!-- order block -->
+                                        <div class="order-block">
+                                            <div class="order-block-number"><span>02</span> / 02</div>
+                                            <div class="order-block-container">
+                                                <div class="order-block-title">Подробности заявки</div>
+
+                                                <div class="form-label">Наименование проекта, в рамках которого заказывается услуга*</div>
+                                                <div class="form-input"><input type="text" name="project" value="" class="required" /></div>
+
+                                                <div class="form-label">Цель работы</div>
+                                                <div class="form-input"><input type="text" name="target" value="" /></div>
+
+                                                <div class="order-row">
+                                                    <div class="order-row-field order-row-field-1">
+                                                        <div class="form-label">Желаемая дата начала</div>
+                                                        <div class="form-input form-input-date"><input type="text" name="date" value="" /></div>
+                                                    </div>
+                                                    <div class="order-row-field order-row-field-2">
+                                                        <div class="form-label">Предполагаемая продолжительность работ, дней</div>
+                                                        <div class="form-input"><input type="text" name="lenth" value="" /></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-label">Характер работы</div>
+                                                <div class="form-select">
+                                                    <select name="nature" data-placeholder="Не выбрано">
+                                                        <option value=""></option>
+                                                        <option value="1">Диплом</option>
+                                                        <option value="2">Диссертация</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-label">Объект исследования(образец)</div>
+                                                <div class="form-input"><input type="text" name="object" value="" /></div>
+
+                                                <div class="form-label">Требуемый метод исследования</div>
+                                                <div class="form-input"><input type="text" name="method" value="" /></div>
+
+                                                <div class="form-label">Специальная пробоподготовка образца</div>
+                                                <div class="form-select">
+                                                    <select name="preparation" data-placeholder="Не выбрано">
+                                                        <option value=""></option>
+                                                        <option value="1">Да</option>
+                                                        <option value="2">Нет</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-label">Количество образцов</div>
+                                                <div class="form-input"><input type="text" name="count" value="" /></div>
+
+                                                <div class="order-block-group">
+                                                    <div class="form-label">Использование результатов в образовательном процессе (диплом, диссертация)</div>
+                                                    <div class="form-select">
+                                                        <select name="results" data-placeholder="Не выбрано">
+                                                            <option value=""></option>
+                                                            <option value="1">Да</option>
+                                                            <option value="2">Нет</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-label">Обязательство ссылаться на ЦКП в публикации результата работы</div>
+                                                    <div class="form-select">
+                                                        <select name="commitment" data-placeholder="Не выбрано">
+                                                            <option value=""></option>
+                                                            <option value="1">Да</option>
+                                                            <option value="2">Нет</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-checkbox form-policy">
+                                                    <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на обработку <a href="#">персональных данных</a>.</span></label>
+                                                </div>
+
+                                                <div class="captcha-notice">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</div>
+
+                                                <div class="form-ctrl">
+                                                    <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
+                                                    <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn-border" /></div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                        <!-- order block END -->
 
-                                    <div class="form-label">Характер работы</div>
-                                    <div class="form-select">
-                                        <select name="nature" data-placeholder="Не выбрано" class="required">
-                                            <option value=""></option>
-                                            <option value="1">Диплом</option>
-                                            <option value="2">Диссертация</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-label">Объект исследования(образец)</div>
-                                    <div class="form-input"><input type="text" name="object" value="" class="required" /></div>
-
-                                    <div class="form-label">Требуемый метод исследования</div>
-                                    <div class="form-input"><input type="text" name="method" value="" class="required" /></div>
-
-                                    <div class="form-label">Специальная пробоподготовка образца</div>
-                                    <div class="form-select">
-                                        <select name="preparation" data-placeholder="Не выбрано" class="required">
-                                            <option value=""></option>
-                                            <option value="1">Да</option>
-                                            <option value="2">Нет</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-label">Количество образцов</div>
-                                    <div class="form-input"><input type="text" name="count" value="" class="required" /></div>
-
-                                    <div class="order-block-group">
-                                        <div class="form-label">Использование результатов в образовательном процессе (диплом, диссертация)</div>
-                                        <div class="form-select">
-                                            <select name="results" data-placeholder="Не выбрано" class="required">
-                                                <option value=""></option>
-                                                <option value="1">Да</option>
-                                                <option value="2">Нет</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-label">Обязательство ссылаться на ЦКП в публикации результата работы</div>
-                                        <div class="form-select">
-                                            <select name="commitment" data-placeholder="Не выбрано" class="required">
-                                                <option value=""></option>
-                                                <option value="1">Да</option>
-                                                <option value="2">Нет</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-checkbox form-policy">
-                                        <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на обработку <a href="#">персональных данных</a>.</span></label>
-                                    </div>
-
-                                    <div class="form-ctrl">
-                                        <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
-                                        <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn-border" /></div>
-                                    </div>
+                                    </form>
                                 </div>
+                                <!-- order END -->
                             </div>
-                            <!-- order block END -->
 
-                        </form>
+                        </div>
                     </div>
-                    <!-- order END -->
+                    <!-- tabs END -->
 
                 </div>
                 <!-- container END -->
@@ -461,6 +679,8 @@
         <script src="js/clipboard.min.js"></script>
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/slick/slick.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

@@ -25,10 +25,7 @@
     .select2-container .select2-search--inline .select2-search__field {font-size:18px}
 }
 
-.select2-dropdown {background-color:#fff; border:1px solid #8daaf5; box-shadow:8px 8px 40px rgba(0, 0, 0, 0.08); border-radius:0; box-sizing:border-box; display:block; max-width:400px; position:absolute; left:-100000px; width:100%; z-index:9951}
-@media (max-width:1205px) {
-    .select2-dropdown {max-width:none}
-}
+.select2-dropdown {background-color:#fff; border:1px solid #8daaf5; box-shadow:8px 8px 40px rgba(0, 0, 0, 0.08); border-radius:0; box-sizing:border-box; display:block; position:absolute; left:-100000px; width:100%; z-index:9951}
 
 .select2-results {display:block}
 .select2-results__options {list-style:none; margin:0; padding:0}

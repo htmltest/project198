@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -167,67 +168,114 @@
                     <!-- catalogue filter -->
                     <div class="catalogue-filter">
                         <div class="catalogue-filter-header">
-                            <div class="catalogue-filter-link"><a href="#" class="btn btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg><span>Фильтр</span></a></div>
+                            <div class="catalogue-filter-link"><a href="#" class="btn-border btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg><span>Фильтр</span></a></div>
                             <div class="catalogue-filter-options"></div>
-                            <div class="catalogue-filter-view">
-                                <a href="#"><svg class="catalogue-view-rows"><use xlink:href="images/sprite.svg#catalogue-view-rows"></use></svg></a>
-                                <a href="#" class="active"><svg class="catalogue-view-cards"><use xlink:href="images/sprite.svg#catalogue-view-cards"></use></svg></a>
-                            </div>
                         </div>
 
                         <div class="catalogue-filter-sort" data-name="sort">
                             <div class="catalogue-filter-sort-title">Сортировать по:</div>
-                            <div class="catalogue-filter-sort-item"><a href="#" data-value="rating">По рейтингу</a></div>
-                            <div class="catalogue-filter-sort-item"><a href="#" data-value="name" class="active">По названию</a></div>
+                            <div class="catalogue-filter-sort-item"><a href="#" data-value="rating" data-valueup="ratingup" class="active"><span>По рейтингу</span><svg><use xlink:href="images/sprite.svg#catalogue-sort-arrow"></use></svg></a></div>
+                            <div class="catalogue-filter-sort-item"><a href="#" data-value="name" data-valueup="nameup"><span>По названию</span><svg><use xlink:href="images/sprite.svg#catalogue-sort-arrow"></use></svg></a></div>
+
+                            <div class="catalogue-filter-view">
+                                <a href="#" data-type="view-rows"><svg class="catalogue-view-rows"><use xlink:href="images/sprite.svg#catalogue-view-rows"></use></svg></a>
+                                <a href="#" data-type="views-cards" class="active"><svg class="catalogue-view-cards"><use xlink:href="images/sprite.svg#catalogue-view-cards"></use></svg></a>
+                            </div>
                         </div>
 
                         <div class="catalogue-filter-container">
                             <form action="ajax/catalogue.html" method="post">
 
-                                <div class="catalogue-filter-section open-always">
+                                <div class="catalogue-filter-section">
                                     <a href="#" class="catalogue-filter-section-title">Основное<span><svg><use xlink:href="images/sprite.svg#catalogue-filter-section-title"></use></svg></span></a>
 
                                     <div class="catalogue-filter-section-content">
                                         <div class="catalogue-filter-row">
-                                            <div class="catalogue-filter-field catalogue-filter-field-3">
+                                            <div class="catalogue-filter-field catalogue-filter-field-half">
                                                 <div class="form-label">Название ЦКП</div>
                                                 <div class="form-input"><input type="text" name="name" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                             </div>
-                                            <div class="catalogue-filter-field">
-                                                <input type="submit" value="Применить" class="btn btn-mini" />
+                                            <div class="catalogue-filter-field catalogue-filter-field-half">
+                                                <div class="form-label">Базовая организация</div>
+                                                <div class="form-input"><input type="text" name="keywords" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                             </div>
                                         </div>
-
                                         <div class="catalogue-filter-row">
-                                            <div class="catalogue-filter-field">
-                                                <div class="form-label">Биоресурсная коллекция</div>
-                                                <div class="form-input"><input type="text" name="bio" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
-                                            </div>
-                                            <div class="catalogue-filter-field">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Базовая организация</div>
                                                 <div class="form-input"><input type="text" name="base" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                             </div>
-                                            <div class="catalogue-filter-field">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Ведомственная принадлежность</div>
                                                 <div class="form-select">
-                                                    <select name="department" data-placeholder="">
+                                                    <select name="department" data-placeholder="Выберите ведомственную принадлежность">
                                                         <option value=""></option>
-                                                        <option value="1">Ведомство 1</option>
-                                                        <option value="2">Ведомство 2</option>
-                                                        <option value="3">Ведомство 3</option>
-                                                        <option value="4">Ведомство 4</option>
-                                                        <option value="5">Ведомство 5</option>
+                                                        <option value="3205998">ФМБА России</option>
+                                                        <optgroup label="Без ведомственной принадлежности">
+                                                            <option value="82939">Без ведомственной принадлежности</option>
+                                                            <option value="1976562">Верховный суд РФ</option>
+                                                            <option value="1943693">Прокуратура РФ</option>
+                                                            <option value="1976477">Следственный комитет РФ</option>
+                                                        </optgroup>
+                                                        <optgroup label="Госкорпорации">
+                                                            <option value="2928">Росатом</option>
+                                                            <option value="77946">Роскосмос</option>
+                                                            <option value="795258">Роснано</option>
+                                                            <option value="238865">Ростех</option>
+                                                        </optgroup>
+                                                        <optgroup label="Минобрнауки России">
+                                                            <option value="2919">Минобрнауки России (ВУЗ)</option>
+                                                            <option value="2920">Минобрнауки России (НО)</option>
+                                                            <option value="2923">РАМН</option>
+                                                            <option value="2921">РАН</option>
+                                                            <option value="2926">РАСХН</option>
+                                                        </optgroup>
+                                                        <optgroup label="ФОИВ">
+                                                            <option value="1923960">МВД России</option>
+                                                            <option value="220933">Минздрав России</option>
+                                                            <option value="798471">Минкомсвязь России</option>
+                                                            <option value="756414">Минкультуры России</option>
+                                                            <option value="645187">Минобороны России</option>
+                                                            <option value="237300">Минприроды России</option>
+                                                            <option value="2925">Минпромторг России</option>
+                                                            <option value="667480">Минпросвещения России</option>
+                                                            <option value="2927">Минсельхоз России</option>
+                                                            <option value="1976672">Минстрой России</option>
+                                                            <option value="588655">Минтранс России</option>
+                                                            <option value="798700">Минфин России</option>
+                                                            <option value="2198269">Минцифры России</option>
+                                                            <option value="442018">Минэкономразвития России</option>
+                                                            <option value="1923956">Минюст России</option>
+                                                            <option value="651733">МЧС России</option>
+                                                            <option value="440059">НИЦ Курчатовский институт</option>
+                                                            <option value="438334">Правительство Москвы</option>
+                                                            <option value="2922">Правительство РФ</option>
+                                                            <option value="237303">Росгидромет</option>
+                                                            <option value="798529">Росздравнадзор</option>
+                                                            <option value="1793426">Росморречфлот</option>
+                                                            <option value="264471">Роспотребнадзор</option>
+                                                            <option value="3207177">Росприроднадзор</option>
+                                                            <option value="798469">Росреестр</option>
+                                                            <option value="798470">Россвязь</option>
+                                                            <option value="2924">Росстандарт</option>
+                                                        </optgroup>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="catalogue-filter-field">
-                                                <div class="form-label">Суперкомпьютерный ЦКП</div>
-                                                <div class="form-input"><input type="text" name="super" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
+                                                <div class="form-label">Направления научных исследований, проводимых в ЦКП</div>
+                                                <div class="form-input"><input type="text" name="directions" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
                                             </div>
                                         </div>
 
-                                        <div class="form-label">Направления научных исследований, проводимых в ЦКП</div>
-                                        <div class="form-input"><input type="text" name="directions" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                        <div class="catalogue-filter-checkboxes">
+                                            <div class="form-checkbox">
+                                                <label><input type="checkbox" name="bio" /><span>Биоресурсная коллекция</span></label>
+                                            </div>
+                                            <div class="form-checkbox">
+                                                <label><input type="checkbox" name="super" /><span>Суперкомпьютерный ЦКП</span></label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -236,30 +284,121 @@
 
                                     <div class="catalogue-filter-section-content">
                                         <div class="catalogue-filter-row">
-                                            <div class="catalogue-filter-field">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Федеральный округ</div>
                                                 <div class="form-select">
-                                                    <select name="district" data-placeholder="">
+                                                    <select name="district" data-placeholder="Выберите федеральный округ">
                                                         <option value=""></option>
-                                                        <option value="1">Центральный</option>
+                                                        <option value="1">Дальневосточный</option>
+                                                        <option value="2">Приволжский</option>
+                                                        <option value="3">Северо-Западный</option>
+                                                        <option value="4">Северо-Кавказский</option>
+                                                        <option value="5">Сибирский</option>
+                                                        <option value="6">Уральский</option>
+                                                        <option value="7">Центральный</option>
+                                                        <option value="8">Южный</option>
                                                     </select>
                                                 </div>
                                             </div>
 
-                                            <div class="catalogue-filter-field">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Регион</div>
                                                 <div class="form-select">
-                                                    <select name="region" data-placeholder="">
+                                                    <select name="region" data-placeholder="Выберите регион">
                                                         <option value=""></option>
-                                                        <option value="1">Рязанская область</option>
+                                                        <option value="01">Республика Адыгея</option>
+                                                        <option value="02">Республика Башкортостан</option>
+                                                        <option value="03">Республика Бурятия</option>
+                                                        <option value="04">Республика Алтай</option>
+                                                        <option value="05">Республика Дагестан</option>
+                                                        <option value="06">Республика Ингушетия</option>
+                                                        <option value="07">Кабардино-Балкарская Республика</option>
+                                                        <option value="08">Республика Калмыкия</option>
+                                                        <option value="09">Республика Карачаево-Черкесия</option>
+                                                        <option value="10">Республика Карелия</option>
+                                                        <option value="11">Республика Коми</option>
+                                                        <option value="12">Республика Марий Эл</option>
+                                                        <option value="13">Республика Мордовия</option>
+                                                        <option value="14">Республика Саха (Якутия)</option>
+                                                        <option value="15">Республика Северная Осетия-Алания</option>
+                                                        <option value="16">Республика Татарстан</option>
+                                                        <option value="17">Республика Тыва</option>
+                                                        <option value="18">Удмуртская Республика</option>
+                                                        <option value="19">Республика Хакасия</option>
+                                                        <option value="20">Чувашская Республика</option>
+                                                        <option value="21">Алтайский край</option>
+                                                        <option value="22">Краснодарский край</option>
+                                                        <option value="23">Красноярский край</option>
+                                                        <option value="24">Приморский край</option>
+                                                        <option value="25">Ставропольский край</option>
+                                                        <option value="26">Хабаровский край</option>
+                                                        <option value="27">Амурская область</option>
+                                                        <option value="28">Архангельская область</option>
+                                                        <option value="29">Астраханская область</option>
+                                                        <option value="30">Белгородская область</option>
+                                                        <option value="31">Брянская область</option>
+                                                        <option value="32">Владимирская область</option>
+                                                        <option value="33">Волгоградская область</option>
+                                                        <option value="34">Вологодская область</option>
+                                                        <option value="35">Воронежская область</option>
+                                                        <option value="36">Ивановская область</option>
+                                                        <option value="37">Иркутская область</option>
+                                                        <option value="38">Калининградская область</option>
+                                                        <option value="39">Калужская область</option>
+                                                        <option value="40">Камчатский край</option>
+                                                        <option value="41">Кемеровская область</option>
+                                                        <option value="42">Кировская область</option>
+                                                        <option value="43">Костромская область</option>
+                                                        <option value="44">Курганская область</option>
+                                                        <option value="45">Курская область</option>
+                                                        <option value="46">Ленинградская область</option>
+                                                        <option value="47">Липецкая область</option>
+                                                        <option value="48">Магаданская область</option>
+                                                        <option value="49">Московская область</option>
+                                                        <option value="50">Мурманская область</option>
+                                                        <option value="51">Нижегородская область</option>
+                                                        <option value="52">Новгородская область</option>
+                                                        <option value="53">Новосибирская область</option>
+                                                        <option value="54">Омская область</option>
+                                                        <option value="55">Оренбургская область</option>
+                                                        <option value="56">Орловская область</option>
+                                                        <option value="57">Пензенская область</option>
+                                                        <option value="58">Пермский край</option>
+                                                        <option value="59">Псковская область</option>
+                                                        <option value="60">Ростовская область</option>
+                                                        <option value="61">Рязанская область</option>
+                                                        <option value="62">Самарская область</option>
+                                                        <option value="63">Саратовская область</option>
+                                                        <option value="64">Сахалинская область</option>
+                                                        <option value="65">Свердловская область</option>
+                                                        <option value="66">Смоленская область</option>
+                                                        <option value="67">Тамбовская область</option>
+                                                        <option value="68">Тверская область</option>
+                                                        <option value="69">Томская область</option>
+                                                        <option value="70">Тульская область</option>
+                                                        <option value="71">Тюменская область</option>
+                                                        <option value="72">Ульяновская область</option>
+                                                        <option value="73">Челябинская область</option>
+                                                        <option value="74">Забайкальский край</option>
+                                                        <option value="75">Ярославская область</option>
+                                                        <option value="76">г. Москва</option>
+                                                        <option value="77">г. Санкт-Петербург</option>
+                                                        <option value="78">Еврейская автономная область</option>
+                                                        <option value="79">Ненецкий автономный округ</option>
+                                                        <option value="80">Ханты-Мансийский автономный округ – Югра</option>
+                                                        <option value="81">Чукотский автономный округ</option>
+                                                        <option value="82">Ямало-Ненецкий автономный округ</option>
+                                                        <option value="83">Чеченская Республика</option>
+                                                        <option value="84">Республика Крым</option>
+                                                        <option value="85">г. Севастополь</option>
                                                     </select>
                                                 </div>
                                             </div>
 
-                                            <div class="catalogue-filter-field">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Город</div>
                                                 <div class="form-select">
-                                                    <select name="city" data-placeholder="">
+                                                    <select name="city" data-placeholder="Выберите город">
                                                         <option value=""></option>
                                                         <option value="1">г. Рязань</option>
                                                     </select>
@@ -290,111 +429,118 @@
 
                                     <div class="catalogue-filter-section-content">
                                         <div class="catalogue-filter-row">
-                                            <div class="catalogue-filter-field">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Способы подачи заявки</div>
                                                 <div class="form-select">
-                                                    <select name="rules_method" data-placeholder="">
+                                                    <select name="rules_method" data-placeholder="Выберите способ подачи заявки">
                                                         <option value=""></option>
-                                                        <option value="1">Вариант 1</option>
-                                                        <option value="2">Вариант 2</option>
-                                                        <option value="3">Вариант 3</option>
-                                                        <option value="4">Вариант 4</option>
-                                                        <option value="5">Вариант 5</option>
+                                                        <option value="1">только в электронном виде</option>
+                                                        <option value="2">в электронном и печатном виде</option>
+                                                        <option value="3">только в печатном виде</option>
                                                     </select>
                                                 </div>
                                             </div>
 
-                                            <div class="catalogue-filter-field">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
+                                                <div class="form-label">Основания для оказания услуг</div>
+                                                <div class="form-select">
+                                                    <select name="rules_basis" data-placeholder="Выберите основания для оказания услуг">
+                                                        <option value=""></option>
+                                                        <option value="1">только заявка</option>
+                                                        <option value="2">заявка, договор и техническое задание</option>
+                                                        <option value="3">заявка и календарный план работ ЦКП</option>
+                                                        <option value="4">заявка и сопроводительное письмо</option>
+                                                        <option value="5">заявка, договор, техническое задание, сопроводительное письмо</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Период рассмотрения заявки</div>
                                                 <div class="form-select">
-                                                    <select name="rules_period" data-placeholder="">
+                                                    <select name="rules_period" data-placeholder="Выберите период рассмотрения заявки">
                                                         <option value=""></option>
-                                                        <option value="1">Вариант 1</option>
-                                                        <option value="2">Вариант 2</option>
-                                                        <option value="3">Вариант 3</option>
-                                                        <option value="4">Вариант 4</option>
-                                                        <option value="5">Вариант 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="catalogue-filter-field">
-                                                <div class="form-label">Критерии исполнения заявок</div>
-                                                <div class="form-select">
-                                                    <select name="rules_execution" data-placeholder="">
-                                                        <option value=""></option>
-                                                        <option value="1">Вариант 1</option>
-                                                        <option value="2">Вариант 2</option>
-                                                        <option value="3">Вариант 3</option>
-                                                        <option value="4">Вариант 4</option>
-                                                        <option value="5">Вариант 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="catalogue-filter-field">
-                                                <div class="form-label">Дополнительные условия</div>
-                                                <div class="form-select">
-                                                    <select name="rules_add" data-placeholder="">
-                                                        <option value=""></option>
-                                                        <option value="1">Вариант 1</option>
-                                                        <option value="2">Вариант 2</option>
-                                                        <option value="3">Вариант 3</option>
-                                                        <option value="4">Вариант 4</option>
-                                                        <option value="5">Вариант 5</option>
+                                                        <option value="1">1-2 дня</option>
+                                                        <option value="2">1-5 дней</option>
+                                                        <option value="3">1-10 дней</option>
+                                                        <option value="4">5-10 дней</option>
+                                                        <option value="5">не более 20 дней</option>
+                                                        <option value="6">не более 1 месяца</option>
+                                                        <option value="7">определяется индивидуально</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="catalogue-filter-row">
-                                            <div class="catalogue-filter-field">
-                                                <div class="form-label">Основания для оказания услуг</div>
-                                                <div class="form-select">
-                                                    <select name="rules_basis" data-placeholder="">
-                                                        <option value=""></option>
-                                                        <option value="1">Вариант 1</option>
-                                                        <option value="2">Вариант 2</option>
-                                                        <option value="3">Вариант 3</option>
-                                                        <option value="4">Вариант 4</option>
-                                                        <option value="5">Вариант 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="catalogue-filter-field">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Критерии рассмотрения заявок</div>
                                                 <div class="form-select">
-                                                    <select name="rules_review" data-placeholder="">
+                                                    <select name="rules_review" data-placeholder="Выберите критерии рассмотрения заявок">
                                                         <option value=""></option>
-                                                        <option value="1">Вариант 1</option>
-                                                        <option value="2">Вариант 2</option>
-                                                        <option value="3">Вариант 3</option>
-                                                        <option value="4">Вариант 4</option>
-                                                        <option value="5">Вариант 5</option>
+                                                        <option value="1">предварительное согласование запланированных работ</option>
+                                                        <option value="2">привлечение совета, экспертов для оценки заявки</option>
+                                                        <option value="3">рассмотрение заявок вне очередности их поступления</option>
+                                                        <option value="4">прием заявок от физических лиц</option>
                                                     </select>
                                                 </div>
                                             </div>
 
-                                            <div class="catalogue-filter-field catalogue-filter-field-2">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
+                                                <div class="form-label">Критерии исполнения заявок</div>
+                                                <div class="form-select">
+                                                    <select name="rules_execution" data-placeholder="Выберите критерии исполнения заявок">
+                                                        <option value=""></option>
+                                                        <option value="01">заключение типового договора</option>
+                                                        <option value="02">заключение индивидуализированного договора</option>
+                                                        <option value="03">заключение договора о научном сотрудничестве/безвозмездного договора</option>
+                                                        <option value="04">отсутствие предоплаты</option>
+                                                        <option value="05">частичная предоплата</option>
+                                                        <option value="06">полная предоплата</option>
+                                                        <option value="07">индивидуальный расчет цены услуги (работы)</option>
+                                                        <option value="08">прямой допуск заказчика к научному оборудованию</option>
+                                                        <option value="09">возможность присутствия заказчика при исполнении сотрудником ЦКП</option>
+                                                        <option value="10">исполнение силами сотрудников ЦКП</option>
+                                                        <option value="11">исполнение с применением аттестованных методик измерений</option>
+                                                        <option value="12">исполнение только на сертифицированном оборудовании</option>
+                                                        <option value="13">изготовление опытного образца</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
                                                 <div class="form-label">Сопроводительная документация</div>
                                                 <div class="form-select">
-                                                    <select name="rules_docs" data-placeholder="">
+                                                    <select name="rules_docs" data-placeholder="Выберите сопроводительную документацию">
                                                         <option value=""></option>
-                                                        <option value="1">Вариант 1</option>
-                                                        <option value="2">Вариант 2</option>
-                                                        <option value="3">Вариант 3</option>
-                                                        <option value="4">Вариант 4</option>
-                                                        <option value="5">Вариант 5</option>
+                                                        <option value="1">протоколы анализа, испытания</option>
+                                                        <option value="2">заключение к заявке</option>
+                                                        <option value="3">научный отчет</option>
+                                                        <option value="4">акт об оказании услуг</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="catalogue-filter-submit">
-                                    <div class="catalogue-filter-field"><input type="submit" value="Применить" class="btn btn-mini" /></div>
+                                        <div class="catalogue-filter-row">
+                                            <div class="catalogue-filter-field catalogue-filter-field-third">
+                                                <div class="form-label">Дополнительные условия</div>
+                                                <div class="form-select">
+                                                    <select name="rules_add" data-placeholder="Выберите дополнительные условия">
+                                                        <option value=""></option>
+                                                        <option value="1">возможность обеспечения конфиденциальности работ по заявке</option>
+                                                        <option value="2">разграничение прав собственности</option>
+                                                        <option value="3">отсутствие обязательства заказчика ссылаться в публикациях на использование оборудования ЦКП</option>
+                                                        <option value="4">отсутствие обязательства заказчика включать в число соавторов сотрудника(-ов) ЦКП</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-field catalogue-filter-field-third"></div>
+
+                                            <div class="catalogue-filter-field catalogue-filter-field-third"></div>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </form>
@@ -405,6 +551,12 @@
                     <!-- catalogue container -->
                     <div class="catalogue-container">
 
+                        <div class="catalogue-rows-headers">
+                            <div class="catalogue-rows-headers-item">ID</div>
+                            <div class="catalogue-rows-headers-item">Название</div>
+                            <div class="catalogue-rows-headers-item">Рейтинг</div>
+                        </div>
+
                         <!-- catalogue -->
                         <div class="catalogue">
                             <div class="catalogue-item">
@@ -413,10 +565,12 @@
                                         <div class="catalogue-item-code">3216</div>
                                         <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
                                         <div class="catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                        <div class="catalogue-item-info">
+                                            <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
+                                            <div class="catalogue-item-params">
+                                                <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
+                                                <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                            </div>
                                         </div>
                                         <div class="catalogue-item-btns">
                                             <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
@@ -432,10 +586,12 @@
                                         <div class="catalogue-item-code">3216</div>
                                         <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
                                         <div class="catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                        <div class="catalogue-item-info">
+                                            <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
+                                            <div class="catalogue-item-params">
+                                                <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
+                                                <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                            </div>
                                         </div>
                                         <div class="catalogue-item-btns">
                                             <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
@@ -450,11 +606,13 @@
                                     <div class="catalogue-item-inner">
                                         <div class="catalogue-item-code">3216</div>
                                         <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                        <div class="catalogue-item-title">Центр коллективного пользования научным оборудованием Исследовательский Научно-аналитический центр НИЦ «Курчатовский институт» – ИРЕА</div>
+                                        <div class="catalogue-item-info">
+                                            <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
+                                            <div class="catalogue-item-params">
+                                                <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
+                                                <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                            </div>
                                         </div>
                                         <div class="catalogue-item-btns">
                                             <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
@@ -470,10 +628,12 @@
                                         <div class="catalogue-item-code">3216</div>
                                         <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>4.3</div>
                                         <div class="catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                        <div class="catalogue-item-info">
+                                            <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
+                                            <div class="catalogue-item-params">
+                                                <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
+                                                <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                            </div>
                                         </div>
                                         <div class="catalogue-item-btns">
                                             <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
@@ -488,11 +648,34 @@
                                     <div class="catalogue-item-inner">
                                         <div class="catalogue-item-code">3216</div>
                                         <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                        <div class="catalogue-item-title">Центр коллективного пользования научным оборудованием Исследовательский Научно-аналитический центр НИЦ «Курчатовский институт» – ИРЕА</div>
+                                        <div class="catalogue-item-info">
+                                            <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
+                                            <div class="catalogue-item-params">
+                                                <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
+                                                <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                            </div>
+                                        </div>
+                                        <div class="catalogue-item-btns">
+                                            <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
+                                            <span data-href="windows/popup.html" class="catalogue-item-btn-feedback window-link" title="Написать"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="catalogue-item">
+                                <a href="#">
+                                    <div class="catalogue-item-inner">
+                                        <div class="catalogue-item-code">3216</div>
+                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
+                                        <div class="catalogue-item-title">Центр коллективного пользования научным оборудованием Исследовательский Научно-аналитический центр НИЦ «Курчатовский институт» – ИРЕА</div>
+                                        <div class="catalogue-item-info">
+                                            <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
+                                            <div class="catalogue-item-params">
+                                                <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
+                                                <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                            </div>
                                         </div>
                                         <div class="catalogue-item-btns">
                                             <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
@@ -508,29 +691,12 @@
                                         <div class="catalogue-item-code">3216</div>
                                         <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
                                         <div class="catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
-                                        </div>
-                                        <div class="catalogue-item-btns">
-                                            <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
-                                            <span data-href="windows/popup.html" class="catalogue-item-btn-feedback window-link" title="Написать"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="catalogue-item">
-                                <a href="#">
-                                    <div class="catalogue-item-inner">
-                                        <div class="catalogue-item-code">3216</div>
-                                        <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>3.7</div>
-                                        <div class="catalogue-item-title">Курчатовский источник синхротронного излучения (КИСИ)</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                        <div class="catalogue-item-info">
+                                            <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Рязанская область</div>
+                                            <div class="catalogue-item-params">
+                                                <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
+                                                <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                            </div>
                                         </div>
                                         <div class="catalogue-item-btns">
                                             <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
@@ -546,10 +712,12 @@
                                         <div class="catalogue-item-code">3216</div>
                                         <div class="catalogue-item-rating"><svg><use xlink:href="images/sprite.svg#catalogue-rating"></use></svg>4.3</div>
                                         <div class="catalogue-item-title">Кластер экспериментально-диагностических модулей «Пучок-М»</div>
-                                        <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
-                                        <div class="catalogue-item-params">
-                                            <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
-                                            <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                        <div class="catalogue-item-info">
+                                            <div class="catalogue-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Московская область</div>
+                                            <div class="catalogue-item-params">
+                                                <div class="catalogue-item-params-equipment"><svg><use xlink:href="images/sprite.svg#catalogue-equipment"></use></svg>207</div>
+                                                <div class="catalogue-item-params-case"><svg><use xlink:href="images/sprite.svg#catalogue-case"></use></svg>99</div>
+                                            </div>
                                         </div>
                                         <div class="catalogue-item-btns">
                                             <span data-href="windows/popup.html" class="catalogue-item-btn-order window-link" title="Подать заявку"><svg><use xlink:href="images/sprite.svg#catalogue-order-2"></use></svg></span>
@@ -585,16 +753,16 @@
                                     <div class="catalogue-page-size-select-current"><span>20</span><svg><use xlink:href="images/sprite.svg#news-search-select-current"></use></svg></div>
                                     <div class="catalogue-page-size-select-list">
                                         <div class="catalogue-page-size-select-item">
-                                            <label><input type="radio" name="size" value="20" checked="checked" /><span>20</span><svg><use xlink:href="images/sprite.svg#news-search-select-item"></use></svg></label>
+                                            <label><input type="radio" name="size" value="20" checked="checked" /><span>20</span></label>
                                         </div>
                                         <div class="catalogue-page-size-select-item">
-                                            <label><input type="radio" name="size" value="40" /><span>40</span><svg><use xlink:href="images/sprite.svg#news-search-select-item"></use></svg></label>
+                                            <label><input type="radio" name="size" value="40" /><span>40</span></label>
                                         </div>
                                         <div class="catalogue-page-size-select-item">
-                                            <label><input type="radio" name="size" value="60" /><span>60</span><svg><use xlink:href="images/sprite.svg#news-search-select-item"></use></svg></label>
+                                            <label><input type="radio" name="size" value="60" /><span>60</span></label>
                                         </div>
                                         <div class="catalogue-page-size-select-item">
-                                            <label><input type="radio" name="size" value="80" /><span>80</span><svg><use xlink:href="images/sprite.svg#news-search-select-item"></use></svg></label>
+                                            <label><input type="radio" name="size" value="80" /><span>80</span></label>
                                         </div>
                                     </div>
                                 </div>
@@ -715,6 +883,8 @@
         <script src="js/clipboard.min.js"></script>
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/slick/slick.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

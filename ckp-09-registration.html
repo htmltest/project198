@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -179,6 +180,8 @@
                             </div>
                         </div>
 
+                        <script src="https://www.google.com/recaptcha/api.js?render=6LdHSvgcAAAAAHfkqTliNRLNbN8n4oSa0UJfMCU3"></script>
+
                         <div class="registration-mobile-title">Кто регистрируется?</div>
 
                         <!-- tabs -->
@@ -195,7 +198,7 @@
 
                                     <!-- order -->
                                     <div class="order">
-                                        <form action="#" method="post">
+                                        <form action="ajax/success.html" method="post" data-captchaurl="ajax/captcha.php" class="ajax-form recaptcha-form">
 
                                             <h2>Регистрация заказчика</h2>
                                             <!-- order block -->
@@ -259,6 +262,8 @@
                                                         <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на&nbsp;обработку <a href="#">персональных данных</a>.</span></label>
                                                     </div>
 
+                                                    <div class="captcha-notice">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</div>
+
                                                     <div class="form-ctrl">
                                                         <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
                                                         <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn-border" /></div>
@@ -280,7 +285,7 @@
 
                                     <!-- order -->
                                     <div class="order">
-                                        <form action="#" method="post">
+                                        <form action="ajax/error.html" method="post" data-captchaurl="ajax/captcha.php" class="ajax-form recaptcha-form">
 
                                             <h2>Регистрация ЦКП</h2>
                                             <div class="order-notice">После заполнения формы для регистрации на портале данные будут рассмотрены администрацией. Если Ваша заявка соответствует условиям, Вам придет уведомление от администрации портала на указанную электронную почту с&nbsp;данными для входа в личный кабинет.</div>
@@ -394,6 +399,8 @@
                                                         <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на&nbsp;обработку <a href="#">персональных данных</a>.</span></label>
                                                     </div>
 
+                                                    <div class="captcha-notice">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</div>
+
                                                     <div class="form-ctrl">
                                                         <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
                                                         <div class="form-submit"><input type="submit" value="Отправить заявку" class="btn-border" /></div>
@@ -415,7 +422,7 @@
 
                                     <!-- order -->
                                     <div class="order">
-                                        <form action="#" method="post">
+                                        <form action="ajax/success.html" method="post" data-captchaurl="ajax/captcha.php" class="ajax-form recaptcha-form">
 
                                             <h2>Регистрация УНУ</h2>
                                             <div class="order-notice">После заполнения формы для регистрации на портале данные будут рассмотрены администрацией. Если Ваша заявка соответствует условиям, Вам придет уведомление от администрации портала на указанную электронную почту с&nbsp;данными для входа в личный кабинет.</div>
@@ -538,6 +545,8 @@
                                                     <div class="form-checkbox form-policy">
                                                         <label><input type="checkbox" name="confirm" class="required" /><span>Отправляю заявку, я соглашаюсь с <a href="#">правилами портала</a> и даю согласие на&nbsp;обработку <a href="#">персональных данных</a>.</span></label>
                                                     </div>
+
+                                                    <div class="captcha-notice">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</div>
 
                                                     <div class="form-ctrl">
                                                         <div class="form-reset"><input type="reset" value="Очистить" class="btn-reset" /></div>
@@ -669,6 +678,8 @@
         <script src="js/clipboard.min.js"></script>
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/slick/slick.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>НТИРФ</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/slick/slick.css" />
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="header-top">
+                        <div class="container">
+                            <div class="header-top-left">
+                                <div class="header-top-left-container">
+                                    <div class="header-top-left-title">Дополнительно</div>
+                                    <div class="header-top-menu">
+                                        <ul>
+                                            <li><a href="#">Новости</a></li>
+                                            <li><a href="#">Документы</a></li>
+                                            <li><a href="#">Контакты</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-top-status"><a href="#"><svg><use xlink:href="images/sprite.svg#header-top-status"></use></svg>Статус заявки</a></div>
+                                </div>
+                                <a href="#" class="header-top-add"><svg><use xlink:href="images/sprite.svg#header-top-add"></use></svg><svg><use xlink:href="images/sprite.svg#header-top-add-close"></use></svg></a>
+                            </div>
+                            <div class="header-top-user">
+                                <a href="#" class="header-top-user-link"><svg><use xlink:href="images/sprite.svg#header-top-user"></use></svg></a>
+                                <div class="header-top-user-menu">
+                                    <div class="header-top-user-menu-name">Сергей Байдаков</div>
+                                    <div class="header-top-user-menu-post">Редактор РИЭПП</div>
+                                    <div class="header-top-user-menu-nav">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Рабочий стол<svg><use xlink:href="images/sprite.svg#header-top-user-menu"></use></svg></a>
+                                                <ul>
+                                                    <li><a href="#">Рабочий стол</a></li>
+                                                    <li><a href="#">Заявки на услугу</a></li>
+                                                    <li><a href="#">Объявления</a></li>
+                                                    <li><a href="#">Отчеты</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Данные о ЦКП</a></li>
+                                            <li>
+                                                <a href="#">Услуги<svg><use xlink:href="images/sprite.svg#header-top-user-menu"></use></svg></a>
+                                                <ul>
+                                                    <li><a href="#">Услуги</a></li>
+                                                    <li><a href="#">Плановая загрузка оборудования</a></li>
+                                                    <li><a href="#">Заказчики услуг</a></li>
+                                                    <li><a href="#">Отзывы</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Объявлениями о продаже/ремонта</a></li>
+                                            <li><a href="#">Мониторинг Минобрнаук</a></li>
+                                            <li><a href="#">Настройки</a></li>
+                                            <li>
+                                                <a href="#">Техподдержка<svg><use xlink:href="images/sprite.svg#header-top-user-menu"></use></svg></a>
+                                                <ul>
+                                                    <li><a href="#">Техподдержка</a></li>
+                                                    <li><a href="#">Поддержка портала</a></li>
+                                                    <li><a href="#">Вопрос-ответ</a></li>
+                                                    <li><a href="#">Форум</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-top-user-menu-logout">
+                                        <a href="#">Выход<svg><use xlink:href="images/sprite.svg#user-logout"></use></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-top-search">
+                                <a href="#" class="header-top-search-link"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg><svg><use xlink:href="images/sprite.svg#header-top-search-close"></use></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-middle">
+                        <div class="container">
+                            <div class="logo">
+                                <a href="#"><svg><use xlink:href="images/sprite.svg#logo"></use></svg><svg><use xlink:href="images/sprite.svg#logo-main"></use></svg></a>
+                            </div>
+                            <div class="header-title">Научно-технологическая инфраструктура Российской Федерации</div>
+                        </div>
+                    </div>
+                    <div class="header-nav">
+                        <div class="container">
+                            <ul>
+                                <li>
+                                    <a href="#">Услуги ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Поиск</a></li>
+                                        <li><a href="#">Статус заявки</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Каталог ЦКП и УНУ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Каталог ЦКП</a></li>
+                                        <li><a href="#">Каталог УНУ</a></li>
+                                        <li><a href="#">Проекты «MegaScience»</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a href="#">Оборудование<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li class="active"><a href="#">Поиск оборудования</a></li>
+                                        <li><a href="#">Продажа</a></li>
+                                        <li><a href="#">Ремонт</a></li>
+                                        <li><a href="#">Каталог производителей оборудования</a></li>
+                                        <li><a href="#">Каталог сервисов по ремонту</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Поддержка<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Поддержка портала</a></li>
+                                        <li><a href="#">Вопрос-ответ</a></li>
+                                        <li><a href="#">Форум</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Аналитика</a></li>
+                                <li>
+                                    <a href="#">Об НТИРФ<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
+                                    <ul>
+                                        <li><a href="#">Другие объекты НТИРФ</a></li>
+                                        <li><a href="#">Меры поддержки</a></li>
+                                        <li><a href="#">Документы</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="header-search">
+                        <div class="container">
+                            <form action="#" method="post">
+                                <div class="header-search-input"><input type="text" name="search" value="" placeholder="Что ищем?" /></div>
+                                <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-top-search"></use></svg><span>Искать</span></button></div>
+                            </form>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs"><a href="#">Портал НТИ</a><span>—</span><a href="#">Оборудование</a><span>—</span>Поиск оборудования</div>
+
+                    <h1>Поиск оборудования</h1>
+
+                    <!-- catalogue filter -->
+                    <div class="catalogue-filter">
+                        <div class="catalogue-filter-header">
+                            <div class="catalogue-filter-link"><a href="#" class="btn-border btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg><span>Фильтр</span></a></div>
+                            <div class="catalogue-filter-options"></div>
+                        </div>
+
+                        <div class="catalogue-filter-sort" data-name="sort">
+                            <div class="catalogue-filter-sort-title">Сортировать по:</div>
+                            <div class="catalogue-filter-sort-item"><a href="#" data-value="rating" data-valueup="ratingup" class="active"><span>По рейтингу</span><svg><use xlink:href="images/sprite.svg#catalogue-sort-arrow"></use></svg></a></div>
+                            <div class="catalogue-filter-sort-item"><a href="#" data-value="name" data-valueup="nameup"><span>По названию</span><svg><use xlink:href="images/sprite.svg#catalogue-sort-arrow"></use></svg></a></div>
+
+                            <div class="catalogue-filter-view">
+                                <a href="#" data-type="view-rows"><svg class="catalogue-view-rows"><use xlink:href="images/sprite.svg#catalogue-view-rows"></use></svg></a>
+                                <a href="#" data-type="views-cards" class="active"><svg class="catalogue-view-cards"><use xlink:href="images/sprite.svg#catalogue-view-cards"></use></svg></a>
+                            </div>
+                        </div>
+
+                        <div class="catalogue-filter-container">
+                            <form action="ajax/equipments.html" method="post">
+
+                                <div class="catalogue-filter-section">
+                                    <a href="#" class="catalogue-filter-section-title">Основное<span><svg><use xlink:href="images/sprite.svg#catalogue-filter-section-title"></use></svg></span></a>
+
+                                    <div class="catalogue-filter-section-content">
+                                        <div class="catalogue-filter-row">
+                                            <div class="catalogue-filter-field">
+                                                <div class="form-label">Название</div>
+                                                <div class="form-input"><input type="text" name="name" value="" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#form-input-clear"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!-- catalogue filter END -->
+
+                    <!-- catalogue container -->
+                    <div class="catalogue-container">
+
+                        <!-- equipments -->
+                        <div class="equipments">
+                            <div class="equipments-item">
+                                <a href="#">
+                                    <div class="equipments-item-inner">
+                                        <div class="equipments-item-code">3216</div>
+                                        <div class="equipments-item-title">Жидкостный экструзионный порозиметр LEP-100</div>
+                                        <div class="equipments-item-subtitle">Leica | Leica Absolute Tracker ATS600 <strong>2014</strong></div>
+                                        <div class="equipments-item-ckp"><img src="files/services-ckp-1.svg" alt="" />Центр коллективного пользования Идентификация и&nbsp;оценка биотехнологического потенциала микроорганизмов»</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="equipments-item">
+                                <a href="#">
+                                    <div class="equipments-item-inner">
+                                        <div class="equipments-item-code">3216</div>
+                                        <div class="equipments-item-title">Программно-аппаратный комплекс автоматизации измерений на базе комплекса автоматизации измерений ACTest Platform 8x</div>
+                                        <div class="equipments-item-subtitle">Leica | Leica Absolute Tracker ATS600 <strong>2014</strong></div>
+                                        <div class="equipments-item-ckp"><img src="files/services-ckp-2.svg" alt="" />Ботанический сад НИУ «БелГУ»</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="equipments-item">
+                                <a href="#">
+                                    <div class="equipments-item-inner">
+                                        <div class="equipments-item-code">3216</div>
+                                        <div class="equipments-item-title">Жидкостный экструзионный порозиметр LEP-100</div>
+                                        <div class="equipments-item-subtitle">Leica | Leica Absolute Tracker ATS600 <strong>2014</strong></div>
+                                        <div class="equipments-item-ckp"><img src="files/services-ckp-1.svg" alt="" />Центр коллективного пользования Идентификация и&nbsp;оценка биотехнологического потенциала микроорганизмов»</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="equipments-item">
+                                <a href="#">
+                                    <div class="equipments-item-inner">
+                                        <div class="equipments-item-code">3216</div>
+                                        <div class="equipments-item-title">Программно-аппаратный комплекс автоматизации измерений на базе комплекса автоматизации измерений ACTest Platform 8x</div>
+                                        <div class="equipments-item-subtitle">Leica | Leica Absolute Tracker ATS600 <strong>2014</strong></div>
+                                        <div class="equipments-item-ckp"><img src="files/services-ckp-2.svg" alt="" />Ботанический сад НИУ «БелГУ»</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- equipments END -->
+
+                    </div>
+                    <!-- catalogue container END -->
+
+                    <!-- catalogue paging -->
+                    <div class="catalogue-paging">
+
+                        <div class="pager">
+                            <a href="#" class="pager-prev" data-value="prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                            <a href="#" class="active" data-value="1">1</a>
+                            <a href="#" data-value="2">2</a>
+                            <a href="#" data-value="3">3</a>
+                            <span>...</span>
+                            <a href="#" data-value="13">13</a>
+                            <a href="#" data-value="14">14</a>
+                            <a href="#" class="pager-next" data-value="next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                        </div>
+
+                        <div class="catalogue-page-size">
+                            <div class="catalogue-page-size-title">На странице:</div>
+                            <div class="catalogue-page-size-value">
+                                <div class="catalogue-page-size-select">
+                                    <div class="catalogue-page-size-select-current"><span>20</span><svg><use xlink:href="images/sprite.svg#news-search-select-current"></use></svg></div>
+                                    <div class="catalogue-page-size-select-list">
+                                        <div class="catalogue-page-size-select-item">
+                                            <label><input type="radio" name="size" value="20" checked="checked" /><span>20</span></label>
+                                        </div>
+                                        <div class="catalogue-page-size-select-item">
+                                            <label><input type="radio" name="size" value="40" /><span>40</span></label>
+                                        </div>
+                                        <div class="catalogue-page-size-select-item">
+                                            <label><input type="radio" name="size" value="60" /><span>60</span></label>
+                                        </div>
+                                        <div class="catalogue-page-size-select-item">
+                                            <label><input type="radio" name="size" value="80" /><span>80</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- catalogue paging END -->
+
+                </div>
+                <!-- container END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="container">
+
+                <div class="footer-container">
+                    <div class="footer-nav">
+                        <div class="footer-title">Инфраструктура<svg><use xlink:href="images/sprite.svg#footer-title"></use></svg></div>
+                        <ul>
+                            <li><a href="#">Каталог ЦКП</a></li>
+                            <li><a href="#">Каталог УНУ</a></li>
+                            <li><a href="#">Ремонт оборудования</a></li>
+                            <li><a href="#">Аналитика</a></li>
+                            <li><a href="#">Меры поддержки</a></li>
+                            <li><a href="#">НТИ России</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-nav">
+                        <div class="footer-title">Разделы<svg><use xlink:href="images/sprite.svg#footer-title"></use></svg></div>
+                        <ul>
+                            <li><a href="#">Поддержка</a></li>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Документы</a></li>
+                        </ul>
+                        <div class="footer-status"><a href="#"><svg><use xlink:href="images/sprite.svg#header-top-status"></use></svg>Статус заявки</a></div>
+                    </div>
+
+                    <div class="footer-contacts">
+                        <div class="footer-title">Контакты</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-address"></use></svg>ФГБУ РИЭПП: 127254, Москва, ул. Добролюбова, 20А</div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-email"></use></svg><a href="mailto:info@riep.ru">info@riep.ru</a></div>
+                        <div class="footer-contacts-text"><svg><use xlink:href="images/sprite.svg#footer-phone"></use></svg><a href="tel:+74959162884">+7 (495) 916-2884</a></div>
+                        <div class="footer-links">
+                            <a href="#">Карта сайта</a><span>|</span><a href="#">Пользовательское соглашение</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-resources">
+                    <div class="footer-title">Ресурсы</div>
+                    <ul>
+                        <li><a href="#">Научно-техниеское развитие РФ</a></li>
+                        <li><a href="#">Научные центры мирового уровня</a></li>
+                        <li><a href="#">Агрегатор фондов</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-mobile">
+                    <a href="#">Карта сайта</a><span>|</span><a href="#">Пользовательское соглашение</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo-main"></use></svg></div>
+                    <div class="footer-support">
+                        <div class="footer-support-title">Портал разработан при поддержке</div>
+                        <div class="footer-support-logo"><img src="images/footer-support.png" alt="" /></div>
+                    </div>
+                    <div class="footer-copyrights">© Реализация и сопровождение: <img src="images/footer-riepp.svg" alt="" /></div>
+                </div>
+            </div>
+        </footer>
+
+        <a href="#" class="up-link"><svg><use xlink:href="images/sprite.svg#up-link"></use></svg></a>
+        <div class="social-links">
+            <div class="social-links-icon"><svg><use xlink:href="images/sprite.svg#social-links"></use></svg></div>
+            <div class="social-links-content">
+                <div class="social-links-block">
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-vk"></use></svg></a></div>
+                </div>
+                <div class="social-links-block">
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-whatsapp"></use></svg></a></div>
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-skype"></use></svg></a></div>
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-telegram"></use></svg></a></div>
+                </div>
+                <div class="social-links-block">
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-feedback"></use></svg></a></div>
+                    <div class="social-links-block-item"><a href="#"><svg><use xlink:href="images/sprite.svg#social-link-phone"></use></svg></a></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/air-datepicker/datepicker.min.js"></script>
+        <script src="js/fileupload/jquery.ui.widget.js"></script>
+        <script src="js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="js/fileupload/jquery.fileupload.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
