@@ -118,9 +118,9 @@
                                     <a href="#">Оборудование<svg><use xlink:href="images/sprite.svg#header-nav-arrow"></use></svg></a>
                                     <ul>
                                         <li><a href="#">Поиск оборудования</a></li>
-                                        <li><a href="#">Продажа</a></li>
+                                        <li class="active"><a href="#">Продажа</a></li>
                                         <li><a href="#">Ремонт</a></li>
-                                        <li class="active"><a href="#">Каталог производителей оборудования</a></li>
+                                        <li><a href="#">Каталог производителей оборудования</a></li>
                                         <li><a href="#">Каталог сервисов по ремонту</a></li>
                                     </ul>
                                 </li>
@@ -158,26 +158,9 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">Портал НТИ</a><span>—</span>Производители научного оборудования</div>
+                    <div class="breadcrumbs"><a href="#">Портал НТИ</a><span>—</span>Объявления о продаже оборудования ЦКП</div>
 
-                    <h1>Производители научного оборудования</h1>
-
-                    <div class="manufacturers-digits">
-                        <div class="manufacturers-digits-inner">
-                            <div class="manufacturers-digit manufacturers-digit-main">
-                                <div class="manufacturers-digit-title">Количество производителей</div>
-                                <div class="manufacturers-digit-value">333</div>
-                            </div>
-                            <div class="manufacturers-digit">
-                                <div class="manufacturers-digit-title">Количество Российских филиалов производителей</div>
-                                <div class="manufacturers-digit-value">316</div>
-                            </div>
-                            <div class="manufacturers-digit">
-                                <div class="manufacturers-digit-title">Количество стран происхождения производителей</div>
-                                <div class="manufacturers-digit-value">29</div>
-                            </div>
-                        </div>
-                    </div>
+                    <h1>Объявления о продаже оборудования</h1>
 
                     <!-- catalogue filter -->
                     <div class="catalogue-filter">
@@ -198,7 +181,7 @@
                         </div>
 
                         <div class="catalogue-filter-container">
-                            <form action="ajax/manufacturers.html" method="post">
+                            <form action="ajax/sale.html" method="post">
 
                                 <div class="catalogue-filter-section">
                                     <a href="#" class="catalogue-filter-section-title">Основное<span><svg><use xlink:href="images/sprite.svg#catalogue-filter-section-title"></use></svg></span></a>
@@ -221,150 +204,105 @@
                     <!-- catalogue container -->
                     <div class="catalogue-container">
 
-                        <!-- manufacturers -->
-                        <div class="manufacturers">
-                            <div class="manufacturers-item">
+                        <!-- sale -->
+                        <div class="sale">
+                            <div class="sale-item">
                                 <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-logo"><img src="files/manufacturers-1.png" alt="" /></div>
-                                            <div class="manufacturers-item-title">A&D Company, Ltd.</div>
+                                    <div class="sale-item-inner">
+                                        <div class="sale-item-code">3205700</div>
+                                        <div class="sale-item-date">27.03.2022</div>
+                                        <div class="sale-item-text">
+                                            <div class="sale-item-title">Радиометр-спектрометр, производство Радэк</div>
+                                            <div class="sale-item-subtitle">Leica | Leica Absolute Tracker ATS600 <strong>2014</strong></div>
                                         </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/JP - Japan.svg" alt="" />Япония</div>
+                                        <div class="sale-item-info">
+                                            <div class="sale-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Краснодарский край, г. Краснодар</div>
+                                            <div class="sale-item-ckp"><img src="files/services-ckp-1.svg" alt="" />Федеральное государственное бюджетное учреждение науки Институт молекулярной биологии им. В.А. Энгельгардта Российской академии наук</div>
+                                        </div>
+                                        <div class="sale-item-params">
+                                            <div class="sale-item-price"><svg><use xlink:href="images/sprite.svg#sale-item-price"></use></svg>25 000 рублей</div>
+                                            <div class="sale-item-status"><span style="background-color:#9dfb85">Рабочее состояние</span></div>
+                                        </div>
+                                        <div class="sale-item-btns">
+                                            <span data-href="windows/popup.html" class="sale-item-btn-feedback window-link" title="Написать"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg></span>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="manufacturers-item">
+                            <div class="sale-item">
                                 <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-logo"><img src="files/manufacturers-2.png" alt="" /></div>
-                                            <div class="manufacturers-item-title">Aanderaa Data Instruments AS</div>
-                                            <div class="manufacturers-item-title-other">AADI</div>
+                                    <div class="sale-item-inner">
+                                        <div class="sale-item-code">3205700</div>
+                                        <div class="sale-item-date">27.03.2022</div>
+                                        <div class="sale-item-text">
+                                            <div class="sale-item-title">Прибор для проведения полимеразной цепной реакции в режиме реального времени rotor-Gene Q&nbsp;Rotor-Gene Q 5 plex HRM (Qiagen)</div>
+                                            <div class="sale-item-subtitle">Leica | Leica Absolute Tracker ATS600 <strong>2014</strong></div>
                                         </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/NO - Norway.svg" alt="" />Норвегия</div>
+                                        <div class="sale-item-info">
+                                            <div class="sale-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Краснодарский край, г. Краснодар</div>
+                                            <div class="sale-item-ckp"><img src="files/services-ckp-1.svg" alt="" />Центр коллективного пользования технологичным оборудованием по&nbsp;направлениям: геномные и постгеномные технологии; физиолого-биохимические и микробиологические исследования; почвенные, агрохимические и экотоксикологические исследования; пищевая безопасность</div>
+                                        </div>
+                                        <div class="sale-item-params">
+                                            <div class="sale-item-price"><svg><use xlink:href="images/sprite.svg#sale-item-price"></use></svg>Цена договорная</div>
+                                            <div class="sale-item-status"><span style="background-color:#fbe885">Требуется ремонт</span></div>
+                                        </div>
+                                        <div class="sale-item-btns">
+                                            <span data-href="windows/popup.html" class="sale-item-btn-feedback window-link" title="Написать"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg></span>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="manufacturers-item">
+                            <div class="sale-item">
                                 <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-logo"><img src="files/manufacturers-3.png" alt="" /></div>
-                                            <div class="manufacturers-item-title">Agilent Technologies, Inc.</div>
-                                            <div class="manufacturers-item-title-other">Agilent</div>
+                                    <div class="sale-item-inner">
+                                        <div class="sale-item-code">3205700</div>
+                                        <div class="sale-item-date">27.03.2022</div>
+                                        <div class="sale-item-text">
+                                            <div class="sale-item-title">Прибор для проведения полимеразной цепной реакции в режиме реального времени rotor-Gene Q&nbsp;Rotor-Gene Q 5 plex HRM (Qiagen)</div>
+                                            <div class="sale-item-subtitle">Leica | Leica Absolute Tracker ATS600 <strong>2014</strong></div>
                                         </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/US - United States.svg" alt="" />Соединённые Штаты Америки</div>
+                                        <div class="sale-item-info">
+                                            <div class="sale-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Краснодарский край, г. Краснодар</div>
+                                            <div class="sale-item-ckp"><img src="files/services-ckp-1.svg" alt="" />Центр коллективного пользования технологичным оборудованием по&nbsp;направлениям: геномные и постгеномные технологии; физиолого-биохимические и микробиологические исследования; почвенные, агрохимические и экотоксикологические исследования; пищевая безопасность</div>
+                                        </div>
+                                        <div class="sale-item-params">
+                                            <div class="sale-item-price"><svg><use xlink:href="images/sprite.svg#sale-item-price"></use></svg>Цена договорная</div>
+                                            <div class="sale-item-status"><span style="background-color:#fbe885">Требуется ремонт</span></div>
+                                        </div>
+                                        <div class="sale-item-btns">
+                                            <span data-href="windows/popup.html" class="sale-item-btn-feedback window-link" title="Написать"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg></span>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <div class="manufacturers-item">
+                            <div class="sale-item">
                                 <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">Analytik Jena GmbH</div>
+                                    <div class="sale-item-inner">
+                                        <div class="sale-item-code">3205700</div>
+                                        <div class="sale-item-date">27.03.2022</div>
+                                        <div class="sale-item-text">
+                                            <div class="sale-item-title">Радиометр-спектрометр, производство Радэк</div>
+                                            <div class="sale-item-subtitle">Leica | Leica Absolute Tracker ATS600 <strong>2014</strong></div>
                                         </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/DE - Germany.svg" alt="" />Германия</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="manufacturers-item">
-                                <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">Andreas Hettich GmbH & Co. KG</div>
+                                        <div class="sale-item-info">
+                                            <div class="sale-item-city"><svg><use xlink:href="images/sprite.svg#catalogue-address"></use></svg>Краснодарский край, г. Краснодар</div>
+                                            <div class="sale-item-ckp"><img src="files/services-ckp-1.svg" alt="" />Федеральное государственное бюджетное учреждение науки Институт молекулярной биологии им. В.А. Энгельгардта Российской академии наук</div>
                                         </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/DE - Germany.svg" alt="" />Германия</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="manufacturers-item">
-                                <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">Anton Paar Group AG</div>
-                                            <div class="manufacturers-item-title-other">Anton Paar GmbH; Santner Foundation</div>
+                                        <div class="sale-item-params">
+                                            <div class="sale-item-price"><svg><use xlink:href="images/sprite.svg#sale-item-price"></use></svg>25 000 рублей</div>
+                                            <div class="sale-item-status"><span style="background-color:#9dfb85">Рабочее состояние</span></div>
                                         </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/AT - Austria.svg" alt="" />Австрия</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="manufacturers-item">
-                                <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">A&D Company, Ltd.</div>
+                                        <div class="sale-item-btns">
+                                            <span data-href="windows/popup.html" class="sale-item-btn-feedback window-link" title="Написать"><svg><use xlink:href="images/sprite.svg#catalogue-feedback"></use></svg></span>
                                         </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/JP - Japan.svg" alt="" />Япония</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="manufacturers-item">
-                                <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">Aanderaa Data Instruments AS</div>
-                                            <div class="manufacturers-item-title-other">AADI</div>
-                                        </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/NO - Norway.svg" alt="" />Норвегия</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="manufacturers-item">
-                                <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">Agilent Technologies, Inc.</div>
-                                            <div class="manufacturers-item-title-other">Agilent</div>
-                                        </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/US - United States.svg" alt="" />Соединённые Штаты Америки</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="manufacturers-item">
-                                <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">Analytik Jena GmbH</div>
-                                        </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/DE - Germany.svg" alt="" />Германия</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="manufacturers-item">
-                                <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">Andreas Hettich GmbH & Co. KG</div>
-                                        </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/DE - Germany.svg" alt="" />Германия</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="manufacturers-item">
-                                <a href="#">
-                                    <div class="manufacturers-item-inner">
-                                        <div class="manufacturers-item-text">
-                                            <div class="manufacturers-item-title">Anton Paar Group AG</div>
-                                            <div class="manufacturers-item-title-other">Anton Paar GmbH; Santner Foundation</div>
-                                        </div>
-                                        <div class="catalogue-item-city"><img src="files/flags/AT - Austria.svg" alt="" />Австрия</div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <!-- manufacturers END -->
+                        <!-- sale END -->
 
                     </div>
                     <!-- catalogue container END -->

@@ -135,6 +135,75 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.gallery').each(function() {
+        var curGallery = $(this);
+        curGallery.on('init', function(event, slick) {
+            var curSlide = curGallery.find('.slick-current');
+            var curPhotoHeight = curSlide.find('.gallery-item-photo').outerHeight();
+            curGallery.find('.slick-dots').css({'top': curPhotoHeight});
+            curGallery.find('.slick-prev').css({'top': curPhotoHeight / 2});
+            curGallery.find('.slick-next').css({'top': curPhotoHeight / 2});
+        });
+        var options = {
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-page-prev"></use></svg></button>',
+            nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-page-next"></use></svg></button>',
+            adaptiveHeight: true,
+            fade: true,
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 1199,
+                    settings: {
+                        fade: false,
+                        dots: true
+                    }
+                }
+            ]
+        };
+        curGallery.slick(
+            options
+        ).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            var curSlide = curGallery.find('.slick-slide:not(.slick-cloned)').eq(nextSlide);
+            var curPhotoHeight = curSlide.find('.gallery-item-photo').outerHeight();
+            curGallery.find('.slick-dots').css({'top': curPhotoHeight});
+            curGallery.find('.slick-prev').css({'top': curPhotoHeight / 2});
+            curGallery.find('.slick-next').css({'top': curPhotoHeight / 2});
+            if (curGallery.next().hasClass('gallery-preview')) {
+                curGallery.next().find('.gallery-preview-item').removeClass('active');
+                curGallery.next().find('.gallery-preview-item').eq(nextSlide).addClass('active');
+            }
+        }).on('setPosition', function(event, slick) {
+            if (curGallery.next().hasClass('gallery-preview')) {
+                var currentSlide = curGallery.slick('slickCurrentSlide');
+                curGallery.next().find('.gallery-preview-item').removeClass('active');
+                curGallery.next().find('.gallery-preview-item').eq(currentSlide).addClass('active');
+            }
+        });
+
+        if (curGallery.next().hasClass('gallery-preview')) {
+            var galleryPreview = curGallery.next();
+            curGallery.slick('slickSetOption', 'asNavFor', galleryPreview);
+            galleryPreview.slick({
+                infinite: false,
+                slidesToShow: 8,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-page-prev"></use></svg></button>',
+                nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-page-next"></use></svg></button>',
+                adaptiveHeight: true,
+                dots: false,
+                asNavFor: curGallery
+            });
+            galleryPreview.find('.gallery-preview-item a').click(function(e) {
+                var curIndex = galleryPreview.find('.gallery-preview-item').index($(this).parent());
+                curGallery.slick('slickGoTo', curIndex);
+                e.preventDefault();
+            });
+        }
+    });
+
     $('.main-filter-detail-link a').click(function(e) {
         $(this).parents().filter('.main-filter-container').toggleClass('open');
         e.preventDefault();
@@ -175,7 +244,11 @@ $(document).ready(function() {
 
     $('body').on('click', '[data-href]', function(e) {
         if (!$(this).hasClass('window-link')) {
-            window.location = $(this).attr('data-href');
+            if ($(this).attr('data-target') == '_blank') {
+                window.open($(this).attr('data-href'));
+            } else {
+                window.location = $(this).attr('data-href');
+            }
             e.preventDefault();
         }
     });
@@ -1134,6 +1207,12 @@ $(document).ready(function() {
         });
     });
 
+    $('.sale-detail-params-item-header').click(function(e) {
+        $(this).parent().toggleClass('open');
+        $(this).parent().find('.sale-detail-params-item-content').slideToggle();
+        e.preventDefault();
+    });
+
 });
 
 function initForm(curForm) {
@@ -1280,7 +1359,28 @@ function initForm(curForm) {
             options['allowClear'] = true;
         }
 
+        if (curSelect.parent().hasClass('form-select-ajax')) {
+            options['ajax'] = {
+                    url: curSelect.parent().attr('data-link'),
+                    dataType: 'json'
+            };
+            options['minimumInputLength'] = 3;
+            options['placeholder'] = curSelect.parent().attr('data-placeholder');
+        }
+
         curSelect.select2(options);
+
+        if (curForm.parents().filter('.catalogue-filter').length == 1) {
+            curSelect.on('select2:select', function(e) {
+                $(e.delegateTarget).parent().find('.select2-container').addClass('select2-container--full');
+            });
+
+            curSelect.on('select2:unselect', function(e) {
+                if (curSelect.find('option[value!=""]:selected').length == 0) {
+                    curSelect.parent().find('.select2-container').removeClass('select2-container--full');
+                }
+            });
+        }
     });
 
     curForm.find('.form-files').each(function() {
@@ -1657,6 +1757,26 @@ $(window).on('load resize', function() {
                 }
             });
         });
+
+        curList.find('.main-catalogue-all').css({'min-height': '0px'});
+
+        if ($(window).width() > 1205) {
+            curList.find('.main-catalogue-all').each(function() {
+                var curBlock = $(this);
+                var curHeight = curBlock.outerHeight();
+
+                var otherBlock = curList.find('.catalogue-item a').eq(0);
+                var otherHeight = otherBlock.outerHeight();
+
+                if (curHeight > otherHeight) {
+                    var diffHeight = curHeight - otherHeight;
+                    var titleHeight = otherBlock.find('.catalogue-item-title').outerHeight();
+                    curList.find('.catalogue-item-title').css({'min-height': (titleHeight + diffHeight) + 'px'});
+                } else {
+                    curList.find('.main-catalogue-all').css({'min-height': otherHeight + 'px'});
+                }
+            });
+        }
     });
 
     $('.services').each(function() {
@@ -1771,6 +1891,50 @@ $(window).on('load resize', function() {
         });
     });
 
+    $('.sale').each(function() {
+        var curList = $(this);
+
+        curList.find('.sale-item-text').css({'min-height': '0'});
+
+        curList.find('.sale-item-text').each(function() {
+            var curBlock = $(this);
+            var curHeight = curBlock.outerHeight();
+            var curTop = curBlock.parents().filter('.sale-item').offset().top;
+
+            curList.find('.sale-item-text').each(function() {
+                var otherBlock = $(this);
+                if (otherBlock.parents().filter('.sale-item').offset().top == curTop) {
+                    var newHeight = otherBlock.outerHeight();
+                    if (newHeight > curHeight) {
+                        curBlock.css({'min-height': newHeight + 'px'});
+                    } else {
+                        otherBlock.css({'min-height': curHeight + 'px'});
+                    }
+                }
+            });
+        });
+
+        curList.find('.sale-item-info').css({'min-height': '0'});
+
+        curList.find('.sale-item-info').each(function() {
+            var curBlock = $(this);
+            var curHeight = curBlock.outerHeight();
+            var curTop = curBlock.parents().filter('.sale-item').offset().top;
+
+            curList.find('.sale-item-info').each(function() {
+                var otherBlock = $(this);
+                if (otherBlock.parents().filter('.sale-item').offset().top == curTop) {
+                    var newHeight = otherBlock.outerHeight();
+                    if (newHeight > curHeight) {
+                        curBlock.css({'min-height': newHeight + 'px'});
+                    } else {
+                        otherBlock.css({'min-height': curHeight + 'px'});
+                    }
+                }
+            });
+        });
+    });
+
     if ($(window).width() > 1205) {
         if ($('.table-scroll').length > 0) {
             $('.table-scroll').mCustomScrollbar('destroy');
@@ -1829,6 +1993,51 @@ $(window).on('load resize', function() {
             curBlock.addClass('with-more');
         }
     });
+
+    $('.repair-regions').each(function() {
+        var curList = $(this);
+
+        curList.find('.repair-regions-item-title').css({'min-height': '0px'});
+
+        curList.find('.repair-regions-item-title').each(function() {
+            var curBlock = $(this);
+            var curHeight = curBlock.outerHeight();
+            var curTop = curBlock.parents().filter('.repair-regions-item').offset().top;
+
+            curList.find('.repair-regions-item-title').each(function() {
+                var otherBlock = $(this);
+                if (otherBlock.parents().filter('.repair-regions-item').offset().top == curTop) {
+                    var newHeight = otherBlock.outerHeight();
+                    if (newHeight > curHeight) {
+                        curBlock.css({'min-height': newHeight + 'px'});
+                    } else {
+                        otherBlock.css({'min-height': curHeight + 'px'});
+                    }
+                }
+            });
+        });
+
+        curList.find('.repair-regions-item-inner').css({'min-height': '0px'});
+
+        curList.find('.repair-regions-item-inner').each(function() {
+            var curBlock = $(this);
+            var curHeight = curBlock.outerHeight();
+            var curTop = curBlock.parents().filter('.repair-regions-item').offset().top;
+
+            curList.find('.repair-regions-item-inner').each(function() {
+                var otherBlock = $(this);
+                if (otherBlock.parents().filter('.repair-regions-item').offset().top == curTop) {
+                    var newHeight = otherBlock.outerHeight();
+                    if (newHeight > curHeight) {
+                        curBlock.css({'min-height': newHeight + 'px'});
+                    } else {
+                        otherBlock.css({'min-height': curHeight + 'px'});
+                    }
+                }
+            });
+        });
+    });
+
 });
 
 $(window).on('load resize scroll', function() {
