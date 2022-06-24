@@ -163,7 +163,21 @@
                     <h1>Научно-технологическая инфраструктура России</h1>
 
                     <div class="ntr-header">
-                        <div class="ntr-filter-link"><a href="#" class="btn btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg>Фильтр<strong></strong></a></div>
+                        <div class="ntr-filter-link"><a href="#" class="btn-border btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg>Фильтр<strong></strong></a></div>
+                        <div class="ntr-city">
+                            <div class="ntr-city-link"><a href="#" class="btn-border btn-mini"><svg class="btn-filter"><use xlink:href="images/sprite.svg#btn-filter"></use></svg>Выбрать город</a></div>
+                            <div class="ntr-city-container">
+                                <div class="ntr-city-inner">
+                                    <div class="ntr-city-content">
+                                        <form action="#" method="post">
+                                            <div class="ntr-city-search"><input type="text" name="search" value="" placeholder="Поиск" /><svg><use xlink:href="images/sprite.svg#ntr-city-search"></use></svg></div>
+                                            <div class="ntr-city-list">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="ntr-map-zoom">
                             <a href="#" class="ntr-map-zoom-inc"><svg><use xlink:href="images/sprite.svg#ntr-map-zoom-inc"></use></svg></a>
                             <a href="#" class="ntr-map-zoom-dec"><svg><use xlink:href="images/sprite.svg#ntr-map-zoom-dec"></use></svg></a>
@@ -184,161 +198,6 @@
                                 </div>
 
                                 <div class="ntr-filter-list">
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[01]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Центры коллективного пользования научным оборудованием</span>
-                                                <span class="ntr-filter-item-count">654</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[02]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Уникальные научные установки</span>
-                                                <span class="ntr-filter-item-count">78</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[03]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Наукограды</span>
-                                                <span class="ntr-filter-item-count">15</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[04]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Особые экономические зоны</span>
-                                                <span class="ntr-filter-item-count">654</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[05]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Инновационные территориальные кластеры</span>
-                                                <span class="ntr-filter-item-count">78</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[06]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Инжиниринговые центры</span>
-                                                <span class="ntr-filter-item-count">15</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[07]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Центры компетенций НТИ</span>
-                                                <span class="ntr-filter-item-count">78</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[08]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Инновационные научно-технологические центры</span>
-                                                <span class="ntr-filter-item-count">15</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[09]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Технопарки</span>
-                                                <span class="ntr-filter-item-count">654</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[10]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Центры молодёжного инновационного творчества</span>
-                                                <span class="ntr-filter-item-count">78</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[11]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Региональные партнёры центра «Сириус»</span>
-                                                <span class="ntr-filter-item-count">15</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="ntr-filter-item">
-                                        <label>
-                                            <input type="checkbox" name="types[12]" />
-                                            <span class="ntr-filter-item-inner">
-                                                <span class="ntr-filter-item-title">Кванториумы</span>
-                                                <span class="ntr-filter-item-count">654</span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#"><svg><use xlink:href="images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>
-                                                <span class="ntr-filter-item-link"><a href="#" download><svg><use xlink:href="images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>
-                                            </span>
-                                        </label>
-                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -347,93 +206,2874 @@
                     <div class="ntr-map"></div>
                     <script src="js/russia.js"></script>
                     <script>
-                        var ntrData = [
-                            //  [id region, value]
-                            [1, 62.3396431015904],
-                            [2, 61.3845393025735],
-                            [3, 56.5250757722472],
-                            [4, 60.2496544290141],
-                            [5, 63.4176635798853],
-                            [6, 65.4532439664129],
-                            [7, 67.6196719804891],
-                            [8, 55.6090871083406],
-                            [9, 64.2763543198577],
-                            [10, 60.37568551374],
-                            [11, 55.8962392856042],
-                            [12, 57.4335777426581],
-                            [13, 62.8134671138023],
-                            [14, 54.1522171733543],
-                            [15, 63.9420390395865],
-                            [16, 56.5342091283137],
-                            [17, 47.6976680823794],
-                            [18, 56.1291303140178],
-                            [19, 58.1900943996378],
-                            [20, 62.9543589203461],
-                            [21, 51.1684086795895],
-                            [22, 63.5799494567149],
-                            [23, 65.3886873905704],
-                            [24, 63.4789015513596],
-                            [25, 63.4486320126664],
-                            [26, 63.3129423372719],
-                            [27, 59.6179362635706],
-                            [28, 61.0523008354161],
-                            [29, 64.4475233601957],
-                            [30, 61.4827607254067],
-                            [31, 64.5069253752198],
-                            [32, 69.1391955771586],
-                            [33, 64.4132237293047],
-                            [34, 57.9116807481239],
-                            [35, 59.6367862311395],
-                            [36, 64.7757027248831],
-                            [37, 61.1932126689278],
-                            [38, 59.9815241618522],
-                            [39, 56.0416602663478],
-                            [40, 62.8467759337872],
-                            [41, 56.2216014533254],
-                            [42, 60.6721958517353],
-                            [43, 63.3281614896506],
-                            [44, 63.8709213927713],
-                            [45, 65.6449432784793],
-                            [46, 68.3697973753674],
-                            [47, 59.2460425952459],
-                            [48, 64.7009837963839],
-                            [49, 55.7704701862888],
-                            [50, 65.2475560105441],
-                            [51, 61.221412632048],
-                            [52, 65.7733731036948],
-                            [53, 60.1986529655848],
-                            [54, 62.1139727817225],
-                            [55, 60.9449082724485],
-                            [56, 64.8683466151667],
-                            [57, 66.5599321852598],
-                            [58, 66.2390385107507],
-                            [59, 56.1728085643189],
-                            [60, 62.9360929560895],
-                            [61, 63.9183216103248],
-                            [62, 64.4245203426067],
-                            [63, 64.5763333865659],
-                            [64, 66.2507486941228],
-                            [65, 59.7463907610996],
-                            [66, 60.6019420273535],
-                            [67, 64.676607107772],
-                            [68, 70.744112279745],
-                            [69, 69.9795663312026],
-                            [70, 60.5095200661781],
-                            [71, 69.9269902419114],
-                            [72, 61.5332829422192],
-                            [73, 58.8270123663865],
-                            [74, 64.25205754813],
-                            [75, 59.2658829676063],
-                            [76, 62.7469586990751],
-                            [77, 54.7546339753762],
-                            [78, 58.4687319331747],
-                            [79, 61.4632446599439],
-                            [83, 62.3186869114697],
-                            [86, 62.3841882088523],
-                            [87, 63.76551010439],
-                            [89, 63.5612931634194],
-                            [91, 61.8816435305721],
-                            [92, 53.6011512537402]
+                        var ntrTypes = [
+                            {
+                                id: 'ckp',
+                                title: 'Центры коллективного пользования научным оборудованием',
+                                pupup_title: 'ЦКП',
+                                count: 658,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'unu',
+                                title: 'Уникальные научные установки',
+                                count: 401,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'city',
+                                title: 'Наукограды',
+                                count: 13,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'oez',
+                                title: 'Особые экономические зоны',
+                                count: 33,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'itc',
+                                title: 'Инновационные территориальные кластеры',
+                                count: 28,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'ic',
+                                title: 'Инжиниринговые центры',
+                                count: 72,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'nti',
+                                title: 'Центры компетенций НТИ',
+                                count: 21,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'intc',
+                                title: 'Инновационные научно-технологические центры',
+                                count: 14,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'techno',
+                                title: 'Технопарки',
+                                count: 155,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'cmit',
+                                title: 'Центры молодёжного инновационного творчества',
+                                count: 245,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'sirius',
+                                title: 'Региональные партнёры центра «Сириус»',
+                                count: 69,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            },
+                            {
+                                id: 'quant',
+                                title: 'Кванториумы',
+                                count: 124,
+                                link_list: '#',
+                                link_results: '#',
+                                link_download: '#'
+                            }
+                        ];
+                        var ntrCities = [
+                            {
+                                id: 0,
+                                title: 'г. Москва',
+                                region: 77,
+                                coords: [55.7538789, 37.6203735],
+                                objects: [
+                                    ['ckp', 138, '#'],
+                                    ['unu', 117, '#'],
+                                    ['ic', 15, '#'],
+                                    ['nti', 8, '#'],
+                                    ['intc', 2, '#'],
+                                    ['techno', 37, '#'],
+                                    ['cmit', 55, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 1,
+                                title: 'г. Санкт-Петербург',
+                                region: 78,
+                                coords: [59.939125, 30.3158225],
+                                objects: [
+                                    ['ckp', 44, '#'],
+                                    ['unu', 38, '#'],
+                                    ['ic', 5, '#'],
+                                    ['nti', 3, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 8, '#'],
+                                    ['cmit', 4, '#'],
+                                    ['sirius', 2, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 2,
+                                title: 'г. Новосибирск',
+                                region: 54,
+                                coords: [55.0281016, 82.9210575],
+                                objects: [
+                                    ['ckp', 42, '#'],
+                                    ['unu', 18, '#'],
+                                    ['nti', 2, '#'],
+                                    ['techno', 3, '#'],
+                                    ['cmit', 3, '#'],
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 3,
+                                title: 'г. Владивосток',
+                                region: 25,
+                                coords: [43.1089, 131.9001],
+                                objects: [
+                                    ['ckp', 19, '#'],
+                                    ['unu', 6, '#'],
+                                    ['nti', 1, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 4,
+                                title: 'г. Иркутск',
+                                region: 38,
+                                coords: [52.2863513, 104.280655],
+                                objects: [
+                                    ['ckp', 19, '#'],
+                                    ['unu', 4, '#'],
+                                    ['ic', 2, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 3, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 5,
+                                title: 'г. Екатеринбург',
+                                region: 66,
+                                coords: [56.8386326, 60.6054887],
+                                objects: [
+                                    ['ckp', 17, '#'],
+                                    ['unu', 6, '#'],
+                                    ['ic', 2, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 3, '#'],
+                                    ['cmit', 3, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 6,
+                                title: 'г. Уфа',
+                                region: 2,
+                                coords: [54.734853, 55.9578647],
+                                objects: [
+                                    ['ckp', 16, '#'],
+                                    ['unu', 8, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['cmit', 3, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 7,
+                                title: 'г. Ставрополь',
+                                region: 26,
+                                coords: [45.0445439, 41.9690168],
+                                objects: [
+                                    ['ckp', 15, '#'],
+                                ]
+                            },
+                            {
+                                id: 8,
+                                title: 'г. Пермь',
+                                region: 59,
+                                coords: [58.0103211, 56.2341778],
+                                objects: [
+                                    ['ckp', 14, '#'],
+                                    ['unu', 12, '#'],
+                                    ['nti', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 9,
+                                title: 'г. Ростов-на-Дону',
+                                region: 61,
+                                coords: [47.2224364, 39.7187866],
+                                objects: [
+                                    ['ckp', 13, '#'],
+                                    ['ic', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 10,
+                                title: 'г. Саратов',
+                                region: 64,
+                                coords: [51.530376, 45.9530257],
+                                objects: [
+                                    ['ckp', 13, '#'],
+                                    ['unu', 1, '#'],
+                                    ['techno', 4, '#'],
+                                    ['cmit', 5, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 11,
+                                title: 'г. Томск',
+                                region: 70,
+                                coords: [56.4847036, 84.9481737],
+                                objects: [
+                                    ['ckp', 13, '#'],
+                                    ['unu', 15, '#'],
+                                    ['ic', 2, '#'],
+                                    ['nti', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 12,
+                                title: 'г. Нижний Новгород',
+                                region: 52,
+                                coords: [56.3242093, 44.0053948],
+                                objects: [
+                                    ['ckp', 12, '#'],
+                                    ['unu', 5, '#'],
+                                    ['ic', 1, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 13,
+                                title: 'г. Омск',
+                                region: 55,
+                                coords: [54.9848136, 73.3674638],
+                                objects: [
+                                    ['ckp', 11, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 14,
+                                title: 'г. Севастополь',
+                                region: 92,
+                                coords: [44.6167334, 33.5253552],
+                                objects: [
+                                    ['ckp', 9, '#'],
+                                    ['unu', 2, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 15,
+                                title: 'г. Казань',
+                                region: 16,
+                                coords: [55.7943877, 49.1115312],
+                                objects: [
+                                    ['ckp', 8, '#'],
+                                    ['unu', 1, '#'],
+                                    ['ic', 3, '#'],
+                                    ['techno', 4, '#'],
+                                    ['cmit', 4, '#'],
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 16,
+                                title: 'г. Хабаровск',
+                                region: 27,
+                                coords: [48.4647991, 135.0598811],
+                                objects: [
+                                    ['ckp', 8, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 17,
+                                title: 'г. Кемерово',
+                                region: 42,
+                                coords: [55.3909721, 86.0467864],
+                                objects: [
+                                    ['ckp', 7, '#'],
+                                    ['unu', 3, '#'],
+                                    ['ic', 1, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 3, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 18,
+                                title: 'г. Краснодар',
+                                region: 23,
+                                coords: [45.040235, 38.9760801],
+                                objects: [
+                                    ['ckp', 7, '#'],
+                                    ['unu', 6, '#'],
+                                    ['ic', 1, '#'],
+                                    ['cmit', 3, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 19,
+                                title: 'г. Орёл',
+                                region: 57,
+                                coords: [52.9672573, 36.0696479],
+                                objects: [
+                                    ['ckp', 7, '#'],
+                                    ['unu', 1, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 20,
+                                title: 'г. Тамбов',
+                                region: 68,
+                                coords: [52.7213021, 41.452258],
+                                objects: [
+                                    ['ckp', 7, '#'],
+                                    ['unu', 1, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 21,
+                                title: 'г. Воронеж',
+                                region: 36,
+                                coords: [51.6592378, 39.1968284],
+                                objects: [
+                                    ['ckp', 6, '#'],
+                                    ['unu', 3, '#'],
+                                    ['ic', 2, '#'],
+                                    ['techno', 3, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 22,
+                                title: 'г. Зеленоград',
+                                region: 77,
+                                coords: [55.9825, 37.18139],
+                                objects: [
+                                    ['ckp', 6, '#'],
+                                    ['ic', 1, '#'],
+                                    ['nti', 1, '#'],
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 23,
+                                title: 'г. Ижевск',
+                                region: 18,
+                                coords: [56.8527444, 53.2113961],
+                                objects: [
+                                    ['ckp', 6, '#'],
+                                    ['unu', 3, '#'],
+                                    ['ic', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 24,
+                                title: 'г. Самара',
+                                region: 63,
+                                coords: [53.1951657, 50.1067691],
+                                objects: [
+                                    ['ckp', 6, '#'],
+                                    ['unu', 3, '#'],
+                                    ['ic', 1, '#'],
+                                    ['nti', 1, '#'],
+                                    ['cmit', 3, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 25,
+                                title: 'г. Тюмень',
+                                region: 72,
+                                coords: [57.1530824, 65.5343118],
+                                objects: [
+                                    ['ckp', 6, '#'],
+                                    ['ic', 2, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 26,
+                                title: 'г. Улан-Удэ',
+                                region: 3,
+                                coords: [51.8334378, 107.5841511],
+                                objects: [
+                                    ['ckp', 6, '#'],
+                                    ['unu', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 27,
+                                title: 'г. Черноголовка',
+                                region: 50,
+                                coords: [56.0100909, 38.3792328],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['ckp', 6, '#'],
+                                    ['unu', 6, '#'],
+                                    ['city', 1, '#'],
+                                    ['nti', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 28,
+                                title: 'г. Грозный',
+                                region: 20,
+                                coords: [43.3179243, 45.6981102],
+                                objects: [
+                                    ['ckp', 5, '#'],
+                                    ['techno', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 29,
+                                title: 'г. Сыктывкар',
+                                region: 11,
+                                coords: [61.668789, 50.8356491],
+                                objects: [
+                                    ['ckp', 5, '#'],
+                                    ['unu', 4, '#'],
+                                    ['techno', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 30,
+                                title: 'г. Челябинск',
+                                region: 74,
+                                coords: [55.1603659, 61.4007858],
+                                objects: [
+                                    ['ckp', 5, '#'],
+                                    ['unu', 1, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 31,
+                                title: 'г. Якутск',
+                                region: 14,
+                                coords: [62.0280273, 129.7325717],
+                                objects: [
+                                    ['ckp', 5, '#'],
+                                    ['unu', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 32,
+                                title: 'г. Белгород',
+                                region: 31,
+                                coords: [50.5977351, 36.5858236],
+                                objects: [
+                                    ['ckp', 4, '#'],
+                                    ['unu', 3, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 33,
+                                title: 'г. Волгоград',
+                                region: 34,
+                                coords: [48.7072005, 44.5170207],
+                                objects: [
+                                    ['ckp', 4, '#'],
+                                    ['ic', 2, '#'],
+                                    ['cmit', 4, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 34,
+                                title: 'г. Красноярск',
+                                region: 24,
+                                coords: [56.009466, 92.8524162],
+                                objects: [
+                                    ['ckp', 4, '#'],
+                                    ['unu', 4, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 5, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 35,
+                                title: 'г. Пущино',
+                                region: 50,
+                                coords: [54.8273, 37.6165],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['ckp', 4, '#'],
+                                    ['unu', 10, '#'],
+                                    ['city', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 36,
+                                title: 'г. Таганрог',
+                                region: 61,
+                                coords: [47.2094907, 38.935154],
+                                objects: [
+                                    ['ckp', 4, '#'],
+                                    ['unu', 1, '#'],
+                                    ['ic', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 37,
+                                title: 'г. Ульяновск',
+                                region: 73,
+                                coords: [54.3080674, 48.3748717],
+                                objects: [
+                                    ['ckp', 4, '#'],
+                                    ['techno', 2, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 38,
+                                title: 'г. Астрахань',
+                                region: 30,
+                                coords: [46.3655808, 48.0559979],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 39,
+                                title: 'г. Барнаул',
+                                region: 22,
+                                coords: [53.3481145, 83.7798362],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['ic', 1, '#'],
+                                    ['cmit', 3, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 40,
+                                title: 'г. Долгопрудный',
+                                region: 50,
+                                coords: [55.9384901, 37.5100527],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['unu', 2, '#'],
+                                    ['ic', 2, '#'],
+                                    ['nti', 1, '#'],
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 41,
+                                title: 'г. Калининград',
+                                region: 39,
+                                coords: [54.7073218, 20.5072458],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['unu', 7, '#'],
+                                    ['ic', 1, '#'],
+                                    ['intc', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 42,
+                                title: 'г. Махачкала',
+                                region: 5,
+                                coords: [42.9848572, 47.5046303],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['unu', 3, '#'],
+                                    ['ic', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 43,
+                                title: 'г. Оренбург',
+                                region: 56,
+                                coords: [51.7875191, 55.1017379],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 44,
+                                title: 'г. Петрозаводск',
+                                region: 10,
+                                coords: [61.78909, 34.3596263],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['unu', 4, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 45,
+                                title: 'г. Рыбное',
+                                region: 62,
+                                coords: [54.7255937, 39.513438],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                ]
+                            },
+                            {
+                                id: 46,
+                                title: 'г. Сергиев Посад',
+                                region: 50,
+                                coords: [56.3063411, 38.1502568],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 47,
+                                title: 'г. Симферополь',
+                                region: 91,
+                                coords: [44.9482645, 34.100117],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['unu', 2, '#'],
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 48,
+                                title: 'г. Ялта',
+                                region: 91,
+                                coords: [44.416366, 34.04455],
+                                objects: [
+                                    ['ckp', 3, '#'],
+                                    ['unu', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 51,
+                                title: 'г. Апатиты',
+                                region: 0,
+                                coords: [67.5678295, 33.4067218],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 50,
+                                title: 'г. Архангельск',
+                                region: 29,
+                                coords: [64.5392985, 40.5170083],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 3, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 51,
+                                title: 'г. Брянск',
+                                region: 32,
+                                coords: [53.2420071, 34.3652716],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 52,
+                                title: 'г. Владикавказ',
+                                region: 15,
+                                coords: [43.0205039, 44.6819383],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 53,
+                                title: 'г. Голицыно',
+                                region: 50,
+                                coords: [55.6189762, 36.9855559],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 54,
+                                title: 'г. Иваново',
+                                region: 37,
+                                coords: [56.9994677, 40.9728231],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 6, '#'],
+                                    ['ic', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 55,
+                                title: 'г. Йошкар-Ола',
+                                region: 12,
+                                coords: [56.6343763, 47.8998445],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 2, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 56,
+                                title: 'г. Курск',
+                                region: 46,
+                                coords: [51.7303391, 36.1926448],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 57,
+                                title: 'г. Кызыл',
+                                region: 17,
+                                coords: [51.7191542, 94.4377234],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 58,
+                                title: 'г. Мурманск',
+                                region: 51,
+                                coords: [69.0076958, 33.0686019],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 59,
+                                title: 'г. Мытищи',
+                                region: 50,
+                                coords: [55.9104647, 37.7363702],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 60,
+                                title: 'г. Нальчик',
+                                region: 7,
+                                coords: [43.4846312, 43.6070316],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 3, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 61,
+                                title: 'г. Новочеркасск',
+                                region: 61,
+                                coords: [47.4119248, 40.1042066],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 1, '#'],
+                                    ['ic', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 62,
+                                title: 'г. Пенза',
+                                region: 58,
+                                coords: [53.1753884, 45.0347408],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['techno', 3, '#'],
+                                    ['cmit', 12, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 63,
+                                title: 'г. Протвино',
+                                region: 50,
+                                coords: [54.8706614, 37.2183307],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 1, '#'],
+                                    ['city', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 64,
+                                title: 'г. Пушкин',
+                                region: 78,
+                                coords: [59.71417, 30.39642],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 65,
+                                title: 'г. Серпухов',
+                                region: 50,
+                                coords: [54.9225396, 37.4032682],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 66,
+                                title: 'г. Тверь',
+                                region: 69,
+                                coords: [56.8585396, 35.9117898],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 67,
+                                title: 'г. Тырныауз',
+                                region: 7,
+                                coords: [43.3981939, 42.9215127],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 3, '#'],
+                                ]
+                            },
+                            {
+                                id: 68,
+                                title: 'г. Чебоксары',
+                                region: 21,
+                                coords: [56.1439378, 47.2488718],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['ic', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 69,
+                                title: 'г. Южно-Сахалинск',
+                                region: 65,
+                                coords: [46.959133, 142.7381252],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 3, '#'],
+                                    ['techno', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 3, '#'],
+                                ]
+                            },
+                            {
+                                id: 70,
+                                title: 'г. Ярославль',
+                                region: 76,
+                                coords: [57.6216145, 39.897878],
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 71,
+                                title: 'г. Азов',
+                                region: 61,
+                                coords: [47.1120631, 39.4232597],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 72,
+                                title: 'г. Анапа',
+                                region: 23,
+                                coords: [44.8950777, 37.3163142],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 73,
+                                title: 'г. Бахчисарай',
+                                region: 91,
+                                coords: [44.751388, 33.8750341],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 74,
+                                title: 'г. Безенчук',
+                                region: 63,
+                                coords: [52.982, 49.4333],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 75,
+                                title: 'г. Бийск',
+                                region: 22,
+                                coords: [52.5393683, 85.2138852],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['city', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 76,
+                                title: 'г. Благовещенск',
+                                region: 28,
+                                coords: [50.257456, 127.534611],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 77,
+                                title: 'г. Братск',
+                                region: 38,
+                                coords: [56.1513951, 101.6339892],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 78,
+                                title: 'г. Владимир',
+                                region: 33,
+                                coords: [56.1281561, 40.4082995],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 1, '#'],
+                                    ['ic', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 79,
+                                title: 'г. Вологда, с. Молочное',
+                                region: 35,
+                                coords: [59.289043, 39.676897],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 80,
+                                title: 'г. Гатчина',
+                                region: 47,
+                                coords: [59.5650861, 30.1281859],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 3, '#'],
+                                ]
+                            },
+                            {
+                                id: 81,
+                                title: 'г. Дербент',
+                                region: 5,
+                                coords: [42.058935, 48.2908653],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 82,
+                                title: 'г. Димитровград',
+                                region: 73,
+                                coords: [54.2168446, 49.6261645],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 83,
+                                title: 'г. Дмитров',
+                                region: 50,
+                                coords: [56.3477176, 37.5267184],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 3, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 84,
+                                title: 'г. Елизово',
+                                region: 41,
+                                coords: [53.1829573, 158.3882833],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 85,
+                                title: 'г. Железноводск',
+                                region: 26,
+                                coords: [44.1320689, 43.0306475],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 86,
+                                title: 'г. Жуковский',
+                                region: 50,
+                                coords: [55.5998408, 38.1224185],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 3, '#'],
+                                    ['city', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 87,
+                                title: 'г. Карачаевск',
+                                region: 9,
+                                coords: [43.773197, 41.9143726],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 88,
+                                title: 'г. Колпашево',
+                                region: 70,
+                                coords: [58.3114716, 82.9027528],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 89,
+                                title: 'г. Комсомольск-на-Амуре',
+                                region: 27,
+                                coords: [50.550011, 137.0079286],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 90,
+                                title: 'г. Липецк',
+                                region: 48,
+                                coords: [52.6103027, 39.5946266],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['techno', 3, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 91,
+                                title: 'г. Лобня',
+                                region: 50,
+                                coords: [56.0328745, 37.4614671],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 92,
+                                title: 'г. Лыткарино',
+                                region: 0,
+                                coords: [55.5778065, 37.9034952],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 93,
+                                title: 'г. Люберцы',
+                                region: 50,
+                                coords: [55.700416, 37.9606496],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 94,
+                                title: 'г. Магадан',
+                                region: 49,
+                                coords: [59.5681763, 150.8085289],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 95,
+                                title: 'г. Магас',
+                                region: 6,
+                                coords: [43.1686967, 44.8130849],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['ic', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 96,
+                                title: 'г. Магнитогорск',
+                                region: 74,
+                                coords: [53.4071891, 58.9791432],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 1, '#'],
+                                    ['ic', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 97,
+                                title: 'г. Майкоп',
+                                region: 1,
+                                coords: [44.6098268, 40.1006527],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 98,
+                                title: 'г. Миасс',
+                                region: 74,
+                                coords: [55.0455774, 60.1077757],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 99,
+                                title: 'г. Михайловск',
+                                region: 26,
+                                coords: [45.1296297, 42.028787],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['ic', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 100,
+                                title: 'г. Мичуринск',
+                                region: 68,
+                                coords: [52.891294, 40.510475],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['city', 1, '#'],
+                                    ['intc', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 101,
+                                title: 'г. Новокузнецк',
+                                region: 0,
+                                coords: [53.7942757, 87.2144046],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 102,
+                                title: 'г. Обнинск',
+                                region: 0,
+                                coords: [55.0943892, 36.6121785],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['ckp', 2, '#'],
+                                    ['unu', 7, '#'],
+                                    ['city', 1, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 103,
+                                title: 'г. Петропавловск-Камчатский',
+                                region: 0,
+                                coords: [53.0370213, 158.6559142],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 104,
+                                title: 'г. Подольск',
+                                region: 0,
+                                coords: [55.4389588, 37.57027],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 2, '#'],
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 105,
+                                title: 'г. Покров',
+                                region: 0,
+                                coords: [55.9167118, 39.1733641],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 106,
+                                title: 'г. Рыбинск',
+                                region: 0,
+                                coords: [58.0483802, 38.858338],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 107,
+                                title: 'г. Рязань',
+                                region: 0,
+                                coords: [54.625457, 39.7359992],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 2, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 108,
+                                title: 'г. Саранск',
+                                region: 0,
+                                coords: [54.1807601, 45.1862263],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 109,
+                                title: 'г. Саров',
+                                region: 0,
+                                coords: [54.9227002, 43.3447792],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 110,
+                                title: 'г. Сочи',
+                                region: 0,
+                                coords: [43.5855829, 39.7231419],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 2, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 111,
+                                title: 'г. Сургут',
+                                region: 0,
+                                coords: [61.2539773, 73.3961726],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 112,
+                                title: 'г. Теберда',
+                                region: 0,
+                                coords: [43.4438408, 41.7414924],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 113,
+                                title: 'г. Тобольск',
+                                region: 0,
+                                coords: [58.2016828, 68.2538392],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 114,
+                                title: 'г. Троицк',
+                                region: 0,
+                                coords: [55.4662, 37.3],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 9, '#'],
+                                    ['city', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 115,
+                                title: 'г. Тула',
+                                region: 0,
+                                coords: [54.192017, 37.6153885],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['ic', 1, '#'],
+                                    ['intc', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 116,
+                                title: 'г. Уссурийск',
+                                region: 0,
+                                coords: [43.79726, 131.9517262],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 117,
+                                title: 'г. Ханты-Мансийск',
+                                region: 0,
+                                coords: [61.0024344, 69.0183322],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 118,
+                                title: 'г. Цивильск',
+                                region: 0,
+                                coords: [55.8650132, 47.472967],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 119,
+                                title: 'г. Череповец',
+                                region: 0,
+                                coords: [59.1269214, 37.9092243],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 120,
+                                title: 'г. Чита',
+                                region: 0,
+                                coords: [52.0340128, 113.4994884],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['quant', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 121,
+                                title: 'г. Чупа',
+                                region: 0,
+                                coords: [66.269768, 33.051651],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 122,
+                                title: 'г. Энгельс',
+                                region: 0,
+                                coords: [51.4854893, 46.1267479],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 123,
+                                title: 'Листвянка',
+                                region: 0,
+                                coords: [undefined, undefined],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 124,
+                                title: 'п. Борок',
+                                region: 0,
+                                coords: [undefined, undefined],
+                                objects: [
+                                    ['ckp', 1, '#'],
+                                    ['unu', 2, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 125,
+                                title: 'г. Кировск (Мурманская область)',
+                                region: 0,
+                                coords: [67.5850979, 33.6337196],
+                                objects: [
+                                    ['unu', 3, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 126,
+                                title: 'г. Благовещенск (Амурская область)',
+                                region: 0,
+                                coords: [50.2605935, 127.4972186],
+                                objects: [
+                                    ['unu', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 127,
+                                title: 'г. Кольцово',
+                                region: 0,
+                                coords: [54.9096, 83.0685],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['unu', 2, '#'],
+                                    ['city', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 128,
+                                title: 'г. Чехов',
+                                region: 0,
+                                coords: [55.1207175, 37.4232591],
+                                objects: [
+                                    ['unu', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 129,
+                                title: 'г. Белогорск (Крым)',
+                                region: 0,
+                                coords: [45.02833, 34.56472],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 130,
+                                title: 'г. Дубна',
+                                region: 0,
+                                coords: [56.7142, 37.1199],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['unu', 1, '#'],
+                                    ['city', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 131,
+                                title: 'г. Истра',
+                                region: 0,
+                                coords: [55.8761087, 36.8300854],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 132,
+                                title: 'г. Кстово',
+                                region: 0,
+                                coords: [56.1133353, 44.1365081],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 133,
+                                title: 'г. Кырен',
+                                region: 0,
+                                coords: [51.6454, 102.1053],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 134,
+                                title: 'г. Одинцово',
+                                region: 0,
+                                coords: [55.6489292, 37.2336389],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 135,
+                                title: 'г. Первоуральск',
+                                region: 0,
+                                coords: [56.8781665, 59.9129205],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 136,
+                                title: 'г. Покровск',
+                                region: 0,
+                                coords: [61.4543538, 129.1182195],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 137,
+                                title: 'г. Слюдянка',
+                                region: 0,
+                                coords: [51.6262679, 103.6886877],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 138,
+                                title: 'г. Ступино',
+                                region: 0,
+                                coords: [54.8938403, 38.0886976],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 139,
+                                title: 'г. Торы',
+                                region: 0,
+                                coords: [51.7508, 102.9811],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 140,
+                                title: 'г. Туруханск',
+                                region: 0,
+                                coords: [65.7586, 87.9324],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 141,
+                                title: 'с. Витязь',
+                                region: 0,
+                                coords: [-0.03, -0.03],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 142,
+                                title: 'с. Кичи-Балык',
+                                region: 0,
+                                coords: [-0.03, -0.03],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 143,
+                                title: 'Феодосия, пгт. Курортное',
+                                region: 0,
+                                coords: [-0.03, -0.03],
+                                objects: [
+                                    ['unu', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 144,
+                                title: 'Королёв',
+                                region: 0,
+                                coords: [55.8562558, 37.7945224],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['city', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 145,
+                                title: 'Реутов',
+                                region: 0,
+                                coords: [55.698236, 37.8019443],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['city', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 146,
+                                title: 'Фрязино',
+                                region: 0,
+                                coords: [55.8990154, 37.9809171],
+                                type: {
+                                    title: 'Наукоград',
+                                    color: '#85d7fb'
+                                },
+                                objects: [
+                                    ['city', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 147,
+                                title: 'Киров (Кировская область)',
+                                region: 0,
+                                coords: [58.5585313, 49.6229219],
+                                objects: [
+                                    ['ic', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 148,
+                                title: 'Великий Новгород',
+                                region: 0,
+                                coords: [58.4764003, 31.2305051],
+                                objects: [
+                                    ['ic', 1, '#'],
+                                    ['intc', 1, '#'],
+                                    ['techno', 2, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 149,
+                                title: 'Псков',
+                                region: 0,
+                                coords: [57.774284, 28.2868188],
+                                objects: [
+                                    ['ic', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 150,
+                                title: 'Иннополис',
+                                region: 0,
+                                coords: [55.8025, 48.7814],
+                                objects: [
+                                    ['nti', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 151,
+                                title: 'Химки',
+                                region: 0,
+                                coords: [55.9036705, 37.4454154],
+                                objects: [
+                                    ['techno', 3, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 152,
+                                title: 'Великие Луки',
+                                region: 0,
+                                coords: [56.3471847, 30.565757],
+                                objects: [
+                                    ['techno', 2, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 153,
+                                title: 'Переславль-Залесский',
+                                region: 0,
+                                coords: [56.7510435, 38.8693064],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 154,
+                                title: 'Волоколамск',
+                                region: 0,
+                                coords: [56.0508121, 35.9735027],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 155,
+                                title: 'Гусев',
+                                region: 0,
+                                coords: [54.6065477, 22.2094114],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 156,
+                                title: 'Лениногорск',
+                                region: 0,
+                                coords: [54.6116917, 52.4582118],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 157,
+                                title: 'Набережные Челны',
+                                region: 0,
+                                coords: [55.7586475, 52.4108739],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                    ['cmit', 2, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 158,
+                                title: 'Сатис',
+                                region: 0,
+                                coords: [54.9301, 43.2459],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 159,
+                                title: 'Егорьевск',
+                                region: 0,
+                                coords: [55.3981326, 39.0508236],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 160,
+                                title: 'Любучаны',
+                                region: 0,
+                                coords: [55.25509, 37.55723],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 161,
+                                title: 'Нахабино',
+                                region: 0,
+                                coords: [55.8556, 37.2453],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 162,
+                                title: 'Донской',
+                                region: 0,
+                                coords: [53.9829582, 38.3522104],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 163,
+                                title: 'Рубцовск',
+                                region: 0,
+                                coords: [51.5163075, 81.2227729],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 164,
+                                title: 'Можайск',
+                                region: 0,
+                                coords: [55.5219819, 36.0390724],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 165,
+                                title: 'Узловая',
+                                region: 0,
+                                coords: [53.9881407, 38.1913104],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 166,
+                                title: 'Пушкино',
+                                region: 0,
+                                coords: [56.0254548, 37.8621438],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 167,
+                                title: 'Тольятти',
+                                region: 0,
+                                coords: [53.5356438, 49.404461],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 168,
+                                title: 'Стерлитамак',
+                                region: 0,
+                                coords: [53.6452498, 55.9465707],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 169,
+                                title: 'Сланцы',
+                                region: 0,
+                                coords: [59.1328693, 28.103106],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 170,
+                                title: 'Талдом',
+                                region: 0,
+                                coords: [56.7458993, 37.5426414],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 171,
+                                title: 'Нягань',
+                                region: 0,
+                                coords: [62.1604839, 65.4094361],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 172,
+                                title: 'Усмань',
+                                region: 0,
+                                coords: [52.0594165, 39.7414516],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 173,
+                                title: 'Киржач',
+                                region: 0,
+                                coords: [56.1635263, 38.8785035],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 174,
+                                title: 'Выкса',
+                                region: 0,
+                                coords: [55.3357103, 42.1829169],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 175,
+                                title: 'Назрань',
+                                region: 0,
+                                coords: [43.2407977, 44.779685],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 176,
+                                title: 'Балашиха',
+                                region: 0,
+                                coords: [55.8113352, 37.9531413],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 177,
+                                title: 'Старая Русса',
+                                region: 0,
+                                coords: [58.0056873, 31.3705076],
+                                objects: [
+                                    ['techno', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 178,
+                                title: 'Заречный',
+                                region: 0,
+                                coords: [53.1211009, 45.0941502],
+                                objects: [
+                                    ['cmit', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 179,
+                                title: 'Елец',
+                                region: 0,
+                                coords: [52.5401738, 38.4539121],
+                                objects: [
+                                    ['cmit', 2, '#'],
+                                ]
+                            },
+                            {
+                                id: 180,
+                                title: 'Смоленск',
+                                region: 0,
+                                coords: [54.7117168, 31.7403366],
+                                objects: [
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 181,
+                                title: 'Ковылкино',
+                                region: 0,
+                                coords: [53.9641464, 43.8441229],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 182,
+                                title: 'Георгиевск',
+                                region: 0,
+                                coords: [44.0736421, 43.3989718],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 183,
+                                title: 'Волжский',
+                                region: 0,
+                                coords: [48.7228483, 44.6712417],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 184,
+                                title: 'Сосенский',
+                                region: 0,
+                                coords: [53.981525, 35.8871458],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 185,
+                                title: 'Рузаевка',
+                                region: 0,
+                                coords: [53.9833238, 44.874116],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 186,
+                                title: 'Солнечногорск',
+                                region: 0,
+                                coords: [56.1398655, 37.0217653],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 187,
+                                title: 'Ессентуки',
+                                region: 0,
+                                coords: [43.969461, 42.7839078],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 188,
+                                title: 'Батайск',
+                                region: 0,
+                                coords: [47.063321, 39.6758382],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 189,
+                                title: 'Изобильный',
+                                region: 0,
+                                coords: [45.2934342, 41.6336448],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 190,
+                                title: 'Невинномысск',
+                                region: 0,
+                                coords: [44.5477404, 41.8726147],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 191,
+                                title: 'Пятигорск',
+                                region: 0,
+                                coords: [43.9661669, 42.9911091],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 192,
+                                title: 'Наволоки',
+                                region: 0,
+                                coords: [57.3928426, 41.8857371],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 193,
+                                title: 'Курганинск',
+                                region: 0,
+                                coords: [44.8126442, 40.5163858],
+                                objects: [
+                                    ['cmit', 2, '#'],
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 194,
+                                title: 'Мончегорск',
+                                region: 0,
+                                coords: [67.8635206, 32.8608886],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 195,
+                                title: 'Саяногорск',
+                                region: 0,
+                                coords: [53.0258226, 91.3371643],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 196,
+                                title: 'Дивногорск',
+                                region: 0,
+                                coords: [55.8827868, 92.305085],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 197,
+                                title: 'Балаково',
+                                region: 0,
+                                coords: [51.9472694, 47.7078146],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 198,
+                                title: 'Ангарск',
+                                region: 0,
+                                coords: [52.4698102, 103.8135385],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 199,
+                                title: 'Котельники',
+                                region: 0,
+                                coords: [55.584898, 37.7882865],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 200,
+                                title: 'Калининск',
+                                region: 0,
+                                coords: [51.4242917, 44.3960177],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 201,
+                                title: 'Альметьевск',
+                                region: 0,
+                                coords: [54.8263662, 52.2220654],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 202,
+                                title: 'Минусинск',
+                                region: 0,
+                                coords: [53.6355509, 91.6121866],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 203,
+                                title: 'Красногорск',
+                                region: 0,
+                                coords: [55.7568475, 37.25442],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 204,
+                                title: 'Петровск',
+                                region: 0,
+                                coords: [52.2343782, 45.3101649],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 205,
+                                title: 'Коряжма',
+                                region: 0,
+                                coords: [61.2135993, 47.0252315],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 206,
+                                title: 'Бугульма',
+                                region: 0,
+                                coords: [54.4613428, 52.7145286],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 207,
+                                title: 'Тулун',
+                                region: 0,
+                                coords: [54.4821409, 100.5029402],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 208,
+                                title: 'Мариинский Посад',
+                                region: 0,
+                                coords: [56.036968, 47.6392676],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 209,
+                                title: 'Сосновоборск',
+                                region: 0,
+                                coords: [56.0452088, 93.2603411],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 210,
+                                title: 'Зеленодольск',
+                                region: 0,
+                                coords: [55.7716751, 48.4260882],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 211,
+                                title: 'Усолье-Сибирское',
+                                region: 0,
+                                coords: [52.6817192, 103.5637694],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 212,
+                                title: 'Красноперекопск',
+                                region: 0,
+                                coords: [45.8787956, 33.7171523],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 213,
+                                title: 'Ясный',
+                                region: 0,
+                                coords: [50.9619499, 59.7993256],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 214,
+                                title: 'Мелеуз',
+                                region: 0,
+                                coords: [52.8840637, 55.8533483],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 215,
+                                title: 'Усть-Кут',
+                                region: 0,
+                                coords: [56.7178049, 105.7006883],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 216,
+                                title: 'Шумерля',
+                                region: 0,
+                                coords: [55.4211795, 46.3433534],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 217,
+                                title: 'Орехово-Зуево',
+                                region: 0,
+                                coords: [55.7401729, 38.9120711],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 218,
+                                title: 'Мамадыш',
+                                region: 0,
+                                coords: [55.6399876, 51.3378614],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 219,
+                                title: 'Черемхово',
+                                region: 0,
+                                coords: [53.0619385, 103.015119],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 220,
+                                title: 'Акъяр',
+                                region: 0,
+                                coords: [51.7821, 58.1357],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 221,
+                                title: 'Каменка',
+                                region: 0,
+                                coords: [53.1105474, 43.9718501],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 222,
+                                title: 'Шелехов',
+                                region: 0,
+                                coords: [52.1352462, 104.0223531],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 223,
+                                title: 'Старое Дрожжаное',
+                                region: 0,
+                                coords: [54.6365, 47.3351],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 224,
+                                title: 'Выборг',
+                                region: 0,
+                                coords: [60.6380748, 28.6578813],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 225,
+                                title: 'Кузнецк',
+                                region: 0,
+                                coords: [53.0381686, 46.5302497],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 226,
+                                title: 'Нижнекамск',
+                                region: 0,
+                                coords: [55.5561963, 51.739407],
+                                objects: [
+                                    ['cmit', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 227,
+                                title: 'Калуга',
+                                region: 0,
+                                coords: [54.5810439, 36.3265933],
+                                objects: [
+                                    ['sirius', 2, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 228,
+                                title: 'Абакан',
+                                region: 0,
+                                coords: [53.7973661, 91.5187792],
+                                objects: [
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 229,
+                                title: 'Нарьян-Мар',
+                                region: 0,
+                                coords: [67.7131525, 53.0819336],
+                                objects: [
+                                    ['sirius', 1, '#'],
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 230,
+                                title: 'Салехард',
+                                region: 0,
+                                coords: [66.6243568, 66.6833994],
+                                objects: [
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 231,
+                                title: 'Чапаево',
+                                region: 0,
+                                coords: [61.7252, 129.4637],
+                                objects: [
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 232,
+                                title: 'Элиста',
+                                region: 0,
+                                coords: [46.3832947, 44.3451417],
+                                objects: [
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 233,
+                                title: 'Вышний Волочёк',
+                                region: 0,
+                                coords: [57.6433326, 34.6152931],
+                                objects: [
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 234,
+                                title: 'Черкесск',
+                                region: 0,
+                                coords: [44.3018637, 42.1217829],
+                                objects: [
+                                    ['sirius', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 235,
+                                title: 'Шадринск',
+                                region: 0,
+                                coords: [56.0020152, 63.5448234],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 236,
+                                title: 'Новоуральск',
+                                region: 0,
+                                coords: [57.1621507, 60.010701],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 237,
+                                title: 'Всеволожск',
+                                region: 0,
+                                coords: [59.9340094, 30.5605834],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 238,
+                                title: 'Моздок',
+                                region: 0,
+                                coords: [43.6621209, 44.5721456],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 239,
+                                title: 'Черногорск',
+                                region: 0,
+                                coords: [53.7408425, 91.2409669],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 240,
+                                title: 'Нефтеюганск',
+                                region: 0,
+                                coords: [61.0032837, 72.5314185],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 241,
+                                title: 'Кирово-Чепецк',
+                                region: 0,
+                                coords: [58.4709921, 49.9467608],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 242,
+                                title: 'Горно-Алтайск',
+                                region: 0,
+                                coords: [51.8732681, 85.8752957],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 243,
+                                title: 'Югорск',
+                                region: 0,
+                                coords: [61.2274504, 63.2514787],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 244,
+                                title: 'Омутнинск',
+                                region: 0,
+                                coords: [58.5847684, 52.1043554],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 245,
+                                title: 'Россошь',
+                                region: 0,
+                                coords: [50.085089, 39.5375534],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 246,
+                                title: 'Ухта',
+                                region: 0,
+                                coords: [63.4714779, 53.6164202],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 247,
+                                title: 'Свободный',
+                                region: 0,
+                                coords: [51.276264, 128.0368995],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 248,
+                                title: 'Биробиджан',
+                                region: 0,
+                                coords: [48.7095975, 132.8367594],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 249,
+                                title: 'Кострома',
+                                region: 0,
+                                coords: [57.7179445, 40.9057282],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 250,
+                                title: 'Северодвинск',
+                                region: 0,
+                                coords: [64.47753, 39.7332715],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 251,
+                                title: 'Новочебоксарск',
+                                region: 0,
+                                coords: [56.024486, 47.3941429],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 252,
+                                title: 'Новороссийск',
+                                region: 0,
+                                coords: [44.6384264, 37.6837218],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 253,
+                                title: 'Кумертау',
+                                region: 0,
+                                coords: [52.6715537, 55.7119915],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 254,
+                                title: 'Ачинск',
+                                region: 0,
+                                coords: [56.1688662, 90.39449],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 255,
+                                title: 'Верхняя Пышма',
+                                region: 0,
+                                coords: [56.8907833, 60.479885],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
+                            {
+                                id: 256,
+                                title: 'Евпатория',
+                                region: 0,
+                                coords: [45.1054322, 33.2817685],
+                                objects: [
+                                    ['quant', 1, '#'],
+                                ]
+                            },
                         ];
                     </script>
 

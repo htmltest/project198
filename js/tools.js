@@ -507,117 +507,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.ntr-map').each(function() {
-        var newHTML = '';
-
-        newHTML +=  '<div class="ntr-map-img"><svg viewBox="0 0 1107.77 630.12" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></div>';
-
-        var curData = ntrData;
-
-        $('.ntr-map').html(newHTML);
-
-        if (curData !== null) {
-            var newMap = '';
-
-            for (var j = 0; j < russiaRegions.length; j++) {
-                var curRegion = russiaRegions[j];
-                for (var i = 0; i < curData.length; i++) {
-                    if (curRegion.id == curData[i][0]) {
-                        newMap += '<g data-title="' + curRegion.title + '">' + curRegion.svg + '</g>';
-                    }
-                }
-            }
-            $('.ntr-map-img svg').html(newMap);
-        }
-    });
-
-    $('body').on('click', '.ntr-map-zoom-inc', function(e) {
-        $('.ntr-map-img').css({'transform': 'translate(-1108px, -631px)', 'width': 2216, 'height': 1262, 'left': '50%', 'top': '50%'});
-        $('.ntr-map-img').data('curLeft', -1108);
-        $('.ntr-map-img').data('curTop', -631);
-        e.preventDefault();
-    });
-
-    $('body').on('click', '.ntr-map-zoom-dec', function(e) {
-        $('.ntr-map-img').css({'transform': 'none', 'width': '100%', 'height': 'auto', 'left': 'auto', 'top': 'auto'});
-        e.preventDefault();
-    });
-
-    var mapDrag = false;
-    var mapMove = false;
-    var mapMoveTimer = null;
-    var mapStartX = 0;
-    var mapStartY = 0;
-
-    var isTouchCapable = 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch || navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0;
-
-    if (!isTouchCapable) {
-        $('.ntr-map-img').on('mousedown', function(e) {
-            mapDrag = true;
-            mapStartX = e.pageX;
-            mapStartY = e.pageY;
-        });
-
-        $('.ntr-map-img').on('mousemove', function(e) {
-            if (mapDrag) {
-                mapMove = true;
-                var curLeft = Number($('.ntr-map-img').data('curLeft'));
-                var curTop = Number($('.ntr-map-img').data('curTop'));
-                var curDiffX = e.pageX;
-                var curDiffY = e.pageY;
-                curDiffX = curDiffX - mapStartX;
-                curDiffY = curDiffY - mapStartY;
-                curLeft += curDiffX;
-                curTop += curDiffY;
-                mapStartX = e.pageX;
-                mapStartY = e.pageY;
-                $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)'});
-                $('.ntr-map-img').data('curLeft', curLeft);
-                $('.ntr-map-img').data('curTop', curTop);
-            }
-        });
-
-        $(document).on('mouseup', function(e) {
-            mapDrag = false;
-            if (mapMove) {
-                window.clearTimeout(mapMoveTimer);
-                mapMoveTimer = null;
-                mapMoveTimer = window.setTimeout(function() {
-                    mapMove = false;
-                }, 100);
-            }
-        });
-    } else {
-        $('.ntr-map-img').on('touchstart', function(e) {
-            mapDrag = true;
-            mapStartX = e.originalEvent.touches[0].pageX;
-            mapStartY = e.originalEvent.touches[0].pageY;
-        });
-
-        $('.ntr-map-img').on('touchmove', function(e) {
-            if (mapDrag) {
-                var curLeft = Number($('.ntr-map-img').data('curLeft'));
-                var curTop = Number($('.ntr-map-img').data('curTop'));
-                var curDiffX = e.originalEvent.touches[0].pageX;
-                var curDiffY = e.originalEvent.touches[0].pageY;
-                curDiffX = curDiffX - mapStartX;
-                curDiffY = curDiffY - mapStartY;
-                curLeft += curDiffX;
-                curTop += curDiffY;
-                mapStartX = e.originalEvent.touches[0].pageX;
-                mapStartY = e.originalEvent.touches[0].pageY;
-                $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)'});
-                $('.ntr-map-img').data('curLeft', curLeft);
-                $('.ntr-map-img').data('curTop', curTop);
-            }
-            e.preventDefault();
-        });
-
-        $(document).on('touchend', function(e) {
-            mapDrag = false;
-        });
-    }
-
     $('.up-link').click(function(e) {
         $('html, body').animate({'scrollTop': 0});
         e.preventDefault();
@@ -1162,6 +1051,262 @@ $(document).ready(function() {
         }
     });
 
+    var timerNTR = null;
+
+    $('body').on('mouseenter', '.ntr-map-img g.ntr-map-img-city', function(e) {
+        if ($(window).width() > 1205) {
+            window.clearTimeout(timerNTR);
+            timerNTR = null;
+
+            $('.ntr-chart-map-region-hint').remove();
+            $('body').append('<div class="ntr-chart-map-region-hint">' +
+                                 '<div class="ntr-chart-map-region-hint-container">' +
+                                 '</div>' +
+                             '</div>');
+            var curLeft = $(this).offset().left;
+            var curTop = $(this).offset().top;
+            $('.ntr-chart-map-region-hint').css({'left': curLeft, 'top': curTop});
+
+            var hintHTML = '';
+            if ($(this).attr('data-type') == 'city') {
+                var curID = $(this).attr('data-id');
+                var curData = null;
+                for (var i = 0; i < ntrCities.length; i++) {
+                    if (curID == ntrCities[i].id) {
+                        curData = ntrCities[i];
+                    }
+                }
+                if (curData !== null) {
+                    hintHTML += '<div class="ntr-chart-map-region-hint-header">' +
+                                    '<div class="ntr-chart-map-region-hint-header-info">' +
+                                        '<div class="ntr-chart-map-region-hint-title">' + curData.title + '</div>';
+                    if (typeof (curData.region) != 'undefined') {
+                        var curRegion = '';
+                        for (var r = 0; r < russiaRegions.length; r++) {
+                            if (russiaRegions[r].id == curData.region) {
+                                curRegion = russiaRegions[r].title;
+                            }
+                        }
+                        hintHTML +=     '<div class="ntr-chart-map-region-hint-region">' + curRegion + '</div>';
+                    }
+                    hintHTML +=     '</div>';
+                    if (typeof (curData.type) != 'undefined') {
+                        hintHTML += '<div class="ntr-chart-map-region-hint-header-type"><span style="background-color:' + curData.type.color + '">' + curData.type.title + '</span></div>';
+                    }
+                    hintHTML += '</div>';
+                    if (typeof (curData.objects) != 'undefined') {
+                        hintHTML += '<div class="ntr-chart-map-region-hint-list">';
+                        for (var j = 0; j < curData.objects.length; j++) {
+                            var curItem = curData.objects[j];
+                            var curType = '';
+                            for (var r = 0; r < ntrTypes.length; r++) {
+                                if (ntrTypes[r].id == curItem[0]) {
+                                    curType = ntrTypes[r].title;
+                                    if (typeof (ntrTypes[r].pupup_title) != 'undefined') {
+                                        curType = ntrTypes[r].pupup_title;
+                                    }
+                                }
+                            }
+                            hintHTML += '<div class="ntr-chart-map-region-hint-item">' +
+                                            '<div class="ntr-chart-map-region-hint-item-title"><a href="' + curItem[2] + '">' + curType + '</a></div>' +
+                                            '<div class="ntr-chart-map-region-hint-item-count">' + curItem[1] + '</div>' +
+                                        '</div>';
+                        }
+                        hintHTML += '</div>';
+                    }
+                }
+            } else {
+                hintHTML += '<div class="ntr-chart-map-region-hint-title">' + $(this).attr('data-title') + '</div>';
+            }
+            $('.ntr-chart-map-region-hint-container').html(hintHTML);
+        }
+    });
+
+    $('body').on('mouseleave', '.ntr-map-img g.ntr-map-img-city', function(e) {
+        if ($(window).width() > 1205) {
+            window.clearTimeout(timerNTR);
+            timerNTR = null;
+
+            timerNTR = window.setTimeout(function() {
+                $('.ntr-chart-map-region-hint').remove();
+            }, 500);
+        }
+    });
+
+    $('body').on('mouseenter', '.ntr-chart-map-region-hint', function(e) {
+        if ($(window).width() > 1205) {
+            window.clearTimeout(timerNTR);
+            timerNTR = null;
+        }
+    });
+
+    $('body').on('mouseleave', '.ntr-chart-map-region-hint', function(e) {
+        if ($(window).width() > 1205) {
+            window.clearTimeout(timerNTR);
+            timerNTR = null;
+
+            timerNTR = window.setTimeout(function() {
+                $('.ntr-chart-map-region-hint').remove();
+            }, 500);
+        }
+    });
+
+    $('.ntr-map').each(function() {
+        var newHTML = '';
+
+        newHTML +=  '<div class="ntr-map-img"><svg viewBox="0 0 1107.77 630.12" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></div>';
+
+        $('.ntr-map').html(newHTML);
+
+        var newMap = '';
+
+        for (var i = 0; i < russiaRegions.length; i++) {
+            var curRegion = russiaRegions[i];
+            newMap += '<g>' + curRegion.svg + '</g>';
+        }
+
+        for (var i = 0; i < ntrCities.length; i++) {
+            var curData = ntrCities[i];
+            var curCoord = [curData.coords[0] * 2, curData.coords[1] * 8];
+            newMap += '<g class="ntr-map-img-city" data-type="city" data-id="' + curData.id + '"><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="10" fill="white" stroke="none" /><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="6.6724" fill="white" fill-opacity="0.5" stroke="none" /><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="5.39361" fill="white" fill-opacity="0.5" stroke="none" /><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="2.38027" fill="#FF0000" fill-opacity="1" stroke="none" /><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="3.78448" stroke="#FF0000" fill="none" fill-opacity="1" /></g>';
+        }
+        $('.ntr-map-img svg').html(newMap);
+    });
+
+    $('body').on('click', '.ntr-map-zoom-inc', function(e) {
+        $('.ntr-map-img').css({'transform': 'translate(-1108px, -631px)', 'width': 2216, 'height': 1262, 'left': '50%', 'top': '50%'});
+        $('.ntr-map-img').data('curLeft', -1108);
+        $('.ntr-map-img').data('curTop', -631);
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.ntr-map-zoom-dec', function(e) {
+        $('.ntr-map-img').css({'transform': 'none', 'width': '100%', 'height': 'auto', 'left': 'auto', 'top': 'auto'});
+        e.preventDefault();
+    });
+
+    var mapDrag = false;
+    var mapMove = false;
+    var mapMoveTimer = null;
+    var mapStartX = 0;
+    var mapStartY = 0;
+
+    var isTouchCapable = 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch || navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0;
+
+    if (!isTouchCapable) {
+        $('.ntr-map-img').on('mousedown', function(e) {
+            mapDrag = true;
+            mapStartX = e.pageX;
+            mapStartY = e.pageY;
+        });
+
+        $('.ntr-map-img').on('mousemove', function(e) {
+            if (mapDrag) {
+                mapMove = true;
+                var curLeft = Number($('.ntr-map-img').data('curLeft'));
+                var curTop = Number($('.ntr-map-img').data('curTop'));
+                var curDiffX = e.pageX;
+                var curDiffY = e.pageY;
+                curDiffX = curDiffX - mapStartX;
+                curDiffY = curDiffY - mapStartY;
+                curLeft += curDiffX;
+                curTop += curDiffY;
+                mapStartX = e.pageX;
+                mapStartY = e.pageY;
+                $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)'});
+                $('.ntr-map-img').data('curLeft', curLeft);
+                $('.ntr-map-img').data('curTop', curTop);
+            }
+        });
+
+        $(document).on('mouseup', function(e) {
+            mapDrag = false;
+            if (mapMove) {
+                window.clearTimeout(mapMoveTimer);
+                mapMoveTimer = null;
+                mapMoveTimer = window.setTimeout(function() {
+                    mapMove = false;
+                }, 100);
+            }
+        });
+    } else {
+        $('.ntr-map-img').on('touchstart', function(e) {
+            mapDrag = true;
+            mapStartX = e.originalEvent.touches[0].pageX;
+            mapStartY = e.originalEvent.touches[0].pageY;
+        });
+
+        $('.ntr-map-img').on('touchmove', function(e) {
+            if (mapDrag) {
+                var curLeft = Number($('.ntr-map-img').data('curLeft'));
+                var curTop = Number($('.ntr-map-img').data('curTop'));
+                var curDiffX = e.originalEvent.touches[0].pageX;
+                var curDiffY = e.originalEvent.touches[0].pageY;
+                curDiffX = curDiffX - mapStartX;
+                curDiffY = curDiffY - mapStartY;
+                curLeft += curDiffX;
+                curTop += curDiffY;
+                mapStartX = e.originalEvent.touches[0].pageX;
+                mapStartY = e.originalEvent.touches[0].pageY;
+                $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)'});
+                $('.ntr-map-img').data('curLeft', curLeft);
+                $('.ntr-map-img').data('curTop', curTop);
+            }
+            e.preventDefault();
+        });
+
+        $(document).on('touchend', function(e) {
+            mapDrag = false;
+        });
+    }
+
+    $('.ntr-header').each(function() {
+        var typesHTML = '';
+        for (var i = 0; i < ntrTypes.length; i++) {
+            var curType = ntrTypes[i];
+            typesHTML +=    '<div class="ntr-filter-item">' +
+                                '<label>' +
+                                    '<input type="checkbox" name="types[' + curType.id + ']" data-id="' + curType.id + '" />' +
+                                    '<span class="ntr-filter-item-inner">' +
+                                        '<span class="ntr-filter-item-title">' + curType.title + '</span>' +
+                                        '<span class="ntr-filter-item-count">' + curType.count + '</span>' +
+                                        '<span class="ntr-filter-item-link"><a href="' + curType.link_list + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#ntr-filter-item-list"></use></svg></a></span>' +
+                                        '<span class="ntr-filter-item-link"><a href="' + curType.link_results + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#ntr-filter-item-results"></use></svg></a></span>' +
+                                        '<span class="ntr-filter-item-link"><a href="' + curType.link_download + '" download><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#ntr-filter-item-download"></use></svg></a></span>' +
+                                    '</span>' +
+                                '</label>' +
+                            '</div>';
+
+        }
+        $('.ntr-filter-list').html(typesHTML);
+
+        var regionsHTML = '';
+        for (var i = 0; i < russiaRegions.length; i++) {
+            var curRegion = russiaRegions[i];
+            var citiesHTML = '';
+            for (var j = 0; j < ntrCities.length; j++) {
+                if (ntrCities[j].region == curRegion.id) {
+                    var curCount = 0;
+                    for (var k = 0; k < ntrCities[j].objects.length; k++) {
+                        curCount += Number(ntrCities[j].objects[k][1]);
+                    }
+                    citiesHTML +=   '<li><span data-id="' + ntrCities[j].id + '">' + ntrCities[j].title + '<em>' + curCount + '</em></span></li>';
+                }
+            }
+            if (citiesHTML != '') {
+                regionsHTML +=  '<div class="ntr-city-group">' +
+                                    '<div class="ntr-city-group-title">' + curRegion.title + '<svg><use xlink:href="images/sprite.svg#ntr-city-group-title"></use></svg></div>' +
+                                        '<div class="ntr-city-group-content">' +
+                                            '<ul>' +
+                                                citiesHTML +
+                                            '</ul>' +
+                                        '</div>' +
+                                    '</div>';
+            }
+        }
+        $('.ntr-city-list').html(regionsHTML);
+    });
+
     $('.ntr-filter-link a').click(function(e) {
         $('html').toggleClass('ntr-filter-open');
         e.preventDefault();
@@ -1181,10 +1326,125 @@ $(document).ready(function() {
         }
 
         updateNTRFilter();
+        updateNTRFilterTypes();
+    });
+
+    $('.ntr-filter-header').each(function() {
+        updateNTRFilter();
+        updateNTRFilterTypes();
     });
 
     $('.ntr-filter-list .ntr-filter-item label input').change(function() {
         updateNTRFilter();
+        updateNTRFilterTypes();
+    });
+
+    $('.ntr-city-search input').on('keyup blur change', function() {
+        var curValue = $(this).val().toLowerCase();
+        $('.ntr-city-list li').each(function() {
+            var curItem = $(this);
+            if (curItem.text().toLowerCase().indexOf(curValue) == -1) {
+                curItem.addClass('hidden');
+            } else {
+                curItem.removeClass('hidden');
+            }
+        });
+        $('.ntr-city-group').each(function() {
+            var curGroup = $(this);
+            if (curGroup.find('li').length == curGroup.find('li.hidden').length) {
+                curGroup.addClass('hidden');
+            } else {
+                curGroup.removeClass('hidden');
+            }
+        });
+    });
+
+    $('body').on('click', '.ntr-city-list li span', function() {
+        var curID = $(this).attr('data-id');
+        $('.ntr-map-img g.ntr-map-img-city[data-id="' + curID + '"]').each(function() {
+            window.clearTimeout(timerNTR);
+            timerNTR = null;
+
+            $('.ntr-chart-map-region-hint').remove();
+            $('body').append('<div class="ntr-chart-map-region-hint">' +
+                                 '<div class="ntr-chart-map-region-hint-container">' +
+                                 '</div>' +
+                             '</div>');
+            var curLeft = $(this).offset().left;
+            var curTop = $(this).offset().top;
+            $('.ntr-chart-map-region-hint').css({'left': curLeft, 'top': curTop});
+
+            var hintHTML = '';
+            if ($(this).attr('data-type') == 'city') {
+                var curData = null;
+                for (var i = 0; i < ntrCities.length; i++) {
+                    if (curID == ntrCities[i].id) {
+                        curData = ntrCities[i];
+                    }
+                }
+                if (curData !== null) {
+                    hintHTML += '<div class="ntr-chart-map-region-hint-header">' +
+                                    '<div class="ntr-chart-map-region-hint-header-info">' +
+                                        '<div class="ntr-chart-map-region-hint-title">' + curData.title + '</div>';
+                    if (typeof (curData.region) != 'undefined') {
+                        var curRegion = '';
+                        for (var r = 0; r < russiaRegions.length; r++) {
+                            if (russiaRegions[r].id == curData.region) {
+                                curRegion = russiaRegions[r].title;
+                            }
+                        }
+                        hintHTML +=     '<div class="ntr-chart-map-region-hint-region">' + curRegion + '</div>';
+                    }
+                    hintHTML +=     '</div>';
+                    if (typeof (curData.type) != 'undefined') {
+                        hintHTML += '<div class="ntr-chart-map-region-hint-header-type"><span style="background-color:' + curData.type.color + '">' + curData.type.title + '</span></div>';
+                    }
+                    hintHTML += '</div>';
+                    if (typeof (curData.objects) != 'undefined') {
+                        hintHTML += '<div class="ntr-chart-map-region-hint-list">';
+                        for (var j = 0; j < curData.objects.length; j++) {
+                            var curItem = curData.objects[j];
+                            var curType = '';
+                            for (var r = 0; r < ntrTypes.length; r++) {
+                                if (ntrTypes[r].id == curItem[0]) {
+                                    curType = ntrTypes[r].title;
+                                    if (typeof (ntrTypes[r].pupup_title) != 'undefined') {
+                                        curType = ntrTypes[r].pupup_title;
+                                    }
+                                }
+                            }
+                            hintHTML += '<div class="ntr-chart-map-region-hint-item">' +
+                                            '<div class="ntr-chart-map-region-hint-item-title"><a href="' + curItem[2] + '">' + curType + '</a></div>' +
+                                            '<div class="ntr-chart-map-region-hint-item-count">' + curItem[1] + '</div>' +
+                                        '</div>';
+                        }
+                        hintHTML += '</div>';
+                    }
+                }
+            } else {
+                hintHTML += '<div class="ntr-chart-map-region-hint-title">' + $(this).attr('data-title') + '</div>';
+            }
+            $('.ntr-chart-map-region-hint-container').html(hintHTML);
+        });
+    });
+
+    $('.ntr-city-link a').click(function(e) {
+        $('html').toggleClass('ntr-city-open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.ntr-city').length == 0) {
+            $('html').removeClass('ntr-city-open');
+        }
+    });
+
+    $('body').on('click', '.ntr-city-group-title', function(e) {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.ntr-city-content').mCustomScrollbar({
+        axis: 'y'
     });
 
     $('.status form').each(function() {
@@ -2224,5 +2484,33 @@ function updateNTRFilter() {
         $('.ntr-header').addClass('selected');
     } else {
         $('.ntr-header').removeClass('selected');
+    }
+}
+
+function updateNTRFilterTypes() {
+    if ($('.ntr-filter-list .ntr-filter-item input:checked').length > 0) {
+        $('.ntr-map-img g.ntr-map-img-city').removeClass('visible');
+        $('.ntr-city').removeClass('visible');
+        $('.ntr-city-group').removeClass('visible');
+        $('.ntr-city-group-content ul li').removeClass('visible');
+        $('.ntr-filter-list .ntr-filter-item input:checked').each(function() {
+            var curId = $(this).attr('data-id');
+            for (var i = 0; i < ntrCities.length; i++) {
+                var curCity = ntrCities[i];
+                for (var j = 0; j < curCity.objects.length; j++) {
+                    if (curCity.objects[j][0] == curId && curCity.objects[j][1] > 0) {
+                        $('.ntr-map-img g.ntr-map-img-city[data-id="' + curCity.id + '"]').addClass('visible');
+                        $('.ntr-city-group-content ul li span[data-id="' + curCity.id + '"]').parent().addClass('visible');
+                        $('.ntr-city-group-content ul li span[data-id="' + curCity.id + '"]').parents().filter('.ntr-city-group').addClass('visible');
+                        $('.ntr-city').addClass('visible');
+                    }
+                }
+            }
+        });
+    } else {
+        $('.ntr-map-img g.ntr-map-img-city').addClass('visible');
+        $('.ntr-city').addClass('visible');
+        $('.ntr-city-group').addClass('visible');
+        $('.ntr-city-group-content ul li').addClass('visible');
     }
 }
