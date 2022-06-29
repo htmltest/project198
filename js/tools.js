@@ -1053,13 +1053,13 @@ $(document).ready(function() {
 
     var timerNTR = null;
 
-    $('body').on('mouseenter', '.ntr-map-img g.ntr-map-img-city', function(e) {
+    $('body').on('mouseenter', '.ntr-map-img .ntr-map-img-city', function(e) {
         if ($(window).width() > 1205) {
             window.clearTimeout(timerNTR);
             timerNTR = null;
 
             $('.ntr-chart-map-region-hint').remove();
-            $('body').append('<div class="ntr-chart-map-region-hint">' +
+            $('.wrapper').append('<div class="ntr-chart-map-region-hint">' +
                                  '<div class="ntr-chart-map-region-hint-container">' +
                                  '</div>' +
                              '</div>');
@@ -1068,61 +1068,57 @@ $(document).ready(function() {
             $('.ntr-chart-map-region-hint').css({'left': curLeft, 'top': curTop});
 
             var hintHTML = '';
-            if ($(this).attr('data-type') == 'city') {
-                var curID = $(this).attr('data-id');
-                var curData = null;
-                for (var i = 0; i < ntrCities.length; i++) {
-                    if (curID == ntrCities[i].id) {
-                        curData = ntrCities[i];
-                    }
+            var curID = $(this).attr('data-id');
+            var curData = null;
+            for (var i = 0; i < ntrCities.length; i++) {
+                if (curID == ntrCities[i].id) {
+                    curData = ntrCities[i];
                 }
-                if (curData !== null) {
-                    hintHTML += '<div class="ntr-chart-map-region-hint-header">' +
-                                    '<div class="ntr-chart-map-region-hint-header-info">' +
-                                        '<div class="ntr-chart-map-region-hint-title">' + curData.title + '</div>';
-                    if (typeof (curData.region) != 'undefined') {
-                        var curRegion = '';
-                        for (var r = 0; r < russiaRegions.length; r++) {
-                            if (russiaRegions[r].id == curData.region) {
-                                curRegion = russiaRegions[r].title;
-                            }
+            }
+            if (curData !== null) {
+                hintHTML += '<div class="ntr-chart-map-region-hint-header">' +
+                                '<div class="ntr-chart-map-region-hint-header-info">' +
+                                    '<div class="ntr-chart-map-region-hint-title">' + curData.title + '</div>';
+                if (typeof (curData.region) != 'undefined') {
+                    var curRegion = '';
+                    for (var r = 0; r < russiaRegions.length; r++) {
+                        if (russiaRegions[r].id == curData.region) {
+                            curRegion = russiaRegions[r].title;
                         }
-                        hintHTML +=     '<div class="ntr-chart-map-region-hint-region">' + curRegion + '</div>';
                     }
-                    hintHTML +=     '</div>';
-                    if (typeof (curData.type) != 'undefined') {
-                        hintHTML += '<div class="ntr-chart-map-region-hint-header-type"><span style="background-color:' + curData.type.color + '">' + curData.type.title + '</span></div>';
-                    }
-                    hintHTML += '</div>';
-                    if (typeof (curData.objects) != 'undefined') {
-                        hintHTML += '<div class="ntr-chart-map-region-hint-list">';
+                    hintHTML +=     '<div class="ntr-chart-map-region-hint-region">' + curRegion + '</div>';
+                }
+                hintHTML +=     '</div>';
+                if (typeof (curData.type) != 'undefined') {
+                    hintHTML += '<div class="ntr-chart-map-region-hint-header-type"><span style="background-color:' + curData.type.color + '">' + curData.type.title + '</span></div>';
+                }
+                hintHTML += '</div>';
+                if (typeof (curData.objects) != 'undefined') {
+                    hintHTML += '<div class="ntr-chart-map-region-hint-list">';
+                    for (var r = 0; r < ntrTypes.length; r++) {
                         for (var j = 0; j < curData.objects.length; j++) {
                             var curItem = curData.objects[j];
                             var curType = '';
-                            for (var r = 0; r < ntrTypes.length; r++) {
-                                if (ntrTypes[r].id == curItem[0]) {
-                                    curType = ntrTypes[r].title;
-                                    if (typeof (ntrTypes[r].pupup_title) != 'undefined') {
-                                        curType = ntrTypes[r].pupup_title;
-                                    }
+                            if (ntrTypes[r].id == curItem[0]) {
+                                curType = ntrTypes[r].title;
+                                if (typeof (ntrTypes[r].pupup_title) != 'undefined') {
+                                    curType = ntrTypes[r].pupup_title;
                                 }
+                                hintHTML += '<div class="ntr-chart-map-region-hint-item">' +
+                                                '<div class="ntr-chart-map-region-hint-item-title"><a href="' + curItem[2] + '">' + curType + '</a></div>' +
+                                                '<div class="ntr-chart-map-region-hint-item-count">' + curItem[1] + '</div>' +
+                                            '</div>';
                             }
-                            hintHTML += '<div class="ntr-chart-map-region-hint-item">' +
-                                            '<div class="ntr-chart-map-region-hint-item-title"><a href="' + curItem[2] + '">' + curType + '</a></div>' +
-                                            '<div class="ntr-chart-map-region-hint-item-count">' + curItem[1] + '</div>' +
-                                        '</div>';
                         }
-                        hintHTML += '</div>';
                     }
+                    hintHTML += '</div>';
                 }
-            } else {
-                hintHTML += '<div class="ntr-chart-map-region-hint-title">' + $(this).attr('data-title') + '</div>';
             }
             $('.ntr-chart-map-region-hint-container').html(hintHTML);
         }
     });
 
-    $('body').on('mouseleave', '.ntr-map-img g.ntr-map-img-city', function(e) {
+    $('body').on('mouseleave', '.ntr-map-img .ntr-map-img-city', function(e) {
         if ($(window).width() > 1205) {
             window.clearTimeout(timerNTR);
             timerNTR = null;
@@ -1151,12 +1147,16 @@ $(document).ready(function() {
         }
     });
 
+    var ntrMapWidth = 1108;
+    var ntrMapHeight = 630;
+
     $('.ntr-map').each(function() {
         var newHTML = '';
 
         newHTML +=  '<div class="ntr-map-img"><svg viewBox="0 0 1107.77 630.12" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></div>';
 
         $('.ntr-map').html(newHTML);
+        $('.ntr-map').data('zoom', 1);
 
         var newMap = '';
 
@@ -1165,23 +1165,41 @@ $(document).ready(function() {
             newMap += '<g>' + curRegion.svg + '</g>';
         }
 
+        $('.ntr-map-img svg').html(newMap);
+
+        var newCities = '';
         for (var i = 0; i < ntrCities.length; i++) {
             var curData = ntrCities[i];
-            var curCoord = [curData.coords[0] * 2, curData.coords[1] * 8];
-            newMap += '<g class="ntr-map-img-city" data-type="city" data-id="' + curData.id + '"><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="10" fill="white" stroke="none" /><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="6.6724" fill="white" fill-opacity="0.5" stroke="none" /><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="5.39361" fill="white" fill-opacity="0.5" stroke="none" /><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="2.38027" fill="#FF0000" fill-opacity="1" stroke="none" /><circle cx="' + curCoord[0] + '" cy="' + curCoord[1] + '" r="3.78448" stroke="#FF0000" fill="none" fill-opacity="1" /></g>';
+            var curCoord = [curData.coords[0]  / 1108 * 100, curData.coords[1] / 631 * 100];
+            newCities += '<div class="ntr-map-img-city" data-id="' + curData.id + '" style="left:' + curCoord[0] + '%; top:' + curCoord[1] + '%"><div class="ntr-map-img-city-inner"></div></div>';
         }
-        $('.ntr-map-img svg').html(newMap);
+        $('.ntr-map-img').append(newCities);
     });
 
     $('body').on('click', '.ntr-map-zoom-inc', function(e) {
-        $('.ntr-map-img').css({'transform': 'translate(-1108px, -631px)', 'width': 2216, 'height': 1262, 'left': '50%', 'top': '50%'});
-        $('.ntr-map-img').data('curLeft', -1108);
-        $('.ntr-map-img').data('curTop', -631);
+        var curZoom = Number($('.ntr-map').data('zoom'));
+        curZoom++;
+        $('.ntr-map').data('zoom', curZoom);
+        $('.ntr-map-img').css({'transform': 'translate(-' + (curZoom * 1108 / 2) + 'px, -' + (curZoom * 631 / 2) + 'px)', 'width': curZoom * 1108, 'height': curZoom * 631, 'left': '50%', 'top': '50%'});
+        $('.ntr-map-img').data('curLeft', -curZoom * 1108 / 2);
+        $('.ntr-map-img').data('curTop', -curZoom * 631 / 2);
         e.preventDefault();
     });
 
     $('body').on('click', '.ntr-map-zoom-dec', function(e) {
-        $('.ntr-map-img').css({'transform': 'none', 'width': '100%', 'height': 'auto', 'left': 'auto', 'top': 'auto'});
+        var curZoom = Number($('.ntr-map').data('zoom'));
+        curZoom--;
+        if (curZoom < 0) {
+            curZoom = 0;
+        }
+        $('.ntr-map').data('zoom', curZoom);
+        if (curZoom == 0) {
+            $('.ntr-map-img').css({'transform': 'none', 'width': '100%', 'height': 'auto', 'left': 'auto', 'top': 'auto'});
+        } else {
+            $('.ntr-map-img').css({'transform': 'translate(-' + (curZoom * 1108 / 2) + 'px, -' + (curZoom * 631 / 2) + 'px)', 'width': curZoom * 1108, 'height': curZoom * 631, 'left': '50%', 'top': '50%'});
+            $('.ntr-map-img').data('curLeft', -curZoom * 1108 / 2);
+            $('.ntr-map-img').data('curTop', -curZoom * 631 / 2);
+        }
         e.preventDefault();
     });
 
@@ -1361,7 +1379,7 @@ $(document).ready(function() {
 
     $('body').on('click', '.ntr-city-list li span', function() {
         var curID = $(this).attr('data-id');
-        $('.ntr-map-img g.ntr-map-img-city[data-id="' + curID + '"]').each(function() {
+        $('.ntr-map-img .ntr-map-img-city[data-id="' + curID + '"]').each(function() {
             window.clearTimeout(timerNTR);
             timerNTR = null;
 
@@ -1472,7 +1490,7 @@ $(document).ready(function() {
         });
     });
 
-    $('.sale-detail-params-item-header').click(function(e) {
+    $('body').on('click', '.sale-detail-params-item-header', function(e) {
         $(this).parent().toggleClass('open');
         $(this).parent().find('.sale-detail-params-item-content').slideToggle();
         e.preventDefault();
@@ -1488,6 +1506,198 @@ $(document).ready(function() {
             $('html, body').animate({'scrollTop': curBlock.offset().top - headerHeight - 20});
             e.preventDefault();
         }
+    });
+
+    $('body').on('click', '.opendata-item-title', function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.opendata-filter-item select').change(function() {
+        var curSelect = $(this);
+
+        var curResults = curSelect.parents().filter('.opendata-item-container');
+        var curForm = curResults.find('.opendata-item-filter form');
+
+        var allSelected = true;
+        curForm.find('.opendata-filter-item').each(function() {
+            if ($(this).find('select').val() == '') {
+                allSelected = false;
+            }
+        });
+        if (allSelected) {
+            var formData = curForm.serialize();
+            curResults.find('.opendata-results').addClass('loading');
+            $.ajax({
+                type: 'GET',
+                url: curForm.attr('action'),
+                dataType: 'html',
+                data: formData,
+                cache: false
+            }).done(function(html) {
+                curResults.find('.opendata-results').html(html);
+                curResults.find('.opendata-results').removeClass('loading');
+                $(window).trigger('resize');
+            });
+        }
+    });
+
+    $('body').on('mouseenter', '.opendata-chart-map-inner g', function(e) {
+        if ($(window).width() > 1205) {
+            $('.opendata-chart-map-region-hint').remove();
+            $('.wrapper').append('<div class="opendata-chart-map-region-hint">' +
+                                 '<div class="opendata-chart-map-region-hint-container">' +
+                                    '<div class="opendata-chart-map-region-hint-title">' + $(this).attr('data-title') + '</div>' +
+                                    '<div class="opendata-chart-map-region-hint-value-map">' + $(this).attr('data-name') + ': <span>' + numberWithSpaces($(this).attr('data-value')) + '</span></div>' +
+                                 '</div>' +
+                             '</div>');
+            var curLeft = e.pageX;
+            var curTop = e.pageY;
+            $('.opendata-chart-map-region-hint').css({'left': curLeft, 'top': curTop});
+            if ($('.opendata-chart-map-region-hint').offset().left + $('.opendata-chart-map-region-hint-container').outerWidth() > $('.wrapper').width()) {
+                $('.opendata-chart-map-region-hint').addClass('to-left');
+            }
+        }
+    });
+
+    $('body').on('mousemove', '.opendata-chart-map-inner g', function(e) {
+        if ($(window).width() > 1205) {
+            var curLeft = e.pageX;
+            var curTop = e.pageY;
+            $('.opendata-chart-map-region-hint').css({'left': curLeft, 'top': curTop});
+        }
+    });
+
+    $('body').on('mouseleave', '.opendata-chart-map-inner g', function(e) {
+        if ($(window).width() > 1205) {
+            $('.opendata-chart-map-region-hint').remove();
+        }
+    });
+
+    $('body').on('click', '.opendata-chart-map-region-hint-close', function(e) {
+        $('.opendata-chart-map-region-hint').remove();
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.opendata-chart-map-region-hint-bg', function() {
+        $('.opendata-chart-map-region-hint').remove();
+    });
+
+    $('body').on('click', '.opendata-chart-map-zoom-inc', function(e) {
+        var curMap = $(this).parent();
+        if (curMap.hasClass('opendata-chart-map-zoom-1')) {
+            curMap.removeClass('opendata-chart-map-zoom-1');
+            curMap.addClass('opendata-chart-map-zoom-2');
+        } else if (curMap.hasClass('opendata-chart-map-zoom-2')) {
+            curMap.removeClass('opendata-chart-map-zoom-2');
+            curMap.addClass('opendata-chart-map-zoom-3');
+        } else {
+            curMap.addClass('opendata-chart-map-zoom-1');
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.opendata-chart-map-zoom-dec', function(e) {
+        var curMap = $(this).parent();
+        if (curMap.hasClass('opendata-chart-map-zoom-3')) {
+            curMap.removeClass('opendata-chart-map-zoom-3');
+            curMap.addClass('opendata-chart-map-zoom-2');
+        } else if (curMap.hasClass('opendata-chart-map-zoom-2')) {
+            curMap.removeClass('opendata-chart-map-zoom-2');
+            curMap.addClass('opendata-chart-map-zoom-1');
+        } else {
+            curMap.removeClass('opendata-chart-map-zoom-1');
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.table-scroll-fixed .sort', function(e) {
+        $(this).parents().filter('.opendata-table').find('.table-scroll .sort').eq(0).trigger('click');
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.opendata-table .table-scroll .sort', function(e) {
+        var curLink = $(this);
+        var curCol = curLink.parent();
+        var curTable = curCol.parents().filter('table');
+        var curColIndex = curTable.find('thead th').index(curCol);
+        if (curLink.hasClass('active')) {
+            curLink.toggleClass('up');
+        } else {
+            curTable.find('thead th a').removeClass('active up');
+            curLink.addClass('active up');
+        }
+        var curRows = [];
+        curTable.find('tbody tr').each(function() {
+            curRows.push($(this));
+        });
+        if (curLink.hasClass('sort-number')) {
+            curRows.sort(function(a, b) {
+                var aValue = Number(a.find('td').eq(curColIndex).html().replace(/\<em\>.+\<\/em\>/g, '').replace(/\ |&nbsp;|—/g, ''));
+                if (aValue == NaN) {
+                    aValue = 0;
+                }
+                var bValue = Number(b.find('td').eq(curColIndex).html().replace(/\<em\>.+\<\/em\>/g, '').replace(/\ |&nbsp;|—/g, ''));
+                if (bValue == NaN) {
+                    bValue = 0;
+                }
+                if (aValue < bValue) return -1;
+                if (aValue > bValue) return 1;
+                return 0;
+            });
+        } else {
+            curRows.sort(function(a, b) {
+                var aValue = a.find('td').eq(curColIndex).html();
+                var bValue = b.find('td').eq(curColIndex).html();
+                if (aValue < bValue) return -1;
+                if (aValue > bValue) return 1;
+                return 0;
+            });
+        }
+
+        if (curLink.hasClass('up')) {
+            curRows.reverse();
+        }
+
+        var newHTML = '';
+        for (var i = 0; i < curRows.length; i++) {
+            newHTML += '<tr>' + curRows[i].html() + '</tr>';
+        }
+        curTable.find('tbody').html(newHTML);
+
+        curBlock = curTable.parents().filter('.opendata-table');
+        curBlock.find('.opendata-table-header-fixed-inner').html('');
+        curBlock.find('thead th').each(function() {
+            curBlock.find('.opendata-table-header-fixed-inner').append('<div class="opendata-table-header-fixed-item" style="width:' + $(this).outerWidth() + 'px">' + $(this).html() + '</div>');
+        });
+
+        curBlock.find('.table-scroll-fixed').remove();
+        var htmlFixed = '<div class="table-scroll-fixed">' +
+                            '<table>' +
+                                '<thead>' +
+                                    '<tr>' +
+                                        '<th>' + curTable.find('th').eq(0).html() + '</th>' +
+                                    '</tr>' +
+                                '</thead>' +
+                                '<tbody>';
+        curTable.find('tbody tr').each(function() {
+            htmlFixed +=            '<tr>' +
+                                        '<td>' + $(this).find('td').eq(0).html() + '</td>' +
+                                    '</tr>';
+        });
+        htmlFixed +=            '</tbody>' +
+                            '</table>' +
+                        '</div>';
+        curBlock.append(htmlFixed)
+
+        var fixedCol = curBlock.find('.table-scroll-fixed');
+        fixedCol.find('th').width(curTable.find('th').eq(0).width()).height(curTable.find('th').eq(0).height());
+        fixedCol.find('td').each(function() {
+            var curTD = $(this);
+            var curIndex = fixedCol.find('td').index(curTD);
+            curTD.height(curTable.find('tbody tr').eq(curIndex).find('td').eq(0).height());
+        });
+
+        e.preventDefault();
     });
 
 });
@@ -2489,7 +2699,7 @@ function updateNTRFilter() {
 
 function updateNTRFilterTypes() {
     if ($('.ntr-filter-list .ntr-filter-item input:checked').length > 0) {
-        $('.ntr-map-img g.ntr-map-img-city').removeClass('visible');
+        $('.ntr-map-img .ntr-map-img-city').removeClass('visible');
         $('.ntr-city').removeClass('visible');
         $('.ntr-city-group').removeClass('visible');
         $('.ntr-city-group-content ul li').removeClass('visible');
@@ -2499,7 +2709,7 @@ function updateNTRFilterTypes() {
                 var curCity = ntrCities[i];
                 for (var j = 0; j < curCity.objects.length; j++) {
                     if (curCity.objects[j][0] == curId && curCity.objects[j][1] > 0) {
-                        $('.ntr-map-img g.ntr-map-img-city[data-id="' + curCity.id + '"]').addClass('visible');
+                        $('.ntr-map-img .ntr-map-img-city[data-id="' + curCity.id + '"]').addClass('visible');
                         $('.ntr-city-group-content ul li span[data-id="' + curCity.id + '"]').parent().addClass('visible');
                         $('.ntr-city-group-content ul li span[data-id="' + curCity.id + '"]').parents().filter('.ntr-city-group').addClass('visible');
                         $('.ntr-city').addClass('visible');
@@ -2508,9 +2718,420 @@ function updateNTRFilterTypes() {
             }
         });
     } else {
-        $('.ntr-map-img g.ntr-map-img-city').addClass('visible');
+        $('.ntr-map-img .ntr-map-img-city').addClass('visible');
         $('.ntr-city').addClass('visible');
         $('.ntr-city-group').addClass('visible');
         $('.ntr-city-group-content ul li').addClass('visible');
+    }
+}
+
+function createChartMap(blockID, data) {
+    var curBlock = $('[data-id="' + blockID + '"]');
+    if (curBlock.length == 1) {
+        makeChartMap(curBlock, data);
+        curBlock.parent().find('.opendata-chart-menu-item a').unbind('click');
+        curBlock.parent().find('.opendata-chart-menu-item a').click(function(e) {
+            var curItem = $(this).parent();
+            if (!curItem.hasClass('active')) {
+                curItem.parent().find('.opendata-chart-menu-item.active').removeClass('active');
+                curItem.addClass('active');
+                makeChartMap(curBlock, data);
+            }
+            e.preventDefault();
+        });
+    }
+}
+
+function makeChartMap(curBlock, data) {
+    var dataType = 'chart';
+    if (curBlock.parent().find('.opendata-chart-menu').length == 1) {
+        dataType = curBlock.parent().find('.opendata-chart-menu .opendata-chart-menu-item.active a').attr('data-type');
+    }
+    var newHTML = '';
+
+    if (dataType == 'chart') {
+
+        if (data.data.length > 1) {
+            newHTML +=  '<div class="opendata-chart-map-year">' +
+                            '<div class="opendata-chart-map-year-inner">';
+            for (var i = 0; i < data.data.length; i++) {
+                newHTML +=      '<div class="opendata-chart-map-year-item"><a href="#">' + data.data[i].year + '</a></div>';
+            }
+            newHTML +=      '</div>' +
+                        '</div>';
+        }
+
+        newHTML +=  '<div class="opendata-chart-map-wrapper"><div class="opendata-chart-map-inner"><svg width="1040" height="591" viewBox="0 0 1107.77 630.12" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></div><a href="#" class="opendata-chart-map-zoom-inc"></a><a href="#" class="opendata-chart-map-zoom-dec"></a></div>';
+
+        if (curBlock.data('year') === undefined) {
+            curBlock.data('year', data.data[0].year);
+        }
+        var curYear = curBlock.data('year');
+        var curData = null;
+        for (var i = 0; i < data.data.length; i++) {
+            if ( data.data[i].year == curYear) {
+                curData =  data.data[i].values;
+            }
+        }
+
+        var curMax = 0;
+        for (var i = 0; i < curData.length; i++) {
+            if (curMax < Number(curData[i][1])) {
+                curMax = Number(curData[i][1]);
+            }
+        }
+
+        data.ranges = [];
+        var map_rages = [0.000001, 0.01, 0.03, 0.20, 1.10];
+        var mr_prev = 0;
+
+        for (var i = 0; i < map_rages.length; i++) {
+            var rangeStart = curMax * mr_prev;
+            var rangeStop = curMax * map_rages[i];
+            if (data.numberFixed == 0) {
+                rangeStop = Math.ceil(rangeStop);
+                rangeStart = Math.ceil(rangeStart);
+            }
+            data.ranges.push([rangeStart, rangeStop, data.colors[i]]);
+            mr_prev = map_rages[i];
+        }
+
+        newHTML +=  '<div class="opendata-chart-map-legend">' +
+                        '<div class="opendata-chart-map-legend-title">' + data.titleRanges + '</div>' +
+                        '<div class="opendata-chart-map-legend-list">';
+        for (var i = 1; i < data.ranges.length; i++) {
+            newHTML +=      '<div class="opendata-chart-map-legend-item" style="background:' + data.ranges[i][2] + '"><span>' + (data.ranges[i][1]).toFixed(data.numberFixed) + '</span></div>';
+        }
+        newHTML += '<em>' + data.ranges[0][0] + '</em>';
+        newHTML +=      '</div>' +
+                    '</div>';
+
+        curBlock.html(newHTML);
+
+        curBlock.find('.opendata-chart-map-year-item a:contains("' + curBlock.data('year') + '")').parent().addClass('active');
+
+        if (curData !== null) {
+            var newMap = '';
+
+            for (var j = 0; j < russiaRegions.length; j++) {
+                var curRegion = russiaRegions[j];
+                for (var i = 0; i < curData.length; i++) {
+                    if (curRegion.id == curData[i][0]) {
+                        var curColorIndex = -1;
+                        var curValue = Number(curData[i][1]);
+                        for (var c = 0; c < data.ranges.length; c++) {
+                            if (curValue >= data.ranges[c][0] && curValue <= data.ranges[c][1]) {
+                                curColorIndex = c;
+                            }
+                            if (curValue == 0) {
+                                curColorIndex = 0;
+                            }
+                        }
+
+                        var curColor = data.ranges[curColorIndex][2];
+
+                        newMap += '<g style="fill:' + curColor + '" data-id="' + curRegion.id + '" data-title="' + curRegion.title + '" data-value="' + curValue + ' ' + data.unit + '" data-name="' + data.titleTable + '">' + curRegion.svg + '</g>';
+                    }
+                }
+            }
+            curBlock.find('.opendata-chart-map-inner svg').html(newMap);
+            curBlock.find('.opendata-chart-map-inner').each(function() {
+                $(this).mCustomScrollbar({
+                    axis: 'x',
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+            });
+        }
+
+        curBlock.find('.opendata-chart-map-year-item a').click(function(e) {
+            var curItem = $(this).parent();
+            if (!curItem.hasClass('active')) {
+                curItem.parent().find('.opendata-chart-map-year-item.active').removeClass('active');
+                curItem.addClass('active');
+                curItem.parents().find('.opendata-chart-container').data('year', curItem.find('a').html());
+                makeChartMap(curBlock, data);
+            }
+            e.preventDefault();
+        });
+
+    } else {
+
+        var tableData = {
+            'headers'   : [],
+            'rows'      : []
+        };
+
+        tableData.headers.push({
+            'sort'  : false,
+            'type'  : 'text',
+            'text'  : data.titleTableFirstCol
+        });
+        for (var i = 0; i < data.data.length; i++) {
+            tableData.headers.push({
+                'sort'  : true,
+                'type'  : 'number',
+                'text'  : data.data[i].year
+            });
+        }
+
+        for (var i = 0; i < russiaRegions.length; i++) {
+            var newRow = [];
+            newRow.push(russiaRegions[i].title);
+            for (var j = 0; j < data.data.length; j++) {
+                var isHas = false;
+                for (var k = 0; k < data.data[j].values.length; k++) {
+                    if (data.data[j].values[k][0] == russiaRegions[i].id) {
+                        newRow.push(numberWithSpaces(data.data[j].values[k][1]) + ' <span>' + data.unit + '</span>');
+                        isHas = true;
+                    }
+                }
+                if (!isHas) {
+                    newRow.push('—');
+                }
+            }
+            tableData.rows.push(newRow);
+        }
+
+        createTable(curBlock, tableData, 15, 0, 'up');
+
+    }
+}
+
+function numberWithSpaces(x) {
+    var parts = x.toString().split('.');
+    parts[0] = parts[0].replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&nbsp;');
+    return parts.join('.');
+}
+
+function createTable(curBlock, tableData, maxRows, sortDefaultCol, sortDefaultDir) {
+    var newHTML = '';
+
+    newHTML +=  '<div class="opendata-table">' +
+                    '<div class="table-scroll">' +
+                        '<table>' +
+                            '<thead>' +
+                                '<tr>';
+    for (var i = 0; i < tableData.headers.length; i++) {
+        newHTML +=                  '<th>';
+        if (tableData.headers[i].sort == true) {
+            var classNumber = '';
+            if (tableData.headers[i].type == 'number') {
+                classNumber = ' sort-number';
+            }
+            newHTML +=                  '<a href="#" class="sort' + classNumber + '">';
+        }
+        newHTML +=                          tableData.headers[i].text;
+        if (tableData.headers[i].sort == true) {
+            newHTML +=                  '</a>';
+        }
+        newHTML +=                  '</th>';
+    }
+
+    newHTML +=                  '</tr>' +
+                            '</thead>' +
+                            '<tbody>';
+
+    var countRows = tableData.rows.length;
+    var isMoreRows = false;
+    if (typeof maxRows !== 'undefined' && countRows > maxRows) {
+        countRows = maxRows;
+        isMoreRows = true;
+    }
+    for (var i = 0; i < countRows; i++) {
+        newHTML +=              '<tr>' +
+                                    '<td><strong>' + tableData.rows[i][0] + '</strong></td>';
+        for (var j = 1; j < tableData.rows[i].length; j++) {
+            newHTML +=              '<td><em>' + tableData.headers[j].text + '</em>' + tableData.rows[i][j] + '</td>';
+        }
+        newHTML +=              '</tr>';
+    }
+
+    newHTML +=              '</tbody>' +
+                        '</table>' +
+                    '</div>' +
+                '</div>';
+
+    if (isMoreRows) {
+        newHTML += '<div class="opendata-table-more"><a href="#" class="btn-border btn-mini"><span>Загрузить остальные</span><span>Свернуть</span></a></div>';
+    }
+    curBlock.html(newHTML);
+
+    curBlock.find('.opendata-table-more a').click(function(e) {
+        var curMore = $(this).parent();
+        if (curMore.hasClass('open')) {
+            curBlock.find('.opendata-table .table-scroll-fixed tbody tr:gt(' + (countRows - 1) + ')').remove();
+            curBlock.find('.opendata-table .table-scroll tbody tr:gt(' + (countRows - 1) + ')').remove();
+            curBlock.find('.opendata-table-more').removeClass('open');
+        } else {
+            curBlock.find('.opendata-table-more').addClass('loading');
+            window.setTimeout(function() {
+                var rowHTML = '';
+                for (var i = countRows; i < tableData.rows.length; i++) {
+                    rowHTML +=              '<tr>' +
+                                                '<td><strong>' + tableData.rows[i][0] + '</strong></td>';
+                    for (var j = 1; j < tableData.rows[i].length; j++) {
+                        rowHTML +=              '<td><em>' + tableData.headers[j].text + '</em>' + tableData.rows[i][j] + '</td>';
+                    }
+                    rowHTML +=              '</tr>';
+                }
+                curBlock.find('.opendata-table .table-scroll tbody').append(rowHTML);
+                if ($(window).width() > 1205) {
+                    var curTable = curBlock.find('.opendata-table .table-scroll table');
+                    var fixedTable = curBlock.find('.opendata-table .table-scroll-fixed table');
+                    var htmlFixed = '';
+                    curTable.find('tbody tr').each(function() {
+                        htmlFixed +=            '<tr>' +
+                                                    '<td>' + $(this).find('td').eq(0).html() + '</td>' +
+                                                '</tr>';
+                    });
+                    fixedTable.find('tbody').html(htmlFixed);
+
+                    var fixedCol = curBlock.find('.table-scroll-fixed');
+                    fixedCol.find('th').width(curTable.find('th').eq(0).width()).height(curTable.find('th').eq(0).height());
+                    fixedCol.find('td').each(function() {
+                        var curTD = $(this);
+                        var curIndex = fixedCol.find('td').index(curTD);
+                        curTD.height(curTable.find('tbody tr').eq(curIndex).find('td').eq(0).height());
+                    });
+                }
+                curBlock.find('.opendata-table-more').addClass('open');
+                curBlock.find('.opendata-table-more').removeClass('loading');
+            }, 100);
+
+        }
+        $(window).trigger('resize');
+        e.preventDefault();
+    });
+
+    if ($(window).width() > 1205) {
+        curBlock.find('.opendata-table').append('<div class="opendata-table-header-fixed"><div class="opendata-table-header-fixed-inner"></div></div>');
+        curBlock.find('.opendata-table thead th').each(function() {
+            curBlock.find('.opendata-table-header-fixed-inner').append('<div class="opendata-table-header-fixed-item" style="width:' + $(this).outerWidth() + 'px">' + $(this).find('a').html() + '</div>');
+        });
+
+        var curTable = curBlock.find('table');
+        var htmlFixed = '<div class="table-scroll-fixed">' +
+                            '<table>' +
+                                '<thead>' +
+                                    '<tr>' +
+                                        '<th>' + curTable.find('th').eq(0).html() + '</th>' +
+                                    '</tr>' +
+                                '</thead>' +
+                                '<tbody>';
+        curTable.find('tbody tr').each(function() {
+            htmlFixed +=            '<tr>' +
+                                        '<td>' + $(this).find('td').eq(0).html() + '</td>' +
+                                    '</tr>';
+        });
+        htmlFixed +=            '</tbody>' +
+                            '</table>' +
+                        '</div>';
+        curBlock.find('.opendata-table').append(htmlFixed)
+
+        var fixedCol = curBlock.find('.table-scroll-fixed');
+        fixedCol.find('th').width(curTable.find('th').eq(0).width()).height(curTable.find('th').eq(0).height());
+        fixedCol.find('td').each(function() {
+            var curTD = $(this);
+            var curIndex = fixedCol.find('td').index(curTD);
+            curTD.height(curTable.find('tbody tr').eq(curIndex).find('td').eq(0).height());
+        });
+    }
+
+    if ($(window).width() > 1205) {
+        curBlock.find('.table-scroll').each(function() {
+            $(this).mCustomScrollbar({
+                axis: 'x',
+                scrollInertia: 300,
+                scrollButtons: {
+                    enable: true
+                },
+                callbacks: {
+                    onInit: function() {
+                        curBlock.find('.table-scroll-fixed').removeClass('visible');
+                    },
+
+                    whileScrolling: function() {
+                        if (-this.mcs.left == 0) {
+                            curBlock.find('.table-scroll-fixed').removeClass('visible');
+                        } else {
+                            curBlock.find('.table-scroll-fixed').addClass('visible');
+                        }
+                        curBlock.find('.opendata-table-header-fixed-inner').css({'left': this.mcs.left});
+                    }
+                }
+            });
+        });
+    }
+
+    $(window).trigger('resize');
+
+    if (typeof sortDefaultCol !== 'undefined') {
+        var curLink = curBlock.find('th .sort').eq(sortDefaultCol);
+        var curCol = curLink.parent();
+        var curTable = curCol.parents().filter('table');
+        var curColIndex = curTable.find('thead th').index(curCol);
+        curTable.find('thead th a').removeClass('active up');
+        curLink.addClass('active');
+        if (sortDefaultDir == 'up') {
+            curLink.addClass('active').addClass('up');
+        }
+
+        var curRows = [];
+        curTable.find('tbody tr').each(function() {
+            curRows.push($(this));
+        });
+        if (curLink.hasClass('sort-number')) {
+            curRows.sort(function(a, b) {
+                var aValue = Number(a.find('td').eq(curColIndex).html().replace(/\<span\>.+\<\/span\>/g, '').replace(/\<em\>.+\<\/em\>/g, '').replace(/\ |&nbsp;|—/g, ''));
+                if (aValue == NaN) {
+                    aValue = 0;
+                }
+                var bValue = Number(b.find('td').eq(curColIndex).html().replace(/\<span\>.+\<\/span\>/g, '').replace(/\<em\>.+\<\/em\>/g, '').replace(/\ |&nbsp;|—/g, ''));
+                if (bValue == NaN) {
+                    bValue = 0;
+                }
+                if (aValue < bValue) return -1;
+                if (aValue > bValue) return 1;
+                return 0;
+            });
+        } else {
+            curRows.sort(function(a, b) {
+                var aValue = a.find('td').eq(curColIndex).html();
+                var bValue = b.find('td').eq(curColIndex).html();
+                if (aValue < bValue) return -1;
+                if (aValue > bValue) return 1;
+                return 0;
+            });
+        }
+
+        if (curLink.hasClass('up')) {
+            curRows.reverse();
+        }
+
+        var newHTML = '';
+        for (var i = 0; i < curRows.length; i++) {
+            newHTML += '<tr>' + curRows[i].html() + '</tr>';
+        }
+        curTable.find('tbody').html(newHTML);
+
+
+        curBlock.find('.table-scroll-fixed tbody').html('');
+        var htmlFixed = '';
+        curTable.find('tbody tr').each(function() {
+            htmlFixed +=            '<tr>' +
+                                        '<td>' + $(this).find('td').eq(0).html() + '</td>' +
+                                    '</tr>';
+        });
+        curBlock.find('.table-scroll-fixed tbody').html(htmlFixed)
+
+        var fixedCol = curBlock.find('.table-scroll-fixed');
+        fixedCol.find('th').width(curTable.find('th').eq(0).width()).height(curTable.find('th').eq(0).height());
+        fixedCol.find('td').each(function() {
+            var curTD = $(this);
+            var curIndex = fixedCol.find('td').index(curTD);
+            curTD.height(curTable.find('tbody tr').eq(curIndex).find('td').eq(0).height());
+        });
     }
 }
