@@ -155,10 +155,10 @@ $(document).ready(function() {
             dots: false,
             responsive: [
                 {
-                    breakpoint: 1199,
+                    breakpoint: 1205,
                     settings: {
                         fade: false,
-                        dots: true
+                        dots: false
                     }
                 }
             ]
@@ -313,7 +313,12 @@ $(document).ready(function() {
         var curTabs = $(this);
         var newHTML = '<ul>';
         curTabs.find('.tabs-content').each(function() {
-            newHTML += '<li><a href="#">' + $(this).attr('data-title') + '</a></li>';
+            var curTab = $(this);
+            newHTML += '<li><a href="#">' + curTab.attr('data-title') + '</a></li>';
+            if (curTabs.hasClass('tabs-with-titles')) {
+                curTab.wrapInner('<div class="tabs-content-inner"></div>')
+                curTab.prepend('<div class="tabs-content-title"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#tabs-content-title"></use></svg>' + curTab.attr('data-title') + '</div>');
+            }
         });
         newHTML += '</ul>';
         curTabs.find('.tabs-menu').html(newHTML);
@@ -333,6 +338,11 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('click', '.tabs-content-title', function(e) {
+        console.log(1);
+        $(this).parent().toggleClass('open');
+    });
+
     $('body').on('click', '.registration .tabs-menu a', function(e) {
         var curItem = $(this).parent();
         var curTabs = curItem.parents().filter('.tabs');
@@ -350,54 +360,6 @@ $(document).ready(function() {
         $('.tabs-content').removeClass('registration-active');
         if ($(window).width() < 1206) {
             $('html, body').animate({'scrollTop': 0});
-        }
-        e.preventDefault();
-    });
-
-    $('.ckp-detail-services').each(function() {
-        var curBlock = $(this);
-        if (curBlock.find('.ckp-detail-services-item').length > 4) {
-            curBlock.addClass('visible-more');
-        }
-    });
-
-    $('.ckp-detail-services-more').click(function(e) {
-        var curBlock = $(this).parent().find('.ckp-detail-services');
-        if (curBlock.hasClass('view-all')) {
-            count = 4;
-            curBlock.find('.ckp-detail-services-item.visible').removeClass('visible');
-            curBlock.removeClass('view-all');
-        } else {
-            var count = curBlock.find('.ckp-detail-services-item:visible').length;
-            count += 4;
-            curBlock.find('.ckp-detail-services-item:lt(' + count + ')').addClass('visible');
-            if (count >= curBlock.find('.ckp-detail-services-item').length) {
-                curBlock.addClass('view-all');
-            }
-        }
-        e.preventDefault();
-    });
-
-    $('.ckp-detail-equipments').each(function() {
-        var curBlock = $(this);
-        if (curBlock.find('.ckp-detail-equipments-item').length > 4) {
-            curBlock.addClass('visible-more');
-        }
-    });
-
-    $('.ckp-detail-equipments-more').click(function(e) {
-        var curBlock = $(this).parent().find('.ckp-detail-equipments');
-        if (curBlock.hasClass('view-all')) {
-            count = 4;
-            curBlock.find('.ckp-detail-equipments-item.visible').removeClass('visible');
-            curBlock.removeClass('view-all');
-        } else {
-            var count = curBlock.find('.ckp-detail-equipments-item:visible').length;
-            count += 4;
-            curBlock.find('.ckp-detail-equipments-item:lt(' + count + ')').addClass('visible');
-            if (count >= curBlock.find('.ckp-detail-equipments-item').length) {
-                curBlock.addClass('view-all');
-            }
         }
         e.preventDefault();
     });
@@ -565,6 +527,15 @@ $(document).ready(function() {
         }
     });
 
+    $('.catalogue-filter-mobile-header-close').click(function(e) {
+        $('html').removeClass('catalogue-filter-open');
+        e.preventDefault();
+    });
+
+    $('.catalogue-filter-mobile-header-reset').click(function(e) {
+        e.preventDefault();
+    });
+
     $('.catalogue-filter-section-title').click(function(e) {
         $(this).parent().toggleClass('open');
         e.preventDefault();
@@ -651,6 +622,34 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.catalogue-filter-sort-mobile-title').click(function(e) {
+        $(this).parent().toggleClass('open');
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.catalogue-filter-sort-mobile').length == 0) {
+            $('.catalogue-filter-sort-mobile').removeClass('open');
+        }
+    });
+
+    $('.catalogue-filter-sort-mobile-item a').click(function(e) {
+        var curLink = $(this);
+        if (!curLink.hasClass('active')) {
+            $('.catalogue-filter-sort-mobile-item a.active').removeClass('active');
+            curLink.addClass('active');
+            $('.catalogue-filter-sort-item a').removeClass('active up');
+            $('.catalogue-filter-sort-item a[data-value="' + curLink.attr('data-value') + '"]').addClass('active');
+            $('.catalogue-filter-sort-item a[data-valueup="' + curLink.attr('data-value') + '"]').addClass('active');
+            if (curLink.hasClass('up')) {
+                $('.catalogue-filter-sort-item a[data-value="' + curLink.attr('data-value') + '"]').addClass('up');
+                $('.catalogue-filter-sort-item a[data-valueup="' + curLink.attr('data-value') + '"]').addClass('up');
+            }
+            updateCatalogue();
+        }
+        $('.catalogue-filter-sort-mobile').removeClass('open');
+        e.preventDefault();
+    });
+
     $('.catalogue-filter-sort-item a').click(function(e) {
         var curLink = $(this);
         if (!curLink.hasClass('active')) {
@@ -658,6 +657,12 @@ $(document).ready(function() {
             curLink.addClass('active');
         } else {
             curLink.toggleClass('up');
+        }
+        $('.catalogue-filter-sort-mobile-item a').removeClass('active');
+        if (curLink.hasClass('up')) {
+            $('.catalogue-filter-sort-mobile-item a[data-value="' + curLink.attr('data-valueup') + '"]').addClass('active');
+        } else {
+            $('.catalogue-filter-sort-mobile-item a[data-value="' + curLink.attr('data-value') + '"]').addClass('active');
         }
         updateCatalogue();
         e.preventDefault();
@@ -887,6 +892,22 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.ckp-social-faq a').click(function(e) {
+        var reviewsBlock = $('.ckp-detail-questions');
+        var reviewsTab = reviewsBlock.parents().filter('.tabs-content');
+        var curTabs = reviewsTab.parents().filter('.tabs');
+        if (!reviewsTab.hasClass('active')) {
+            var curIndex = curTabs.find('.tabs-content').index(reviewsTab);
+            curTabs.find('.tabs-menu li').eq(curIndex).find('a').trigger('click');
+        }
+        $('html, body').animate({'scrollTop': curTabs.offset().top - $('header').outerHeight()});
+        e.preventDefault();
+    });
+
+    $('.ckp-detail-section > h2').click(function(e) {
+        $(this).parent().toggleClass('open');
+    });
+
     $('.is-jur-checkbox').change(function() {
         var curForm = $(this).parents().filter('form');
         if ($(this).prop('checked')) {
@@ -1035,6 +1056,7 @@ $(document).ready(function() {
         if (curLi.find('ul').length == 1) {
             $('.header-top-user-menu').toggleClass('open');
             curLi.toggleClass('open');
+            $('html').toggleClass('header-top-user-submenu-open');
             e.preventDefault();
         }
     });
@@ -1047,18 +1069,15 @@ $(document).ready(function() {
         var curLI = $(this).parent();
         if (curLI.find('ul').length > 0) {
             curLI.toggleClass('open');
+            $('html').toggleClass('nav-mobile-submenu-open');
             e.preventDefault();
         }
     });
 
-    var timerNTR = null;
-
-    $('body').on('mouseenter', '.ntr-map-img .ntr-map-img-city', function(e) {
+    $('body').on('click', '.ntr-map-img .ntr-map-img-city', function(e) {
         if ($(window).width() > 1205) {
-            window.clearTimeout(timerNTR);
-            timerNTR = null;
-
             $('.ntr-chart-map-region-hint').remove();
+            $('.ntr-chart-map-region-hint-show').remove();
             $('.wrapper').append('<div class="ntr-chart-map-region-hint">' +
                                  '<div class="ntr-chart-map-region-hint-container">' +
                                  '</div>' +
@@ -1114,41 +1133,66 @@ $(document).ready(function() {
                     hintHTML += '</div>';
                 }
             }
-            $('.ntr-chart-map-region-hint-container').html(hintHTML);
+            $('.ntr-chart-map-region-hint .ntr-chart-map-region-hint-container').html(hintHTML);
+        }
+    });
+
+    $('body').on('mouseenter', '.ntr-map-img .ntr-map-img-city', function(e) {
+        if ($(window).width() > 1205) {
+            $('.ntr-chart-map-region-hint-show').remove();
+            $('.wrapper').append('<div class="ntr-chart-map-region-hint-show">' +
+                                 '<div class="ntr-chart-map-region-hint-container">' +
+                                 '</div>' +
+                             '</div>');
+            var curLeft = $(this).offset().left;
+            var curTop = $(this).offset().top;
+            $('.ntr-chart-map-region-hint-show').css({'left': curLeft, 'top': curTop});
+
+            var hintHTML = '';
+            var curID = $(this).attr('data-id');
+            var curData = null;
+            for (var i = 0; i < ntrCities.length; i++) {
+                if (curID == ntrCities[i].id) {
+                    curData = ntrCities[i];
+                }
+            }
+            if (curData !== null) {
+                hintHTML += '<div class="ntr-chart-map-region-hint-header">' +
+                                '<div class="ntr-chart-map-region-hint-header-info">' +
+                                    '<div class="ntr-chart-map-region-hint-title">' + curData.title + '</div>';
+                if (typeof (curData.region) != 'undefined') {
+                    var curRegion = '';
+                    for (var r = 0; r < russiaRegions.length; r++) {
+                        if (russiaRegions[r].id == curData.region) {
+                            curRegion = russiaRegions[r].title;
+                        }
+                    }
+                    hintHTML +=     '<div class="ntr-chart-map-region-hint-region">' + curRegion + '</div>';
+                }
+                hintHTML +=     '</div>';
+                if (typeof (curData.type) != 'undefined') {
+                    hintHTML += '<div class="ntr-chart-map-region-hint-header-type"><span style="background-color:' + curData.type.color + '">' + curData.type.title + '</span></div>';
+                }
+                hintHTML += '</div>';
+            }
+            $('.ntr-chart-map-region-hint-show .ntr-chart-map-region-hint-container').html(hintHTML);
         }
     });
 
     $('body').on('mouseleave', '.ntr-map-img .ntr-map-img-city', function(e) {
         if ($(window).width() > 1205) {
-            window.clearTimeout(timerNTR);
-            timerNTR = null;
-
-            timerNTR = window.setTimeout(function() {
-                $('.ntr-chart-map-region-hint').remove();
-            }, 500);
+            $('.ntr-chart-map-region-hint-show').remove();
         }
     });
 
-    $('body').on('mouseenter', '.ntr-chart-map-region-hint', function(e) {
-        if ($(window).width() > 1205) {
-            window.clearTimeout(timerNTR);
-            timerNTR = null;
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.ntr-chart-map-region-hint').length == 0 && $(e.target).parents().filter('.ntr-map-img-city').length == 0 && !$(e.target).hasClass('ntr-map-img-city') && $(e.target).parents().filter('.ntr-city-list').length == 0) {
+            $('.ntr-chart-map-region-hint').remove();
         }
     });
 
-    $('body').on('mouseleave', '.ntr-chart-map-region-hint', function(e) {
-        if ($(window).width() > 1205) {
-            window.clearTimeout(timerNTR);
-            timerNTR = null;
-
-            timerNTR = window.setTimeout(function() {
-                $('.ntr-chart-map-region-hint').remove();
-            }, 500);
-        }
-    });
-
-    var ntrMapWidth = 1108;
-    var ntrMapHeight = 630;
+    var ntrMapWidth = 1107.77;
+    var ntrMapHeight = 630.12;
 
     $('.ntr-map').each(function() {
         var newHTML = '';
@@ -1157,6 +1201,8 @@ $(document).ready(function() {
 
         $('.ntr-map').html(newHTML);
         $('.ntr-map').data('zoom', 1);
+        $('.ntr-map-img').data('curLeft', 0);
+        $('.ntr-map-img').data('curTop', 0);
 
         var newMap = '';
 
@@ -1170,36 +1216,86 @@ $(document).ready(function() {
         var newCities = '';
         for (var i = 0; i < ntrCities.length; i++) {
             var curData = ntrCities[i];
-            var curCoord = [curData.coords[0]  / 1108 * 100, curData.coords[1] / 631 * 100];
-            newCities += '<div class="ntr-map-img-city" data-id="' + curData.id + '" style="left:' + curCoord[0] + '%; top:' + curCoord[1] + '%"><div class="ntr-map-img-city-inner"></div></div>';
+            var curCoord = [curData.coords[0] / ntrMapWidth * 100, curData.coords[1] / ntrMapHeight * 100];
+            var classFederal = '';
+            if (typeof (curData.federal) != 'undefined' && curData.federal) {
+                classFederal = ' federal';
+            }
+            newCities += '<div class="ntr-map-img-city' + classFederal + '" data-id="' + curData.id + '" data-left="' + curData.coords[0] + '" data-top="' + curData.coords[1] + '" style="left:' + curCoord[0] + '%; top:' + curCoord[1] + '%" title="' + ntrCities[i].title + '"></div>';
         }
         $('.ntr-map-img').append(newCities);
     });
 
+    var ntrMapZoomIntensity = 0.5;
+
+    $('body').on('dblclick', '.ntr-map-img', function(e) {
+        var curZoom = Number($('.ntr-map').data('zoom'));
+
+        var curLeft = Number($('.ntr-map-img').data('curLeft'));
+        var curTop = Number($('.ntr-map-img').data('curTop'));
+
+        var mouseX = e.pageX - $('.ntr-map').offset().left;
+        var mouseY = e.pageY - $('.ntr-map').offset().top;
+
+        var scale = curZoom + ntrMapZoomIntensity;
+        curLeft += mouseX / (curZoom * scale) - mouseX / curZoom;
+        curTop += mouseY / (curZoom * scale) - mouseY / curZoom;
+
+        curZoom = curZoom + ntrMapZoomIntensity;
+        $('.ntr-map').data('zoom', curZoom);
+
+        $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)', 'width': curZoom * ntrMapWidth, 'height': curZoom * ntrMapHeight});
+        $('.ntr-map-img').data('curLeft', curLeft);
+        $('.ntr-map-img').data('curTop', curTop);
+    });
+
     $('body').on('click', '.ntr-map-zoom-inc', function(e) {
         var curZoom = Number($('.ntr-map').data('zoom'));
-        curZoom++;
+
+        var curLeft = Number($('.ntr-map-img').data('curLeft'));
+        var curTop = Number($('.ntr-map-img').data('curTop'));
+
+        var mouseX = ntrMapWidth / 2;
+        var mouseY = ntrMapHeight / 2;
+
+        var scale = curZoom + ntrMapZoomIntensity;
+        curLeft += mouseX / (curZoom * scale) - mouseX / curZoom;
+        curTop += mouseY / (curZoom * scale) - mouseY / curZoom;
+
+        curZoom = curZoom + ntrMapZoomIntensity;
         $('.ntr-map').data('zoom', curZoom);
-        $('.ntr-map-img').css({'transform': 'translate(-' + (curZoom * 1108 / 2) + 'px, -' + (curZoom * 631 / 2) + 'px)', 'width': curZoom * 1108, 'height': curZoom * 631, 'left': '50%', 'top': '50%'});
-        $('.ntr-map-img').data('curLeft', -curZoom * 1108 / 2);
-        $('.ntr-map-img').data('curTop', -curZoom * 631 / 2);
+
+        $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)', 'width': curZoom * ntrMapWidth, 'height': curZoom * ntrMapHeight});
+        $('.ntr-map-img').data('curLeft', curLeft);
+        $('.ntr-map-img').data('curTop', curTop);
         e.preventDefault();
     });
 
     $('body').on('click', '.ntr-map-zoom-dec', function(e) {
         var curZoom = Number($('.ntr-map').data('zoom'));
-        curZoom--;
-        if (curZoom < 0) {
-            curZoom = 0;
+
+        var curLeft = Number($('.ntr-map-img').data('curLeft'));
+        var curTop = Number($('.ntr-map-img').data('curTop'));
+
+        var mouseX = ntrMapWidth / 2;
+        var mouseY = ntrMapHeight / 2;
+
+        var scale = curZoom - ntrMapZoomIntensity;
+        if (scale < 1) {
+            scale = 1;
+        }
+        curLeft -= mouseX / (curZoom * scale) - mouseX / curZoom;
+        curTop -= mouseY / (curZoom * scale) - mouseY / curZoom;
+
+        curZoom = curZoom - ntrMapZoomIntensity;
+        if (curZoom < 1) {
+            curZoom = 1;
         }
         $('.ntr-map').data('zoom', curZoom);
-        if (curZoom == 0) {
-            $('.ntr-map-img').css({'transform': 'none', 'width': '100%', 'height': 'auto', 'left': 'auto', 'top': 'auto'});
-        } else {
-            $('.ntr-map-img').css({'transform': 'translate(-' + (curZoom * 1108 / 2) + 'px, -' + (curZoom * 631 / 2) + 'px)', 'width': curZoom * 1108, 'height': curZoom * 631, 'left': '50%', 'top': '50%'});
-            $('.ntr-map-img').data('curLeft', -curZoom * 1108 / 2);
-            $('.ntr-map-img').data('curTop', -curZoom * 631 / 2);
-        }
+
+        $('.ntr-map-img').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px)', 'width': curZoom * ntrMapWidth, 'height': curZoom * ntrMapHeight});
+        $('.ntr-map-img').data('curLeft', curLeft);
+        $('.ntr-map-img').data('curTop', curTop);
         e.preventDefault();
     });
 
@@ -1299,8 +1395,37 @@ $(document).ready(function() {
         $('.ntr-filter-list').html(typesHTML);
 
         var regionsHTML = '';
-        for (var i = 0; i < russiaRegions.length; i++) {
-            var curRegion = russiaRegions[i];
+
+        var newRegions = russiaRegions.slice();
+        newRegions.sort(function(a, b) {
+            if (typeof (a.federal) != 'undefined' && a.federal) {
+                return -1;
+            }
+            return 1;
+        });
+        newRegions.sort(function(a, b) {
+            if ((typeof (a.federal) != 'undefined' && a.federal) && (typeof (b.federal) != 'undefined' && b.federal)) {
+                if (a.title > b.title) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+            return 0;
+        });
+        newRegions.sort(function(a, b) {
+            if ((typeof (a.federal) == 'undefined' || !a.federal) && (typeof (b.federal) == 'undefined' || !b.federal)) {
+                if (a.title > b.title) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+            return 0;
+        });
+
+        for (var i = 0; i < newRegions.length; i++) {
+            var curRegion = newRegions[i];
             var citiesHTML = '';
             for (var j = 0; j < ntrCities.length; j++) {
                 if (ntrCities[j].region == curRegion.id) {
@@ -1357,34 +1482,61 @@ $(document).ready(function() {
         updateNTRFilterTypes();
     });
 
+    $('.ntr-city-search input').attr('autocomplete', 'off');
+    $('.ntr-city-search input').on('keydown', function(e) {
+        if (e.keyCode == 13) {
+            return false;
+        }
+    });
+
     $('.ntr-city-search input').on('keyup blur change', function() {
         var curValue = $(this).val().toLowerCase();
         $('.ntr-city-list li').each(function() {
             var curItem = $(this);
-            if (curItem.text().toLowerCase().indexOf(curValue) == -1) {
+
+            var curTitle = curItem.find('span').html();
+            curTitle = curTitle.replace('<b>', '').replace('</b>', '');
+            curItem.find('span').html(curTitle);
+
+            var curIndex = curItem.text().toLowerCase().indexOf(curValue);
+            if (curIndex == -1) {
                 curItem.addClass('hidden');
             } else {
                 curItem.removeClass('hidden');
+                var curTitle = curItem.find('span').html();
+                curItem.find('span').html(curTitle.slice(0, curIndex) + '<b>' + curTitle.slice(curIndex, curIndex + curValue.length) + '</b>' + curTitle.slice(curIndex + curValue.length));
             }
         });
         $('.ntr-city-group').each(function() {
             var curGroup = $(this);
+            curGroup.removeClass('open');
             if (curGroup.find('li').length == curGroup.find('li.hidden').length) {
                 curGroup.addClass('hidden');
             } else {
                 curGroup.removeClass('hidden');
+                curGroup.addClass('open');
             }
         });
+        if (curValue == '') {
+            $('.ntr-city-group').removeClass('open');
+        }
     });
 
     $('body').on('click', '.ntr-city-list li span', function() {
         var curID = $(this).attr('data-id');
         $('.ntr-map-img .ntr-map-img-city[data-id="' + curID + '"]').each(function() {
-            window.clearTimeout(timerNTR);
-            timerNTR = null;
+            var mapZoom = Number($('.ntr-map').data('zoom'));
+
+            var mapLeft = $('.ntr-map').width() / 2 - Number($(this).attr('data-left')) * mapZoom;
+            var mapTop = $('.ntr-map').height() / 2 - Number($(this).attr('data-top')) * mapZoom;
+
+            $('.ntr-map-img').css({'transform': 'translate(' + mapLeft + 'px, ' + mapTop + 'px)'});
+            $('.ntr-map-img').data('curLeft', mapLeft);
+            $('.ntr-map-img').data('curTop', mapTop);
 
             $('.ntr-chart-map-region-hint').remove();
-            $('body').append('<div class="ntr-chart-map-region-hint">' +
+            $('.ntr-chart-map-region-hint-show').remove();
+            $('.wrapper').append('<div class="ntr-chart-map-region-hint">' +
                                  '<div class="ntr-chart-map-region-hint-container">' +
                                  '</div>' +
                              '</div>');
@@ -1393,56 +1545,52 @@ $(document).ready(function() {
             $('.ntr-chart-map-region-hint').css({'left': curLeft, 'top': curTop});
 
             var hintHTML = '';
-            if ($(this).attr('data-type') == 'city') {
-                var curData = null;
-                for (var i = 0; i < ntrCities.length; i++) {
-                    if (curID == ntrCities[i].id) {
-                        curData = ntrCities[i];
-                    }
+            var curData = null;
+            for (var i = 0; i < ntrCities.length; i++) {
+                if (curID == ntrCities[i].id) {
+                    curData = ntrCities[i];
                 }
-                if (curData !== null) {
-                    hintHTML += '<div class="ntr-chart-map-region-hint-header">' +
-                                    '<div class="ntr-chart-map-region-hint-header-info">' +
-                                        '<div class="ntr-chart-map-region-hint-title">' + curData.title + '</div>';
-                    if (typeof (curData.region) != 'undefined') {
-                        var curRegion = '';
-                        for (var r = 0; r < russiaRegions.length; r++) {
-                            if (russiaRegions[r].id == curData.region) {
-                                curRegion = russiaRegions[r].title;
-                            }
+            }
+            if (curData !== null) {
+                hintHTML += '<div class="ntr-chart-map-region-hint-header">' +
+                                '<div class="ntr-chart-map-region-hint-header-info">' +
+                                    '<div class="ntr-chart-map-region-hint-title">' + curData.title + '</div>';
+                if (typeof (curData.region) != 'undefined') {
+                    var curRegion = '';
+                    for (var r = 0; r < russiaRegions.length; r++) {
+                        if (russiaRegions[r].id == curData.region) {
+                            curRegion = russiaRegions[r].title;
                         }
-                        hintHTML +=     '<div class="ntr-chart-map-region-hint-region">' + curRegion + '</div>';
                     }
-                    hintHTML +=     '</div>';
-                    if (typeof (curData.type) != 'undefined') {
-                        hintHTML += '<div class="ntr-chart-map-region-hint-header-type"><span style="background-color:' + curData.type.color + '">' + curData.type.title + '</span></div>';
-                    }
-                    hintHTML += '</div>';
-                    if (typeof (curData.objects) != 'undefined') {
-                        hintHTML += '<div class="ntr-chart-map-region-hint-list">';
+                    hintHTML +=     '<div class="ntr-chart-map-region-hint-region">' + curRegion + '</div>';
+                }
+                hintHTML +=     '</div>';
+                if (typeof (curData.type) != 'undefined') {
+                    hintHTML += '<div class="ntr-chart-map-region-hint-header-type"><span style="background-color:' + curData.type.color + '">' + curData.type.title + '</span></div>';
+                }
+                hintHTML += '</div>';
+                if (typeof (curData.objects) != 'undefined') {
+                    hintHTML += '<div class="ntr-chart-map-region-hint-list">';
+                    for (var r = 0; r < ntrTypes.length; r++) {
                         for (var j = 0; j < curData.objects.length; j++) {
                             var curItem = curData.objects[j];
                             var curType = '';
-                            for (var r = 0; r < ntrTypes.length; r++) {
-                                if (ntrTypes[r].id == curItem[0]) {
-                                    curType = ntrTypes[r].title;
-                                    if (typeof (ntrTypes[r].pupup_title) != 'undefined') {
-                                        curType = ntrTypes[r].pupup_title;
-                                    }
+                            if (ntrTypes[r].id == curItem[0]) {
+                                curType = ntrTypes[r].title;
+                                if (typeof (ntrTypes[r].pupup_title) != 'undefined') {
+                                    curType = ntrTypes[r].pupup_title;
                                 }
+                                hintHTML += '<div class="ntr-chart-map-region-hint-item">' +
+                                                '<div class="ntr-chart-map-region-hint-item-title"><a href="' + curItem[2] + '">' + curType + '</a></div>' +
+                                                '<div class="ntr-chart-map-region-hint-item-count">' + curItem[1] + '</div>' +
+                                            '</div>';
                             }
-                            hintHTML += '<div class="ntr-chart-map-region-hint-item">' +
-                                            '<div class="ntr-chart-map-region-hint-item-title"><a href="' + curItem[2] + '">' + curType + '</a></div>' +
-                                            '<div class="ntr-chart-map-region-hint-item-count">' + curItem[1] + '</div>' +
-                                        '</div>';
                         }
-                        hintHTML += '</div>';
                     }
+                    hintHTML += '</div>';
                 }
-            } else {
-                hintHTML += '<div class="ntr-chart-map-region-hint-title">' + $(this).attr('data-title') + '</div>';
             }
-            $('.ntr-chart-map-region-hint-container').html(hintHTML);
+            $('.ntr-chart-map-region-hint .ntr-chart-map-region-hint-container').html(hintHTML);
         });
     });
 

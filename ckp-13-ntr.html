@@ -13,6 +13,27 @@
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
     </head>
 
     <body>
@@ -39,7 +60,7 @@
                                 <a href="#" class="header-top-add"><svg><use xlink:href="images/sprite.svg#header-top-add"></use></svg><svg><use xlink:href="images/sprite.svg#header-top-add-close"></use></svg></a>
                             </div>
                             <div class="header-top-user">
-                                <a href="#" class="header-top-user-link"><svg><use xlink:href="images/sprite.svg#header-top-user"></use></svg></a>
+                                <a href="#" class="header-top-user-link"><svg><use xlink:href="images/sprite.svg#header-top-user"></use></svg><svg><use xlink:href="images/sprite.svg#header-top-add-close"></use></svg></a>
                                 <div class="header-top-user-menu">
                                     <div class="header-top-user-menu-name">Сергей Байдаков</div>
                                     <div class="header-top-user-menu-post">Редактор РИЭПП</div>
@@ -178,7 +199,9 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="ntr-map-zoom">
+                            <div class="ntr-map-zoom-title">Zoom</div>
                             <a href="#" class="ntr-map-zoom-inc"><svg><use xlink:href="images/sprite.svg#ntr-map-zoom-inc"></use></svg></a>
                             <a href="#" class="ntr-map-zoom-dec"><svg><use xlink:href="images/sprite.svg#ntr-map-zoom-dec"></use></svg></a>
                         </div>
@@ -310,6 +333,7 @@
                                 id: 0,
                                 title: 'г. Москва',
                                 region: 77,
+                                federal: true,
                                 coords: [146, 360],
                                 objects: [
                                     ['ckp', 138, '#'],
@@ -327,6 +351,7 @@
                             {
                                 id: 1,
                                 title: 'г. Санкт-Петербург',
+                                federal: true,
                                 region: 78,
                                 coords: [148, 276],
                                 objects: [
@@ -453,7 +478,7 @@
                                 id: 9,
                                 title: 'г. Ростов-на-Дону',
                                 region: 61,
-                                coords: [85, 477],
+                                coords: [95, 475],
                                 objects: [
                                     ['ckp', 13, '#'],
                                     ['ic', 1, '#'],
@@ -524,8 +549,9 @@
                             {
                                 id: 14,
                                 title: 'г. Севастополь',
+                                federal: true,
                                 region: 92,
-                                coords: [9, 450],
+                                coords: [15, 458],
                                 objects: [
                                     ['ckp', 9, '#'],
                                     ['unu', 2, '#'],
@@ -609,7 +635,7 @@
                                 id: 20,
                                 title: 'г. Тамбов',
                                 region: 68,
-                                coords: [166, 424],
+                                coords: [151, 425],
                                 objects: [
                                     ['ckp', 7, '#'],
                                     ['unu', 1, '#'],
@@ -959,7 +985,7 @@
                                 id: 45,
                                 title: 'г. Рыбное',
                                 region: 62,
-                                coords: [146, 372],
+                                coords: [158, 395],
                                 objects: [
                                     ['ckp', 3, '#'],
                                 ]
@@ -1397,7 +1423,7 @@
                                 id: 84,
                                 title: 'г. Елизово',
                                 region: 41,
-                                coords: [1036, 279],
+                                coords: [1037, 288],
                                 objects: [
                                     ['ckp', 1, '#'],
                                     ['unu', 1, '#'],
@@ -1590,7 +1616,7 @@
                                 id: 101,
                                 title: 'г. Новокузнецк',
                                 region: 42,
-                                coords: [523, 540],
+                                coords: [524, 557],
                                 objects: [
                                     ['ckp', 1, '#'],
                                     ['quant', 1, '#'],
@@ -1620,7 +1646,7 @@
                                 id: 103,
                                 title: 'г. Петропавловск-Камчатский',
                                 region: 41,
-                                coords: [1046, 284],
+                                coords: [1046, 294],
                                 objects: [
                                     ['ckp', 1, '#'],
                                     ['unu', 2, '#'],
@@ -1677,7 +1703,7 @@
                                 id: 108,
                                 title: 'г. Саранск',
                                 region: 13,
-                                coords: [191, 417],
+                                coords: [188, 425],
                                 objects: [
                                     ['ckp', 1, '#'],
                                     ['techno', 2, '#'],
@@ -1691,7 +1717,7 @@
                                 id: 109,
                                 title: 'г. Саров',
                                 region: 52,
-                                coords: [185, 396],
+                                coords: [186, 406],
                                 objects: [
                                     ['ckp', 1, '#'],
                                 ]
@@ -1743,7 +1769,7 @@
                                 id: 114,
                                 title: 'г. Троицк',
                                 region: 77,
-                                coords: [151, 400],
+                                coords: [151, 360],
                                 type: {
                                     title: 'Наукоград',
                                     color: '#85d7fb'
@@ -1760,7 +1786,7 @@
                                 id: 115,
                                 title: 'г. Тула',
                                 region: 71,
-                                coords: [141, 375],
+                                coords: [140, 386],
                                 objects: [
                                     ['ckp', 1, '#'],
                                     ['ic', 1, '#'],
@@ -1775,7 +1801,7 @@
                                 id: 116,
                                 title: 'г. Уссурийск',
                                 region: 25,
-                                coords: [1000, 559],
+                                coords: [957, 561],
                                 objects: [
                                     ['ckp', 1, '#'],
                                 ]
@@ -1797,7 +1823,7 @@
                                 id: 118,
                                 title: 'г. Цивильск',
                                 region: 21,
-                                coords: [417, 406],
+                                coords: [212, 420],
                                 objects: [
                                     ['ckp', 1, '#'],
                                 ]
@@ -1856,7 +1882,7 @@
                                 id: 124,
                                 title: 'п. Борок',
                                 region: 76,
-                                coords: [267, 425],
+                                coords: [182, 354],
                                 objects: [
                                     ['ckp', 1, '#'],
                                     ['unu', 2, '#'],
@@ -1867,7 +1893,7 @@
                                 id: 125,
                                 title: 'г. Кировск',
                                 region: 51,
-                                coords: [262, 223],
+                                coords: [258, 229],
                                 objects: [
                                     ['unu', 3, '#'],
                                     ['cmit', 1, '#'],
@@ -1879,7 +1905,7 @@
                                 id: 126,
                                 title: 'г. Благовещенск',
                                 region: 28,
-                                coords: [877, 499],
+                                coords: [862, 492],
                                 objects: [
                                     ['unu', 2, '#'],
                                 ]
@@ -1956,7 +1982,7 @@
                                 id: 133,
                                 title: 'г. Кырен',
                                 region: 3,
-                                coords: [649, 561],
+                                coords: [644, 556],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -1965,7 +1991,7 @@
                                 id: 134,
                                 title: 'г. Одинцово',
                                 region: 50,
-                                coords: [154, 360],
+                                coords: [149, 355],
                                 objects: [
                                     ['unu', 1, '#'],
                                     ['cmit', 1, '#'],
@@ -1975,7 +2001,7 @@
                                 id: 135,
                                 title: 'г. Первоуральск',
                                 region: 66,
-                                coords: [321, 444],
+                                coords: [316, 439],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -1984,7 +2010,7 @@
                                 id: 136,
                                 title: 'г. Покровск',
                                 region: 14,
-                                coords: [784, 357],
+                                coords: [779, 352],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -1993,7 +2019,7 @@
                                 id: 137,
                                 title: 'г. Слюдянка',
                                 region: 38,
-                                coords: [664, 559],
+                                coords: [659, 554],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -2002,7 +2028,7 @@
                                 id: 138,
                                 title: 'г. Ступино',
                                 region: 50,
-                                coords: [152, 371],
+                                coords: [147, 366],
                                 objects: [
                                     ['unu', 1, '#'],
                                     ['cmit', 1, '#'],
@@ -2013,7 +2039,7 @@
                                 id: 139,
                                 title: 'г. Торы',
                                 region: 3,
-                                coords: [51.7508, 102.9811],
+                                coords: [666, 556],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -2022,7 +2048,7 @@
                                 id: 140,
                                 title: 'г. Туруханск',
                                 region: 24,
-                                coords: [65.7586, 87.9324],
+                                coords: [527, 359],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -2031,7 +2057,7 @@
                                 id: 141,
                                 title: 'с. Витязь',
                                 region: 25,
-                                coords: [42.598182, 131.185859],
+                                coords: [957, 579],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -2040,7 +2066,7 @@
                                 id: 142,
                                 title: 'с. Кичи-Балык',
                                 region: 9,
-                                coords: [43.789028, 42.650015],
+                                coords: [66, 509],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -2049,7 +2075,7 @@
                                 id: 143,
                                 title: 'Феодосия, пгт. Курортное',
                                 region: 91,
-                                coords: [44.913332, 35.192013],
+                                coords: [18, 439],
                                 objects: [
                                     ['unu', 1, '#'],
                                 ]
@@ -2058,7 +2084,7 @@
                                 id: 144,
                                 title: 'Королёв',
                                 region: 50,
-                                coords: [55.8562558, 37.7945224],
+                                coords: [154, 351],
                                 type: {
                                     title: 'Наукоград',
                                     color: '#85d7fb'
@@ -2072,7 +2098,7 @@
                                 id: 145,
                                 title: 'Реутов',
                                 region: 50,
-                                coords: [55.698236, 37.8019443],
+                                coords: [153, 356],
                                 type: {
                                     title: 'Наукоград',
                                     color: '#85d7fb'
@@ -2085,7 +2111,7 @@
                                 id: 146,
                                 title: 'Фрязино',
                                 region: 50,
-                                coords: [55.8990154, 37.9809171],
+                                coords: [155, 353],
                                 type: {
                                     title: 'Наукоград',
                                     color: '#85d7fb'
@@ -2100,7 +2126,7 @@
                                 id: 147,
                                 title: 'Киров',
                                 region: 43,
-                                coords: [58.5585313, 49.6229219],
+                                coords: [250, 384],
                                 objects: [
                                     ['ic', 1, '#'],
                                 ]
@@ -2109,7 +2135,7 @@
                                 id: 148,
                                 title: 'Великий Новгород',
                                 region: 53,
-                                coords: [141, 295],
+                                coords: [136, 290],
                                 objects: [
                                     ['ic', 1, '#'],
                                     ['intc', 1, '#'],
@@ -2122,7 +2148,7 @@
                                 id: 149,
                                 title: 'Псков',
                                 region: 60,
-                                coords: [57.774284, 28.2868188],
+                                coords: [123, 280],
                                 objects: [
                                     ['ic', 1, '#'],
                                     ['sirius', 1, '#'],
@@ -2134,7 +2160,7 @@
                                 id: 150,
                                 title: 'Иннополис',
                                 region: 16,
-                                coords: [55.8025, 48.7814],
+                                coords: [224, 410],
                                 objects: [
                                     ['nti', 1, '#'],
                                     ['oez', 1, '#'],
@@ -2144,7 +2170,7 @@
                                 id: 151,
                                 title: 'Химки',
                                 region: 50,
-                                coords: [55.9036705, 37.4454154],
+                                coords: [153, 350],
                                 objects: [
                                     ['techno', 3, '#'],
                                     ['cmit', 1, '#'],
@@ -2154,7 +2180,7 @@
                                 id: 152,
                                 title: 'Великие Луки',
                                 region: 60,
-                                coords: [56.3471847, 30.565757],
+                                coords: [118, 303],
                                 objects: [
                                     ['techno', 2, '#'],
                                     ['quant', 1, '#'],
@@ -2164,7 +2190,7 @@
                                 id: 153,
                                 title: 'Переславль-Залесский',
                                 region: 76,
-                                coords: [56.7510435, 38.8693064],
+                                coords: [171, 348],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2173,7 +2199,7 @@
                                 id: 154,
                                 title: 'Волоколамск',
                                 region: 50,
-                                coords: [56.0508121, 35.9735027],
+                                coords: [147, 344],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2182,7 +2208,7 @@
                                 id: 155,
                                 title: 'Гусев',
                                 region: 39,
-                                coords: [54.6065477, 22.2094114],
+                                coords: [57, 270],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2191,7 +2217,7 @@
                                 id: 156,
                                 title: 'Лениногорск',
                                 region: 16,
-                                coords: [54.6116917, 52.4582118],
+                                coords: [238, 437],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2200,7 +2226,7 @@
                                 id: 157,
                                 title: 'Набережные Челны',
                                 region: 16,
-                                coords: [55.7586475, 52.4108739],
+                                coords: [240, 422],
                                 objects: [
                                     ['techno', 1, '#'],
                                     ['cmit', 2, '#'],
@@ -2211,7 +2237,7 @@
                                 id: 158,
                                 title: 'Сатис',
                                 region: 52,
-                                coords: [54.9301, 43.2459],
+                                coords: [183, 392],
                                 objects: [
                                     ['techno', 1, '#'],
                                     ['quant', 1, '#'],
@@ -2222,7 +2248,7 @@
                                 id: 159,
                                 title: 'Егорьевск',
                                 region: 50,
-                                coords: [55.3981326, 39.0508236],
+                                coords: [155, 372],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2231,7 +2257,7 @@
                                 id: 160,
                                 title: 'Любучаны',
                                 region: 50,
-                                coords: [55.25509, 37.55723],
+                                coords: [153, 360],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2240,7 +2266,7 @@
                                 id: 161,
                                 title: 'Нахабино',
                                 region: 50,
-                                coords: [55.8556, 37.2453],
+                                coords: [150, 349],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2249,7 +2275,7 @@
                                 id: 162,
                                 title: 'Донской',
                                 region: 71,
-                                coords: [53.9829582, 38.3522104],
+                                coords: [137, 373],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2258,7 +2284,7 @@
                                 id: 163,
                                 title: 'Рубцовск',
                                 region: 22,
-                                coords: [51.5163075, 81.2227729],
+                                coords: [461, 569],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2267,7 +2293,7 @@
                                 id: 164,
                                 title: 'Можайск',
                                 region: 50,
-                                coords: [55.5219819, 36.0390724],
+                                coords: [143, 350],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2276,7 +2302,7 @@
                                 id: 165,
                                 title: 'Узловая',
                                 region: 71,
-                                coords: [53.9881407, 38.1913104],
+                                coords: [136, 375],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2285,7 +2311,7 @@
                                 id: 166,
                                 title: 'Пушкино',
                                 region: 50,
-                                coords: [56.0254548, 37.8621438],
+                                coords: [156, 354],
                                 objects: [
                                     ['techno', 1, '#'],
                                     ['cmit', 1, '#'],
@@ -2295,7 +2321,7 @@
                                 id: 167,
                                 title: 'Тольятти',
                                 region: 63,
-                                coords: [53.5356438, 49.404461],
+                                coords: [206, 441],
                                 objects: [
                                     ['techno', 1, '#'],
                                     ['quant', 1, '#'],
@@ -2307,7 +2333,7 @@
                                 id: 168,
                                 title: 'Стерлитамак',
                                 region: 2,
-                                coords: [53.6452498, 55.9465707],
+                                coords: [253, 466],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2316,7 +2342,7 @@
                                 id: 169,
                                 title: 'Сланцы',
                                 region: 47,
-                                coords: [59.1328693, 28.103106],
+                                coords: [143, 268],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2325,7 +2351,7 @@
                                 id: 170,
                                 title: 'Талдом',
                                 region: 50,
-                                coords: [56.7458993, 37.5426414],
+                                coords: [156, 345],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2334,7 +2360,7 @@
                                 id: 171,
                                 title: 'Нягань',
                                 region: 86,
-                                coords: [62.1604839, 65.4094361],
+                                coords: [376, 393],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2343,7 +2369,7 @@
                                 id: 172,
                                 title: 'Усмань',
                                 region: 48,
-                                coords: [52.0594165, 39.7414516],
+                                coords: [128, 414],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2352,7 +2378,7 @@
                                 id: 173,
                                 title: 'Киржач',
                                 region: 33,
-                                coords: [56.1635263, 38.8785035],
+                                coords: [166, 361],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2361,7 +2387,7 @@
                                 id: 174,
                                 title: 'Выкса',
                                 region: 52,
-                                coords: [55.3357103, 42.1829169],
+                                coords: [171, 391],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2370,7 +2396,7 @@
                                 id: 175,
                                 title: 'Назрань',
                                 region: 6,
-                                coords: [43.2407977, 44.779685],
+                                coords: [90, 539],
                                 objects: [
                                     ['techno', 1, '#'],
                                     ['cmit', 1, '#'],
@@ -2380,7 +2406,7 @@
                                 id: 176,
                                 title: 'Балашиха',
                                 region: 50,
-                                coords: [55.8113352, 37.9531413],
+                                coords: [152, 370],
                                 objects: [
                                     ['techno', 1, '#'],
                                     ['cmit', 1, '#'],
@@ -2391,7 +2417,7 @@
                                 id: 177,
                                 title: 'Старая Русса',
                                 region: 53,
-                                coords: [58.0056873, 31.3705076],
+                                coords: [145, 295],
                                 objects: [
                                     ['techno', 1, '#'],
                                 ]
@@ -2400,7 +2426,7 @@
                                 id: 178,
                                 title: 'Заречный',
                                 region: 58,
-                                coords: [53.1211009, 45.0941502],
+                                coords: [176, 420],
                                 objects: [
                                     ['cmit', 2, '#'],
                                 ]
@@ -2409,7 +2435,7 @@
                                 id: 179,
                                 title: 'Елец',
                                 region: 48,
-                                coords: [52.5401738, 38.4539121],
+                                coords: [125, 392],
                                 objects: [
                                     ['cmit', 2, '#'],
                                 ]
@@ -2418,7 +2444,7 @@
                                 id: 180,
                                 title: 'Смоленск',
                                 region: 67,
-                                coords: [54.7117168, 31.7403366],
+                                coords: [100, 340],
                                 objects: [
                                     ['cmit', 2, '#'],
                                     ['sirius', 1, '#'],
@@ -2428,7 +2454,7 @@
                                 id: 181,
                                 title: 'Ковылкино',
                                 region: 13,
-                                coords: [53.9641464, 43.8441229],
+                                coords: [173, 404],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2437,7 +2463,7 @@
                                 id: 182,
                                 title: 'Георгиевск',
                                 region: 26,
-                                coords: [44.0736421, 43.3989718],
+                                coords: [91, 519],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2446,7 +2472,7 @@
                                 id: 183,
                                 title: 'Волжский',
                                 region: 34,
-                                coords: [48.7228483, 44.6712417],
+                                coords: [142, 471],
                                 objects: [
                                     ['cmit', 1, '#'],
                                     ['quant', 1, '#'],
@@ -2456,7 +2482,7 @@
                                 id: 184,
                                 title: 'Сосенский',
                                 region: 40,
-                                coords: [53.981525, 35.8871458],
+                                coords: [119, 363],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2465,7 +2491,7 @@
                                 id: 185,
                                 title: 'Рузаевка',
                                 region: 13,
-                                coords: [53.9833238, 44.874116],
+                                coords: [184, 411],
                                 objects: [
                                     ['cmit', 1, '#'],
                                     ['quant', 1, '#'],
@@ -2475,7 +2501,7 @@
                                 id: 186,
                                 title: 'Солнечногорск',
                                 region: 50,
-                                coords: [56.1398655, 37.0217653],
+                                coords: [150, 358],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2484,7 +2510,7 @@
                                 id: 187,
                                 title: 'Ессентуки',
                                 region: 26,
-                                coords: [43.969461, 42.7839078],
+                                coords: [83, 518],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2493,7 +2519,7 @@
                                 id: 188,
                                 title: 'Батайск',
                                 region: 61,
-                                coords: [47.063321, 39.6758382],
+                                coords: [86, 461],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2502,7 +2528,7 @@
                                 id: 189,
                                 title: 'Изобильный',
                                 region: 26,
-                                coords: [45.2934342, 41.6336448],
+                                coords: [83, 493],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2511,7 +2537,7 @@
                                 id: 190,
                                 title: 'Невинномысск',
                                 region: 26,
-                                coords: [44.5477404, 41.8726147],
+                                coords: [77, 505],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2520,7 +2546,7 @@
                                 id: 191,
                                 title: 'Пятигорск',
                                 region: 26,
-                                coords: [43.9661669, 42.9911091],
+                                coords: [86, 518],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2529,7 +2555,7 @@
                                 id: 192,
                                 title: 'Наволоки',
                                 region: 37,
-                                coords: [57.3928426, 41.8857371],
+                                coords: [192, 362],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2538,7 +2564,7 @@
                                 id: 193,
                                 title: 'Курганинск',
                                 region: 23,
-                                coords: [44.8126442, 40.5163858],
+                                coords: [63, 494],
                                 objects: [
                                     ['cmit', 2, '#'],
                                     ['sirius', 1, '#'],
@@ -2549,7 +2575,7 @@
                                 id: 194,
                                 title: 'Мончегорск',
                                 region: 51,
-                                coords: [67.8635206, 32.8608886],
+                                coords: [252, 211],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2558,7 +2584,7 @@
                                 id: 195,
                                 title: 'Саяногорск',
                                 region: 19,
-                                coords: [53.0258226, 91.3371643],
+                                coords: [542, 549],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2567,7 +2593,7 @@
                                 id: 196,
                                 title: 'Дивногорск',
                                 region: 24,
-                                coords: [55.8827868, 92.305085],
+                                coords: [553, 507],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2576,7 +2602,7 @@
                                 id: 197,
                                 title: 'Балаково',
                                 region: 64,
-                                coords: [51.9472694, 47.7078146],
+                                coords: [189, 457],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2585,7 +2611,7 @@
                                 id: 198,
                                 title: 'Ангарск',
                                 region: 38,
-                                coords: [52.4698102, 103.8135385],
+                                coords: [659, 544],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2594,7 +2620,7 @@
                                 id: 199,
                                 title: 'Котельники',
                                 region: 50,
-                                coords: [55.584898, 37.7882865],
+                                coords: [147, 372],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2603,7 +2629,7 @@
                                 id: 200,
                                 title: 'Калининск',
                                 region: 64,
-                                coords: [51.4242917, 44.3960177],
+                                coords: [163, 440],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2612,7 +2638,7 @@
                                 id: 201,
                                 title: 'Альметьевск',
                                 region: 16,
-                                coords: [54.8263662, 52.2220654],
+                                coords: [240, 440],
                                 objects: [
                                     ['cmit', 1, '#'],
                                     ['quant', 1, '#'],
@@ -2622,7 +2648,7 @@
                                 id: 202,
                                 title: 'Минусинск',
                                 region: 24,
-                                coords: [53.6355509, 91.6121866],
+                                coords: [558, 542],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2631,7 +2657,7 @@
                                 id: 203,
                                 title: 'Красногорск',
                                 region: 50,
-                                coords: [55.7568475, 37.25442],
+                                coords: [147, 361],
                                 objects: [
                                     ['cmit', 1, '#'],
                                     ['sirius', 1, '#'],
@@ -2641,7 +2667,7 @@
                                 id: 204,
                                 title: 'Петровск',
                                 region: 64,
-                                coords: [52.2343782, 45.3101649],
+                                coords: [169, 446],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2650,7 +2676,7 @@
                                 id: 205,
                                 title: 'Коряжма',
                                 region: 29,
-                                coords: [61.2135993, 47.0252315],
+                                coords: [255, 345],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2659,7 +2685,7 @@
                                 id: 206,
                                 title: 'Бугульма',
                                 region: 16,
-                                coords: [54.4613428, 52.7145286],
+                                coords: [240, 452],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2668,7 +2694,7 @@
                                 id: 207,
                                 title: 'Тулун',
                                 region: 38,
-                                coords: [54.4821409, 100.5029402],
+                                coords: [630, 508],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2677,7 +2703,7 @@
                                 id: 208,
                                 title: 'Мариинский Посад',
                                 region: 21,
-                                coords: [56.036968, 47.6392676],
+                                coords: [215, 412],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2686,7 +2712,7 @@
                                 id: 209,
                                 title: 'Сосновоборск',
                                 region: 24,
-                                coords: [56.0452088, 93.2603411],
+                                coords: [574, 513],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2695,7 +2721,7 @@
                                 id: 210,
                                 title: 'Зеленодольск',
                                 region: 16,
-                                coords: [55.7716751, 48.4260882],
+                                coords: [220, 424],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2704,7 +2730,7 @@
                                 id: 211,
                                 title: 'Усолье-Сибирское',
                                 region: 38,
-                                coords: [52.6817192, 103.5637694],
+                                coords: [653, 549],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2713,7 +2739,7 @@
                                 id: 212,
                                 title: 'Красноперекопск',
                                 region: 91,
-                                coords: [45.8787956, 33.7171523],
+                                coords: [23, 444],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2722,7 +2748,7 @@
                                 id: 213,
                                 title: 'Ясный',
                                 region: 56,
-                                coords: [50.9619499, 59.7993256],
+                                coords: [275, 524],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2731,7 +2757,7 @@
                                 id: 214,
                                 title: 'Мелеуз',
                                 region: 2,
-                                coords: [52.8840637, 55.8533483],
+                                coords: [253, 485],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2740,7 +2766,7 @@
                                 id: 215,
                                 title: 'Усть-Кут',
                                 region: 38,
-                                coords: [56.7178049, 105.7006883],
+                                coords: [659, 490],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2749,7 +2775,7 @@
                                 id: 216,
                                 title: 'Шумерля',
                                 region: 21,
-                                coords: [55.4211795, 46.3433534],
+                                coords: [203, 412],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2758,7 +2784,7 @@
                                 id: 217,
                                 title: 'Орехово-Зуево',
                                 region: 50,
-                                coords: [55.7401729, 38.9120711],
+                                coords: [158, 375],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2767,7 +2793,7 @@
                                 id: 218,
                                 title: 'Мамадыш',
                                 region: 16,
-                                coords: [55.6399876, 51.3378614],
+                                coords: [234, 428],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2776,7 +2802,7 @@
                                 id: 219,
                                 title: 'Черемхово',
                                 region: 38,
-                                coords: [53.0619385, 103.015119],
+                                coords: [654, 542],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2785,7 +2811,7 @@
                                 id: 220,
                                 title: 'Акъяр',
                                 region: 2,
-                                coords: [51.7821, 58.1357],
+                                coords: [266, 507],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2794,7 +2820,7 @@
                                 id: 221,
                                 title: 'Каменка',
                                 region: 58,
-                                coords: [53.1105474, 43.9718501],
+                                coords: [167, 426],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2803,7 +2829,7 @@
                                 id: 222,
                                 title: 'Шелехов',
                                 region: 38,
-                                coords: [52.1352462, 104.0223531],
+                                coords: [664, 553],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2812,7 +2838,7 @@
                                 id: 223,
                                 title: 'Старое Дрожжаное',
                                 region: 16,
-                                coords: [54.6365, 47.3351],
+                                coords: [209, 427],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2821,7 +2847,7 @@
                                 id: 224,
                                 title: 'Выборг',
                                 region: 47,
-                                coords: [60.6380748, 28.6578813],
+                                coords: [158, 267],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2830,7 +2856,7 @@
                                 id: 225,
                                 title: 'Кузнецк',
                                 region: 58,
-                                coords: [53.0381686, 46.5302497],
+                                coords: [180, 437],
                                 objects: [
                                     ['cmit', 1, '#'],
                                 ]
@@ -2839,7 +2865,7 @@
                                 id: 226,
                                 title: 'Нижнекамск',
                                 region: 16,
-                                coords: [55.5561963, 51.739407],
+                                coords: [242, 435],
                                 objects: [
                                     ['cmit', 1, '#'],
                                     ['quant', 1, '#'],
@@ -2849,7 +2875,7 @@
                                 id: 227,
                                 title: 'Калуга',
                                 region: 40,
-                                coords: [54.5810439, 36.3265933],
+                                coords: [128, 370],
                                 objects: [
                                     ['sirius', 2, '#'],
                                     ['quant', 1, '#'],
@@ -2859,7 +2885,7 @@
                                 id: 228,
                                 title: 'Абакан',
                                 region: 19,
-                                coords: [53.7973661, 91.5187792],
+                                coords: [549, 549],
                                 objects: [
                                     ['sirius', 1, '#'],
                                     ['quant', 1, '#'],
@@ -2869,7 +2895,7 @@
                                 id: 229,
                                 title: 'Нарьян-Мар',
                                 region: 83,
-                                coords: [67.7131525, 53.0819336],
+                                coords: [342, 286],
                                 objects: [
                                     ['sirius', 1, '#'],
                                     ['quant', 1, '#'],
@@ -2879,7 +2905,7 @@
                                 id: 230,
                                 title: 'Салехард',
                                 region: 89,
-                                coords: [66.6243568, 66.6833994],
+                                coords: [413, 335],
                                 objects: [
                                     ['sirius', 1, '#'],
                                 ]
@@ -2888,7 +2914,7 @@
                                 id: 231,
                                 title: 'Чапаево',
                                 region: 14,
-                                coords: [61.7252, 129.4637],
+                                coords: [793, 365],
                                 objects: [
                                     ['sirius', 1, '#'],
                                 ]
@@ -2897,7 +2923,7 @@
                                 id: 232,
                                 title: 'Элиста',
                                 region: 8,
-                                coords: [46.3832947, 44.3451417],
+                                coords: [113, 506],
                                 objects: [
                                     ['sirius', 1, '#'],
                                 ]
@@ -2906,7 +2932,7 @@
                                 id: 233,
                                 title: 'Вышний Волочёк',
                                 region: 69,
-                                coords: [57.6433326, 34.6152931],
+                                coords: [150, 330],
                                 objects: [
                                     ['sirius', 1, '#'],
                                 ]
@@ -2915,7 +2941,7 @@
                                 id: 234,
                                 title: 'Черкесск',
                                 region: 9,
-                                coords: [44.3018637, 42.1217829],
+                                coords: [73, 518],
                                 objects: [
                                     ['sirius', 1, '#'],
                                 ]
@@ -2924,7 +2950,7 @@
                                 id: 235,
                                 title: 'Шадринск',
                                 region: 45,
-                                coords: [56.0020152, 63.5448234],
+                                coords: [330, 474],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -2933,7 +2959,7 @@
                                 id: 236,
                                 title: 'Новоуральск',
                                 region: 66,
-                                coords: [57.1621507, 60.010701],
+                                coords: [316, 450],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -2942,7 +2968,7 @@
                                 id: 237,
                                 title: 'Всеволожск',
                                 region: 47,
-                                coords: [59.9340094, 30.5605834],
+                                coords: [158, 288],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -2951,7 +2977,7 @@
                                 id: 238,
                                 title: 'Моздок',
                                 region: 15,
-                                coords: [43.6621209, 44.5721456],
+                                coords: [87, 536],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -2960,7 +2986,7 @@
                                 id: 239,
                                 title: 'Черногорск',
                                 region: 19,
-                                coords: [53.7408425, 91.2409669],
+                                coords: [548, 546],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -2969,7 +2995,7 @@
                                 id: 240,
                                 title: 'Нефтеюганск',
                                 region: 86,
-                                coords: [61.0032837, 72.5314185],
+                                coords: [420, 418],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -2978,7 +3004,7 @@
                                 id: 241,
                                 title: 'Кирово-Чепецк',
                                 region: 43,
-                                coords: [58.4709921, 49.9467608],
+                                coords: [246, 389],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -2987,7 +3013,7 @@
                                 id: 242,
                                 title: 'Горно-Алтайск',
                                 region: 4,
-                                coords: [51.8732681, 85.8752957],
+                                coords: [503, 574],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -2996,7 +3022,7 @@
                                 id: 243,
                                 title: 'Югорск',
                                 region: 86,
-                                coords: [61.2274504, 63.2514787],
+                                coords: [355, 400],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3005,7 +3031,7 @@
                                 id: 244,
                                 title: 'Омутнинск',
                                 region: 43,
-                                coords: [58.5847684, 52.1043554],
+                                coords: [267, 399],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3014,7 +3040,7 @@
                                 id: 245,
                                 title: 'Россошь',
                                 region: 36,
-                                coords: [50.085089, 39.5375534],
+                                coords: [111, 440],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3023,7 +3049,7 @@
                                 id: 246,
                                 title: 'Ухта',
                                 region: 11,
-                                coords: [63.4714779, 53.6164202],
+                                coords: [311, 345],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3032,7 +3058,7 @@
                                 id: 247,
                                 title: 'Свободный',
                                 region: 28,
-                                coords: [51.276264, 128.0368995],
+                                coords: [859, 489],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3041,7 +3067,7 @@
                                 id: 248,
                                 title: 'Биробиджан',
                                 region: 79,
-                                coords: [48.7095975, 132.8367594],
+                                coords: [927, 501],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3050,7 +3076,7 @@
                                 id: 249,
                                 title: 'Кострома',
                                 region: 44,
-                                coords: [57.7179445, 40.9057282],
+                                coords: [193, 361],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3059,7 +3085,7 @@
                                 id: 250,
                                 title: 'Северодвинск',
                                 region: 29,
-                                coords: [64.47753, 39.7332715],
+                                coords: [257, 286],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3068,7 +3094,7 @@
                                 id: 251,
                                 title: 'Новочебоксарск',
                                 region: 21,
-                                coords: [56.024486, 47.3941429],
+                                coords: [214, 410],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3077,7 +3103,7 @@
                                 id: 252,
                                 title: 'Новороссийск',
                                 region: 23,
-                                coords: [44.6384264, 37.6837218],
+                                coords: [45, 488],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3086,7 +3112,7 @@
                                 id: 253,
                                 title: 'Кумертау',
                                 region: 2,
-                                coords: [52.6715537, 55.7119915],
+                                coords: [250, 489],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3095,7 +3121,7 @@
                                 id: 254,
                                 title: 'Ачинск',
                                 region: 24,
-                                coords: [56.1688662, 90.39449],
+                                coords: [540, 505],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3104,7 +3130,7 @@
                                 id: 255,
                                 title: 'Верхняя Пышма',
                                 region: 66,
-                                coords: [56.8907833, 60.479885],
+                                coords: [317, 447],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3113,7 +3139,7 @@
                                 id: 256,
                                 title: 'Евпатория',
                                 region: 91,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [14, 447],
                                 objects: [
                                     ['quant', 1, '#'],
                                 ]
@@ -3122,7 +3148,7 @@
                                 id: 257,
                                 title: 'г. Дзержинск',
                                 region: 52,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [195, 385],
                                 objects: [
                                     ['itc', 1, '#'],
                                     ['oez', 1, '#'],
@@ -3132,7 +3158,7 @@
                                 id: 258,
                                 title: 'г. Елабуга',
                                 region: 16,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [243, 429],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3141,7 +3167,7 @@
                                 id: 259,
                                 title: 'г. Боровск',
                                 region: 40,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [135, 364],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3150,7 +3176,7 @@
                                 id: 260,
                                 title: 'г. Кашира',
                                 region: 50,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [150, 378],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3159,7 +3185,7 @@
                                 id: 261,
                                 title: 'г. Скопин',
                                 region: 48,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [140, 404],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3168,7 +3194,7 @@
                                 id: 262,
                                 title: 'г. Нариманов',
                                 region: 30,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [145, 526],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3177,7 +3203,7 @@
                                 id: 263,
                                 title: 'г. Мценск',
                                 region: 57,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [118, 384],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3186,7 +3212,7 @@
                                 id: 264,
                                 title: 'Джейрах',
                                 region: 52,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [188, 387],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3195,7 +3221,7 @@
                                 id: 265,
                                 title: 'Архыз',
                                 region: 9,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [61, 509],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3204,7 +3230,7 @@
                                 id: 266,
                                 title: 'Ведучи',
                                 region: 20,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [93, 554],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3213,7 +3239,7 @@
                                 id: 267,
                                 title: 'Алагир',
                                 region: 15,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [82, 535],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
@@ -3222,7 +3248,7 @@
                                 id: 268,
                                 title: 'Хунзах',
                                 region: 5,
-                                coords: [45.1054322, 33.2817685],
+                                coords: [98, 571],
                                 objects: [
                                     ['oez', 1, '#'],
                                 ]
